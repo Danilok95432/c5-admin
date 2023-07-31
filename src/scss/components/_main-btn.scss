@@ -1,0 +1,21 @@
+.main-btn {
+  color: #064AB1;
+  text-align: center;
+  @include opensans-regular;
+  font-size: 15px;
+  line-height: 22px;
+  padding: 8px 20px;
+  border-radius: 3px;
+  border: 1px solid #064AB1;
+  background: #F6F6F6;
+
+  &._red {
+    border-color: #920303;
+    color: #920303;
+  }
+
+  &._green {
+    border-color: #00754A;
+    color: #00754A;
+  }
+}

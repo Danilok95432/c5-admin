@@ -10,10 +10,10 @@ body {
   margin: 0;
   min-width: 340px;
   overflow-x: hidden;
-  @include montserrat-regular;
+  @include opensans-regular;
   font-size: 15px;
   line-height: 25px;
-  background-color: $main-bg;
+  background-color: #ffffff;
   color: $black;
   position: relative;
 }
@@ -64,15 +64,6 @@ button {
   padding: 0;
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -88,12 +79,9 @@ textarea {
   resize: none;
 }
 
-h1 {
-  @include montserrat-semibold;
-  font-size: 25px;
-  line-height: 30px;
+.number-mask {
+  text-align: left !important;
 }
-
 
 .hidden {
   display: none !important;
@@ -121,32 +109,6 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-// стили для флекс-таблиц
-
-.flex-table {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-  &__row {
-    display: flex;
-  }
-
-  &__cell {
-    width: 100%;
-    flex: 1 1 auto;
-    @include montserrat-regular;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-
-    &:not(:last-child) {
-      padding-right: 20px;
-    }
-  }
-}
-
 
 .grid-layout {
   display: grid;

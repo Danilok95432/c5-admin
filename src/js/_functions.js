@@ -1,7 +1,3 @@
-// Обрезка длинного текста на определенную длину
-import { bigImgModal, infoModal, modalOverlay } from './_vars'
-
-
 
 //Сбор данных форм
 
@@ -17,17 +13,6 @@ export const formToObj = (formData) => {
   }), {})
 }
 
-// Функция показа модалки большой картинки
-
-export const showBigImgModal = (path) => {
-  bigImgModal.classList.add('big-img-modal_active')
-  bigImgModal.querySelector('img').src = path
-  modalOverlay.classList.add('modal-overlay_active')
-  modalOverlay.addEventListener('click', () => {
-    modalOverlay.classList.remove('modal-overlay_active')
-    bigImgModal.classList.remove('big-img-modal_active')
-  })
-}
 
 // Обновление id в изменяемых списках
 export const updateChangeableListId = (changeableList) => {
@@ -80,19 +65,6 @@ export async function sendData (data, url) {
   })
 }
 
-// показ/скрытие модалки ошибки
-
-export const showInfoModal = (responseText) => {
-  infoModal.addEventListener('click', (e) => {
-    if (e.target.classList.contains('info-modal')) {
-      infoModal.classList.add('hidden')
-    }
-
-  })
-  const modalText = infoModal.querySelector('.info-modal__content-text')
-  modalText.textContent = responseText
-  infoModal.classList.remove('hidden')
-}
 
 export const getNoun = (number, one, two, five) => {
   let n = Math.abs(number);

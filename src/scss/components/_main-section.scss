@@ -1,0 +1,48 @@
+.main-section {
+  padding: 25px 25px 20px 25px;
+  border-radius: 5px;
+  border: 1px solid #D0D5DF;
+  background: #F6F6F6;
+
+  h1 {
+    color: $black;
+    @include opensans-regular;
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    li {
+      border-right: 1px solid #D0D5DF;
+      border-top: 1px solid #D0D5DF;
+      border-bottom: 1px solid #D0D5DF;
+      padding: 7px 15px;
+      background-color: $white;
+
+      &:first-child {
+        border-left: 1px solid #D0D5DF;
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+
+      &._active {
+        border-color: $black;
+        pointer-events: none;
+        border-radius: 3px;
+        border-left: 1px solid $black;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+  }
+
+}

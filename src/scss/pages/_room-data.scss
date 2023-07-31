@@ -1,0 +1,80 @@
+.room-data-page {
+  padding-bottom: 150px;
+
+  .number-mask {
+    width: 80px;
+  }
+
+  .main-input__unit {
+    margin-left: 10px;
+  }
+
+  .bathroom-select {
+    max-width: 215px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D0D5DF;
+  }
+
+  &__content-left {
+    max-width: 655px;
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+
+  &__checkbox-list {
+    padding-right: 55px;
+    li {
+      margin-bottom: 8px;
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .floor-wrapper {
+    label {
+      min-width: auto;
+      margin-right: 0;
+    }
+
+    select {
+      width: 150px;
+
+      &:first-of-type {
+        margin-right: 40px;
+      }
+    }
+
+    .floor-wrapper__label {
+      min-width: 200px;
+      margin-right: 23px;
+    }
+
+    .main-checkbox {
+      min-width: 95px;
+      margin-right: 5px;
+    }
+  }
+
+  &__btns {
+    padding-left: 223px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btns-right {
+    display: flex;
+    button:first-child {
+      margin-right: 20px;
+    }
+  }
+}

@@ -3,55 +3,22 @@
 @import "settings";
 
 //Страницы
-@import "pages/home";
-@import "pages/rooms";
-@import "pages/booking";
-@import "pages/selection-rooms";
-@import "pages/tariffs";
-@import "pages/services";
-@import "pages/one-room";
-@import "pages/guest-data";
-@import "pages/booking-completed";
-@import "pages/selection-one-room";
-@import "pages/restaurant";
-@import "pages/typical";
-@import "pages/guests";
 
-
+@import "./pages/room-data";
 
 //Медиа
-@import "./media/media-booking";
-@import "./media/media-selection-rooms";
-@import "./media/media-tariffs";
-@import "./media/media-services";
-@import "./media/media-one-room";
-@import "./media/media-booking-completed";
-@import "./media/media-selection-one-room";
-@import "./media/media-typical";
-
 
 //Компоненты
+@import "./components/auth-panel";
+@import "./components/main-section";
+@import "./components/main-input";
+@import "./components/main-textarea";
 @import "./components/main-menu";
-@import "./components/custom-select";
-@import "./components/lang-switcher";
-@import "./components/custom-input";
-@import "./components/find-res-form";
-@import "./components/top-row";
-@import "./components/breadcrumbs";
+@import "./components/room-fund-menu";
 @import "./components/main-checkbox";
-@import "./components/custom-textarea";
-@import "./components/aside-menu";
-@import "./components/aside-review";
-@import "./components/main-review";
-@import "./components/main-gallery";
-@import "./components/guests-modal";
-@import "./components/main-counter";
+@import "./components/main-btn";
 
 
-
-@import "./components/footer";
-@import "./components/rooms-list";
-@import "./components/booking-calendar";
 
 
 

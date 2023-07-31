@@ -2,9 +2,6 @@ import {
   limitationChangeableElements,
   updateChangeableListId
 } from '../_functions'
-import {initSelects} from "./customSelect"
-import {initChildrenSelects} from "./addChildrenSelect";
-import {initCounters} from "./guestsModal";
 
 const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 

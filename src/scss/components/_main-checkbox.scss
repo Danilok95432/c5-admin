@@ -1,0 +1,39 @@
+.main-checkbox {
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  input + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: $black;
+  }
+
+  input + label::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: $white;
+    border: 1px solid #868585;
+    border-radius: 0;
+    margin-right: 6px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 11px 8px;
+  }
+
+  input:checked + label::before {
+    background-image: url("../img/check-mark.svg");
+  }
+}
+

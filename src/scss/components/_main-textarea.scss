@@ -1,0 +1,27 @@
+.main-textarea-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  label {
+    min-width: 200px;
+    margin-right: 23px;
+    cursor: initial;
+  }
+}
+
+.main-textarea {
+  padding: 10px 10px;
+  color: $black;
+  @include opensans-regular;
+  font-size: 15px;
+  resize: none;
+  width: 100%;
+  height: 105px;
+  border-radius: 3px;
+  border: 1px solid #E3DDDD;
+  border-bottom: 1px solid #868585;
+
+  &::placeholder {
+    color: #91969A;
+  }
+}

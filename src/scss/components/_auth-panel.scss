@@ -1,0 +1,32 @@
+.auth-panel {
+  background: #F6F6F6;
+  padding: 25px 0;
+  border-bottom: 1px solid #D0D5DF;
+  margin-bottom: 15px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__welcome {
+    @include opensans-regular;
+    font-size: 15px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__escape {
+    display: flex;
+    align-items: center;
+    color: #920303;
+
+    svg {
+      margin-left: 8px;
+    }
+  }
+}

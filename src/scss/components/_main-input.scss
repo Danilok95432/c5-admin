@@ -1,0 +1,22 @@
+.main-input-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  label {
+    min-width: 200px;
+    margin-right: 23px;
+    cursor: initial;
+  }
+}
+
+
+.main-input {
+  padding: 10px 10px;
+  color: $black;
+  @include opensans-regular;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #E3DDDD;
+  border-bottom: 1px solid #868585;
+}

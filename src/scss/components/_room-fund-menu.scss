@@ -1,0 +1,36 @@
+.room-fund-menu {
+  margin-bottom: 30px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      border-right: 1px solid #D0D5DF;
+      border-top: 1px solid #D0D5DF;
+      border-bottom: 1px solid #D0D5DF;
+      padding: 7px 15px;
+      background-color: #F6F6F6;
+
+      &:first-child {
+        border-left: 1px solid #D0D5DF;
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+
+      &._active {
+        border-left: 1px solid #D0D5DF;
+        background-color: $white;
+        border-color: $black;
+        pointer-events: none;
+        border-radius: 3px;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+  }
+}

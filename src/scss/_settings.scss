@@ -1,0 +1,161 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 340px;
+  overflow-x: hidden;
+  @include montserrat-regular;
+  font-size: 15px;
+  line-height: 25px;
+  background-color: $main-bg;
+  color: $black;
+  position: relative;
+}
+
+main {
+  min-height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+svg {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+
+h1 {
+  @include montserrat-semibold;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+._disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.site-container {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1250px;
+  padding: 0 15px;
+}
+
+.trim-string {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// стили для флекс-таблиц
+
+.flex-table {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    width: 100%;
+    flex: 1 1 auto;
+    @include montserrat-regular;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+
+    &:not(:last-child) {
+      padding-right: 20px;
+    }
+  }
+}
+
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr) );
+  grid-column-gap: 40px;
+  grid-row-gap: 80px;
+  justify-items: center;
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr) );
+  }
+}
+

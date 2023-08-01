@@ -16,12 +16,26 @@
     flex-wrap: wrap;
     margin-bottom: 30px;
 
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
+
     li {
       border-right: 1px solid #D0D5DF;
       border-top: 1px solid #D0D5DF;
       border-bottom: 1px solid #D0D5DF;
       padding: 7px 15px;
       background-color: $white;
+      @media (max-width: 768px) {
+        border-left: 1px solid #D0D5DF;
+        margin-bottom: 5px;
+        width: 48%;
+      }
+      @media (max-width: 500px) {
+        border-left: 1px solid #D0D5DF;
+        margin-bottom: 5px;
+        width: 100%;
+      }
 
       &:first-child {
         border-left: 1px solid #D0D5DF;

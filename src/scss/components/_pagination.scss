@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+
+  a {
+    color: #000;
+    @include opensans-regular;
+    font-size: 13px;
+    padding: 1px 10px;
+    transition: all .3s;
+    &:hover {
+      color: #064AB1;
+      text-decoration: underline;
+    }
+    &._active {
+      border-radius: 3px;
+      border: 1px solid #E3DDDD;
+      background: #FFF;
+      pointer-events: none;
+    }
+  }
+}

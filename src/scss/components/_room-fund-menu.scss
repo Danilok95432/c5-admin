@@ -4,12 +4,22 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     li {
       border-right: 1px solid #D0D5DF;
       border-top: 1px solid #D0D5DF;
       border-bottom: 1px solid #D0D5DF;
       padding: 7px 15px;
       background-color: #F6F6F6;
+      @media (max-width: 768px) {
+        border-left: 1px solid #D0D5DF;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
 
       &:first-child {
         border-left: 1px solid #D0D5DF;
@@ -24,7 +34,6 @@
         border-left: 1px solid #D0D5DF;
         background-color: $white;
         border-color: $black;
-        pointer-events: none;
         border-radius: 3px;
       }
 

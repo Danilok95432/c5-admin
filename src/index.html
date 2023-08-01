@@ -73,7 +73,7 @@
           </a>
         </li>
         <li class="_active">
-          <a href="#">
+          <a href="rooms-list.html">
             Реестр номеров
           </a>
         </li>
@@ -93,12 +93,12 @@
         </h1>
         <ul class="main-section__menu">
           <li class="_active">
-            <a href="#">
+            <a href="index.html">
               Данные номера
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="rooms-apartment.html">
               Комнаты в номере
             </a>
           </li>
@@ -143,20 +143,22 @@
               </div>
               <div class="main-input-wrapper floor-wrapper">
                 <label class="floor-wrapper__label">Этаж:</label>
-                <select class="main-input" name="floor">
-                  <option value="">выбрать этаж</option>
-                  <option value=1">1 этаж</option>
-                  <option value="2">2 этаж</option>
-                </select>
-                <div class="main-checkbox">
-                  <input type="checkbox" name="two_floors" id="twoFloors">
-                  <label for="twoFloors">Два этажа</label>
+                <div class="floor-wrapper__content">
+                  <select class="main-input" name="floor">
+                    <option value="">выбрать этаж</option>
+                    <option value=1">1 этаж</option>
+                    <option value="2">2 этаж</option>
+                  </select>
+                  <div class="main-checkbox">
+                    <input type="checkbox" name="two_floors" id="twoFloors">
+                    <label for="twoFloors">Два этажа</label>
+                  </div>
+                  <select class="main-input" name="two_floors_select">
+                    <option value="">выбрать этаж</option>
+                    <option value=1">1 этаж</option>
+                    <option value="2">2 этаж</option>
+                  </select>
                 </div>
-                <select class="main-input" name="two_floors_select">
-                  <option value="">выбрать этаж</option>
-                  <option value=1">1 этаж</option>
-                  <option value="2">2 этаж</option>
-                </select>
               </div>
               <div class="main-textarea-wrapper">
                 <label>Описание номера:</label>
@@ -170,8 +172,11 @@
               </div>
               <div class="main-input-wrapper">
                 <label>Площадь номера:</label>
-                <input class="main-input number-mask" type="text" name="square">
-                <span class="main-input__unit">м<sup>2</sup></span>
+                <div class="main-input-wrapper__content">
+                  <input class="main-input number-mask" type="text"
+                         name="square">
+                  <span class="main-input__unit">м<sup>2</sup></span>
+                </div>
               </div>
               <div class="main-input-wrapper">
                 <label>Взрослых, не более:</label>
@@ -225,7 +230,7 @@
             <button class="main-btn _red" type="button">Отменить изменения
             </button>
             <div class="room-data-page__btns-right">
-              <button class="main-btn" type="button">Применить</button>
+              <button class="main-btn _blue" type="button">Применить</button>
               <button class="main-btn _green" type="submit">Сохранить и
                 закрыть
               </button>

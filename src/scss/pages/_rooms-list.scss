@@ -1,44 +1,53 @@
 .rooms-list-page {
 
   .main-table {
+    @media (max-width: 1100px) {
+      overflow-x: auto;
+      .main-table__row {
+        min-width: 1200px;
+      }
+    }
+
+
+
     &__cell {
       &:nth-child(1) {
         max-width: 3%;
       }
 
       &:nth-child(2) {
-        max-width: 7%;
+        max-width: 6%;
       }
 
       &:nth-child(3) {
-        max-width: 10%;
+        max-width: 9%;
       }
 
       &:nth-child(4) {
-        max-width: 17%;
+        max-width: 16%;
       }
 
       &:nth-child(5) {
-        max-width: 15%;
+        max-width: 14%;
       }
 
       &:nth-child(6) {
-        max-width: 15%;
+        max-width: 22%;
       }
 
       &:nth-child(7) {
         font-size: 13px;
-        max-width: 15%;
+        max-width: 14%;
       }
 
       &:nth-child(8) {
         text-align: center;
-        max-width: 5%;
+        max-width: 4%;
       }
 
       &:nth-child(9) {
         text-align: center;
-        max-width: 7%;
+        max-width: 6%;
       }
 
       &:nth-child(10) {

@@ -36,18 +36,6 @@ if (addToListBtns) {
       targetChangeableList.appendChild(templateElement)
       limitationChangeableElements(targetChangeableList, addBtn)
       updateChangeableListId(targetChangeableList)
-      initSelects()
-
-      const childrenSelects = templateElement.querySelectorAll('.children-select.custom-select__main-children select')
-
-      if (childrenSelects) {
-        initChildrenSelects(childrenSelects)
-      }
-
-      const initialCounters = templateElement.querySelectorAll('.main-counter')
-      if (initialCounters) {
-        initCounters(initialCounters)
-      }
     })
   })
 }

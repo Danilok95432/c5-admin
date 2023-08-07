@@ -1,0 +1,63 @@
+.room-apartment-page {
+
+  .main-input-wrapper label {
+    min-width: 170px;
+  }
+
+  .main-btn {
+    background-color: transparent;
+  }
+
+  .apart-list {
+    li {
+      padding: 20px 190px 26px 20px;
+      border-radius: 5px;
+      border: 1px dashed #868585;
+      position: relative;
+
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        @include opensans-semibold;
+        font-size: 21px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__content {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__left {
+      margin-right: 15px;
+      min-width: 470px;
+    }
+
+    &__right {
+      min-width: 406px;
+
+      .main-input-wrapper label {
+        min-width: 106px;
+      }
+    }
+
+    .main-input-wrapper {
+      .main-input {
+        &._sm {
+          max-width: 80px;
+        }
+
+        &._md {
+          max-width: 215px;
+        }
+      }
+
+    }
+
+  }
+}

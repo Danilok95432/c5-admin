@@ -131,3 +131,17 @@ textarea {
     margin-left: 2px;
   }
 }
+
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 10;
+  svg {
+    pointer-events: none;
+    path {
+      transition: all .3s;
+    }
+  }
+}

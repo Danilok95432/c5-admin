@@ -116,7 +116,39 @@
 
         <form action="#">
           <div class="room-apartment-page__content">
+            <ul class="apart-list" data-list="changeable">
+              <li>
+                 <h3>
+                   Комната 1
+                 </h3>
+                <form action="#">
+                  <div class="apart-list__left">
+                    <div class="main-input-wrapper">
+                      <label>Название комнаты:</label>
+                      <input class="main-input" type="text" name="apart_name">
+                    </div>
+                    <div class="main-input-wrapper generate-select" data-template="badSelect">
+                      <label>Количество кроватей:</label>
+                      <select class="main-input" name="bed_count">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                    <div class="generate-select__list">
+                      <div class="main-input-wrapper">
+                        <label>Кровать <span class="generate-select__count">1</span>:</label>
+                        <select class="main-input" name="bed_count">
+                          <option value="1">Двуспальная</option>
+                          <option value="2">Детская</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </form>
 
+              </li>
+            </ul>
           </div>
 
         </form>
@@ -126,6 +158,16 @@
 
   </main>
 </div>
+
+<template id="badSelect">
+  <div class="main-input-wrapper">
+    <label>Кровать <span class="generate-select__count">1</span>:</label>
+    <select class="main-input" name="bed_count[]">
+      <option value="1">Двуспальная</option>
+      <option value="2">Детская</option>
+    </select>
+  </div>
+</template>
 
 </body>
 

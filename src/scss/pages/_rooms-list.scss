@@ -9,7 +9,6 @@
     }
 
 
-
     &__cell {
       &:nth-child(1) {
         max-width: 3%;
@@ -48,16 +47,6 @@
       &:nth-child(9) {
         max-width: 7%;
 
-        button {
-          display: flex;
-          align-items: center;
-          color: #920303;
-          font-size: 13px;
-
-          svg {
-            margin-left: 2px;
-          }
-        }
       }
     }
   }

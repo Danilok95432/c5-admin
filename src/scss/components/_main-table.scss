@@ -25,7 +25,7 @@
     background-color: $white;
     transition: all .3s;
 
-    a {
+    a:not(.delete-link) {
       color: #064AB1;
     }
 
@@ -60,9 +60,26 @@
       align-items: center;
       font-size: 13px;
       width: 232px;
+
       select {
         margin-left: 8px;
         max-width: 72px;
+      }
+    }
+
+
+    form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      button[type="submit"] {
+        border: 1px solid #D0D5DF;
+        padding: 5px;
+        transition: all .3s;
+        &:hover {
+          background-color: #D0D5DF;
+          color: #ffffff;
+        }
       }
     }
 

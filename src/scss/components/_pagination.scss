@@ -17,5 +17,8 @@
       background: #FFF;
       pointer-events: none;
     }
+    &:first-child._active {
+      margin-left: 10px;
+    }
   }
 }

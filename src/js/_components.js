@@ -4,6 +4,7 @@ import './components/cutStrings'
 import './components/confirmBtns'
 import './components/generateSelect'
 import './components/mainTable'
+import './components/generalDropzone'
 
 
 

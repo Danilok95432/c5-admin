@@ -1,5 +1,5 @@
 
-const cutString = (stringArray, stringLength) => {
+export const cutString = (stringArray, stringLength) => {
   stringArray.forEach(str => {
     let cutLength = 0
     stringLength ? cutLength = stringLength : cutLength = +str.dataset.shear

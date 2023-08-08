@@ -104,6 +104,30 @@ textarea {
   padding: 0 15px;
 }
 
+
+.dz-details,
+.dz-progress,
+.dz-error-message,
+.dz-success-mark,
+.dz-error-mark {
+  display: none !important;
+}
+
+.dz-message {
+  button {
+    padding: 0;
+  }
+}
+
+.dz-remove {
+  line-height: 0;
+  font-size: 0;
+}
+
+.dz-preview:not(.dz-preview.dz-processing) {
+  display: none;
+}
+
 .trim-string {
   white-space: nowrap;
   overflow: hidden;
@@ -143,5 +167,21 @@ textarea {
     path {
       transition: all .3s;
     }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  z-index: -1;
+
+  &_active {
+    z-index: 998;
+    visibility: visible;
   }
 }

@@ -103,12 +103,12 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="rooms-services.html">
               Сервисы в номере
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="rooms-photos.html">
               Фотографии номера
             </a>
           </li>
@@ -122,76 +122,73 @@
                 <h3>
                   Комната 1
                 </h3>
-                <form action="#">
-                  <div class="apart-list__content">
-                    <div class="apart-list__left">
+                <div class="apart-list__content">
+                  <div class="apart-list__left">
+                    <div class="main-input-wrapper">
+                      <label>Название комнаты:</label>
+                      <input class="main-input" type="text" name="apart_name">
+                    </div>
+                    <div class="main-input-wrapper generate-select"
+                         data-template="badSelect">
+                      <label>Количество кроватей:</label>
+                      <select class="main-input" name="bed_count">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                    <div class="generate-select__list">
                       <div class="main-input-wrapper">
-                        <label>Название комнаты:</label>
-                        <input class="main-input" type="text" name="apart_name">
-                      </div>
-                      <div class="main-input-wrapper generate-select"
-                           data-template="badSelect">
-                        <label>Количество кроватей:</label>
+                        <label>Кровать <span
+                          class="generate-select__count">1</span>:</label>
                         <select class="main-input" name="bed_count">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                        </select>
-                      </div>
-                      <div class="generate-select__list">
-                        <div class="main-input-wrapper">
-                          <label>Кровать <span
-                            class="generate-select__count">1</span>:</label>
-                          <select class="main-input" name="bed_count">
-                            <option value="1">Двуспальная</option>
-                            <option value="2">Детская</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Взрослых, не более:</label>
-                        <input class="main-input number-mask _sm" type="text"
-                               name="adults_count">
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Детей, не более:</label>
-                        <input class="main-input number-mask _sm" type="text"
-                               name="children_count">
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Ванная комната:</label>
-                        <select class="main-input _md" name="bathroom">
-                          <option value="1">Ванная в номере</option>
-                          <option value="2">Общая ванная</option>
+                          <option value="1">Двуспальная</option>
+                          <option value="2">Детская</option>
                         </select>
                       </div>
                     </div>
-                    <div class="apart-list__right">
-                      <div class="main-input-wrapper">
-                        <label>Тип комнаты:</label>
-                        <input class="main-input" type="text" name="room_type">
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Окна:</label>
-                        <input class="main-input" type="text" name="window">
-                      </div>
+                    <div class="main-input-wrapper">
+                      <label>Взрослых, не более:</label>
+                      <input class="main-input number-mask _sm" type="text"
+                             name="adults_count">
                     </div>
-
+                    <div class="main-input-wrapper">
+                      <label>Детей, не более:</label>
+                      <input class="main-input number-mask _sm" type="text"
+                             name="children_count">
+                    </div>
+                    <div class="main-input-wrapper">
+                      <label>Ванная комната:</label>
+                      <select class="main-input _md" name="bathroom">
+                        <option value="1">Ванная в номере</option>
+                        <option value="2">Общая ванная</option>
+                      </select>
+                    </div>
                   </div>
-                  <div class="main-input-wrapper">
-                    <label></label>
-                    <button class="main-btn _blue" type="submit">
-                      <svg width="16" height="11" viewBox="0 0 16 11"
-                           fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M15.6091 0.201934C15.6731 0.265782 15.7239 0.341632 15.7586 0.425138C15.7932 0.508644 15.8111 0.598165 15.8111 0.688575C15.8111 0.778985 15.7932 0.868507 15.7586 0.952013C15.7239 1.03552 15.6731 1.11137 15.6091 1.17522L5.98628 10.7981C5.92243 10.8621 5.84658 10.9129 5.76308 10.9475C5.67957 10.9822 5.59005 11 5.49964 11C5.40923 11 5.31971 10.9822 5.2362 10.9475C5.1527 10.9129 5.07685 10.8621 5.013 10.7981L0.201573 5.98664C0.072508 5.85758 0 5.68253 0 5.5C0 5.31747 0.072508 5.14242 0.201573 5.01336C0.330639 4.88429 0.505689 4.81179 0.688215 4.81179C0.870741 4.81179 1.04579 4.88429 1.17486 5.01336L5.49964 9.33952L14.6358 0.201934C14.6997 0.137924 14.7755 0.0871387 14.8591 0.0524876C14.9426 0.0178364 15.0321 0 15.1225 0C15.2129 0 15.3024 0.0178364 15.3859 0.0524876C15.4694 0.0871387 15.5453 0.137924 15.6091 0.201934Z"
-                          fill="#064AB1"/>
-                      </svg>
-                      Сохранить комнату
-                    </button>
+                  <div class="apart-list__right">
+                    <div class="main-input-wrapper">
+                      <label>Тип комнаты:</label>
+                      <input class="main-input" type="text" name="room_type">
+                    </div>
+                    <div class="main-input-wrapper">
+                      <label>Окна:</label>
+                      <input class="main-input" type="text" name="window">
+                    </div>
                   </div>
-                </form>
 
+                </div>
+                <div class="main-input-wrapper">
+                  <label></label>
+                  <a href="#" class="main-btn _blue">
+                    <svg width="16" height="11" viewBox="0 0 16 11"
+                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6091 0.201934C15.6731 0.265782 15.7239 0.341632 15.7586 0.425138C15.7932 0.508644 15.8111 0.598165 15.8111 0.688575C15.8111 0.778985 15.7932 0.868507 15.7586 0.952013C15.7239 1.03552 15.6731 1.11137 15.6091 1.17522L5.98628 10.7981C5.92243 10.8621 5.84658 10.9129 5.76308 10.9475C5.67957 10.9822 5.59005 11 5.49964 11C5.40923 11 5.31971 10.9822 5.2362 10.9475C5.1527 10.9129 5.07685 10.8621 5.013 10.7981L0.201573 5.98664C0.072508 5.85758 0 5.68253 0 5.5C0 5.31747 0.072508 5.14242 0.201573 5.01336C0.330639 4.88429 0.505689 4.81179 0.688215 4.81179C0.870741 4.81179 1.04579 4.88429 1.17486 5.01336L5.49964 9.33952L14.6358 0.201934C14.6997 0.137924 14.7755 0.0871387 14.8591 0.0524876C14.9426 0.0178364 15.0321 0 15.1225 0C15.2129 0 15.3024 0.0178364 15.3859 0.0524876C15.4694 0.0871387 15.5453 0.137924 15.6091 0.201934Z"
+                        fill="#064AB1"/>
+                    </svg>
+                    Сохранить комнату
+                  </a>
+                </div>
               </li>
             </ul>
             <button class="main-btn" type="button" data-btn="add"
@@ -204,6 +201,10 @@
               </svg>
               Добавить комнату
             </button>
+          </div>
+
+          <div class="room-apartment-page__submit-block">
+            <button class="main-btn _blue" type="submit">Применить</button>
           </div>
 
         </form>
@@ -240,76 +241,72 @@
     <h3>
       Комната <span class="changeable-amount">1</span>
     </h3>
-    <form action="#">
-      <div class="apart-list__content">
-        <div class="apart-list__left">
-          <div class="main-input-wrapper">
-            <label>Название комнаты:</label>
-            <input class="main-input" type="text" name="apart_name">
-          </div>
-          <div class="main-input-wrapper generate-select"
-               data-template="badSelect">
-            <label>Количество кроватей:</label>
-            <select class="main-input" name="bed_count">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="generate-select__list">
-            <div class="main-input-wrapper">
-              <label>Кровать <span
-                class="generate-select__count">1</span>:</label>
-              <select class="main-input" name="bed_count">
-                <option value="1">Двуспальная</option>
-                <option value="2">Детская</option>
-              </select>
-            </div>
-          </div>
-          <div class="main-input-wrapper">
-            <label>Взрослых, не более:</label>
-            <input class="main-input number-mask _sm" type="text"
-                   name="adults_count">
-          </div>
-          <div class="main-input-wrapper">
-            <label>Детей, не более:</label>
-            <input class="main-input number-mask _sm" type="text"
-                   name="children_count">
-          </div>
-          <div class="main-input-wrapper">
-            <label>Ванная комната:</label>
-            <select class="main-input _md" name="bathroom">
-              <option value="1">Ванная в номере</option>
-              <option value="2">Общая ванная</option>
-            </select>
-          </div>
+    <div class="apart-list__content">
+      <div class="apart-list__left">
+        <div class="main-input-wrapper">
+          <label>Название комнаты:</label>
+          <input class="main-input" type="text" name="apart_name">
         </div>
-        <div class="apart-list__right">
-          <div class="main-input-wrapper">
-            <label>Тип комнаты:</label>
-            <input class="main-input" type="text" name="room_type">
-          </div>
-          <div class="main-input-wrapper">
-            <label>Окна:</label>
-            <input class="main-input" type="text" name="window">
-          </div>
+        <div class="main-input-wrapper">
+          <label>Помывочное место:</label>
+          <select class="main-input" name="washing_place">
+            <option value="1">Ванна гидромассажная</option>
+            <option value="2">Ванна</option>
+            <option value="3">Душ</option>
+          </select>
         </div>
-
+        <div class="main-input-wrapper">
+          <label>Баня:</label>
+          <select class="main-input" name="bath">
+            <option value="1">Русская баня</option>
+            <option value="2">Сауна</option>
+          </select>
+        </div>
+        <div class="main-input-wrapper">
+          <label>Сантехника:</label>
+          <ul class="checkbox-list">
+            <li>
+              <input type="checkbox" name="toilet">
+              <label>Унитаз</label>
+            </li>
+            <li>
+              <input type="checkbox" name="bidet">
+              <label>Биде</label>
+            </li>
+            <li>
+              <input type="checkbox" name="sink">
+              <label>Раковина</label>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="main-input-wrapper">
-        <label></label>
-        <button class="main-btn _blue" type="submit">
-          <svg width="16" height="11" viewBox="0 0 16 11"
-               fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M15.6091 0.201934C15.6731 0.265782 15.7239 0.341632 15.7586 0.425138C15.7932 0.508644 15.8111 0.598165 15.8111 0.688575C15.8111 0.778985 15.7932 0.868507 15.7586 0.952013C15.7239 1.03552 15.6731 1.11137 15.6091 1.17522L5.98628 10.7981C5.92243 10.8621 5.84658 10.9129 5.76308 10.9475C5.67957 10.9822 5.59005 11 5.49964 11C5.40923 11 5.31971 10.9822 5.2362 10.9475C5.1527 10.9129 5.07685 10.8621 5.013 10.7981L0.201573 5.98664C0.072508 5.85758 0 5.68253 0 5.5C0 5.31747 0.072508 5.14242 0.201573 5.01336C0.330639 4.88429 0.505689 4.81179 0.688215 4.81179C0.870741 4.81179 1.04579 4.88429 1.17486 5.01336L5.49964 9.33952L14.6358 0.201934C14.6997 0.137924 14.7755 0.0871387 14.8591 0.0524876C14.9426 0.0178364 15.0321 0 15.1225 0C15.2129 0 15.3024 0.0178364 15.3859 0.0524876C15.4694 0.0871387 15.5453 0.137924 15.6091 0.201934Z"
-              fill="#064AB1"/>
-          </svg>
-          Сохранить комнату
-        </button>
+      <div class="apart-list__right">
+        <div class="main-input-wrapper">
+          <label>Тип комнаты:</label>
+          <input class="main-input" type="text" name="room_type">
+        </div>
+        <div class="main-input-wrapper">
+          <label>Бассейн:</label>
+          <select class="main-input" name="bathroom">
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+          </select>
+        </div>
       </div>
-    </form>
 
+    </div>
+    <div class="main-input-wrapper">
+      <label></label>
+      <a href="#" class="main-btn _blue">
+        <svg width="16" height="11" viewBox="0 0 16 11"
+             fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6091 0.201934C15.6731 0.265782 15.7239 0.341632 15.7586 0.425138C15.7932 0.508644 15.8111 0.598165 15.8111 0.688575C15.8111 0.778985 15.7932 0.868507 15.7586 0.952013C15.7239 1.03552 15.6731 1.11137 15.6091 1.17522L5.98628 10.7981C5.92243 10.8621 5.84658 10.9129 5.76308 10.9475C5.67957 10.9822 5.59005 11 5.49964 11C5.40923 11 5.31971 10.9822 5.2362 10.9475C5.1527 10.9129 5.07685 10.8621 5.013 10.7981L0.201573 5.98664C0.072508 5.85758 0 5.68253 0 5.5C0 5.31747 0.072508 5.14242 0.201573 5.01336C0.330639 4.88429 0.505689 4.81179 0.688215 4.81179C0.870741 4.81179 1.04579 4.88429 1.17486 5.01336L5.49964 9.33952L14.6358 0.201934C14.6997 0.137924 14.7755 0.0871387 14.8591 0.0524876C14.9426 0.0178364 15.0321 0 15.1225 0C15.2129 0 15.3024 0.0178364 15.3859 0.0524876C15.4694 0.0871387 15.5453 0.137924 15.6091 0.201934Z"
+            fill="#064AB1"/>
+        </svg>
+        Сохранить комнату
+      </a>
+    </div>
   </li>
 </template>
 

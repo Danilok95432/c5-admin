@@ -1,4 +1,5 @@
 .room-apartment-page {
+  padding-bottom: 95px;
 
   .main-input-wrapper label {
     min-width: 170px;
@@ -8,12 +9,33 @@
     background-color: transparent;
   }
 
+  button[data-btn="add"] {
+    margin-top: 23px;
+    margin-left: 215px;
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  &__submit-block {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #D0D5DF;
+    padding-left: 215px;
+    @media (max-width: 768px) {
+      padding-left: 0;
+    }
+  }
+
   .apart-list {
     li {
       padding: 20px 190px 26px 20px;
       border-radius: 5px;
       border: 1px dashed #868585;
       position: relative;
+      @media (max-width: 1024px) {
+        padding-right: 20px;
+      }
 
 
       &:not(:last-child) {
@@ -31,18 +53,34 @@
       margin-bottom: 30px;
       display: flex;
       justify-content: space-between;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
     }
 
     &__left {
       margin-right: 15px;
       min-width: 470px;
+      @media (max-width: 768px) {
+        min-width: 100%;
+      }
+      @media (max-width: 1024px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
 
     &__right {
       min-width: 406px;
+      @media (max-width: 768px) {
+        min-width: 100%;
+      }
 
       .main-input-wrapper label {
         min-width: 106px;
+        @media (max-width: 1024px) {
+          min-width: 170px;
+        }
       }
     }
 
@@ -59,5 +97,29 @@
 
     }
 
+  }
+
+  .checkbox-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    label {
+      @include opensans-regular;
+      font-size: 15px;
+      min-width: auto;
+      margin-right: 0;
+    }
+
+    li {
+      margin-bottom: 0;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
   }
 }

@@ -1,0 +1,30 @@
+.fix-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &._no-margin {
+    margin: 0;
+  }
+
+  &__title {
+    min-width: 220px;
+    margin-right: 23px;
+    font-weight: 300;
+
+    &._bold {
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 3px;
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

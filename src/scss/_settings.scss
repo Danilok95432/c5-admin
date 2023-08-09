@@ -162,8 +162,10 @@ textarea {
   top: 10px;
   cursor: pointer;
   z-index: 10;
+
   svg {
     pointer-events: none;
+
     path {
       transition: all .3s;
     }
@@ -183,5 +185,38 @@ textarea {
   &_active {
     z-index: 998;
     visibility: visible;
+  }
+}
+
+.booking-balance {
+  &__total {
+    color: #920303;
+    font-weight: 600;
+  }
+}
+
+.booking-status {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  span {
+    display: block;
+    padding: 0 8px 2px 8px;
+    border-radius: 50px;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    &._red {
+      color: #920303;
+      background: #FAEBEB;
+    }
+    &._green {
+      color: #0E8128;
+      background: #DEF3DA;
+    }
   }
 }

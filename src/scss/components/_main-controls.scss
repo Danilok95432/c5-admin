@@ -1,0 +1,21 @@
+.main-controls {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+
+  &__item {
+    a {
+      color: #064AB1;
+    }
+    &._delete {
+      margin-left: 20px;
+      a {
+        color: #920303;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

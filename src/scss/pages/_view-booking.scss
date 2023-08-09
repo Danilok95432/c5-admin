@@ -1,0 +1,99 @@
+.view-booking-page {
+  padding-bottom: 40px;
+
+  &__source-row {
+    align-items: flex-start;
+  }
+
+  &__table-subtitle {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    a {
+      color: #064AB1;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .main-table {
+    border: none;
+    @media (max-width: 1024px) {
+      overflow-x: auto;
+    }
+
+    &__row {
+      background-color: transparent;
+      @media (max-width: 1024px) {
+        min-width: 1000px;
+      }
+      &.main-table__title-row .main-table__cell {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .services-price-table {
+    .main-table__cell {
+      &:nth-child(1) {
+        min-width: 18%;
+      }
+
+      &:nth-child(2) {
+        min-width: 26%;
+      }
+
+      &:nth-child(3) {
+        min-width: 26%;
+      }
+
+      &:nth-child(4) {
+        min-width: 20%;
+      }
+
+      &:nth-child(5) {
+        min-width: 10%;
+        text-align: right;
+      }
+    }
+  }
+  .journal-table{
+    .main-table__cell {
+      &:nth-child(1) {
+        min-width: 15%;
+      }
+
+      &:nth-child(2) {
+        min-width: 11%;
+      }
+
+      &:nth-child(3) {
+        min-width: 14%;
+      }
+
+      &:nth-child(4) {
+        min-width: 21%;
+      }
+
+      &:nth-child(5) {
+        min-width: 27%;
+      }
+      &:nth-child(6) {
+        min-width: 12%;
+        text-align: right;
+      }
+    }
+  }
+
+}

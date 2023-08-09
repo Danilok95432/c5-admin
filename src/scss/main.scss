@@ -2,15 +2,6 @@
 @import "fonts";
 @import "settings";
 
-//Страницы
-
-@import "./pages/room-data";
-@import "./pages/rooms-list";
-@import "./pages/rooms-apartment";
-@import "./pages/rooms-services";
-@import "./pages/rooms-photos";
-
-//Медиа
 
 //Компоненты
 @import "./components/auth-panel";
@@ -25,6 +16,21 @@
 @import "./components/pagination";
 @import "./components/big-img-modal";
 @import "./components/info-modal";
+@import "./components/main-controls";
+@import "./components/fix-row";
+
+//Страницы
+
+@import "./pages/room-data";
+@import "./pages/rooms-list";
+@import "./pages/rooms-apartment";
+@import "./pages/rooms-services";
+@import "./pages/rooms-photos";
+@import "./pages/view-booking";
+
+
+
+
 
 
 

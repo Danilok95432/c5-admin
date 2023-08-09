@@ -4,11 +4,46 @@
   border: 1px solid #D0D5DF;
   background: #F6F6F6;
 
+  &._add {
+    margin-top: 20px;
+  }
+
   h1 {
     color: $black;
     @include opensans-regular;
     font-size: 23px;
     margin-bottom: 30px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 15px;
+
+    h1 {
+      margin-bottom: 0;
+      margin-right: 5px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 5px;
+
+    h4 {
+      font-size: 15px;
+      margin-right: 3px;
+      font-weight: 300;
+      span {
+        font-weight: 600;
+      }
+    }
   }
 
   &__menu {
@@ -59,4 +94,11 @@
     }
   }
 
+  &__item {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #D0D5DF;
+  }
 }
+
+

@@ -79,7 +79,7 @@ textarea {
   resize: none;
 }
 
-.number-mask {
+.number-mask, .currency-mask {
   text-align: left !important;
 }
 
@@ -200,6 +200,7 @@ textarea {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+
   span {
     display: block;
     padding: 0 8px 2px 8px;
@@ -214,9 +215,56 @@ textarea {
       color: #920303;
       background: #FAEBEB;
     }
+
     &._green {
       color: #0E8128;
       background: #DEF3DA;
     }
   }
+}
+
+.air-datepicker-body--day-name {
+  color: #817D8C;
+  @include opensans-regular;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.air-datepicker-cell.-day- {
+  @include opensans-regular;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+
+  &.-selected- {
+    background-color: #064AB1;
+    color: #ffffff;
+  }
+}
+
+
+.air-datepicker-nav--title {
+  @include opensans-regular;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+
+  i {
+    @include opensans-regular;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+  }
+}
+
+
+.air-datepicker-global-container {
+  z-index: 9999;
+}
+
+.date-custom-container {
+  z-index: 9999;
+  position: absolute;
+  left: 0;
+  top: 0;
 }

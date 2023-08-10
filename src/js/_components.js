@@ -6,6 +6,7 @@ import './components/generateSelect'
 import './components/mainTable'
 import './components/generalDropzone'
 import './components/customDate'
+import './components/changeRoomType'
 
 
 

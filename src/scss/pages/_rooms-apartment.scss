@@ -122,4 +122,25 @@
       }
     }
   }
+
+  // Управление отображением видимости типа комнаты
+
+  .room-state {
+    &__content {
+      display: none;
+    }
+
+    &[data-state="1"], &[data-state="2"] {
+      .room-state__content[data-content="1"] {
+        display: block;
+      }
+    }
+
+    &[data-state="3"] {
+      .room-state__content[data-content="2"] {
+        display: block;
+      }
+    }
+  }
+
 }

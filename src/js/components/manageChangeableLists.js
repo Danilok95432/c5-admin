@@ -2,6 +2,8 @@ import {
   limitationChangeableElements,
   updateChangeableListId
 } from '../_functions'
+import {initChangeSelects} from "./changeRoomType";
+import {initGenerateSelect} from "./generateSelect";
 
 const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 
@@ -36,6 +38,8 @@ if (addToListBtns) {
       targetChangeableList.appendChild(templateElement)
       limitationChangeableElements(targetChangeableList, addBtn)
       updateChangeableListId(targetChangeableList)
+      initChangeSelects(templateElement)
+      initGenerateSelect()
     })
   })
 }

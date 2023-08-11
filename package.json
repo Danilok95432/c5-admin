@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
-    "air-datepicker": "^3.3.1",
+    "air-datepicker": "^3.4.0",
     "aos": "^2.3.4",
     "choices.js": "^10.1.0",
     "dropzone": "^6.0.0-beta.2",
@@ -65,6 +65,7 @@
     "inputmask": "^5.0.8",
     "just-validate": "^3.3.3",
     "lightgallery": "2.7.1",
+    "moment": "^2.29.4",
     "rellax": "^1.12.1",
     "simplebar": "^5.3.6",
     "smooth-scroll": "^16.1.3",

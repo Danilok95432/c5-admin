@@ -1,0 +1,53 @@
+.room-date-controller {
+  display: flex;
+  justify-content: space-between;
+
+
+  .date-mask {
+    border-radius: 3px;
+    border: 1px solid #D0D5DF;
+    background: #F6F6F6;
+    max-width: 130px;
+    font-size: 13px;
+  }
+
+
+  &__calendar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__date-preview {
+    @include opensans-semibold;
+    font-size: 21px;
+    margin-right: 15px;
+  }
+
+
+  &__switcher {
+    display: flex;
+    align-items: center;
+  }
+
+  &__switcher-date {
+    margin-left: 15px;
+    margin-right: 15px;
+    @include opensans-regular;
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  &__switcher-btn {
+    svg path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      svg path {
+        fill: #064AB1;
+      }
+    }
+  }
+
+}

@@ -21,6 +21,7 @@
     @include opensans-semibold;
     font-size: 21px;
     margin-right: 15px;
+    text-transform: capitalize;
   }
 
 
@@ -36,6 +37,8 @@
     font-size: 13px;
     text-align: center;
     padding-bottom: 5px;
+    text-transform: capitalize;
+    width: 65px;
   }
 
   &__switcher-btn {

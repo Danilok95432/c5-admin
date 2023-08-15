@@ -1,4 +1,3 @@
-
 //Сбор данных форм
 
 import {bigImgModal, infoModal, modalOverlay} from "./_vars";
@@ -59,7 +58,7 @@ export const limitationChangeableElements = (changeableList, addBtn) => {
 }
 
 // Фунцкия отправки fetch запросов
-export async function sendData (data, url) {
+export async function sendData(data, url) {
   return await fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'multipart/form-data'},
@@ -105,4 +104,18 @@ export const showBigImgModal = (path) => {
     modalOverlay.classList.remove('modal-overlay_active')
     bigImgModal.classList.remove('big-img-modal_active')
   })
+}
+
+// функция определения дня недели по дате
+
+export const defineWeekDay = (date) => {
+  const datesWeekArr = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+  const currentDate = new Date(date)
+  return datesWeekArr[currentDate.getDay()]
+}
+
+
+// Форматирование даты в формат дд.мм.гггг
+export const formatDate = (date) => {
+  return date.split(".").reverse().join(".")
 }

@@ -53,11 +53,12 @@
         top: 0;
         width: 2px;
         height: 10000px;
+        opacity: 0.5;
         background-color: #00FF38;
       }
 
       &::after {
-        content: '';
+        content: attr(data-pointer);
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -65,12 +66,55 @@
         border-radius: 50%;
         width: 5px;
         height: 5px;
+        opacity: 0.5;
         background-color: #00FF38;
       }
     }
 
     &._no-current {
       opacity: 0.5;
+    }
+  }
+
+  .trigger-row {
+    td {
+      background-color: #F1F7FF;
+
+      &:first-child {
+        position: relative;
+        padding-right: 30px;
+        cursor: pointer;
+
+        svg {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+
+          &._rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  .child-row {
+    display: none;
+
+    td {
+      transition: background-color .3s;
+    }
+
+    &:hover td {
+      background-color: #FFEDBD;
+    }
+
+    &._visible {
+      display: table-row;
+    }
+
+    svg {
+      display: none;
     }
   }
 

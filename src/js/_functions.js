@@ -119,3 +119,16 @@ export const defineWeekDay = (date) => {
 export const formatDate = (date) => {
   return date.split(".").reverse().join(".")
 }
+
+// Получение всех соседних элементов
+
+export const getRowsSiblings = (elem, limitElClass) => {
+  let siblings = [];
+  let sibling = elem;
+  while (!sibling.nextElementSibling?.classList.contains(limitElClass) && sibling.nextElementSibling) {
+    sibling = sibling.nextElementSibling;
+    siblings.push(sibling);
+  }
+
+  return siblings;
+}

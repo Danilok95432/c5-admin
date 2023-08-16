@@ -1,8 +1,10 @@
 .room-apartment-page {
   padding-bottom: 95px;
 
-  .main-input-wrapper label {
-    min-width: 170px;
+  .main-input-wrapper {
+    label {
+      min-width: 170px;
+    }
   }
 
   .main-btn {
@@ -119,6 +121,7 @@
 
       &:not(:last-child) {
         margin-right: 5px;
+        margin-bottom: 0;
       }
     }
   }

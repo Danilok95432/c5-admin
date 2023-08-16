@@ -1,7 +1,69 @@
 import AirDatepicker from "air-datepicker";
-import {defineWeekDay, sendData, showInfoModal} from "../_functions";
+import {
+  defineWeekDay,
+  getRowsSiblings,
+  sendData,
+  showInfoModal
+} from "../_functions";
+import {pointerSvg} from "../_vars";
 
 const roomDateController = document.querySelector('.room-date-controller')
+
+const initRowsVisibleHandler = () => {
+  const triggerRows = document.querySelectorAll('tr.trigger-row')
+  if (triggerRows) {
+    triggerRows.forEach(rowEl => {
+      const triggerCell = rowEl.querySelector('td:first-child')
+      triggerCell.addEventListener('click', () => {
+        const triggerCellPointerIcon = triggerCell.querySelector('svg')
+        triggerCellPointerIcon.classList.toggle('_rotate')
+        const allSiblings = getRowsSiblings(rowEl, 'trigger-row')
+        allSiblings.forEach((el) => el.classList.toggle('_visible'))
+      })
+    })
+  }
+}
+const renderCells = (cells) => {
+  if (cells) {
+    const html = cells.map((cell, i) => {
+      return (
+        `<td>
+          ${cell}
+          ${i === 0 ? pointerSvg : ''}
+        </td>`
+      )
+    })
+    return html.join('')
+  }
+}
+const renderChildRows = (childRows) => {
+  if (childRows) {
+    const html = childRows.map(row => {
+      return (
+        `<tr class="child-row">
+           ${renderCells(row?.cells)}
+        </tr>`
+      )
+    })
+    return html.join('')
+  }
+}
+const renderRows = (rows) => {
+  if (rows) {
+    const rowsContainer = document.querySelector('.room-booking-calendar tbody')
+    const html = rows.map(row => {
+      return (
+        `<tr class="trigger-row">
+           ${renderCells(row?.cells)}
+        </tr>
+        ${renderChildRows(row?.childRows)}`
+      )
+    })
+
+    rowsContainer.innerHTML = html.join('')
+
+  }
+}
 const getCellsContent = async (dateInfo) => {
   const bookingTableWrapper = document.querySelector('.room-booking-calendar')
   const dataScript = bookingTableWrapper.dataset.script
@@ -18,8 +80,7 @@ const getCellsContent = async (dateInfo) => {
     const {status, errortext, rows} = finishedResponse
 
     if (status === 'ok') {
-      console.log(rows)
-
+      renderRows(rows)
     } else {
       showInfoModal(errortext)
     }
@@ -41,6 +102,7 @@ if (roomDateController) {
 
   const presentDay = new Date()
   getCellsContent(presentDay)
+    .then(() => initRowsVisibleHandler())
   const customRoomCalendar = new AirDatepicker(calendarInput, {
     onSelect: ({date, formattedDate}) => {
       datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy');
@@ -54,6 +116,7 @@ if (roomDateController) {
 
       renderDateRow(customRoomCalendar.getViewDates('days'))
       getCellsContent(date)
+        .then(() => initRowsVisibleHandler())
 
     },
     selectedDates: [presentDay]
@@ -115,9 +178,9 @@ if (roomDateController) {
   const renderDateRow = (cellArr) => {
     const html = cellArr.map(dateEl => {
       return (`<th class="day-cell ${setDateTypeClass(dateEl)}">
-<span>${customRoomCalendar.formatDate(dateEl, 'dd')}</span>
-<span>${defineWeekDay(dateEl)}</span>
-</th>`)
+                    <span>${customRoomCalendar.formatDate(dateEl, 'dd')}</span>
+                    <span>${defineWeekDay(dateEl)}</span>
+                </th>`)
     })
     html.unshift('<th>Номера</th>')
     bookingTableTitleRow.innerHTML = html.join('')

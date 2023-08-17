@@ -5,7 +5,7 @@ import {
   sendData,
   showInfoModal
 } from "../_functions";
-import {pointerSvg} from "../_vars";
+import {lockSvg, pointerSvg} from "../_vars";
 
 const roomDateController = document.querySelector('.room-date-controller')
 
@@ -26,12 +26,35 @@ const initRowsVisibleHandler = () => {
 const renderCells = (cells) => {
   if (cells) {
     const html = cells.map((cell, i) => {
-      return (
-        `<td>
+      if (!cell.status) {
+        return (
+          `<td>
           ${cell}
           ${i === 0 ? pointerSvg : ''}
         </td>`
+        )
+      }
+
+      if (cell.content === 'lock') {
+        return (
+          `<td class="${cell.status}">
+            <div class="booking-track" style="width: ${cell.dayCount * 40}px">
+                ${lockSvg}
+            </div>
+        </td>`
+        )
+      }
+
+      return (
+        `<td class="${cell.status}">
+            <div class="booking-track" style="width: ${cell.dayCount * 40 - 40}px">
+              <p>${cell.content}</p>
+              <h6>${cell.price ?? ''}</h6>
+            </div>
+        </td>`
       )
+
+
     })
     return html.join('')
   }
@@ -187,9 +210,6 @@ if (roomDateController) {
   }
 
   renderDateRow(customRoomCalendar.getViewDates('days'))
-
-
-  // Получение контента ячеек от сервер
 
 
 }

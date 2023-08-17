@@ -1,7 +1,20 @@
+.sortable-chosen {
+  border: 1px solid #064AB1;
+}
+
+
+
 .sorted-photos {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
   &__element {
-
+    width: 32%;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

@@ -1,0 +1,80 @@
+.room-booking-calendar {
+  td._green, td._orange, td._red {
+    position: relative;
+
+    svg {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  td._green {
+    .booking-track {
+      background-color: #9AFF8A;
+      border: 1px solid #01DA32;
+
+      svg path {
+        fill: #0E8128;
+      }
+
+    }
+  }
+
+  td._orange {
+    .booking-track {
+      border: 1px solid #FFA011;
+      background-color: #FFD363;
+
+      svg path {
+        fill: #D53E07;
+      }
+    }
+  }
+
+  td._red {
+    .booking-track {
+      border: 1px solid #9E1F1F;
+      background: #FF9A9A;
+
+      svg path {
+        fill: #920303;
+      }
+    }
+  }
+}
+
+
+.booking-track {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 35.5px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+
+  p {
+    font-size: 13px;
+    max-width: 170px;
+    line-height: 1.02;
+    text-align: left;
+    overflow: hidden;
+    margin-right: 4px;
+    text-overflow: ellipsis;
+  }
+
+  h6 {
+    @include opensans-regular;
+    font-size: 11px;
+    line-height: 1;
+    min-width: 38px;
+    text-align: right;
+  }
+
+
+}

@@ -26,7 +26,6 @@ export const updateInputsId = (input, changeableId) => {
     const attrValue = inputLabel.getAttribute('for')
     inputLabel.setAttribute('for', attrValue + changeableId)
   }
-  console.log(input)
 }
 
 // Обновление id в изменяемых списках

@@ -1,3 +1,5 @@
+import {updateChangeableListId, updateInputsId} from "../_functions";
+
 export const initGenerateSelect = () => {
   const generateSelectWrappers = document.querySelectorAll('.generate-select')
 
@@ -22,6 +24,8 @@ export const initGenerateSelect = () => {
           fragment.append(newEl);
         }
         genList.append(fragment)
+        const changeableElements = genList.querySelectorAll('.changeable-input')
+        changeableElements.forEach((el, i) => updateInputsId(el, i))
       })
     })
   }

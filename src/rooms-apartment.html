@@ -138,11 +138,12 @@
                           <option value="3">3</option>
                         </select>
                       </div>
-                      <div class="generate-select__list">
-                        <div class="main-input-wrapper">
+                      <div class="generate-select__list"
+                           data-changeable-id="true">
+                        <div class="main-input-wrapper changeable-input">
                           <label>Кровать <span
                             class="generate-select__count">1</span>:</label>
-                          <select class="main-input" name="bed_count">
+                          <select class="main-input" name="bed_type">
                             <option value="1">Двуспальная</option>
                             <option value="2">Детская</option>
                           </select>
@@ -299,9 +300,9 @@
 </div>
 
 <template id="badSelect">
-  <div class="main-input-wrapper">
+  <div class="main-input-wrapper changeable-input">
     <label>Кровать <span class="generate-select__count">1</span>:</label>
-    <select class="main-input" name="bed_count[]">
+    <select class="main-input" name="bed_type">
       <option value="1">Двуспальная</option>
       <option value="2">Детская</option>
     </select>
@@ -309,6 +310,9 @@
 </template>
 <template id="room">
   <li class="room-state" data-state="1">
+    <div class="changeable-input">
+      <input class="changeable-input-id" type="hidden" name="room_id" value="">
+    </div>
     <button class="delete-btn" type="button" data-btn="delete">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
            xmlns="http://www.w3.org/2000/svg">
@@ -327,11 +331,11 @@
     <div class="room-state__content" data-content="1">
       <div class="apart-list__content">
         <div class="apart-list__left">
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Название комнаты:</label>
             <input class="main-input" type="text" name="apart_name">
           </div>
-          <div class="main-input-wrapper generate-select"
+          <div class="main-input-wrapper generate-select changeable-input"
                data-template="badSelect">
             <label>Количество кроватей:</label>
             <select class="main-input" name="bed_count">
@@ -341,26 +345,26 @@
             </select>
           </div>
           <div class="generate-select__list">
-            <div class="main-input-wrapper">
+            <div class="main-input-wrapper changeable-input">
               <label>Кровать <span
                 class="generate-select__count">1</span>:</label>
-              <select class="main-input" name="bed_count">
+              <select class="main-input" name="bed_type">
                 <option value="1">Двуспальная</option>
                 <option value="2">Детская</option>
               </select>
             </div>
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Взрослых, не более:</label>
             <input class="main-input number-mask _sm" type="text"
                    name="adults_count">
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Детей, не более:</label>
             <input class="main-input number-mask _sm" type="text"
                    name="children_count">
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Ванная комната:</label>
             <select class="main-input _md" name="bathroom">
               <option value="1">Ванная в номере</option>
@@ -369,7 +373,7 @@
           </div>
         </div>
         <div class="apart-list__right">
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Тип комнаты:</label>
             <select class="main-input type-room-select _md"
                     name="room_type">
@@ -378,7 +382,7 @@
               <option value="3">Ванная комната</option>
             </select>
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Окна:</label>
             <input class="main-input" type="text" name="window">
           </div>
@@ -401,11 +405,11 @@
     <div class="room-state__content" data-content="2">
       <div class="apart-list__content">
         <div class="apart-list__left">
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Название комнаты:</label>
             <input class="main-input" type="text" name="apart_name">
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Помывочное место:</label>
             <select class="main-input" name="washing_place">
               <option value="1">Ванна гидромассажная</option>
@@ -413,7 +417,7 @@
               <option value="3">Душ</option>
             </select>
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Баня:</label>
             <select class="main-input" name="bath">
               <option value="1">Русская баня</option>
@@ -423,15 +427,15 @@
           <div class="main-input-wrapper">
             <label>Сантехника:</label>
             <ul class="checkbox-list">
-              <li>
+              <li class="changeable-input">
                 <input type="checkbox" name="toilet">
                 <label>Унитаз</label>
               </li>
-              <li>
+              <li class="changeable-input">
                 <input type="checkbox" name="bidet">
                 <label>Биде</label>
               </li>
-              <li>
+              <li class="changeable-input">
                 <input type="checkbox" name="sink">
                 <label>Раковина</label>
               </li>
@@ -439,7 +443,7 @@
           </div>
         </div>
         <div class="apart-list__right">
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Тип комнаты:</label>
             <select class="main-input type-room-select _md"
                     name="room_type">
@@ -448,7 +452,7 @@
               <option value="3">Ванная комната</option>
             </select>
           </div>
-          <div class="main-input-wrapper">
+          <div class="main-input-wrapper changeable-input">
             <label>Бассейн:</label>
             <select class="main-input" name="bathroom">
               <option value="1">Да</option>

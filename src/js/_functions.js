@@ -14,6 +14,20 @@ export const formToObj = (formData) => {
   }), {})
 }
 
+export const updateInputsId = (input, changeableId) => {
+  const currentInput = input.querySelector('input, select, textarea')
+  const inputLabel = input.querySelector('label')
+
+  currentInput.name = `${currentInput.name}[${changeableId}]`
+  if (currentInput.id) {
+    currentInput.id = currentInput.id + changeableId
+  }
+  if (inputLabel?.getAttribute('for')) {
+    const attrValue = inputLabel.getAttribute('for')
+    inputLabel.setAttribute('for', attrValue + changeableId)
+  }
+  console.log(input)
+}
 
 // Обновление id в изменяемых списках
 export const updateChangeableListId = (changeableList) => {
@@ -23,19 +37,18 @@ export const updateChangeableListId = (changeableList) => {
       const changeableId = i + 1
 
       const changeableAmount = el.querySelector('.changeable-amount')
-      const changeableInput = el.querySelector('.changeable-input')
+      const changeableInputs = el.querySelectorAll('.changeable-input')
+      const inputIdInfo = el.querySelector('.changeable-input-id')
 
       if (changeableAmount) {
         changeableAmount.textContent = changeableId
       }
+      if (inputIdInfo) {
+        inputIdInfo.value = changeableId
+      }
 
-      if (changeableInput) {
-        const input = changeableInput.querySelector('input')
-        const inputLabel = changeableInput.querySelector('label')
-
-        input.value = changeableId
-        input.id = changeableId
-        inputLabel.setAttribute("for", changeableId)
+      if (changeableInputs) {
+        changeableInputs.forEach(inputEl => updateInputsId(inputEl, changeableId))
       }
 
     })

@@ -14,11 +14,20 @@ export const formToObj = (formData) => {
   }), {})
 }
 
+const formatChangeableInputName = (name, id) => {
+  const initialName = name.split('[')[0]
+  return `${initialName}[${id}]`
+}
+
+const formatChangeableSelects = (name, id) => {
+  const initialName = name.split('[')
+  initialName[1] = `${id - 1}]`
+  return initialName.join('[')
+}
 export const updateInputsId = (input, changeableId) => {
   const currentInput = input.querySelector('input, select, textarea')
   const inputLabel = input.querySelector('label')
-
-  currentInput.name = `${currentInput.name}[${changeableId}]`
+  currentInput.name = formatChangeableInputName(currentInput.name, changeableId)
   if (currentInput.id) {
     currentInput.id = currentInput.id + changeableId
   }
@@ -37,6 +46,7 @@ export const updateChangeableListId = (changeableList) => {
 
       const changeableAmount = el.querySelector('.changeable-amount')
       const changeableInputs = el.querySelectorAll('.changeable-input')
+      const changeableSelects = el.querySelectorAll('.generate-select__list select')
       const inputIdInfo = el.querySelector('.changeable-input-id')
 
       if (changeableAmount) {
@@ -48,6 +58,12 @@ export const updateChangeableListId = (changeableList) => {
 
       if (changeableInputs) {
         changeableInputs.forEach(inputEl => updateInputsId(inputEl, changeableId))
+      }
+
+      if (changeableSelects) {
+        changeableSelects.forEach(selectEl => {
+          selectEl.name = formatChangeableSelects(selectEl.name, changeableId)
+        })
       }
 
     })

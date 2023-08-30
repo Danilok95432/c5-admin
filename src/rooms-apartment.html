@@ -114,15 +114,19 @@
           </li>
         </ul>
 
-        <form action="#">
+        <form action="./data/test.txt">
           <div class="room-apartment-page__content">
             <ul class="apart-list" data-list="changeable"
                 data-changeable-id="true">
               <li class="room-state" data-state="1">
-                <input class="room-id" type="hidden"
-                       name="room_id" value="1">
-                <input class="state-info" type="hidden"
-                       name="data_state" value="1">
+                <div class="changeable-input">
+                  <input class="room-id" type="hidden"
+                         name="room_id" value="1">
+                </div>
+                <div class="changeable-input">
+                  <input class="state-info" type="hidden"
+                         name="data_state" value="1">
+                </div>g
                 <div class="room-state__content" data-content="1">
                   <h3>
                     Комната 1
@@ -292,9 +296,13 @@
 </template>
 <template id="room">
   <li class="room-state" data-state="1">
-    <input class="room-id" type="hidden" name="room_id" value="">
-    <input class="state-info" type="hidden"
-           name="data_state" value="1">
+    <div class="changeable-input">
+      <input class="room-id" type="hidden" name="room_id" value="">
+    </div>
+    <div class="changeable-input">
+      <input class="state-info" type="hidden"
+             name="data_state" value="1">
+    </div>
     <button class="delete-btn" type="button" data-btn="delete">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
            xmlns="http://www.w3.org/2000/svg">

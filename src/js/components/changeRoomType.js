@@ -7,7 +7,7 @@ export const initChangeSelects = (elToFind) => {
       changeSelect.addEventListener('input', (e) => {
         const currentElement = e.currentTarget.closest('.room-state')
         const dataStateInput = currentElement.querySelector('.state-info')
-        const allInputs = currentElement.querySelectorAll('input, textarea')
+        const allInputs = currentElement.querySelectorAll('input:not(.room-id, .state-info), textarea')
         currentElement.dataset.state = e.target.value
         dataStateInput.value = e.target.value
         changeTypeSelects.forEach(changeSelect => changeSelect.value = currentElement.dataset.state)

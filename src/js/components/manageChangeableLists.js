@@ -38,7 +38,7 @@ if (addToListBtns) {
       targetChangeableList.appendChild(templateElement)
       limitationChangeableElements(targetChangeableList, addBtn)
       updateChangeableListId(targetChangeableList)
-      initChangeSelects(templateElement)
+      initChangeSelects([templateElement])
       initGenerateSelect()
     })
   })

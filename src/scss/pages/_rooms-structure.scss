@@ -1,12 +1,96 @@
 .rooms-structure-page {
+  .main-section {
+    min-height: 520px;
+  }
+
   .main-section__top {
     display: block;
+
     .main-btn {
       background: transparent;
       padding: 10px 10px;
     }
   }
+
   h1 {
-    margin-bottom: 23px;
+    margin-bottom: 15px;
   }
+
+  .main-section__menu {
+    margin-bottom: 20px;
+  }
+
+  .main-table {
+    overflow: auto;
+
+    &__row {
+      background-color: #fff;
+      font-size: 15px;
+      @include opensans-regular;
+      padding: 0 0 0 18px;
+      @media (max-width: 768px) {
+        min-width: 700px;
+      }
+
+      &._grey {
+        background: #DCDCDC;
+        .main-table__cell:first-child {
+          color: #757575;
+        }
+      }
+
+      &._yellow {
+        background: #FFEDBD;
+      }
+
+      &._blue {
+        background: #E5F0FF;
+      }
+    }
+
+    &__title-row {
+      font-size: 13px;
+      @include opensans-light;
+    }
+
+    &__cell {
+      display: flex;
+      align-items: center;
+      max-height: 47px;
+      height: 47px;
+      &._status-cell {
+        font-size: 10px;
+      }
+      &._controllers-cell {
+        background-color: #FFFFFF;
+      }
+      &:nth-child(1) {
+        max-width: 73%;
+        @media (max-width: 1024px) {
+          max-width: 50%;
+        }
+      }
+      &:nth-child(2) {
+        max-width: 20%;
+        p {
+          max-width: 150px;
+        }
+        @media (max-width: 1024px) {
+          max-width: 35%;
+        }
+      }
+      &:nth-child(3) {
+        max-width: 9%;
+        text-align: center;
+        justify-content: center;
+        a:first-child {
+          margin-right: 20px;
+        }
+        @media (max-width: 1024px) {
+          max-width: 15%;
+        }
+      }
+    }
+  }
+
 }

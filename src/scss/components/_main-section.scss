@@ -65,7 +65,6 @@
       border-right: 1px solid #D0D5DF;
       border-top: 1px solid #D0D5DF;
       border-bottom: 1px solid #D0D5DF;
-      padding: 7px 15px;
       background-color: $white;
       @media (max-width: 768px) {
         border-left: 1px solid #D0D5DF;
@@ -95,6 +94,8 @@
       }
 
       a {
+        padding: 4px 15px;
+        display: block;
         color: $black;
       }
     }

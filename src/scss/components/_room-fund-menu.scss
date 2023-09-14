@@ -12,7 +12,6 @@
       border-right: 1px solid #D0D5DF;
       border-top: 1px solid #D0D5DF;
       border-bottom: 1px solid #D0D5DF;
-      padding: 7px 15px;
       background-color: #F6F6F6;
       @media (max-width: 768px) {
         border-left: 1px solid #D0D5DF;
@@ -38,6 +37,8 @@
       }
 
       a {
+        padding: 7px 15px;
+        display: block;
         color: $black;
       }
     }

@@ -1,0 +1,44 @@
+.cafe-control-page {
+  .main-section__top {
+    display: block;
+    margin-bottom: 20px;
+
+    h1 {
+      @include opensans-semibold;
+      margin-bottom: 10px;
+
+      a {
+        font-weight: 400;
+        color: #000000;
+      }
+    }
+
+    p {
+      color: #A3A3A3;
+    }
+  }
+
+  &__inputs-row {
+    display: flex;
+    align-items: center;
+
+    .input-column-wrapper {
+      margin-right: 20px;
+    }
+  }
+
+  .input-column-wrapper {
+    max-width: 515px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .main-checkbox {
+    padding-top: 12px;
+  }
+
+  .fields-section {
+    border-bottom: 1px solid #D0D5DF;
+    margin-bottom: 20px;
+  }
+}

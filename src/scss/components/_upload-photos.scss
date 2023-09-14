@@ -1,0 +1,23 @@
+.upload-photos {
+  .dz-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 230px;
+    height: 108px;
+    border: 1px dashed #7B7B7B;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    svg {
+      margin-bottom: 8px;
+    }
+    p {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.1;
+      max-width: 168px;
+
+    }
+  }
+}

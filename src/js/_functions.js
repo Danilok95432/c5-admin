@@ -1,6 +1,6 @@
 //Сбор данных форм
 
-import {bigImgModal, infoModal, modalOverlay} from "./_vars";
+import { bigImgModal, infoModal, modalOverlay } from './_vars'
 
 export const serializeForm = (formNode) => {
   return new FormData(formNode)
@@ -8,10 +8,13 @@ export const serializeForm = (formNode) => {
 
 // Преобразование formData в объект
 export const formToObj = (formData) => {
-  return Array.from(formData.entries()).reduce((memo, pair) => ({
-    ...memo,
-    [pair[0]]: pair[1],
-  }), {})
+  return Array.from(formData.entries()).reduce(
+    (memo, pair) => ({
+      ...memo,
+      [pair[0]]: pair[1],
+    }),
+    {},
+  )
 }
 
 const formatChangeableInputName = (name, id) => {
@@ -25,7 +28,7 @@ const formatChangeableSelects = (name, id) => {
   return initialName.join('[')
 }
 export const updateInputsId = (input, changeableId) => {
-  const currentInput = input.querySelector('input, select, textarea')
+  const currentInput = input.querySelector('input, select, textarea') ?? input
   const inputLabel = input.querySelector('label')
   currentInput.name = formatChangeableInputName(currentInput.name, changeableId)
   if (currentInput.id) {
@@ -46,7 +49,9 @@ export const updateChangeableListId = (changeableList) => {
 
       const changeableAmount = el.querySelector('.changeable-amount')
       const changeableInputs = el.querySelectorAll('.changeable-input')
-      const changeableSelects = el.querySelectorAll('.generate-select__list select')
+      const changeableSelects = el.querySelectorAll(
+        '.generate-select__list select',
+      )
       const inputIdInfo = el.querySelector('.changeable-input-id')
 
       if (changeableAmount) {
@@ -57,19 +62,19 @@ export const updateChangeableListId = (changeableList) => {
       }
 
       if (changeableInputs) {
-        changeableInputs.forEach(inputEl => updateInputsId(inputEl, changeableId))
+        changeableInputs.forEach((inputEl) =>
+          updateInputsId(inputEl, changeableId),
+        )
       }
 
       if (changeableSelects) {
-        changeableSelects.forEach(selectEl => {
+        changeableSelects.forEach((selectEl) => {
           selectEl.name = formatChangeableSelects(selectEl.name, changeableId)
         })
       }
-
     })
   }
 }
-
 
 // Блокировка/разблокировка добавления/удаления элементов в изменяемых списках при ограничении максимального количества
 
@@ -89,35 +94,32 @@ export const limitationChangeableElements = (changeableList, addBtn) => {
 export async function sendData(data, url) {
   return await fetch(url, {
     method: 'POST',
-    headers: {'Content-Type': 'multipart/form-data'},
+    headers: { 'Content-Type': 'multipart/form-data' },
     body: data,
   })
 }
 
-
 export const getNoun = (number, one, two, five) => {
-  let n = Math.abs(number);
-  n %= 100;
+  let n = Math.abs(number)
+  n %= 100
   if (n >= 5 && n <= 20) {
-    return five;
+    return five
   }
-  n %= 10;
+  n %= 10
   if (n === 1) {
-    return one;
+    return one
   }
   if (n >= 2 && n <= 4) {
-    return two;
+    return two
   }
-  return five;
+  return five
 }
-
 
 export const showInfoModal = (responseText) => {
   infoModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('info-modal')) {
       infoModal.classList.add('hidden')
     }
-
   })
   const modalText = infoModal.querySelector('.info-modal__content-text')
   modalText.textContent = responseText
@@ -142,21 +144,23 @@ export const defineWeekDay = (date) => {
   return datesWeekArr[currentDate.getDay()]
 }
 
-
 // Форматирование даты в формат дд.мм.гггг
 export const formatDate = (date) => {
-  return date.split(".").reverse().join(".")
+  return date.split('.').reverse().join('.')
 }
 
 // Получение всех соседних элементов
 
 export const getRowsSiblings = (elem, limitElClass) => {
-  let siblings = [];
-  let sibling = elem;
-  while (!sibling.nextElementSibling?.classList.contains(limitElClass) && sibling.nextElementSibling) {
-    sibling = sibling.nextElementSibling;
-    siblings.push(sibling);
+  let siblings = []
+  let sibling = elem
+  while (
+    !sibling.nextElementSibling?.classList.contains(limitElClass) &&
+    sibling.nextElementSibling
+  ) {
+    sibling = sibling.nextElementSibling
+    siblings.push(sibling)
   }
 
-  return siblings;
+  return siblings
 }

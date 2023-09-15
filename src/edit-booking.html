@@ -261,7 +261,7 @@
                 </select>
               </div>
               <div class="input-column-wrapper main-checkbox">
-                <input type="checkbox" name="early" id="early"/>
+                <input type="checkbox" name="early" id="early" />
                 <label for="early">Ранний заезд</label>
               </div>
             </div>
@@ -302,7 +302,7 @@
                 </select>
               </div>
               <div class="input-column-wrapper main-checkbox">
-                <input type="checkbox" name="late" id="late"/>
+                <input type="checkbox" name="late" id="late" />
                 <label for="late">Поздний выезд</label>
               </div>
             </div>
@@ -477,57 +477,43 @@
             </div>
           </div>
           <div class="rooms-category">
-            <ul data-list="changeable">
+            <ul data-list="changeable" data-changeable-id="true">
               <li>
-                <div class="edit-booking-page__inputs-row">
+                <div
+                  class="edit-booking-page__inputs-row context-select__wrapper">
                   <div class="input-column-wrapper">
                     <label>Категория номера</label>
-                    <select class="main-input" name="client_type">
+                    <select class="main-input changeable-input context-select"
+                            name="room_category[1]">
                       <option value="0">Люкс с бассейном</option>
+                      <option value="1">Обычный номер</option>
+                      <option value="2">Люкс</option>
                     </select>
                   </div>
                   <div class="input-column-wrapper">
                     <label>Номер</label>
-                    <select class="main-input" name="client_type">
+                    <select class="main-input changeable-input _active"
+                            name="room_number[1]"
+                            data-context="0">
                       <option value="0">33 (2 этаж)</option>
+                      <option value="1">11 (1 этаж)</option>
+                      <option value="2">1 (1 этаж)</option>
+                    </select>
+                    <select class="main-input changeable-input"
+                            name="room_number[1]"
+                            data-context="1">
+                      <option value="0">15 (2 этаж)</option>
+                    </select>
+                    <select class="main-input changeable-input"
+                            name="room_number[1]"
+                            data-context="2">
+                      <option value="0">4 (1 этаж)</option>
+                      <option value="1">13 (1 этаж)</option>
                     </select>
                   </div>
                 </div>
               </li>
 
-              <li>
-                <div class="edit-booking-page__inputs-row">
-                  <div class="input-column-wrapper">
-                    <select class="main-input" name="client_type">
-                      <option value="0">Люкс с бассейном</option>
-                    </select>
-                  </div>
-                  <div class="input-column-wrapper floor">
-                    <select class="main-input" name="client_type">
-                      <option value="0">33 (2 этаж)</option>
-                    </select>
-
-                    <button
-                      class="delete-btn"
-                      type="button"
-                      data-btn="delete"
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.44019 7.50023L14.8059 1.13451C15.0657 0.874712 15.0657 0.454198 14.8059 0.194397C14.5461 -0.0647991 14.1256 -0.0647991 13.8658 0.194397L7.50008 6.56011L1.13497 0.194397C0.875165 -0.0647991 0.454651 -0.0647991 0.19485 0.194397C-0.0643459 0.454198 -0.0643459 0.874712 0.19485 1.13451L6.56056 7.50023L0.19485 13.8653C-0.0649501 14.1251 -0.0649501 14.5457 0.19485 14.8055C0.324751 14.9354 0.494527 15 0.664908 15C0.835289 15 1.00507 14.9354 1.13497 14.8055L7.50068 8.43974L13.8664 14.8055C13.9963 14.9354 14.1661 15 14.3365 15C14.5068 15 14.6766 14.9354 14.8065 14.8055C15.0663 14.5457 15.0663 14.1251 14.8065 13.8653L8.44079 7.49962L8.44019 7.50023Z"
-                          fill="#920303"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </li>
             </ul>
 
             <button
@@ -746,15 +732,32 @@
 
 <template id="new-room">
   <li>
-    <div class="edit-booking-page__inputs-row">
+    <div class="edit-booking-page__inputs-row context-select__wrapper">
       <div class="input-column-wrapper">
-        <select class="main-input" name="client_type">
+        <select class="main-input changeable-input context-select" name="room_category[1]">
           <option value="0">Люкс с бассейном</option>
+          <option value="1">Обычный номер</option>
+          <option value="2">Люкс</option>
         </select>
       </div>
       <div class="input-column-wrapper floor">
-        <select class="main-input" name="client_type">
+        <select class="main-input changeable-input _active"
+                name="room_number[1]"
+                data-context="0">
           <option value="0">33 (2 этаж)</option>
+          <option value="1">11 (1 этаж)</option>
+          <option value="2">1 (1 этаж)</option>
+        </select>
+        <select class="main-input changeable-input"
+                name="room_number[1]"
+                data-context="1">
+          <option value="0">15 (2 этаж)</option>
+        </select>
+        <select class="main-input changeable-input"
+                name="room_number[1]"
+                data-context="2">
+          <option value="0">4 (1 этаж)</option>
+          <option value="1">13 (1 этаж)</option>
         </select>
 
         <button class="delete-btn" type="button" data-btn="delete">

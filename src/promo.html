@@ -2,10 +2,10 @@
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
 
 @include('partials/head.html', {
-'title': 'Блок управления кафе'
+'title': 'Управление промо-блоком'
 })
 
-<body class="page__body cafe-control-page">
+<body class="page__body promo-page">
 
 <div class="site-container">
   <div class="modal-overlay"></div>
@@ -64,17 +64,17 @@
   </header>
   <main class="main">
     <div class="container">
-      <form class="cafe-form" action="#">
+      <form class="promo-form" action="#">
         <div class="main-section">
 
           <section class="fields-section">
             <div class="main-section__top">
               <h1>
-                <a href="index.html">Главная</a> / Блок в кафе
+                <a href="index.html">Главная</a> / Промо-блок
               </h1>
               <p>поля, отмеченные символом *, обязательны для заполнения</p>
             </div>
-            <div class="cafe-control-page__inputs-row">
+            <div class="promo-page__inputs-row">
               <div class="input-column-wrapper">
                 <label>Заголовок блока*</label>
                 <input
@@ -105,10 +105,9 @@
               ></textarea>
             </div>
           </section>
-          <section class="cafe-control-page__photos">
-            <h4>Фотографии кафе</h4>
-            <div class="cafe-control-page__photos-desc">
-              <p>Загрузить новую фотографию</p>
+          <section class="promo-page__photos">
+            <div class="promo-page__photos-desc">
+              <p>Изображение блока*</p>
               <p>1600px*517px, JPEG, PNG</p>
             </div>
 

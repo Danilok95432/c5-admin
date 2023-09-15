@@ -1,0 +1,26 @@
+.main-controllers {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__btns-left,
+  &__btns-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
+
+}

@@ -1,4 +1,4 @@
-.cafe-control-page {
+.promo-page {
   padding-bottom: 215px;
   .main-section__top {
     display: block;
@@ -48,19 +48,6 @@
     padding-top: 12px;
     @media (max-width: 768px) {
       padding-top: 0;
-    }
-  }
-
-  .fields-section {
-    border-bottom: 1px solid #D0D5DF;
-    margin-bottom: 20px;
-  }
-
-  &__photos {
-    h4 {
-      font-weight: 600;
-      margin-bottom: 10px;
-      font-size: 15px;
     }
   }
 

@@ -591,20 +591,21 @@
                   />
                 </div>
               </div>
-
               <div
                 class="edit-booking-page__inputs-row cost-wrapper-footer"
               >
                 <div class="input-column-wrapper _md">
                   <label>Внести оплату по заказу</label>
                   <input
-                    class="main-input currency-mask"
+                    class="main-input edit-booking-page__make-payment-input currency-mask"
                     type="text"
                     name="total_price"
                   />
                 </div>
 
-                <button class="main-btn" type="button" data-btn="add">
+                <button class="edit-booking-page__make-payment-btn main-btn"
+                        type="button"
+                        data-script="./data/test.txt" data-add="доп. параметры">
                   <svg
                     width="16"
                     height="11"
@@ -617,7 +618,6 @@
                       fill="#064AB1"
                     />
                   </svg>
-
                   Зачесть оплату
                 </button>
                 <p class="cost-textmark">
@@ -626,8 +626,52 @@
                   оплату»
                 </p>
               </div>
+              <div class="edit-booking-page__payments">
+                <h4>Внесенные платежи по заказу</h4>
+                <ul class="payments-list" data-list="changeable"
+                    data-changeable-id="true">
+                  <li>
+                    <p class="payments-list__count changeable-amount">1</p>
+                    <p class="payments-list__title">Автоматический платеж
+                      22.02.2023 в 08:00</p>
+                    <p class="payments-list__status">Система (API Островок)</p>
+                    <p class="payments-list__price">10 000.00 ₽</p>
+                  </li>
+                  <li>
+                    <p class="payments-list__count changeable-amount">2</p>
+                    <p class="payments-list__title">Касса Иванищенко Е. К.
+                      24.02.2023 в 09:22</p>
+                    <p class="payments-list__status">Ручное внесение</p>
+                    <p class="payments-list__price">7 000.00 ₽</p>
+                    <button data-btn="delete" type="button">
+                      Удалить
+                      <svg width="11" height="11" viewBox="0 0 11 11"
+                           fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M6.18947 5.50017L10.8577 0.831976C11.0482 0.641455 11.0482 0.333078 10.8577 0.142558C10.6671 -0.0475193 10.3588 -0.0475193 10.1682 0.142558L5.50006 4.81075L0.832308 0.142558C0.641788 -0.0475193 0.333411 -0.0475193 0.14289 0.142558C-0.047187 0.333078 -0.047187 0.641455 0.14289 0.831976L4.81108 5.50017L0.14289 10.1679C-0.0476301 10.3584 -0.0476301 10.6668 0.14289 10.8573C0.23815 10.9526 0.362653 11 0.487599 11C0.612545 11 0.737048 10.9526 0.832308 10.8573L5.5005 6.18914L10.1687 10.8573C10.2639 10.9526 10.3885 11 10.5134 11C10.6383 11 10.7628 10.9526 10.8581 10.8573C11.0486 10.6668 11.0486 10.3584 10.8581 10.1679L6.18992 5.49972L6.18947 5.50017Z"
+                          fill="#920303" />
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <p class="payments-list__count changeable-amount">3</p>
+                    <p class="payments-list__title">Касса Степаненкович А. Д.
+                      27.03.2023 в 22:23</p>
+                    <p class="payments-list__status">Ручное внесение</p>
+                    <p class="payments-list__price">3 000.00 ₽</p>
+                    <button data-btn="delete" type="button">
+                      Удалить
+                      <svg width="11" height="11" viewBox="0 0 11 11"
+                           fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M6.18947 5.50017L10.8577 0.831976C11.0482 0.641455 11.0482 0.333078 10.8577 0.142558C10.6671 -0.0475193 10.3588 -0.0475193 10.1682 0.142558L5.50006 4.81075L0.832308 0.142558C0.641788 -0.0475193 0.333411 -0.0475193 0.14289 0.142558C-0.047187 0.333078 -0.047187 0.641455 0.14289 0.831976L4.81108 5.50017L0.14289 10.1679C-0.0476301 10.3584 -0.0476301 10.6668 0.14289 10.8573C0.23815 10.9526 0.362653 11 0.487599 11C0.612545 11 0.737048 10.9526 0.832308 10.8573L5.5005 6.18914L10.1687 10.8573C10.2639 10.9526 10.3885 11 10.5134 11C10.6383 11 10.7628 10.9526 10.8581 10.8573C11.0486 10.6668 11.0486 10.3584 10.8581 10.1679L6.18992 5.49972L6.18947 5.50017Z"
+                          fill="#920303" />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-
             <div class="total-cost">
               <div class="total-cost-item">
                 <div>
@@ -654,6 +698,7 @@
                 <p class="taxes">Налоги <span>00.00 ₽</span></p>
               </div>
             </div>
+
           </div>
           <div class="main-section__item comments-block">
             <div
@@ -734,7 +779,8 @@
   <li>
     <div class="edit-booking-page__inputs-row context-select__wrapper">
       <div class="input-column-wrapper">
-        <select class="main-input changeable-input context-select" name="room_category[1]">
+        <select class="main-input changeable-input context-select"
+                name="room_category[1]">
           <option value="0">Люкс с бассейном</option>
           <option value="1">Обычный номер</option>
           <option value="2">Люкс</option>
@@ -975,5 +1021,6 @@
     </div>
   </div>
 </template>
+@include('partials/info-modal.html')
 </body>
 </html>

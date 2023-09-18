@@ -82,6 +82,18 @@ select.main-input {
   }
 }
 
+.week-view-input {
+  position: relative;
+  width: 100%;
+  &__info {
+    position: absolute;
+    left: 88px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #91969A;
+  }
+}
+
 .input-columns {
   label {
     margin-bottom: 5px;

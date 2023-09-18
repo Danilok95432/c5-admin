@@ -7,7 +7,7 @@
   }
 
   .main-input-wrapper, .main-textarea-wrapper {
-    label {
+    & > label {
       font-weight: 300;
       min-width: 207px;
     }

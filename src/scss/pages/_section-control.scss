@@ -1,0 +1,66 @@
+.section-control-page {
+  padding-bottom: 350px;
+  @media (max-width: 768px) {
+    padding-bottom: 50px;
+  }
+
+  .main-btn {
+    background: transparent;
+    padding: 10px 10px;
+    margin-bottom: 5px;
+  }
+
+  .main-section__top {
+    display: block;
+    margin-bottom: 20px;
+
+    h1 {
+      @include opensans-semibold;
+      margin-bottom: 15px;
+
+      a {
+        font-weight: 400;
+        color: #000000;
+      }
+    }
+  }
+
+  .main-table {
+    max-width: 810px;
+    overflow: auto;
+    margin-bottom: 15px;
+
+    &__row {
+      padding: 14px 6px;
+      @media (max-width: 768px) {
+        min-width: 800px;
+      }
+    }
+
+    &__title-row {
+      @include opensans-light;
+      font-size: 13px;
+      background: transparent;
+    }
+
+    &__cell {
+      text-align: center;
+      &:nth-child(1) {
+        max-width: 5%;
+      }
+
+      &:nth-child(2) {
+        max-width: 43%;
+        text-align: left;
+      }
+
+      &:nth-child(3) {
+        max-width: 45%;
+      }
+
+      &:nth-child(4) {
+        max-width: 7%;
+      }
+    }
+  }
+}

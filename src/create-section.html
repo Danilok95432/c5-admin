@@ -2,10 +2,10 @@
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
 
 @include('partials/head.html', {
-'title': 'Управление промо-блоком'
+'title': 'Создать или редактировать секцию'
 })
 
-<body class="page__body promo-page">
+<body class="page__body create-section-page">
 
 <div class="site-container">
   <div class="modal-overlay"></div>
@@ -64,23 +64,25 @@
   </header>
   <main class="main">
     <div class="container">
-      <form class="promo-form" action="#">
+      <form class="create-section-form" action="#">
         <div class="main-section">
 
           <section class="fields-section">
             <div class="main-section__top">
               <h1>
-                <a href="index.html">Главная</a> / Промо-блок
+                <a href="index.html">Главная</a> / <a
+                href="section-control.html">Три секции</a> / Создать или
+                редактировать секцию
               </h1>
               <p>поля, отмеченные символом *, обязательны для заполнения</p>
             </div>
-            <div class="promo-page__inputs-row">
+            <div class="create-section-page__inputs-row">
               <div class="input-column-wrapper">
-                <label>Заголовок блока*</label>
+                <label>Заголовок секции*</label>
                 <input
                   class="main-input"
                   type="text"
-                  placeholder="Надпись большими буквами"
+                  placeholder="Надпись рядом с картинкой"
                   name="title"
                   required
                 />
@@ -95,27 +97,27 @@
               </div>
             </div>
             <div class="input-column-wrapper">
-              <label>Текст блока*</label>
-              <textarea
-                class="main-textarea"
+              <label>Ссылка секции*</label>
+              <input
+                class="main-input"
                 type="text"
-                placeholder="Более длинная надпись, сделанная буквами поменьше"
-                name="text"
+                placeholder="/sitepage/"
+                name="link"
                 required
-              ></textarea>
+              />
             </div>
           </section>
-          <section class="promo-page__photos">
-            <div class="promo-page__photos-desc">
-              <p>Изображение блока*</p>
-              <p>1600px*517px, JPEG, PNG</p>
+          <section class="create-section-page__photos">
+            <div class="create-section-page__photos-desc">
+              <p>Изображение секции*</p>
+              <p>58px * 71px, SVG</p>
             </div>
 
             <div class="upload-photos general-dropzone-wrapper">
-              <div id="promoPhotos"
+              <div id="sectionPhotos"
                    data-show-preview="true"
                    class="dropzone general-dropzone"
-                   data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "115", "acceptedFiles": ".png, .jpeg, .jpg", "type": "promoPhotos", "filesCount": "1", "additional": "доп.контент"}'>
+                   data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "115", "acceptedFiles": ".svg, .png", "type": "sectionPhotos", "filesCount": "1", "additional": "доп.контент"}'>
                 <div class="dz-message">
                   <svg width="30" height="21" viewBox="0 0 30 21" fill="none"
                        xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +148,7 @@
                     или нажмите на ссылку</p>
                   <button
                     class="general-dropzone__add-btn main-btn"
-                    id="promo-add"
+                    id="cafe-add"
                     type="button">
                     Загрузить
                   </button>

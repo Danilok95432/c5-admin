@@ -1,12 +1,13 @@
-.promo-page {
+.create-section-page {
   padding-bottom: 215px;
+
   .main-section__top {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 
     h1 {
       @include opensans-semibold;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
 
       a {
         font-weight: 400;
@@ -53,11 +54,13 @@
 
   &__photos-desc {
     margin-bottom: 5px;
+
     p {
       font-weight: 300;
       line-height: 1.4;
     }
   }
+
 
   .upload-photos {
     .general-dropzone.dz-started {
@@ -70,4 +73,5 @@
     }
 
   }
+
 }

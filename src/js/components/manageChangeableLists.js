@@ -40,7 +40,7 @@ if (addToListBtns) {
       )
       targetChangeableList.appendChild(templateElement)
       limitationChangeableElements(targetChangeableList, addBtn)
-      initContextSelects()
+      initContextSelects(templateElement)
       updateChangeableListId(targetChangeableList)
       initChangeSelects([templateElement])
       initGenerateSelect()

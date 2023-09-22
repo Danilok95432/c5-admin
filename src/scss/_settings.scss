@@ -269,14 +269,7 @@ textarea {
   top: 0;
 }
 
-[data-context] {
-  display: none;
-
-  &._active {
-    display: block;
-  }
-}
-
 .currency-mask-text {
   text-align: left !important;
 }
+

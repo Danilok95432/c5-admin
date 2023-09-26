@@ -2,7 +2,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -79,7 +81,8 @@ textarea {
   resize: none;
 }
 
-.number-mask, .currency-mask {
+.number-mask,
+.currency-mask {
   text-align: left !important;
 }
 
@@ -136,12 +139,13 @@ textarea {
 
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   grid-column-gap: 40px;
   grid-row-gap: 80px;
   justify-items: center;
+
   @media (max-width: 420px) {
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   }
 }
 
@@ -272,4 +276,3 @@ textarea {
 .currency-mask-text {
   text-align: left !important;
 }
-

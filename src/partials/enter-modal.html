@@ -1,0 +1,87 @@
+<div class="modal _active" id="enter-modal">
+  <button class="modal-close-btn" data-close-modal="enter-modal" type="button">
+    <svg
+      width="21"
+      height="20"
+      viewBox="0 0 21 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.2536 10.0003L19.7412 1.51268C20.0876 1.16628 20.0876 0.605597 19.7412 0.259196C19.3948 -0.0863988 18.8341 -0.0863988 18.4877 0.259196L10.0001 8.74682L1.51329 0.259196C1.16689 -0.0863988 0.606201 -0.0863988 0.2598 0.259196C-0.0857945 0.605597 -0.0857945 1.16628 0.2598 1.51268L8.74742 10.0003L0.2598 18.4871C-0.0866001 18.8335 -0.0866001 19.3942 0.2598 19.7406C0.433001 19.9138 0.659369 20 0.886544 20C1.11372 20 1.34009 19.9138 1.51329 19.7406L10.0009 11.253L18.4885 19.7406C18.6617 19.9138 18.8881 20 19.1153 20C19.3424 20 19.5688 19.9138 19.742 19.7406C20.0884 19.3942 20.0884 18.8335 19.742 18.4871L11.2544 9.9995L11.2536 10.0003Z"
+        fill="white"
+      />
+    </svg>
+  </button>
+  <form class="styled-form" action="#" style="border: 1px solid black">
+    <h4>Вход отельера</h4>
+
+    <div class="input-column-wrapper _gap">
+      <label for="hotelier-login">Логин учетной записи*</label>
+      <input
+        class="main-input"
+        id="hotelier-login"
+        type="email"
+        placeholder="example@example.com"
+        name="hotelier_login"
+        required
+      />
+    </div>
+
+    <div class="input-column-wrapper">
+      <label for="hotelier-password">Пароль учетной записи*</label>
+      <input
+        class="main-input"
+        id="hotelier-password"
+        type="password"
+        placeholder="*************"
+        name="hotelier_password"
+        required
+      />
+      @include('./eye-button.html')
+    </div>
+
+    <div class="modal-links">
+      <button
+        class="main-btn _white"
+        type="button"
+        data-open-modal="registration-modal"
+        data-close-modal="enter-modal"
+      >
+        Не помню пароль
+      </button>
+      <button
+        class="main-btn _white"
+        type="button"
+        data-open-modal="registration-modal"
+        data-close-modal="enter-modal"
+      >
+        Пройти регистрацию
+      </button>
+    </div>
+
+    <button class="main-btn _blue" type="submit">Войти</button>
+  </form>
+
+  <form class="reset-password-form styled-form" action="#">
+    <p >
+      Код отправлен в виде SMS. Повторить отправку через
+      <span id="smsTimer">0:30</span>
+    </p>
+    <div class="input-column-wrapper">
+      <label for="enter-code">Проверочный код*</label>
+      <input
+        class="main-input"
+        id="enter-code"
+        type="password"
+        placeholder="******"
+        name="enter_code"
+        required
+      />
+    </div>
+    <div class="modal-links">
+      <button class="main-btn _white" type="button">Не приходит код</button>
+    </div>
+    <button class="main-btn _blue" type="submit">Подтвердить вход</button>
+  </form>
+</div>

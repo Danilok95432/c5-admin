@@ -21,6 +21,15 @@
 }
 
 .input-column-wrapper {
+
+  &__row {
+    display: flex;
+    gap: 10px;
+    @media (max-width: 550px) {
+      flex-direction: column;
+    }
+  }
+
   label {
     margin-bottom: 5px;
     display: block;

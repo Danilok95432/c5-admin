@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+
+@include('partials/head.html', {
+'title': 'Создание / редактирование организации'
+})
+
+<body class="page__body edit-organization-page">
+
+<div class="site-container">
+  <header>
+    @include('partials/auth-panel.html')
+    <div class="container main-menu">
+      <ul>
+        <li>
+          <a href="#">
+            Настройки
+          </a>
+        </li>
+        <li>
+          <a href="rooms-structure.html">
+            Базовые модули
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Контент
+          </a>
+        </li>
+        <li>
+          <a href="objects-list.html">
+            Номерной фонд
+          </a>
+        </li>
+        <li>
+          <a href="view-booking.html">
+            Бронирование
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Ресторан
+          </a>
+        </li>
+      </ul>
+      <a class="main-menu__dashboard" href="#">
+        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.256282 0.256283C0.0921873 0.420377 0 0.642936 0 0.875V13.125C0 13.3571 0.0921873 13.5796 0.256282 13.7437C0.420376 13.9078 0.642936 14 0.875 14H5.25C5.48206 14 5.70462 13.9078 5.86872 13.7437C6.03281 13.5796 6.125 13.3571 6.125 13.125V0.875C6.125 0.642936 6.03281 0.420377 5.86872 0.256283C5.70462 0.0921885 5.48206 0 5.25 0H0.875C0.642936 0 0.420376 0.0921885 0.256282 0.256283Z"
+            fill="#064AB1" />
+          <path
+            d="M8 10.875C8 10.6429 8.09219 10.4204 8.25628 10.2563C8.42038 10.0922 8.64294 10 8.875 10H13.25C13.4821 10 13.7046 10.0922 13.8687 10.2563C14.0328 10.4204 14.125 10.6429 14.125 10.875V13.125C14.125 13.3571 14.0328 13.5796 13.8687 13.7437C13.7046 13.9078 13.4821 14 13.25 14H8.875C8.64294 14 8.42038 13.9078 8.25628 13.7437C8.09219 13.5796 8 13.3571 8 13.125V10.875Z"
+            fill="#064AB1" />
+          <path
+            d="M8.25628 0.256283C8.09219 0.420377 8 0.642936 8 0.875V7.125C8 7.35706 8.09219 7.57962 8.25628 7.74372C8.42038 7.90781 8.64294 8 8.875 8H13.25C13.4821 8 13.7046 7.90781 13.8687 7.74372C14.0328 7.57962 14.125 7.35706 14.125 7.125V0.875C14.125 0.642936 14.0328 0.420377 13.8687 0.256283C13.7046 0.0921885 13.4821 0 13.25 0H8.875C8.64294 0 8.42038 0.0921885 8.25628 0.256283Z"
+            fill="#064AB1" />
+        </svg>
+
+        Дашборд
+      </a>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <form action="#">
+        <section class="main-section">
+          <h1>
+            Данные организации
+          </h1>
+          <p class="main-section__desc">поля, отмеченные символом *, обязательны
+            для заполнения</p>
+
+          <div class="main-section__item">
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Краткое наименование*</label>
+                <input class="main-input" type="text"
+                       placeholder="Наименование организации" name="short_name"
+                       required>
+              </div>
+              <p class="inputs-row__desc">
+                Например, ООО НПО ТАУ
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Полное наименование*</label>
+                <div class="input-column-wrapper__row">
+                  <select
+                    class="main-input edit-organization-page__property-type-input"
+                    name="property_type">
+                    <option value="0">ООО</option>
+                    <option value="1">АО</option>
+                  </select>
+                  <input class="main-input" type="text"
+                         placeholder="Наименование организации" name="full_name"
+                         required>
+                </div>
+              </div>
+              <p class="inputs-row__desc">
+                Полное название, включая расшифровку формы собственности
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Торговая марка*</label>
+                <input class="main-input" type="text"
+                       placeholder="Коммерческое название или торговая марка"
+                       name="trademark"
+                       required>
+              </div>
+              <p class="inputs-row__desc">
+                Например, Гостиница Славянская
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Регион и город*</label>
+                <div class="input-column-wrapper__row">
+                  <select
+                    class="main-input edit-organization-page__city-input"
+                    name="city">
+                    <option value="0">выбрать регион</option>
+                    <option value="1">регион 1</option>
+                    <option value="2">регион 2</option>
+                    <option value="3">регион 3</option>
+                  </select>
+                  <input class="main-input" type="text"
+                         placeholder="указать населенный пункт" name="locality"
+                         required>
+                </div>
+              </div>
+              <p class="inputs-row__desc">
+                Эти данные нужны для того, чтобы событие нормально искалось в
+                списках
+              </p>
+            </div>
+          </div>
+          <div class="main-section__item">
+            <div class="edit-organization-page__photos-desc">
+              <h6>Логотип организации*</h6>
+              <p>соотношение сторон 1:1 или 3:4, JPEG, PNG</p>
+            </div>
+
+            <div class="upload-photos general-dropzone-wrapper">
+              <div id="orgLogo"
+                   data-show-preview="true"
+                   class="dropzone general-dropzone"
+                   data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "115", "acceptedFiles": ".png, .jpeg, .jpg", "type": "orgLogo", "filesCount": "1", "additional": "доп.контент"}'>
+                <div class="dz-message">
+                  <svg width="30" height="21" viewBox="0 0 30 21" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M27.9213 0H2.07723C0.930008 0 0 0.930008 0 2.07723V18.8413C0 19.9885 0.930008 20.9186 2.07723 20.9186H27.9213C29.0685 20.9186 29.9985 19.9885 29.9985 18.8413V2.07723C29.9985 0.930008 29.0685 0 27.9213 0Z"
+                      fill="#F4F7FA" />
+                    <path
+                      d="M9.93867 8.59755C11.3804 8.59755 12.5492 7.42877 12.5492 5.987C12.5492 4.54524 11.3804 3.37646 9.93867 3.37646C8.4969 3.37646 7.32812 4.54524 7.32812 5.987C7.32812 7.42877 8.4969 8.59755 9.93867 8.59755Z"
+                      fill="#064AB1" />
+                    <path
+                      d="M8.78741 8.32995C9.59336 8.32995 10.2467 7.28097 10.2467 5.98699C10.2467 4.69302 9.59336 3.64404 8.78741 3.64404C7.98147 3.64404 7.32812 4.69302 7.32812 5.98699C7.32812 7.28097 7.98147 8.32995 8.78741 8.32995Z"
+                      fill="#91D9F9" />
+                    <path
+                      d="M18.5482 20.9187H1.96335C1.44269 20.9186 0.943398 20.7116 0.575234 20.3435C0.207071 19.9753 0.000164949 19.476 0 18.9554V15.374L4.77427 12.0174C5.03395 11.835 5.34439 11.739 5.66166 11.7428C5.97893 11.7466 6.28698 11.85 6.54222 12.0385L18.5482 20.9187Z"
+                      fill="#91D9F9" />
+                    <path
+                      d="M21.8706 9.09274L29.9991 14.0045V18.8908C29.9989 19.4286 29.7852 19.9443 29.4049 20.3245C29.0245 20.7047 28.5088 20.9183 27.971 20.9183H3.73438L18.5451 9.2981C19.0131 8.93059 19.5819 8.71413 20.1759 8.67745C20.7698 8.64078 21.3609 8.78561 21.8706 9.09274Z"
+                      fill="#064AB1" />
+                  </svg>
+                  <p>
+                    Перетащите изображение
+                    на это поле
+                  </p>
+                </div>
+                <div class="upload-photos__info">
+                  <p class="upload-photos__info-title">Файл еще не загружен</p>
+                  <p>Перетащите его на поле слева
+                    или нажмите на ссылку</p>
+                  <button
+                    class="general-dropzone__add-btn main-btn"
+                    id="promo-add"
+                    type="button">
+                    Загрузить
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-section__item">
+            <div class="inputs-row _textarea">
+              <div class="input-column-wrapper">
+                <label>Описание*</label>
+                <textarea class="main-textarea"
+                          placeholder="Описание организации"
+                          name="org_desc"
+                          required></textarea>
+              </div>
+              <p class="inputs-row__desc">
+                Описание организации в нескольких фразах
+              </p>
+            </div>
+          </div>
+          <div class="main-section__item">
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Интернет-сайт</label>
+                <input class="main-input" type="url"
+                       placeholder="www.example.com" name="website">
+              </div>
+              <p class="inputs-row__desc">
+                Адрес сайта или страницы в социальной сети
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Контактный e-mail</label>
+                <input class="main-input" type="email"
+                       placeholder="example@example.com" name="email">
+              </div>
+              <p class="inputs-row__desc">
+                Ваш контактный e-mail. Рекомендуем не применять один и тот же и
+                как логин и как контактный
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Контактный телефон</label>
+                <input class="main-input phone-mask" type="text"
+                       placeholder="+7 911 000 92 24" name="phone">
+              </div>
+              <p class="inputs-row__desc">
+                Это контактный номер телефона, который знает только
+                администратор системы
+              </p>
+            </div>
+          </div>
+          <div class="main-section__item">
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>ИНН</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="12 символов, цифры" name="inn"
+                       maxlength="12" />
+              </div>
+              <p class="inputs-row__desc">
+                Индивидуальный налоговый номер организации
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>КПП</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="12 символов, цифры" name="kpp"
+                       maxlength="12" />
+              </div>
+              <p class="inputs-row__desc">
+                Код постановки на учет организации
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>ОГРН или ОГРНИП</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="13 символов, цифры" name="ogrn"
+                       maxlength="13" />
+              </div>
+              <p class="inputs-row__desc">
+                Основной государственный регистрационный номер организации или
+                индивидуального предпринимателя
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>ОКВЭД</label>
+                <input class="main-input" type="text"
+                       placeholder="55.20, 56.10.1" name="okved" />
+              </div>
+              <p class="inputs-row__desc">
+                Коды деятельности через запятую. Основной код всегда ставится
+                первым!
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Банк</label>
+                <input class="main-input" type="text"
+                       placeholder="Например, ТАмбовское отделение Сбербанка России"
+                       name="bank" />
+              </div>
+              <p class="inputs-row__desc">
+                Полное правильное наименование банка, в котором обслуживается
+                организация
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>БИК</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="9 символов, цифры" name="bik"
+                       maxlength="9" />
+              </div>
+              <p class="inputs-row__desc">
+                Банковский идентификатор клиента
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Коррсчёт</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="20 символов, цифры" name="corr_invoice"
+                       maxlength="20" />
+              </div>
+              <p class="inputs-row__desc">
+                Корреспондентский счет
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Расчётный счёт</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="20 символов, цифры" name="checking_invoice"
+                       maxlength="20" />
+              </div>
+              <p class="inputs-row__desc">
+                Расчетный счет организации в банке
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Лицевой счёт</label>
+                <input class="main-input number-mask" type="text"
+                       placeholder="20 символов, цифры" name="personal_invoice"
+                       maxlength="20" />
+              </div>
+              <p class="inputs-row__desc">
+                Лицевой счёт организации в банке
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Должность руководителя</label>
+                <select class="main-input"
+                        name="director_position"
+                >
+                  <option value="0">Генеральный директор</option>
+                  <option value="1">должность 2</option>
+                </select>
+              </div>
+              <p class="inputs-row__desc">
+                Укажите должность руководителя организации
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>ФИО руководителя</label>
+                <input class="main-input" type="text"
+                       placeholder="Фамилия, имя и отчество руководителя"
+                       name="director_name">
+              </div>
+              <p class="inputs-row__desc">
+                Фамилия, имя и отчество руководителя
+              </p>
+            </div>
+            <div class="inputs-row">
+              <div class="input-column-wrapper">
+                <label>Основание действия</label>
+                <input class="main-input" type="text"
+                       placeholder="Устав или доверенность"
+                       name="document">
+              </div>
+              <p class="inputs-row__desc">
+                Документ, на основании которого действует руководитель
+              </p>
+            </div>
+            <div class="inputs-row _textarea">
+              <div class="input-column-wrapper">
+                <label>Юридический адрес</label>
+                <textarea class="main-textarea"
+                          placeholder="Индекс, город, адрес"
+                          name="juristic_address"></textarea>
+              </div>
+              <p class="inputs-row__desc">
+                Полный юридический адрес организации
+              </p>
+            </div>
+          </div>
+        </section>
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn _green" type="submit">
+              Сохранить и закрыть
+            </button>
+            <a href="#" class="main-btn _blue">Применить и продолжить</a>
+          </div>
+          <div class="main-controllers__btns-right">
+            <a href="#" class="main-btn _red">Отменить изменения</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </main>
+</div>
+
+</body>
+
+</html>

@@ -13,7 +13,10 @@ export const initContextSelects = (currentTempl) => {
         contextContentSelect.querySelectorAll('option'),
       )
 
-      const currentContextValue = contextContentState[0].dataset.context ?? 1
+      const currentContextValue =
+        contextSelect.querySelector('option[selected]')?.value ??
+        contextSelect.querySelector('option')?.value
+
       setContextOptions(
         currentContextValue,
         contextContentSelect,

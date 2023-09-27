@@ -14,4 +14,4 @@ import './components/weekViewInputs'
 import './components/manageModal'
 import './components/managePassword'
 import './components/fetchLists'
-
+import './components/submitInputs'

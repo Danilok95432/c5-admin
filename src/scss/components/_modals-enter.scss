@@ -1,0 +1,67 @@
+ #enter-modal {
+     .input-column-wrapper {
+         margin-right: 0;
+         margin-bottom: 17px;
+         position: relative;
+     }
+
+     .modal-links {
+         margin-bottom: 22px;
+     }
+
+     .btn-show-pass {
+         position: absolute;
+         display: flex;
+         align-items: center;
+         width: 20px;
+         height: 18px;
+         right: 15px;
+         top: 32px;
+         transform: translateY(calc(35px / 2 - 50%));
+
+         &__eye-open {
+             display: none;
+         }
+
+         &__eye-close {
+             display: block;
+         }
+
+         &._open {
+             .btn-show-pass__eye-close {
+                 display: none;
+             }
+
+             .btn-show-pass__eye-open {
+                 display: block;
+             }
+         }
+     }
+ }
+
+ .reset-password-form {
+     width: 480px;
+     position: relative;
+     top: -30px;
+     border-radius: 0 0 5px 5px;
+     border: 1px solid #93B5C5;
+
+     p:first-child {
+         padding-top: 5px;
+         margin-bottom: 12px;
+         position: relative;
+         font-size: 15px;
+         font-weight: 300;
+         line-height: normal;
+
+         &::after {
+             position: absolute;
+             content: '';
+             height: 1px;
+             width: 100%;
+             top: -10px;
+             right: 0;
+             background-color: #E3DDDD;
+         }
+     }
+ }

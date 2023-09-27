@@ -19,8 +19,6 @@ if (showPasswordButtons) {
 
 const timer = () => {
   const smsTimer = document.querySelector('#smsTimer')
-
-  console.log(smsTimer)
   smsTimer.innerHTML = `0:${SMS_SECONDS_START_VALUE}`
 
   let smsSeconds = SMS_SECONDS_START_VALUE

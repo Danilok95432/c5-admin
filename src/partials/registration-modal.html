@@ -1,4 +1,4 @@
-<div class="modal" id="registration-modal">
+<div class="modal" id="registration-modal"> 
   <button
     class="modal-close-btn"
     data-close-modal="registration-modal"
@@ -17,14 +17,13 @@
       />
     </svg>
   </button>
-  <form class="styled-form" action="#">
+  <form class="styled-form" action="#"> 
     <h4>Регистрация отельера</h4>
 
-    <div class="input-column-wrapper _gap">
-      <label for="hotelier-name">Название отельера*</label>
+    <div class="input-column-wrapper">
+      <label>Название отельера*</label>
       <input
         class="main-input"
-        id="hotelier-name"
         type="text"
         placeholder="Бренд, название организации или ФИО сотрудника"
         name="hotelier_name"
@@ -32,11 +31,10 @@
       />
     </div>
 
-    <div class="input-column-wrapper _gap">
-      <label for="hotelier-city">Город или регион*</label>
+    <div class="input-column-wrapper">
+      <label>Город или регион*</label>
       <input
         class="main-input"
-        id="hotelier-city"
         type="text"
         placeholder="Россия, Тамбов"
         name="hotelier_city"
@@ -44,11 +42,10 @@
       />
     </div>
 
-    <div class="input-column-wrapper _gap">
-      <label for="hotelier-login">Логин отельера (e-mail)*</label>
+    <div class="input-column-wrapper">
+      <label>Логин отельера (e-mail)*</label>
       <input
         class="main-input"
-        id="hotelier-login"
         type="email"
         placeholder="example@example.com"
         name="hotelier_login"
@@ -56,11 +53,10 @@
       />
     </div>
 
-    <div class="input-column-wrapper _gap">
-      <label for="hotelier-phone">Телефон*</label>
+    <div class="input-column-wrapper">
+      <label>Телефон*</label>
       <input
-        class="main-input"
-        id="hotelier-phone"
+        class="main-input phone-mask"
         type="tel"
         placeholder="+7 (999) 999-99-99"
         name="hotelier_phone"
@@ -87,7 +83,7 @@
       >
     </div>
 
-    <button class="main-btn _blue" type="submit">Зарегистрироваться</button>
+    <button class="main-btn _blue registration-btn" type="submit">Зарегистрироваться</button>
 
     <button
       class="main-btn _white"

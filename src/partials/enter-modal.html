@@ -13,7 +13,7 @@
       />
     </svg>
   </button>
-  <form class="styled-form" action="#" style="border: 1px solid black">
+  <form class="enter-form styled-form" action="#">
     <h4>Вход отельера</h4>
 
     <div class="input-column-wrapper _gap">
@@ -28,7 +28,7 @@
       />
     </div>
 
-    <div class="input-column-wrapper">
+    <div class="input-column-wrapper" onclick="e => console.log(e)">
       <label for="hotelier-password">Пароль учетной записи*</label>
       <input
         class="main-input"
@@ -60,11 +60,11 @@
       </button>
     </div>
 
-    <button class="main-btn _blue" type="submit">Войти</button>
+    <button class="main-btn _blue submit-enter" type="submit">Войти</button>
   </form>
 
-  <form class="reset-password-form styled-form" action="#">
-    <p >
+  <form class="reset-password-form styled-form hidden" action="#">
+    <p>
       Код отправлен в виде SMS. Повторить отправку через
       <span id="smsTimer">0:30</span>
     </p>

@@ -4,7 +4,7 @@
     overflow-x: hidden;
     left: 50%;
     top: 50%;
-    width: 650px;
+    width: 530px;
     transform: translate(-50%, -50%);
     transition: all .2s;
     opacity: 0;
@@ -25,6 +25,7 @@
     }
 
     .styled-form {
+
         width: 485px;
         padding: 44px 30px 35px 30px;
         border: 1px solid #93B5C5;
@@ -36,6 +37,7 @@
             width: 90vw;
             padding: 30px 20px 20px 20px;
         }
+
 
         h4 {
             font-size: 25px;
@@ -52,7 +54,6 @@
             min-width: 425px;
             position: relative;
 
-
             &._gap {
                 margin-bottom: 18px;
             }
@@ -66,10 +67,6 @@
 
     .main-checkbox {
         display: inline-block;
-        margin-bottom: 18px;
-
-
-
 
         label {
             display: inline-block;
@@ -88,10 +85,12 @@
     }
 
     .main-btn {
-        margin-top: 12px;
+        margin-top: 15px;
+
+        &._white {
+            margin-top: 22px;
+        }
     }
-
-
 }
 
 .modal-overlay {
@@ -120,17 +119,12 @@
 
 .modal-links {
     margin-top: 5px;
-
     display: flex;
     justify-content: space-between;
-
     color: #064AB1;
-
     font-size: 15px;
-
     font-weight: 400;
     line-height: normal;
-
     margin-bottom: 10px;
 }
 
@@ -157,9 +151,8 @@
     width: 20px;
     height: 18px;
     right: 15px;
-    top: 30px;
+    top: 27px;
     transform: translateY(calc(35px / 2 - 50%));
-
 
     .big-form__eye-open {
         display: none;
@@ -182,29 +175,27 @@
 
 
 .reset-password-form {
+    width: 480px;
+
     position: relative;
     top: -30px;
     border-radius: 0 0 5px 5px;
-
-    // border: 3px solid red;
     border: 1px solid #93B5C5;
 
     p:first-child {
-        margin-bottom: 25px;
-        font-size: 13px;
-        line-height: 18px;
+        margin-bottom: 15px;
         position: relative;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: normal;
 
         &::after {
             position: absolute;
             content: '';
-
             height: 1px;
             width: 100%;
-
             top: -25px;
             right: 0;
-
             background-color: #E3DDDD;
         }
     }

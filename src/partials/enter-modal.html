@@ -1,4 +1,4 @@
-<div class="modal" id="enter-modal">
+<div class="modal" id="enter-modal"> 
   <button class="modal-close-btn" data-close-modal="enter-modal" type="button">
     <svg
       width="21"
@@ -13,14 +13,13 @@
       />
     </svg>
   </button>
-  <form class="styled-form" action="#" style="border: 1px solid black">
+  <form class="enter-form styled-form" action="#">
     <h4>Вход отельера</h4>
 
-    <div class="input-column-wrapper _gap">
-      <label for="hotelier-login">Логин учетной записи*</label>
+    <div class="input-column-wrapper">
+      <label>Логин учетной записи*</label>
       <input
         class="main-input"
-        id="hotelier-login"
         type="email"
         placeholder="example@example.com"
         name="hotelier_login"
@@ -29,10 +28,9 @@
     </div>
 
     <div class="input-column-wrapper">
-      <label for="hotelier-password">Пароль учетной записи*</label>
+      <label>Пароль учетной записи*</label>
       <input
         class="main-input"
-        id="hotelier-password"
         type="password"
         placeholder="*************"
         name="hotelier_password"
@@ -45,7 +43,7 @@
       <button
         class="main-btn _white"
         type="button"
-        data-open-modal="registration-modal"
+        data-open-modal="reset-password-modal"
         data-close-modal="enter-modal"
       >
         Не помню пароль
@@ -60,19 +58,18 @@
       </button>
     </div>
 
-    <button class="main-btn _blue" type="submit">Войти</button>
+    <button class="main-btn _blue submit-enter" type="submit">Войти</button>
   </form>
 
-  <form class="reset-password-form styled-form" action="#">
-    <p >
+  <form class="reset-password-form styled-form hidden" action="#">
+    <p>
       Код отправлен в виде SMS. Повторить отправку через
       <span id="smsTimer">0:30</span>
     </p>
     <div class="input-column-wrapper">
-      <label for="enter-code">Проверочный код*</label>
+      <label>Проверочный код*</label>
       <input
         class="main-input"
-        id="enter-code"
         type="password"
         placeholder="******"
         name="enter_code"

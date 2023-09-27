@@ -1,0 +1,38 @@
+#registration-modal {
+    .input-column-wrapper {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .text {
+        margin-bottom: 15px;
+        color: #2D3231;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .main-checkbox {
+        display: inline-block;
+        margin-bottom: 20px;
+
+        label {
+            display: inline-block;
+            text-indent: -20px;
+            padding-left: 20px;
+            max-width: 400px;
+            line-height: 18px
+        }
+
+        a {
+            color: #064AB1;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18px;
+        }
+    }
+
+    .registration-btn {
+        margin-bottom: 15px;
+    }
+}

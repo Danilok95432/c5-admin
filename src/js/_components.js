@@ -12,4 +12,6 @@ import './components/photosSort'
 import './components/contextSelect'
 import './components/weekViewInputs'
 import './components/manageModal'
+import './components/managePassword'
 import './components/fetchLists'
+

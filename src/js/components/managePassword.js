@@ -43,9 +43,11 @@ const handleSmsSubmit = (e) => {
 }
 
 export const getSmsCode = () => {
-  enterForm.querySelector('.submit-enter').classList.remove('_disabled')
-  enterForm.removeEventListener('submit', handleSmsSubmit)
-  enterForm.addEventListener('submit', handleSmsSubmit)
+  if (enterForm) {
+    enterForm.querySelector('.submit-enter').classList.remove('_disabled')
+    enterForm.removeEventListener('submit', handleSmsSubmit)
+    enterForm.addEventListener('submit', handleSmsSubmit)
+  }
 }
 
 getSmsCode()

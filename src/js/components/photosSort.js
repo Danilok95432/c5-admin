@@ -1,9 +1,13 @@
-import Sortable from 'sortablejs/modular/sortable.complete.esm.js';
+import Sortable from 'sortablejs/modular/sortable.complete.esm.js'
 
-const sortedPhotos = document.querySelectorAll('.sorted-photos')
+const initSortable = () => {
+  const sortedPhotos = document.querySelectorAll('.sorted-photos')
 
-if (sortedPhotos) {
-  sortedPhotos.forEach(el => {
-    const sortable = new Sortable(el)
-  })
+  if (sortedPhotos) {
+    sortedPhotos.forEach((el) => {
+      const sortable = new Sortable(el)
+    })
+  }
 }
+
+initSortable()

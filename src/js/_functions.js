@@ -129,9 +129,9 @@ export const showInfoModal = (responseText) => {
 export const showBigImgModal = (path) => {
   bigImgModal.classList.add('big-img-modal_active')
   bigImgModal.querySelector('img').src = path
-  modalOverlay.classList.add('modal-overlay_active')
+  modalOverlay.classList.add('_active')
   modalOverlay.addEventListener('click', () => {
-    modalOverlay.classList.remove('modal-overlay_active')
+    modalOverlay.classList.remove('_active')
     bigImgModal.classList.remove('big-img-modal_active')
   })
 }

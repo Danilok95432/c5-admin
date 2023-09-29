@@ -2,6 +2,7 @@ import { Dropzone } from 'dropzone'
 
 import { sendData, showBigImgModal, showInfoModal } from '../_functions'
 import { cutString } from './cutStrings'
+import { read } from '@popperjs/core'
 
 const genDropzones = document.querySelectorAll('.general-dropzone')
 
@@ -35,13 +36,16 @@ if (genDropzones) {
     const onShowBig = (file) => {
       if (isBigPreview) {
         const previewPic = file.previewElement
-
         if (previewPic) {
           const previewImg = previewPic.querySelector('img')
-          previewImg.setAttribute('data-big-img', file.dataURL)
-          previewPic.addEventListener('click', () => {
-            showBigImgModal(file.dataURL)
-          })
+          let reader = new FileReader()
+          reader.readAsDataURL(file)
+          reader.onload = () => {
+            previewImg.setAttribute('data-big-img', reader.result)
+            previewPic.addEventListener('click', () => {
+              showBigImgModal(reader.result)
+            })
+          }
         }
       }
     }
@@ -143,7 +147,9 @@ if (genDropzones) {
       }
     })
 
-    const existingFiles = dropzoneEl.querySelectorAll('.dz-preview')
+    const existingFiles = dropzoneEl
+      .closest('.general-dropzone-wrapper')
+      .querySelectorAll('.dz-preview')
     if (existingFiles.length > 0) {
       if (existingFiles.length >= filesCount) {
         addBtn?.classList.add('btn_disabled')

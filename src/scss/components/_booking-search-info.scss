@@ -1,0 +1,14 @@
+.booking-search-info {
+  margin-bottom: 15px;
+  &__count {
+    font-weight: 700;
+  }
+
+  &__border {
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: 2px solid #3045FF;
+    line-height: 1;
+  }
+}

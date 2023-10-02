@@ -1,5 +1,5 @@
 .room-booking-calendar {
-  td._green, td._orange, td._red {
+  td._green, td._orange, td._red, td._green-lock, td._orange-lock, td._red-lock  {
     position: relative;
 
     svg {
@@ -11,7 +11,7 @@
     }
   }
 
-  td._green {
+  td._green, td._green-lock {
     .booking-track {
       background-color: #9AFF8A;
       border: 1px solid #01DA32;
@@ -23,7 +23,7 @@
     }
   }
 
-  td._orange {
+  td._orange, td._orange-lock {
     .booking-track {
       border: 1px solid #FFA011;
       background-color: #FFD363;
@@ -34,7 +34,7 @@
     }
   }
 
-  td._red {
+  td._red, td._red-lock {
     .booking-track {
       border: 1px solid #9E1F1F;
       background: #FF9A9A;
@@ -57,6 +57,9 @@
   display: flex;
   justify-content: space-between;
   padding: 3px;
+  &._searched {
+    border: 2px solid #3045FF !important;
+  }
 
   p {
     font-size: 13px;

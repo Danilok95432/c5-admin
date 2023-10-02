@@ -28,27 +28,51 @@ const renderCells = (cells) => {
     const html = cells.map((cell, i) => {
       if (!cell.status) {
         return `<td>
-          ${cell}
-          ${i === 0 ? pointerSvg : ''}
-        </td>`
+            ${cell}
+            ${i === 0 ? pointerSvg : ''}
+          </td>`
+      }
+      if (cell.status === '_green' || cell.status === '_orange') {
+        return `<td class="${cell.status}" >
+             <a href="${cell.link}" class="booking-track" title="${
+               cell.content
+             }, ${cell?.price ?? ''}" style="width: ${
+               cell.dayCount * 40 - 40
+             }px">
+                    <p>${cell.content}</p>
+                    <h6>${cell.price ?? ''}</h6>
+                  </a>
+              </td>`
       }
 
-      if (cell.content === 'lock') {
+      if (cell.status === '_red') {
+        return `<td class="${cell.status}" >
+             <a href="${cell.link}" class="booking-track" title="${
+               cell.content
+             }" style="width: ${cell.dayCount * 40 - 40}px">
+                    <p>${cell.content}</p>
+                  </a>
+              </td>`
+      }
+
+      if (cell.status === '_green-lock' || cell.status === '_orange-lock') {
         return `<td class="${cell.status}">
-            <div class="booking-track" style="width: ${cell.dayCount * 40}px">
+            <a href="${cell.link}" class="booking-track" title="${
+              cell.content
+            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
-            </div>
+            </a>
         </td>`
       }
-
-      return `<td class="${cell.status}">
-            <div class="booking-track" style="width: ${
-              cell.dayCount * 40 - 40
-            }px">
-              <p>${cell.content}</p>
-              <h6>${cell.price ?? ''}</h6>
-            </div>
+      if (cell.status === '_red-lock') {
+        return `<td class="${cell.status}">
+            <a href="${cell.link}" class="booking-track" title="${
+              cell.content
+            }" style="width: ${cell.dayCount * 40}px">
+                ${lockSvg}
+            </a>
         </td>`
+      }
     })
     return html.join('')
   }

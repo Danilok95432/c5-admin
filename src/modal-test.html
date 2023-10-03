@@ -1,46 +1,46 @@
 <!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-  @include('partials/head.html', { 'title': 'TEST' })
+@include('partials/head.html', { 'title': 'TEST' })
 
-  <body class="page__body room-data-page">
-    <div class="site-container">
-      <div class="modal-overlay"></div>
+<body class="page__body room-data-page">
+<div class="site-container">
+  <div class="modal-overlay"></div>
 
-      @include('partials/registration-modal.html')
-      @include('partials/reset-password-modal.html')
-      @include('partials/enter-modal.html')
-      @include('partials/sign-in-modal.html')
+  @include('partials/registration-modal.html')
+  @include('partials/reset-password-modal.html')
+  @include('partials/enter-modal.html')
+  @include('partials/sign-in-modal.html')
 
-      <button
-        class="main-btn _blue"
-        data-open-modal="registration-modal"
-        type="button"
-      >
-        Регистрация отельера
-      </button>
+  <button
+    class="main-btn _blue"
+    data-open-modal="registration-modal"
+    type="button"
+  >
+    Регистрация отельера
+  </button>
 
-      <button
-        class="main-btn _blue"
-        data-open-modal="enter-modal"
-        type="button"
-      >
-        Вход отельера
-      </button>
+  <button
+    class="main-btn _blue"
+    data-open-modal="enter-modal"
+    type="button"
+  >
+    Вход отельера
+  </button>
 
-      <button
-        class="main-btn _blue"
-        data-open-modal="reset-password-modal"
-        type="button"
-      >
-        Восстановить пароль
-      </button>
-      <button
-        class="main-btn _blue"
-        data-open-modal="sign-in-modal"
-        type="button"
-      >
-        Войти в систему
-      </button>
-    </div>
-  </body>
+  <button
+    class="main-btn _blue"
+    data-open-modal="reset-password-modal"
+    type="button"
+  >
+    Восстановить пароль
+  </button>
+  <button
+    class="main-btn _blue"
+    data-open-modal="sign-in-modal"
+    type="button"
+  >
+    Войти в систему
+  </button>
+</div>
+</body>
 </html>

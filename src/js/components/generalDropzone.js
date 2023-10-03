@@ -2,7 +2,6 @@ import { Dropzone } from 'dropzone'
 
 import { sendData, showBigImgModal, showInfoModal } from '../_functions'
 import { cutString } from './cutStrings'
-import { read } from '@popperjs/core'
 
 const genDropzones = document.querySelectorAll('.general-dropzone')
 

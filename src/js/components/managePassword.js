@@ -1,4 +1,5 @@
 import { SMS_SECONDS_START_VALUE, TIME_INTERVAL_MILLISECONDS } from '../_vars'
+
 const showPasswordButtons = document.querySelectorAll('.btn-show-pass')
 
 const enterForm = document.querySelector('.enter-form')

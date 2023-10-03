@@ -3,6 +3,7 @@
   "arrowParens": "always",
   "semi": false,
   "singleQuote": false,
+  "endOfLine": "crlf",
   "max-len": [
     "error",
     140,

@@ -20,6 +20,14 @@
   }
 }
 
+
+.input-columns-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
 .input-column-wrapper {
 
   &__row {

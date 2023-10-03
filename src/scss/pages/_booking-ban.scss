@@ -1,0 +1,31 @@
+.booking-ban-page {
+
+  .main-section__top {
+    gap: 15px;
+  }
+
+  .fix-row {
+    margin-bottom: 5px;
+    align-items: flex-start;
+
+    &._indent {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      min-width: 176px;
+    }
+
+    &__desc {
+      max-width: 550px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      &._date {
+        max-width: 260px;
+      }
+    }
+
+  }
+}

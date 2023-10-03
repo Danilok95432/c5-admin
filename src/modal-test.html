@@ -9,6 +9,7 @@
       @include('partials/registration-modal.html')
       @include('partials/reset-password-modal.html')
       @include('partials/enter-modal.html')
+      @include('partials/sign-in-modal.html')
 
       <button
         class="main-btn _blue"
@@ -32,6 +33,13 @@
         type="button"
       >
         Восстановить пароль
+      </button>
+      <button
+        class="main-btn _blue"
+        data-open-modal="sign-in-modal"
+        type="button"
+      >
+        Войти в систему
       </button>
     </div>
   </body>

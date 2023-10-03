@@ -1,0 +1,32 @@
+.btn-show-pass {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 18px;
+  right: 15px;
+  bottom: 10px;
+
+  svg  {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__eye-open {
+    display: none;
+  }
+
+  &__eye-close {
+    display: block;
+  }
+
+  &._open {
+    .btn-show-pass__eye-close {
+      display: none;
+    }
+
+    .btn-show-pass__eye-open {
+      display: block;
+    }
+  }
+}

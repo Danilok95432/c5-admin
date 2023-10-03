@@ -9,34 +9,6 @@
          margin-bottom: 22px;
      }
 
-     .btn-show-pass {
-         position: absolute;
-         display: flex;
-         align-items: center;
-         width: 20px;
-         height: 18px;
-         right: 15px;
-         top: 32px;
-         transform: translateY(calc(35px / 2 - 50%));
-
-         &__eye-open {
-             display: none;
-         }
-
-         &__eye-close {
-             display: block;
-         }
-
-         &._open {
-             .btn-show-pass__eye-close {
-                 display: none;
-             }
-
-             .btn-show-pass__eye-open {
-                 display: block;
-             }
-         }
-     }
  }
 
  .reset-password-form {

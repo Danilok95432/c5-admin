@@ -1,0 +1,45 @@
+<div class="modal sign-in-modal" id="sign-in-modal">
+  <button class="modal-close-btn" data-close-modal="sign-in-modal"
+          type="button">
+    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <rect width="27.0713" height="1.08285"
+            transform="matrix(0.706025 -0.708187 0.706025 0.708187 0.125 19.2329)"
+            fill="black" />
+      <rect width="27.0713" height="1.08285"
+            transform="matrix(-0.706025 -0.708187 0.706025 -0.708187 19.1133 19.9385)"
+            fill="black" />
+    </svg>
+
+  </button>
+  <form action="#">
+    <h4>C-5</h4>
+
+    <div class="input-column-wrapper">
+      <label>Логин*</label>
+      <input
+        class="main-input"
+        type="login"
+        name="login"
+        required
+      />
+    </div>
+
+    <div class="input-column-wrapper">
+      <label>Пароль*</label>
+      <input
+        class="main-input"
+        type="password"
+        placeholder="************"
+        name="password"
+        required
+      />
+      @include('./eye-button.html')
+    </div>
+
+    <p class="sign-in-modal__desc">Если у Вас нет логина и пароля для доступа к
+      системе управления задачами, обратитесь к руководителю подразделения.</p>
+    <button class="main-btn" type="submit">Войти в систему</button>
+  </form>
+
+</div>

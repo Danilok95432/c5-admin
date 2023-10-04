@@ -29,6 +29,12 @@
 }
 
 .input-column-wrapper {
+  &._sm {
+    max-width: 94px;
+  }
+  &._md{
+    max-width: 180px;
+  }
 
   &__row {
     display: flex;

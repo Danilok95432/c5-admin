@@ -1,0 +1,36 @@
+.manage-restaurant-page {
+
+  &__subtitle {
+    color: #000;
+    @include opensans-semibold;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__photos-desc {
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+
+  .input-column-wrapper {
+    width: 280px;
+    margin-bottom: 25px;
+
+    &._main-textarea {
+      width: 700px;
+
+      textarea {
+        height: 170px;
+      }
+    }
+
+    &._textarea {
+      width: 700px;
+
+      textarea {
+        height: 70px;
+      }
+    }
+  }
+}

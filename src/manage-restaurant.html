@@ -2,13 +2,12 @@
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
 
 @include('partials/head.html', {
-'title': 'Блок управления кафе'
+'title': 'Управление страницей ресторана'
 })
 
-<body class="page__body cafe-control-page">
+<body class="page__body manage-restaurant-page">
 
 <div class="site-container">
-  <div class="modal-overlay"></div>
   <header>
     @include('partials/auth-panel.html')
     <div class="container main-menu">
@@ -38,7 +37,7 @@
             Бронирование
           </a>
         </li>
-        <li>
+        <li class="_active">
           <a href="manage-restaurant.html">
             Ресторан
           </a>
@@ -61,62 +60,103 @@
         Дашборд
       </a>
     </div>
+    <div class="container room-fund-menu">
+      <ul>
+        <li>
+          <a href="#">
+            Страница ресторана
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Список банкетов
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Создать банкет
+          </a>
+        </li>
+      </ul>
+    </div>
   </header>
   <main class="main">
     <div class="container">
-      <form class="cafe-form" action="#">
-        <div class="main-section">
-
-          <section class="fields-section">
-            <div class="main-section__top">
-              <h1>
-                <a href="index.html">Главная</a> / Блок в кафе
-              </h1>
-              <p>поля, отмеченные символом *, обязательны для заполнения</p>
+      <form action="#">
+        <section class="main-section">
+          <h1>Управление страницей ресторана</h1>
+          <div class="input-column-wrapper">
+            <label>Название ресторана</label>
+            <input class="main-input" type="text"
+                   name="restaurant_name">
+          </div>
+          <div class="input-column-wrapper _main-textarea">
+            <label>Текст на странице ресторана</label>
+            <textarea class="main-textarea" name="page_text"></textarea>
+          </div>
+          <div class="main-section__item">
+            <h5 class="manage-restaurant-page__subtitle">
+              Режим работы
+            </h5>
+            <div class="input-column-wrapper__row">
+              <div class="input-column-wrapper _sm">
+                <label>Открытие:</label>
+                <select class="main-input"
+                        name="opening">
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                </select>
+              </div>
+              <div class="input-column-wrapper _sm">
+                <label>Закрытие:</label>
+                <select class="main-input"
+                        name="closing">
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                </select>
+              </div>
             </div>
-            <div class="cafe-control-page__inputs-row">
+            <div class="input-column-wrapper__row">
               <div class="input-column-wrapper">
-                <label>Заголовок блока*</label>
-                <input
-                  class="main-input"
-                  type="text"
-                  placeholder="Надпись большими буквами"
-                  name="title"
-                  required
-                />
+                <label>План завтрака</label>
+                <select class="main-input"
+                        name="breakfast_plan">
+                  <option value="1">Шведский стол</option>
+                  <option value="2">план 2</option>
+                  <option value="3">план 3</option>
+                </select>
               </div>
-              <div class="main-checkbox">
-                <input
-                  type="checkbox"
-                  name="hide_section"
-                  id="hideSection"
-                />
-                <label for="hideSection">Скрыть секцию</label>
+              <div class="input-column-wrapper _md">
+                <label>Стоимость завтрака, руб.</label>
+                <input class="main-input"
+                       name="breakfast_price" type="text" />
               </div>
             </div>
-            <div class="input-column-wrapper">
-              <label>Текст блока*</label>
-              <textarea
-                class="main-textarea"
-                type="text"
-                placeholder="Более длинная надпись, сделанная буквами поменьше"
-                name="text"
-                required
-              ></textarea>
+            <div class="input-column-wrapper _textarea">
+              <label>Условия для детей (Детям)</label>
+              <textarea class="main-textarea" name="child_circs"></textarea>
             </div>
-          </section>
-          <section class="cafe-control-page__photos">
-            <h4>Фотографии кафе</h4>
-            <div class="cafe-control-page__photos-desc">
-              <p>Загрузить новую фотографию</p>
-              <p>1600px*517px, JPEG, PNG</p>
+            <div class="input-column-wrapper _textarea">
+              <label>Обслуживание в номерах</label>
+              <textarea class="main-textarea" name="service_room"></textarea>
             </div>
+          </div>
+          <div class="main-section__item">
+            <h5 class="manage-restaurant-page__subtitle">
+              Главное (большое) изображение
+            </h5>
 
+            <p class="manage-restaurant-page__photos-desc">соотношение сторон
+              1:1 или 3:4, JPEG, PNG</p>
             <div class="upload-photos general-dropzone-wrapper">
-              <div id="cafePhotos"
+              <div id="mainRestaurant"
                    data-show-preview="true"
                    class="dropzone general-dropzone"
-                   data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "115", "acceptedFiles": ".png, .jpeg, .jpg", "type": "cafePhotos", "filesCount": "6", "additional": "доп.контент"}'>
+                   data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "115", "acceptedFiles": ".jpeg, .png", "type": "mainRestaurant", "filesCount": "1", "additional": "доп.контент"}'>
                 <div class="dz-message">
                   <svg width="30" height="21" viewBox="0 0 30 21" fill="none"
                        xmlns="http://www.w3.org/2000/svg">
@@ -147,17 +187,15 @@
                     или нажмите на ссылку</p>
                   <button
                     class="general-dropzone__add-btn main-btn"
-                    id="cafe-add"
+                    id="main-restaurant-add"
                     type="button">
                     Загрузить
                   </button>
                 </div>
               </div>
-              <div class="dropzone-previews general-dropzone__previews">
-              </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
         <div class="main-controllers">
           <div class="main-controllers__btns-left">
             <button class="main-btn _green" type="submit">
@@ -167,14 +205,15 @@
           </div>
           <div class="main-controllers__btns-right">
             <a href="#" class="main-btn _red">Отменить изменения</a>
+            <a href="#" class="main-btn _orange">Поместить в архив</a>
           </div>
         </div>
       </form>
-    </div>
 
+
+    </div>
   </main>
 </div>
-@include('partials/big-img-modal.html')
 @include('partials/info-modal.html')
 </body>
 

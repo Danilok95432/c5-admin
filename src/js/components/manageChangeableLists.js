@@ -5,6 +5,7 @@ import {
 import { initChangeSelects } from './changeRoomType'
 import { initGenerateSelect } from './generateSelect'
 import { initContextSelects } from './contextSelect'
+import { initFileUploading } from './fileUpload'
 
 const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 
@@ -44,6 +45,7 @@ if (addToListBtns) {
       updateChangeableListId(targetChangeableList)
       initChangeSelects([templateElement])
       initGenerateSelect()
+      initFileUploading()
     })
   })
 }

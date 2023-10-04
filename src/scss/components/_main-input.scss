@@ -3,7 +3,7 @@
   align-items: center;
   margin-bottom: 15px;
 
-  label {
+  label{
     min-width: 200px;
     margin-right: 23px;
     cursor: initial;
@@ -44,7 +44,7 @@
     }
   }
 
-  label {
+  label:not(.main-btn)  {
     margin-bottom: 5px;
     display: block;
     font-weight: 300;

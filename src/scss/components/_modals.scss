@@ -1,4 +1,4 @@
-.modal {
+.modal:not(.info-modal) {
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
@@ -42,7 +42,7 @@
             font-weight: 600;
             line-height: normal;
             margin-bottom: 16px;
-        }     
+        }
     }
 }
 

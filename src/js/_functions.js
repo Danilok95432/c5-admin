@@ -32,11 +32,13 @@ export const updateInputsId = (input, changeableId) => {
   const inputLabel = input.querySelector('label')
   currentInput.name = formatChangeableInputName(currentInput.name, changeableId)
   if (currentInput.id) {
-    currentInput.id = currentInput.id + changeableId
+    const initialId = currentInput.id.split('[')[0]
+    currentInput.id = `${initialId}[${changeableId}]`
   }
   if (inputLabel?.getAttribute('for')) {
     const attrValue = inputLabel.getAttribute('for')
-    inputLabel.setAttribute('for', attrValue + changeableId)
+    const initialLabel = attrValue.split('[')[0]
+    inputLabel.setAttribute('for', `${initialLabel}[${changeableId}]`)
   }
 }
 

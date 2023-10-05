@@ -215,40 +215,68 @@
                   </div>
                   <div class="input-column-wrapper _download">
                     <label>Документ меню</label>
-                    <div class="file-upload">
-                      <div class="file-upload__wrapper">
-                        <p class="file-upload__name"></p>
+                    <div class="file-upload changeable-input">
+                      <div class="file-upload__info">
+                        <button class="file-upload__delete-btn" type="button">
+                          <svg width="15" height="15" viewBox="0 0 15 15"
+                               fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.07422" y="13.5015" width="17.6233"
+                                  height="0.704931"
+                                  transform="rotate(-45 1.07422 13.5015)"
+                                  fill="#920303"
+                                  stroke="#920303" />
+                            <rect x="13.4609" y="13.96" width="17.6233"
+                                  height="0.704931"
+                                  transform="rotate(-135 13.4609 13.96)"
+                                  fill="#920303"
+                                  stroke="#920303" />
+                          </svg>
+                        </button>
+                        <a href="#" download class="file-upload__name"></a>
                         <p class="file-upload__size"></p>
                       </div>
-                      <div class="file-upload__add-wrapper changeable-input">
-                        <input type="file"
-                               class="file-upload__add"
-                               name="menu_file[1]"
-                               id="menu-file1">
-                        <label class="main-btn file-upload__add-label"
-                               for="menu-file1">
-                          Загрузить pdf-файл
-                        </label>
-                      </div>
+                      <input type="file"
+                             class="file-upload__add"
+                             name="menu_file[1]"
+                             id="menu-file[1]" accept="application/pdf">
+                      <label class="main-btn file-upload__add-label"
+                             for="menu-file[1]">
+                        Загрузить pdf-файл
+                      </label>
                     </div>
                   </div>
                   <div class="input-column-wrapper _download">
                     <label>Фото меню</label>
-                    <div class="file-upload">
-                      <div class="file-upload__wrapper">
-                        <p class="file-upload__name"></p>
+                    <div class="file-upload changeable-input">
+                      <div class="file-upload__info">
+                        <button class="file-upload__delete-btn" type="button">
+                          <svg width="15" height="15" viewBox="0 0 15 15"
+                               fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.07422" y="13.5015" width="17.6233"
+                                  height="0.704931"
+                                  transform="rotate(-45 1.07422 13.5015)"
+                                  fill="#920303"
+                                  stroke="#920303" />
+                            <rect x="13.4609" y="13.96" width="17.6233"
+                                  height="0.704931"
+                                  transform="rotate(-135 13.4609 13.96)"
+                                  fill="#920303"
+                                  stroke="#920303" />
+                          </svg>
+                        </button>
+                        <a href="#" download class="file-upload__name"></a>
                         <p class="file-upload__size"></p>
                       </div>
-                      <div class="file-upload__add-wrapper changeable-input">
-                        <input type="file"
-                               class="file-upload__add"
-                               name="menu_photo[1]"
-                               id="menu-photo1">
-                        <label class="main-btn file-upload__add-label"
-                               for="menu-photo1">
-                          Загрузить фото
-                        </label>
-                      </div>
+                      <input type="file"
+                             class="file-upload__add"
+                             name="menu_photo[1]"
+                             id="menu-photo[1]" accept="image/jpeg,image/png">
+                      <label class="main-btn file-upload__add-label"
+                             for="menu-photo[1]">
+                        Загрузить фото
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -380,7 +408,7 @@
                 <div class="input-column-wrapper _textarea">
                   <label>Текст блока</label>
                   <textarea class="main-textarea"
-                            name="block_text1"></textarea>
+                            name="block_text2"></textarea>
                 </div>
               </li>
               <li>
@@ -438,7 +466,7 @@
                 <div class="input-column-wrapper _textarea">
                   <label>Текст блока</label>
                   <textarea class="main-textarea"
-                            name="block_text1"></textarea>
+                            name="block_text3"></textarea>
                 </div>
               </li>
               <li>
@@ -496,7 +524,7 @@
                 <div class="input-column-wrapper _textarea">
                   <label>Текст блока</label>
                   <textarea class="main-textarea"
-                            name="block_text1"></textarea>
+                            name="block_text4"></textarea>
                 </div>
               </li>
             </ul>
@@ -580,38 +608,58 @@
       </div>
       <div class="input-column-wrapper _download">
         <label>Документ меню</label>
-        <div class="file-upload">
-          <div class="file-upload__wrapper">
-            <p class="file-upload__name"></p>
+        <div class="file-upload changeable-input">
+          <div class="file-upload__info">
+            <button class="file-upload__delete-btn" type="button">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.07422" y="13.5015" width="17.6233"
+                      height="0.704931"
+                      transform="rotate(-45 1.07422 13.5015)" fill="#920303"
+                      stroke="#920303" />
+                <rect x="13.4609" y="13.96" width="17.6233" height="0.704931"
+                      transform="rotate(-135 13.4609 13.96)" fill="#920303"
+                      stroke="#920303" />
+              </svg>
+            </button>
+            <a href="#" download class="file-upload__name"></a>
             <p class="file-upload__size"></p>
           </div>
-          <div class="file-upload__add-wrapper changeable-input">
-            <input type="file"
-                   class="file-upload__add"
-                   name="menu_file[1]"
-                   id="menu-file">
-            <label class="main-btn file-upload__add-label" for="menu-file">
-              Загрузить pdf-файл
-            </label>
-          </div>
+          <input type="file"
+                 class="file-upload__add"
+                 name="menu_file[1]"
+                 id="menu-file[0]" accept="application/pdf">
+          <label class="main-btn file-upload__add-label" for="menu-file[0]">
+            Загрузить pdf-файл
+          </label>
         </div>
       </div>
       <div class="input-column-wrapper _download">
         <label>Фото меню</label>
-        <div class="file-upload">
-          <div class="file-upload__wrapper">
-            <p class="file-upload__name"></p>
+        <div class="file-upload changeable-input">
+          <div class="file-upload__info">
+            <button class="file-upload__delete-btn" type="button">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.07422" y="13.5015" width="17.6233"
+                      height="0.704931"
+                      transform="rotate(-45 1.07422 13.5015)" fill="#920303"
+                      stroke="#920303" />
+                <rect x="13.4609" y="13.96" width="17.6233" height="0.704931"
+                      transform="rotate(-135 13.4609 13.96)" fill="#920303"
+                      stroke="#920303" />
+              </svg>
+            </button>
+            <a href="#" download class="file-upload__name"></a>
             <p class="file-upload__size"></p>
           </div>
-          <div class="file-upload__add-wrapper changeable-input">
-            <input type="file"
-                   class="file-upload__add"
-                   name="menu_photo[1]"
-                   id="menu-photo">
-            <label class="main-btn file-upload__add-label" for="menu-photo">
-              Загрузить фото
-            </label>
-          </div>
+          <input type="file"
+                 class="file-upload__add"
+                 name="menu_photo[1]"
+                 id="menu-photo[0]" accept="image/jpeg,image/png">
+          <label class="main-btn file-upload__add-label" for="menu-photo[0]">
+            Загрузить фото
+          </label>
         </div>
       </div>
     </div>

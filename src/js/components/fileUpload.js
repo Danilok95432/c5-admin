@@ -1,36 +1,24 @@
 // загрузка файлов
 
-import { sendData, showInfoModal } from '../_functions'
+import { showInfoModal } from '../_functions'
 
 export const initFileUploading = () => {
+  const handleDeleteFile = (e) => {
+    if (e.target.classList.contains('file-upload__delete-btn')) {
+      const currentFileWrapper = e.target.closest('.file-upload')
+      const currentInput = currentFileWrapper.querySelector('.file-upload__add')
+      currentFileWrapper.classList.remove('_loaded')
+      currentInput.value = ''
+    }
+  }
+
   const fileUploads = document.querySelectorAll('.file-upload')
   if (fileUploads) {
-    const isDelete = (target) =>
-      target.classList.contains('file-upload__delete')
-    const handleDeleteFile = async (script, fileId, delElement) => {
-      const data = {
-        id_file: fileId,
-      }
-      const jsonData = JSON.stringify(data)
-      try {
-        const response = await sendData(jsonData, script)
-        const finishedResponse = await response.json()
-        const { status, errortext } = finishedResponse
-
-        if (status === 'ok') {
-          delElement.closest('.file-upload__el').remove()
-        } else {
-          showInfoModal(errortext)
-        }
-      } catch (err) {
-        showInfoModal('Во время выполнения запроса произошла ошибка')
-        console.error(err)
-      }
-    }
-
     fileUploads.forEach((fileUploadEl) => {
       const uploadInput = fileUploadEl.querySelector('.file-upload__add')
-      const uploadLabel = fileUploadEl.querySelector('.file-upload__add-label')
+      const uploadWrapper = fileUploadEl.querySelector(
+        '.file-upload__add-wrapper',
+      )
       const uploadName = fileUploadEl.querySelector('.file-upload__name')
       const uploadSize = fileUploadEl.querySelector('.file-upload__size')
 
@@ -43,18 +31,20 @@ export const initFileUploading = () => {
         reader.addEventListener('load', (e) => {
           if (uploadName) {
             uploadName.textContent = fileItem.name ?? ''
+            uploadName.href = reader.result
           }
           if (uploadSize) {
             uploadSize.textContent =
               `${Math.round(fileItem.size / 1000)} КБ` ?? ''
           }
-          uploadLabel.classList.add('hidden')
+          fileUploadEl.classList.add('_loaded')
         })
 
         reader.addEventListener('error', () => {
           showInfoModal(`Произошла ошибка при чтении файла: ${fileItem.name}`)
         })
       })
+      fileUploadEl.addEventListener('click', handleDeleteFile)
     })
   }
 }

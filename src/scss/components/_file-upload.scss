@@ -1,4 +1,29 @@
 .file-upload {
+
+  &__info {
+    position: relative;
+    display: none;
+    padding-right: 25px;
+  }
+
+  &__delete-btn {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+  }
+
+  &._loaded {
+    .file-upload__add-label {
+      display: none;
+    }
+    .file-upload__info {
+      display: block;
+    }
+  }
+
+
   .main-btn {
     display: flex;
     justify-content: center;
@@ -14,6 +39,7 @@
 
   &__name {
     font-weight: 600;
+    color: #000000;
   }
 
   &__delete {
@@ -31,6 +57,7 @@
     }
 
   }
+
 }
 
 

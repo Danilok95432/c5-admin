@@ -6,8 +6,9 @@
     width: 50px;
   }
 
-  .main-input-wrapper, .main-textarea-wrapper {
-    & > label {
+  .main-input-wrapper,
+  .main-textarea-wrapper {
+    &>label {
       font-weight: 300;
       min-width: 207px;
     }
@@ -20,6 +21,7 @@
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 1px solid #D0D5DF;
+
     @media (max-width: 1024px) {
       flex-direction: column;
     }
@@ -29,6 +31,7 @@
     max-width: 670px;
     flex-grow: 1;
     margin-right: 130px;
+
     @media (max-width: 1024px) {
       max-width: 100%;
       width: 100%;
@@ -37,9 +40,20 @@
     }
   }
 
+  &__footer-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D0D5DF;
+  }
+
+  .checkbox-list-container {
+    max-width: 350px;
+  }
+
   &__checkbox-list {
     margin-top: -5px;
+    margin-bottom: 40px;
     padding-right: 55px;
+
     @media (max-width: 1280px) {
       padding-right: 0;
     }
@@ -51,10 +65,12 @@
 
   .guests-wrapper {
     margin-bottom: 20px;
+
     span {
       font-weight: 400;
       margin-right: 10px;
     }
+
     .main-input {
       margin-right: 40px;
     }
@@ -63,9 +79,11 @@
       @media (max-width: 768px) {
         display: flex;
         flex-wrap: wrap;
+
         span {
           width: 100%;
         }
+
         .main-input {
           width: 100px;
           margin-bottom: 10px;
@@ -82,11 +100,14 @@
     padding-left: 223px;
     display: flex;
     justify-content: space-between;
+
     @media (max-width: 1024px) {
       padding-left: 0;
     }
+
     @media (max-width: 768px) {
       flex-direction: column;
+
       .main-btn._red {
         margin-bottom: 10px;
       }

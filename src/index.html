@@ -73,21 +73,6 @@
         <div class="container">
           <section class="main-section">
             <h1>Создание / редактирование номера (основные данные)</h1>
-            <ul class="main-section__menu">
-              <li class="_active">
-                <a href="index.html"> Данные номера </a>
-              </li>
-              <li>
-                <a href="rooms-apartment.html"> Комнаты в номере </a>
-              </li>
-              <li>
-                <a href="rooms-services.html"> Сервисы в номере </a>
-              </li>
-              <li>
-                <a href="rooms-photos.html"> Фотографии номера </a>
-              </li>
-            </ul>
-
             <form action="#">
               <div class="room-data-page__content">
                 <div class="room-data-page__content-left">
@@ -100,17 +85,9 @@
                     <input class="main-input" type="text" name="short_name" />
                   </div>
                   <div class="main-input-wrapper">
-                    <label>Объект размещения:</label>
-                    <select class="main-input" name="object">
-                      <option value="1">Гостиница "Славянская"</option>
-                      <option value="2">номер 2</option>
-                      <option value="3">номер 3</option>
-                    </select>
-                  </div>
-                  <div class="main-input-wrapper">
                     <label>Категория номера:</label>
                     <select class="main-input" name="category">
-                      <option value="1">Константинопольский</option>
+                      <option value="1">Люкс с бассейном</option>
                       <option value="2">категория 2</option>
                       <option value="3">категория 3</option>
                     </select>
@@ -147,10 +124,10 @@
                     ></textarea>
                   </div>
                   <div class="main-textarea-wrapper">
-                    <label>Описание номера:</label>
+                    <label>Особые условия для гостей:</label>
                     <textarea
                       class="main-textarea"
-                      name="public_desc"
+                      name="conditions"
                       placeholder="Условия заселения, размещения и всего остального (кроме цен), в свободной форме"
                     ></textarea>
                   </div>
@@ -164,29 +141,6 @@
                       />
                       <span class="main-input__unit">м<sup>2</sup></span>
                     </div>
-                  </div>
-                  <div class="main-input-wrapper">
-                    <label>Взрослых, не более:</label>
-                    <input
-                      class="main-input number-mask"
-                      type="text"
-                      name="adults_count"
-                    />
-                  </div>
-                  <div class="main-input-wrapper">
-                    <label>Детей, не более:</label>
-                    <input
-                      class="main-input number-mask"
-                      type="text"
-                      name="child_count"
-                    />
-                  </div>
-                  <div class="main-input-wrapper">
-                    <label>Ванная комната:</label>
-                    <select class="main-input bathroom-select" name="bathroom">
-                      <option value="1">Ванная в номере</option>
-                      <option value="2">Общая ванная</option>
-                    </select>
                   </div>
                 </div>
                 <ul class="room-data-page__checkbox-list">
@@ -224,12 +178,6 @@
                     />
                     <label for="bookingStand"
                       >Бронирование на стойке объекта</label
-                    >
-                  </li>
-                  <li class="main-checkbox">
-                    <input type="checkbox" name="show_main" id="showMain" />
-                    <label for="showMain"
-                      >Показывать номер на главной странице</label
                     >
                   </li>
                 </ul>

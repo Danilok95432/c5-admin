@@ -5,15 +5,11 @@ const initAllDates = () => {
 
   if (allDateInputs) {
     allDateInputs.forEach((el) => {
-      const { dateStart } = el.dataset
-      const formatDate = dateStart.split('.').reverse().join('.')
-
       const customDate = new AirDatepicker(el, {
-        startDate: formatDate,
         container: '.date-custom-container',
       })
 
-      el.addEventListener('blur', (e) => {
+      el.addEventListener('click', (e) => {
         const featuredDate = e.currentTarget.value
           .split('.')
           .reverse()

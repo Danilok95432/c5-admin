@@ -13,7 +13,7 @@ if (weekViewWrappers) {
       },
     })
 
-    viewInput.addEventListener('blur', (e) => {
+    viewInput.addEventListener('click', (e) => {
       const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
       if (featuredDate) {
         customDate.selectDate(featuredDate)

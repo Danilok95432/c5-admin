@@ -6,6 +6,10 @@
   border: 1px solid #D0D5DF;
   margin: 10px 0;
 
+  @media (max-width: 768px) {
+    overflow-x: auto;
+  }
+
   .main-input {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -24,6 +28,9 @@
     padding: 14px 10px;
     background-color: $white;
     transition: all .3s;
+    @media (max-width: 768px) {
+      min-width: 1000px;
+    }
 
     a:not(.delete-link) {
       color: #064AB1;

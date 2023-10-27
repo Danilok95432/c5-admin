@@ -31,11 +31,12 @@ const handleFetchListsSubmit = async ({ script, add, valueInput, wrapper }) => {
       wrapper.insertAdjacentHTML('beforeend', html)
       valueInput.value = ''
       calcFetchAmount(wrapper.children)
+    } else {
       showInfoModal(errortext)
     }
   } catch (err) {
-    showInfoModal('Во время выполнения запроса произошла ошибка')
     console.error(err)
+    showInfoModal('Во время выполнения запроса произошла ошибка')
   }
 }
 const handleRemoveFetchElement = async (e) => {
@@ -57,6 +58,7 @@ const handleRemoveFetchElement = async (e) => {
         `[data-fetch-list="${fetchListAnchor}"]`,
       )
       calcFetchAmount(wrapperList.children)
+    } else {
       showInfoModal(errortext)
     }
   } catch (err) {

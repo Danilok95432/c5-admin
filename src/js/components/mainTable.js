@@ -5,13 +5,16 @@ if (mainTables) {
     const paginationRowForm = table.querySelector(
       '.main-table__pagination-row form',
     )
-    const submitSelect = table.querySelector(
-      '.main-table__pagination-row select.main-input',
-    )
-    if (submitSelect) {
-      submitSelect.addEventListener('input', () => {
-        paginationRowForm.submit()
-      })
+
+    if (paginationRowForm) {
+      const submitSelect = table.querySelector(
+        '.main-table__pagination-row select.main-input',
+      )
+      if (submitSelect) {
+        submitSelect.addEventListener('input', () => {
+          paginationRowForm.submit()
+        })
+      }
     }
   })
 }

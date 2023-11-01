@@ -5,12 +5,13 @@ if (actionBtns) {
     const actionScript = btn.dataset.action
     const actionForm = btn.closest('form')
     btn.addEventListener('click', (e) => {
-      actionForm.action = actionScript
-
+      e.preventDefault()
       if (actionForm.checkValidity()) {
+        actionForm.action = actionScript
         actionForm.submit()
       } else {
-        console.log('форма не прошла валидацию')
+        const invalidElements = actionForm.querySelectorAll(':invalid')
+        invalidElements[0].reportValidity()
       }
     })
   })

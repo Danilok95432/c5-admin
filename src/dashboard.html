@@ -106,9 +106,7 @@
                 </div>
 
                 <div class="dashboard-statistic">
-                  <div
-                    class="dashboard-statistic__item dashboard-statistic__item_green"
-                  >
+                  <div class="dashboard-statistic__item _green">
                     <span class="dashboard-statistic__icon"
                       ><svg
                         width="20"
@@ -137,7 +135,7 @@
                   </div>
 
                   <div
-                    class="dashboard-statistic__item dashboard-statistic__item_blue"
+                    class="dashboard-statistic__item _blue"
                   >
                     <span class="dashboard-statistic__icon">
                       <svg
@@ -165,7 +163,7 @@
                   </div>
 
                   <div
-                    class="dashboard-statistic__item dashboard-statistic__item_yellow"
+                    class="dashboard-statistic__item _yellow"
                   >
                     <span class="dashboard-statistic__icon">
                       <svg
@@ -207,7 +205,7 @@
                   </div>
 
                   <div
-                    class="dashboard-statistic__item dashboard-statistic__item_orange"
+                    class="dashboard-statistic__item _orange"
                   >
                     <span class="dashboard-statistic__icon">
                       <svg
@@ -275,7 +273,7 @@
                     <div>
                       <p class="additional-statistic__status">Заблокировано</p>
                       <p
-                        class="additional-statistic__value additional-statistic__value_blue"
+                        class="additional-statistic__value _blue"
                       >
                         7 заблокированных номеров
                       </p>
@@ -431,8 +429,8 @@
                 </ul>
               </div>
 
-              <div class="notifications-block">
-                <div class="notifications-block__item red-notification">
+              <ul class="notifications-block" data-list="changeable">
+                <li class="notifications-block__item _red-notification">
                   <svg
                     width="20"
                     height="20"
@@ -454,7 +452,7 @@
                   Внимание! В гостинице «Малая Медведица» требуют ремонта 10
                   номеров.
 
-                  <button class="close-notification-button">
+                  <button class="close-notification-button" data-btn="delete">
                     <svg
                       width="14"
                       height="14"
@@ -469,9 +467,9 @@
                       />
                     </svg>
                   </button>
-                </div>
+                </li>
 
-                <div class="notifications-block__item orange-notification">
+                <li class="notifications-block__item _orange-notification">
                   <svg
                     width="20"
                     height="20"
@@ -491,7 +489,7 @@
 
                   Внимание! В санатории «Тигры вод» заканчивается горячая вода.
 
-                  <button class="close-notification-button">
+                  <button class="close-notification-button" data-btn="delete">
                     <svg
                       width="14"
                       height="14"
@@ -506,8 +504,8 @@
                       />
                     </svg>
                   </button>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
 
             <aside class="dashboard-aside">

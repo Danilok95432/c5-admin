@@ -94,19 +94,19 @@
                 flex: 1;
                 border-radius: 5px;
 
-                &_green {
+                &._green {
                     background-color: #E8FDE5;
                 }
 
-                &_blue {
+                &._blue {
                     background-color: #F1F7FF;
                 }
 
-                &_yellow {
+                &._yellow {
                     background-color: #FDF1D3;
                 }
 
-                &_orange {
+                &._orange {
                     background-color: #FDE9D3;
                 }
             }
@@ -168,7 +168,7 @@
 
             &__value {
 
-                &_blue {
+                &._blue {
                     color: #064AB1;
                 }
 
@@ -233,10 +233,9 @@
         gap: 10px;
 
         .notifications-block__item {
-            max-height: 40px;
             position: relative;
             border-radius: 5px;
-            padding: 10px;
+            padding: 7px 10px;
             display: flex;
             align-items: center;
             font-weight: 500;
@@ -254,12 +253,12 @@
             right: 8px;
         }
 
-        .red-notification {
+        ._red-notification {
             color: #FFF;
             background: #920303;
         }
 
-        .orange-notification {
+        ._orange-notification {
             border: 1px solid #EA7000;
             color: #EA7000;
         }

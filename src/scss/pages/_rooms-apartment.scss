@@ -20,20 +20,10 @@
     }
   }
 
-  &__submit-block {
+  .main-controllers {
     margin-top: 25px;
     padding-top: 25px;
     border-top: 1px solid #D0D5DF;
-    padding-left: 215px;
-
-    @media (max-width: 768px) {
-      padding-left: 0;
-    }
-  }
-
-  &__save-room-btn {
-    margin-left: 195px;
-    margin-top: 10px;
   }
 
   .apart-list {

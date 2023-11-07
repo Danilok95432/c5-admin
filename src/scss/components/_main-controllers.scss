@@ -6,6 +6,10 @@
   flex-wrap: wrap;
   gap: 10px;
 
+  a, button {
+    background: transparent;
+  }
+
 
   @media (max-width: 1024px) {
     flex-direction: column;

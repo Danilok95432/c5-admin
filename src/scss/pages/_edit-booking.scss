@@ -1,11 +1,4 @@
 
-
-#reset-password-modal {
-
-}
-
-
-
 .edit-booking-page {
   padding-bottom: 115px;
 
@@ -35,11 +28,20 @@
     margin-top: 12px;
   }
 
+  .input-columns__content {
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
   &__inputs-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
 
     .count-row-description {
       max-width: 530px;
@@ -55,6 +57,10 @@
 
     .input-column-wrapper {
       width: 24%;
+
+      label {
+        height: 25px;
+      }
 
 
       &.main-checkbox {
@@ -110,44 +116,6 @@
       @media (max-width: 768px) {
         width: 100%;
       }
-    }
-  }
-
-  &__btns {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-  &__btns-left,
-  &__btns-right {
-    display: flex;
-    flex-wrap: wrap;
-
-    .main-btn:first-child {
-      margin-right: 20px;
-
-      @media (max-width: 500px) {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      flex-direction: column;
-    }
-  }
-
-  &__btns-left {
-    @media (max-width: 1024px) {
-      margin-bottom: 20px;
     }
   }
 
@@ -253,9 +221,6 @@
 
       .input-column-wrapper {
         margin-bottom: 0;
-        @media (max-width: 768px) {
-          margin-bottom: 10px;
-        }
       }
     }
   }

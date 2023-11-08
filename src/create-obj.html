@@ -1,174 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Создание / редактирование объекта'
+  })
 
-@include('partials/head.html', {
-'title': 'Создание / редактирование объекта'
-})
+  <body class="page__body create-obj-page">
+    <div class="site-container">
+      <header>
+        @include('partials/auth-panel.html')
+        <div class="container main-menu">
+          <ul>
+            <li>
+              <a href="#"> Настройки </a>
+            </li>
+            <li>
+              <a href="rooms-structure.html"> Базовые модули </a>
+            </li>
+            <li>
+              <a href="#"> Контент </a>
+            </li>
+            <li class="_active">
+              <a href="objects-list.html"> Номерной фонд </a>
+            </li>
+            <li>
+              <a href="view-booking.html"> Бронирование </a>
+            </li>
+            <li>
+              <a href="manage-restaurant.html"> Ресторан </a>
+            </li>
+          </ul>
+          <a class="main-menu__dashboard" href="#">
+            <svg
+              width="15"
+              height="14"
+              viewBox="0 0 15 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.256282 0.256283C0.0921873 0.420377 0 0.642936 0 0.875V13.125C0 13.3571 0.0921873 13.5796 0.256282 13.7437C0.420376 13.9078 0.642936 14 0.875 14H5.25C5.48206 14 5.70462 13.9078 5.86872 13.7437C6.03281 13.5796 6.125 13.3571 6.125 13.125V0.875C6.125 0.642936 6.03281 0.420377 5.86872 0.256283C5.70462 0.0921885 5.48206 0 5.25 0H0.875C0.642936 0 0.420376 0.0921885 0.256282 0.256283Z"
+                fill="#064AB1"
+              />
+              <path
+                d="M8 10.875C8 10.6429 8.09219 10.4204 8.25628 10.2563C8.42038 10.0922 8.64294 10 8.875 10H13.25C13.4821 10 13.7046 10.0922 13.8687 10.2563C14.0328 10.4204 14.125 10.6429 14.125 10.875V13.125C14.125 13.3571 14.0328 13.5796 13.8687 13.7437C13.7046 13.9078 13.4821 14 13.25 14H8.875C8.64294 14 8.42038 13.9078 8.25628 13.7437C8.09219 13.5796 8 13.3571 8 13.125V10.875Z"
+                fill="#064AB1"
+              />
+              <path
+                d="M8.25628 0.256283C8.09219 0.420377 8 0.642936 8 0.875V7.125C8 7.35706 8.09219 7.57962 8.25628 7.74372C8.42038 7.90781 8.64294 8 8.875 8H13.25C13.4821 8 13.7046 7.90781 13.8687 7.74372C14.0328 7.57962 14.125 7.35706 14.125 7.125V0.875C14.125 0.642936 14.0328 0.420377 13.8687 0.256283C13.7046 0.0921885 13.4821 0 13.25 0H8.875C8.64294 0 8.42038 0.0921885 8.25628 0.256283Z"
+                fill="#064AB1"
+              />
+            </svg>
 
-<body class="page__body create-obj-page">
+            Дашборд
+          </a>
+        </div>
+        <div class="container room-fund-menu">
+          <ul>
+            <li class="_active">
+              <a href="objects-list.html"> Объекты </a>
+            </li>
+            <li>
+              <a href="rooms-categories.html"> Категории номеров </a>
+            </li>
+            <li>
+              <a href="rooms-list.html"> Реестр номеров </a>
+            </li>
+            <li>
+              <a href="room-chain.html"> Сетка номера/даты </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="main-section">
+            <h1>Создание / редактирование объекта</h1>
 
-<div class="site-container">
-  <header>
-    @include('partials/auth-panel.html')
-    <div class="container main-menu">
-      <ul>
-        <li>
-          <a href="#">
-            Настройки
-          </a>
-        </li>
-        <li>
-          <a href="rooms-structure.html">
-            Базовые модули
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Контент
-          </a>
-        </li>
-        <li class="_active">
-          <a href="objects-list.html">
-            Номерной фонд
-          </a>
-        </li>
-        <li>
-          <a href="view-booking.html">
-            Бронирование
-          </a>
-        </li>
-        <li>
-          <a href="manage-restaurant.html">
-            Ресторан
-          </a>
-        </li>
-      </ul>
-      <a class="main-menu__dashboard" href="#">
-        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0.256282 0.256283C0.0921873 0.420377 0 0.642936 0 0.875V13.125C0 13.3571 0.0921873 13.5796 0.256282 13.7437C0.420376 13.9078 0.642936 14 0.875 14H5.25C5.48206 14 5.70462 13.9078 5.86872 13.7437C6.03281 13.5796 6.125 13.3571 6.125 13.125V0.875C6.125 0.642936 6.03281 0.420377 5.86872 0.256283C5.70462 0.0921885 5.48206 0 5.25 0H0.875C0.642936 0 0.420376 0.0921885 0.256282 0.256283Z"
-            fill="#064AB1" />
-          <path
-            d="M8 10.875C8 10.6429 8.09219 10.4204 8.25628 10.2563C8.42038 10.0922 8.64294 10 8.875 10H13.25C13.4821 10 13.7046 10.0922 13.8687 10.2563C14.0328 10.4204 14.125 10.6429 14.125 10.875V13.125C14.125 13.3571 14.0328 13.5796 13.8687 13.7437C13.7046 13.9078 13.4821 14 13.25 14H8.875C8.64294 14 8.42038 13.9078 8.25628 13.7437C8.09219 13.5796 8 13.3571 8 13.125V10.875Z"
-            fill="#064AB1" />
-          <path
-            d="M8.25628 0.256283C8.09219 0.420377 8 0.642936 8 0.875V7.125C8 7.35706 8.09219 7.57962 8.25628 7.74372C8.42038 7.90781 8.64294 8 8.875 8H13.25C13.4821 8 13.7046 7.90781 13.8687 7.74372C14.0328 7.57962 14.125 7.35706 14.125 7.125V0.875C14.125 0.642936 14.0328 0.420377 13.8687 0.256283C13.7046 0.0921885 13.4821 0 13.25 0H8.875C8.64294 0 8.42038 0.0921885 8.25628 0.256283Z"
-            fill="#064AB1" />
-        </svg>
+            <form action="#">
+              <div class="create-obj-page__content">
+                <div class="create-obj-page__content-left">
+                  <div class="main-input-wrapper">
+                    <label>Полное название объекта:</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      name="obj_full_name"
+                    />
+                  </div>
+                  <div class="main-input-wrapper">
+                    <label>Краткое название объекта:</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      name="obj_short_name"
+                    />
+                  </div>
+                  <div class="main-input-wrapper">
+                    <label>Тип объекта:</label>
+                    <select class="main-input" name="object_type">
+                      <option value="1">Гостиница</option>
+                      <option value="2">тип 2</option>
+                      <option value="3">тип 3</option>
+                    </select>
+                  </div>
+                  <div class="main-input-wrapper">
+                    <label>Сезонность объекта:</label>
+                    <select class="main-input" name="object_seasonality">
+                      <option value="1">Все сезоны</option>
+                      <option value="2">Летний сезон</option>
+                      <option value="3">Осенний сезон</option>
+                    </select>
+                  </div>
+                  <div class="main-input-wrapper">
+                    <label>Юридическое лицо:</label>
+                    <select class="main-input" name="object_entity">
+                      <option value="1">ООО «Первое юридическое лицо»</option>
+                      <option value="2">какое-то юр. лицо</option>
+                    </select>
+                  </div>
 
-        Дашборд
-      </a>
+                  <div class="main-textarea-wrapper">
+                    <label>Краткое описание:</label>
+                    <textarea
+                      class="main-textarea"
+                      name="short_desc"
+                      placeholder="Тут вводится какое-то описание, которое нужно и показывается только сотрудникам, имеющим доступ в админку."
+                    ></textarea>
+                  </div>
+                </div>
+                <ul class="create-obj-page__checkbox-list">
+                  <li class="main-checkbox">
+                    <input type="checkbox" name="active_obj" id="activeObj" />
+                    <label for="activeObj">Активный объект</label>
+                  </li>
+                  <li class="main-checkbox">
+                    <input type="checkbox" name="hide_obj" id="hideObj" />
+                    <label for="hideObj">Скрыть объект</label>
+                  </li>
+                  <li class="main-checkbox">
+                    <input
+                      type="checkbox"
+                      name="priority_obj"
+                      id="priorityObj"
+                    />
+                    <label for="priorityObj">Приоритетный объект</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="main-controllers">
+                <div class="main-controllers__btns-left">
+                  <button class="main-btn _green" type="submit">
+                    Сохранить и закрыть
+                  </button>
+                  <button
+                    class="main-btn _blue"
+                    type="button"
+                    data-action="./data/test.txt"
+                  >
+                    Применить и продолжить
+                  </button>
+                </div>
+                <div class="main-controllers__btns-right">
+                  <a href="#" class="main-btn _red">Отменить изменения</a>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
     </div>
-    <div class="container room-fund-menu">
-      <ul>
-        <li class="_active">
-          <a href="objects-list.html">
-            Объекты
-          </a>
-        </li>
-        <li>
-          <a href="rooms-categories.html">
-            Категории номеров
-          </a>
-        </li>
-        <li>
-          <a href="rooms-list.html">
-            Реестр номеров
-          </a>
-        </li>
-        <li>
-          <a href="room-chain.html">
-            Сетка номера/даты
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <main class="main">
-    <div class="container">
-      <section class="main-section">
-        <h1>
-          Создание / редактирование объекта
-        </h1>
-
-        <form action="#">
-          <div class="create-obj-page__content">
-            <div class="create-obj-page__content-left">
-              <div class="main-input-wrapper">
-                <label>Полное название объекта:</label>
-                <input class="main-input" type="text" name="obj_full_name">
-              </div>
-              <div class="main-input-wrapper">
-                <label>Краткое название объекта:</label>
-                <input class="main-input" type="text"
-                       name="obj_short_name">
-              </div>
-              <div class="main-input-wrapper">
-                <label>Тип объекта:</label>
-                <select class="main-input" name="object_type">
-                  <option value="1">Гостиница</option>
-                  <option value="2">тип 2</option>
-                  <option value="3">тип 3</option>
-                </select>
-              </div>
-              <div class="main-input-wrapper">
-                <label>Сезонность объекта:</label>
-                <select class="main-input" name="object_seasonality">
-                  <option value="1">Все сезоны</option>
-                  <option value="2">Летний сезон</option>
-                  <option value="3">Осенний сезон</option>
-                </select>
-              </div>
-              <div class="main-input-wrapper">
-                <label>Юридическое лицо:</label>
-                <select class="main-input" name="object_entity">
-                  <option value="1">ООО «Первое юридическое лицо»</option>
-                  <option value="2">какое-то юр. лицо</option>
-                </select>
-              </div>
-
-              <div class="main-textarea-wrapper">
-                <label>Краткое описание:</label>
-                <textarea class="main-textarea" name="short_desc"
-                          placeholder="Тут вводится какое-то описание, которое нужно и показывается только сотрудникам, имеющим доступ в админку."></textarea>
-              </div>
-            </div>
-            <ul class="create-obj-page__checkbox-list">
-              <li class="main-checkbox">
-                <input type="checkbox" name="active_obj"
-                       id="activeObj">
-                <label for="activeObj">Активный объект</label>
-              </li>
-              <li class="main-checkbox">
-                <input type="checkbox" name="hide_obj" id="hideObj">
-                <label for="hideObj">Скрыть объект</label>
-              </li>
-              <li class="main-checkbox">
-                <input type="checkbox" name="priority_obj" id="priorityObj">
-                <label for="priorityObj">Приоритетный объект</label>
-              </li>
-            </ul>
-          </div>
-
-          <div class="create-obj-page__btns">
-            <button class="main-btn _red" type="button">Отменить изменения
-            </button>
-            <div class="create-obj-page__btns-right">
-              <button class="main-btn _blue" type="button" data-action="./data/test.txt">Применить</button>
-              <button class="main-btn _green" type="submit">Сохранить и
-                закрыть
-              </button>
-            </div>
-          </div>
-        </form>
-
-      </section>
-    </div>
-
-  </main>
-</div>
-
-</body>
-
+  </body>
 </html>

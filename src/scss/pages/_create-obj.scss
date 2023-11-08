@@ -1,7 +1,6 @@
 .create-obj-page {
   padding-bottom: 150px;
 
-
   .main-input-wrapper, .main-textarea-wrapper {
     & > label {
       font-weight: 300;
@@ -41,33 +40,6 @@
 
     li {
       margin-bottom: 8px;
-    }
-  }
-
-
-  &__btns {
-    padding-left: 223px;
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: 1024px) {
-      padding-left: 0;
-    }
-    @media (max-width: 768px) {
-      flex-direction: column;
-      .main-btn._red {
-        margin-bottom: 10px;
-      }
-    }
-
-
-  }
-
-  &__btns-right {
-    display: flex;
-
-
-    button:first-child {
-      margin-right: 20px;
     }
   }
 }

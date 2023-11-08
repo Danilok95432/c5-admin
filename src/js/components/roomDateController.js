@@ -105,7 +105,7 @@ const getCellsContent = async (dateInfo) => {
   const dataScript = bookingTableWrapper.dataset.script
 
   const objData = {
-    date: dateInfo,
+    date: String(dateInfo),
   }
   const jsonData = JSON.stringify(objData)
 

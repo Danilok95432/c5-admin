@@ -27,15 +27,20 @@
   }
 
   .main-table {
-    max-width: 810px;
+    max-width: 900px;
     overflow: auto;
     margin-bottom: 15px;
 
     &__row {
       padding: 14px 6px;
+
       @media (max-width: 768px) {
         min-width: 800px;
       }
+    }
+
+    .main-checkbox input + label::before {
+      margin-right: 0;
     }
 
     &__title-row {
@@ -51,16 +56,21 @@
       }
 
       &:nth-child(2) {
-        max-width: 43%;
+        max-width: 38%;
         text-align: left;
       }
 
       &:nth-child(3) {
-        max-width: 45%;
+        max-width: 38%;
       }
 
       &:nth-child(4) {
-        max-width: 7%;
+        max-width: 9%;
+      }
+      &:nth-child(5) {
+        display: flex;
+        justify-content: center;
+        max-width: 10%;
       }
     }
   }

@@ -21,6 +21,8 @@ if (genDropzones) {
 
     const isBigPreview = dropzoneEl.dataset.showPreview
 
+    const hiddenOnLoadElements = dropzoneEl.querySelectorAll('._hidden-on-load')
+
     // Обновление счетчика файлов
     const updateAmountFiles = () => {
       if (amountFiles) {
@@ -95,6 +97,9 @@ if (genDropzones) {
               dropzoneEl.querySelectorAll('.dz-preview').length < filesCount
             ) {
               addBtn?.classList.remove('btn_disabled')
+              hiddenOnLoadElements?.forEach((el) =>
+                el.classList.remove('hidden'),
+              )
             }
             updateAmountFiles()
           }
@@ -134,6 +139,7 @@ if (genDropzones) {
 
         if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
           addBtn?.classList.add('btn_disabled')
+          hiddenOnLoadElements?.forEach((el) => el.classList.add('hidden'))
         }
 
         if (cutTitles) {
@@ -152,6 +158,7 @@ if (genDropzones) {
     if (existingFiles.length > 0) {
       if (existingFiles.length >= filesCount) {
         addBtn?.classList.add('btn_disabled')
+        hiddenOnLoadElements?.forEach((el) => el.classList.add('hidden'))
       }
 
       updateAmountFiles()
@@ -184,6 +191,9 @@ if (genDropzones) {
               dropzoneEl.querySelectorAll('.dz-preview').length < filesCount
             ) {
               addBtn?.classList.remove('btn_disabled')
+              hiddenOnLoadElements?.forEach((el) =>
+                el.classList.remove('hidden'),
+              )
             }
             updateAmountFiles()
           } else {

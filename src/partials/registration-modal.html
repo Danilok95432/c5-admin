@@ -1,4 +1,4 @@
-<div class="modal" id="registration-modal"> 
+<div class="modal" id="registration-modal">
   <button
     class="modal-close-btn"
     data-close-modal="registration-modal"
@@ -17,7 +17,7 @@
       />
     </svg>
   </button>
-  <form class="styled-form" action="#"> 
+  <form class="styled-form" action="#">
     <h4>Регистрация отельера</h4>
 
     <div class="input-column-wrapper">
@@ -43,23 +43,12 @@
     </div>
 
     <div class="input-column-wrapper">
-      <label>Логин отельера (e-mail)*</label>
-      <input
-        class="main-input"
-        type="email"
-        placeholder="example@example.com"
-        name="hotelier_login"
-        required
-      />
-    </div>
-
-    <div class="input-column-wrapper">
-      <label>Телефон*</label>
+      <label>Логин (номер телефона)*</label>
       <input
         class="main-input phone-mask"
         type="tel"
         placeholder="+7 (999) 999-99-99"
-        name="hotelier_phone"
+        name="hotelier_login"
         required
       />
     </div>
@@ -83,7 +72,9 @@
       >
     </div>
 
-    <button class="main-btn _blue registration-btn" type="submit">Зарегистрироваться</button>
+    <button class="main-btn _blue registration-btn" type="submit">
+      Зарегистрироваться
+    </button>
 
     <button
       class="main-btn _white"

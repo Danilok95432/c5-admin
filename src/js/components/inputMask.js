@@ -42,6 +42,8 @@ export const initAllMasks = () => {
         groupSeparator: ' ',
         showMaskOnHover: false,
         showMaskOnFocus: false,
+        shortcuts: null,
+        allowMinus: false,
       }).mask(itemMask)
     })
   }
@@ -81,6 +83,8 @@ export const initAllMasks = () => {
         groupSeparator: ' ',
         showMaskOnHover: false,
         showMaskOnFocus: false,
+        shortcuts: null,
+        allowMinus: false,
       }).mask(el)
     })
   }

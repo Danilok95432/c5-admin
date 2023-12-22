@@ -5,8 +5,11 @@ if (confirmBtns) {
     btn.addEventListener('click', (e) => {
       e.preventDefault()
       const hrefLink = e.target?.href
+      const customConfirmText = e.currentTarget?.dataset.confirm
 
-      let isDelete = confirm('Вы действительно хотите удалить запись?')
+      let isDelete = confirm(
+        customConfirmText ?? 'Вы действительно хотите удалить запись?',
+      )
       if (isDelete && hrefLink) {
         location.href = hrefLink
       }

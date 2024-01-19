@@ -6,12 +6,15 @@ import { initChangeSelects } from './changeRoomType'
 import { initGenerateSelect } from './generateSelect'
 import { initContextSelects } from './contextSelect'
 import { initFileUploading } from './fileUpload'
+import { initAllDates } from './customDate'
+import { initAllMasks } from './inputMask'
 
 const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 
 if (changeableLists) {
   // Удаление элементов в изменяемых списках
   changeableLists.forEach((list) => {
+    console.log(list)
     list.addEventListener('click', (e) => {
       if (e.target.dataset.btn === 'delete') {
         e.target.closest('li').remove()
@@ -24,7 +27,6 @@ if (changeableLists) {
     })
   })
 }
-
 // Добавление элементов в изменяемых списках
 
 const addToListBtns = document.querySelectorAll('button[data-btn="add"]')
@@ -46,6 +48,8 @@ if (addToListBtns) {
       initChangeSelects([templateElement])
       initGenerateSelect()
       initFileUploading()
+      initAllDates()
+      initAllMasks()
     })
   })
 }

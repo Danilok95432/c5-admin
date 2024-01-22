@@ -14,7 +14,6 @@ const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 if (changeableLists) {
   // Удаление элементов в изменяемых списках
   changeableLists.forEach((list) => {
-    console.log(list)
     list.addEventListener('click', (e) => {
       if (e.target.dataset.btn === 'delete') {
         e.target.closest('li').remove()

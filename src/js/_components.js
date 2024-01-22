@@ -20,4 +20,4 @@ import './components/fileUpload'
 import './components/table-elements'
 import './components/toggleMenu'
 import './components/actionBtns'
-
+import './components/editBooking'

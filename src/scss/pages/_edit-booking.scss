@@ -249,20 +249,23 @@
 
     .booking-cost {
       margin-bottom: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #D0D5DF;
       display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      max-width: 85.5%;
-
 
       .input-column-wrapper {
         width: 280px;
+      }
+
+      .rooms-params__search-btn {
+        background-color: transparent;
       }
     }
 
     &__list {
       max-width: 580px;
       margin-bottom: 25px;
+
       li {
         display: flex;
         flex-wrap: wrap;
@@ -305,6 +308,34 @@
       font-size: 15px;
       border-color: #064AB1;
       background: transparent;
+    }
+
+    &__btn-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+
+      .rooms-params__save-warning {
+        display: none;
+        color: #920303;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.2;
+        max-width: 350px;
+      }
+
+      &._blocked {
+        .rooms-params__save-warning {
+          display: block;
+        }
+
+        .rooms-params__btn {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+      }
     }
 
   }

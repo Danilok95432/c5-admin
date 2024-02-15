@@ -27,6 +27,7 @@ export const newRoom = `<li class="rooms-list__item">
           fill="#920303" />
       </svg>
     </button>
+    <input class="room-order-input" type="hidden" name="order_room_id[2]" value="" />
     <h4><span class="changeable-amount">1</span> номер бронирования
     </h4>
     <ul class="guests-list" data-list="changeable">

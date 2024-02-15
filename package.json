@@ -1,6 +1,6 @@
 {
-  "name": "gulp-builder",
-  "version": "2.0.4",
+  "name": "t4-admin",
+  "version": "0.3.7",
   "description": "gulp-builder for weblayout",
   "main": "gulpfile.js",
   "scripts": {

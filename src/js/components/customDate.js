@@ -4,9 +4,14 @@ const initAllDates = () => {
   const allDateInputs = document.querySelectorAll('input[data-date-start]')
 
   if (allDateInputs) {
+
+
+
     allDateInputs.forEach((el) => {
+      const isNow = el.dataset.dateStart === 'now'
       const customDate = new AirDatepicker(el, {
         container: '.date-custom-container',
+        selectedDates: [isNow ? new Date() : '']
       })
 
       el.addEventListener('click', (e) => {

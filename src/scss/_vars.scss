@@ -2,6 +2,10 @@ $white: #ffffff;
 $black: #000000;
 
 
+@mixin montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
 @mixin montserrat-medium {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;

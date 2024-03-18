@@ -27,6 +27,9 @@ if (editBookingPage) {
     '.rooms-params__btn-wrapper',
   )
 
+  let initialSum = 0
+  let globalRoomsData = []
+
   // Логика добавления номеров и гостей с нумерацией имен инпутов
 
   let observer = new MutationObserver(() => {
@@ -83,9 +86,62 @@ if (editBookingPage) {
     }
   })
 
+  // Логика расчета скидок и внесения сумм
+
+  const discountPercentInput = editBookingPage.querySelector(
+    '.main-input__discount-percent',
+  )
+
+  const discountRubInput = editBookingPage.querySelector(
+    '.main-input__discount-rub',
+  )
+
+  const discountSumInput = editBookingPage.querySelector('.result-sum input')
+
+  const totalCostToPay = editBookingPage.querySelector(
+    '.total-cost-item__to-pay h3 span',
+  )
+
+  discountPercentInput.addEventListener('input', (e) => {
+    discountSumInput.value = initialSum - initialSum * (+e.target.value / 100)
+    totalCostToPay.textContent = String(
+      initialSum - initialSum * (+e.target.value / 100),
+    )
+
+    if (!e.target.value || e.target.value === '0') {
+      discountRubInput.classList.remove('_disabled')
+    } else {
+      discountRubInput.value = '0'
+      discountRubInput.classList.add('_disabled')
+    }
+  })
+  discountRubInput.addEventListener('input', (e) => {
+    discountSumInput.value = initialSum - Number(e.target.value)
+    totalCostToPay.textContent = String(initialSum - Number(e.target.value))
+    if (!e.target.value || e.target.value === '0') {
+      discountPercentInput.classList.remove('_disabled')
+    } else {
+      discountPercentInput.value = '0'
+      discountPercentInput.classList.add('_disabled')
+    }
+  })
+
+  const setDiscountSum = (price) => {
+    if (!price) return
+
+    discountPercentInput.classList.remove('_disabled')
+    discountRubInput.classList.remove('_disabled')
+
+    const roomsCount =
+      editBookingPage.querySelector('.rooms-list').children.length
+    const totalPrice = price * roomsCount
+    initialSum = totalPrice
+    discountSumInput.value = totalPrice
+    totalCostToPay.textContent = String(totalPrice)
+  }
+
   // Логика поиска подходящих номеров
 
-  let globalRoomsData = []
   const initBlockedInputs = () => {
     const blockedInputs = editBookingPage.querySelectorAll(
       '._block-search-input',
@@ -113,6 +169,37 @@ if (editBookingPage) {
     )
     roomsTariffsSelect.innerHTML = optionsHtml.join('')
   }
+  const initRooms = (roomsData) => {
+    if (!roomsData) return
+    const optionsHtml = roomsData
+      .map(
+        ({ roomName, roomValue }) =>
+          `<option value="${roomValue}">${roomName}</option>`,
+      )
+      .join()
+
+    const roomsCount =
+      editBookingPage.querySelector('.rooms-list').children.length
+    const roomsHtml = Array(roomsCount)
+      .fill('')
+      .map(
+        (rooms, idx) =>
+          `
+               <li>
+                <div class="input-column-wrapper floor">
+                  <label>${idx + 1} номер бронирования</label>
+                  <select class="main-input"
+                          name="room_number[${idx + 1}]">
+                      ${optionsHtml}
+                  </select>
+                </div>
+                <p>${idx + 1} свободный номер, подходящий под
+                  заданные параметры. Выберите номер.</p>
+              </li>
+        `,
+      )
+    freeRoomsList.innerHTML = roomsHtml.join('')
+  }
 
   roomsCategoriesSelect.addEventListener('input', (e) => {
     const currentSelectValue = e.target.value
@@ -120,6 +207,21 @@ if (editBookingPage) {
       (category) => currentSelectValue === category.categoryValue,
     )
     initTariffsSelect(currentCategory.tariffs)
+    initRooms(currentCategory.rooms)
+    setDiscountSum(currentCategory.tariffs[0].tariffPrice ?? 0)
+  })
+  roomsTariffsSelect.addEventListener('input', (e) => {
+    const currentSelectValue = e.target.value
+    let currentTariff = {}
+    globalRoomsData.forEach((category) => {
+      category.tariffs.forEach((tariff) => {
+        if (tariff.tariffValue === currentSelectValue) {
+          currentTariff = tariff
+        }
+      })
+    })
+
+    setDiscountSum(currentTariff.tariffPrice ?? 0)
   })
 
   const searchScript = searchRoomsBtn.dataset.script
@@ -147,6 +249,8 @@ if (editBookingPage) {
         globalRoomsData = [...categories]
         initCategoriesSelect(categories)
         initTariffsSelect(categories[0].tariffs)
+        initRooms(categories[0].rooms)
+        setDiscountSum(categories[0].tariffs[0].tariffPrice)
       } else {
         showInfoModal(errortext)
       }

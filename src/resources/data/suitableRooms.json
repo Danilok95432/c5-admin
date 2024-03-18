@@ -1,0 +1,67 @@
+{
+  "status": "ok",
+  "errortext": "Произошла ошибка!",
+  "categories": [
+    {
+      "categoryName": "Двухместный номер",
+      "categoryValue": "cat1",
+      "tariffs": [
+        {
+          "tariffName": "Двухместный номер с питанием",
+          "tariffValue": "tar1",
+          "tariffPrice": "30000"
+        },
+        {
+          "tariffName": "Двухместные номер без питания",
+          "tariffValue": "tar2",
+          "tariffPrice": "25000"
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "номер \"101 двухместный\"",
+          "roomValue": "r1"
+        },
+        {
+          "roomName": "номер \"207 двухместный\"",
+          "roomValue": "r2"
+        },
+        {
+          "roomName": "номер \"315 двухместный\"",
+          "roomValue": "r3"
+        }
+      ]
+    },
+    {
+      "categoryName": "Трехместный номер",
+      "categoryValue": "cat2",
+      "tariffs": [
+        {
+          "tariffName": "Трехместный номер с питанием",
+          "tariffValue": "tar3",
+          "tariffPrice": "40000"
+        },
+        {
+          "tariffName": "Трехместный номер без питания",
+          "tariffValue": "tar4",
+          "tariffPrice": "35000"
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "номер \"115 трехместный\"",
+          "roomValue": "r1"
+        },
+        {
+          "roomName": "номер \"218 трехместный\"",
+          "roomValue": "r2"
+        },
+        {
+          "roomName": "номер \"331 трехместный\"",
+          "roomValue": "r3"
+        }
+      ]
+    }
+  ]
+}
+

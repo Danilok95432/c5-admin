@@ -13,14 +13,14 @@ if (editBookingPage) {
   )
 
   const searchRoomsBtn = editBookingPage.querySelector(
-    '.rooms-params__search-btn',
+    '.rooms-search .main-btn',
   )
   const freeRoomsList = editBookingPage.querySelector('.rooms-params__list')
-  const roomsCategoriesSelectWrapper = editBookingPage.querySelector(
-    '.input-column-wrapper__categories-select',
+  const roomsCategoriesSelect = editBookingPage.querySelector(
+    '.input-column-wrapper__categories-select select',
   )
-  const roomsTariffsSelectWrapper = editBookingPage.querySelector(
-    '.input-column-wrapper__tariff-select',
+  const roomsTariffsSelect = editBookingPage.querySelector(
+    '.input-column-wrapper__tariff-select select',
   )
 
   const roomsSaveBtn = editBookingPage.querySelector(
@@ -84,6 +84,8 @@ if (editBookingPage) {
   })
 
   // Логика поиска подходящих номеров
+
+  let globalRoomsData = []
   const initBlockedInputs = () => {
     const blockedInputs = editBookingPage.querySelectorAll(
       '._block-search-input',
@@ -94,6 +96,31 @@ if (editBookingPage) {
       })
     })
   }
+  const initCategoriesSelect = (categoriesData) => {
+    if (!categoriesData) return
+    const optionsHtml = categoriesData.map(
+      ({ categoryName, categoryValue }) =>
+        `<option value="${categoryValue}">${categoryName}</option>`,
+    )
+    roomsCategoriesSelect.innerHTML = optionsHtml.join('')
+  }
+  const initTariffsSelect = (tariffsData) => {
+    if (!tariffsData) return
+
+    const optionsHtml = tariffsData.map(
+      ({ tariffName, tariffValue }) =>
+        `<option value="${tariffValue}">${tariffName}</option>`,
+    )
+    roomsTariffsSelect.innerHTML = optionsHtml.join('')
+  }
+
+  roomsCategoriesSelect.addEventListener('input', (e) => {
+    const currentSelectValue = e.target.value
+    const currentCategory = globalRoomsData.find(
+      (category) => currentSelectValue === category.categoryValue,
+    )
+    initTariffsSelect(currentCategory.tariffs)
+  })
 
   const searchScript = searchRoomsBtn.dataset.script
 
@@ -113,15 +140,13 @@ if (editBookingPage) {
       const response = await sendData(jsonData, searchScript)
       const finishedResponse = await response.json()
 
-      const { status, errortext, htmlRooms, htmlCategories, htmlTariffs } =
-        finishedResponse
+      const { status, errortext, categories } = finishedResponse
       if (status === 'ok') {
         roomsSaveBtn.classList.remove('_blocked')
-        freeRoomsList.innerHTML = htmlRooms
-        roomsCategoriesSelectWrapper.innerHTML = htmlCategories
-        roomsTariffsSelectWrapper.innerHTML = htmlTariffs
         initBlockedInputs()
-        initRoomsCategories()
+        globalRoomsData = [...categories]
+        initCategoriesSelect(categories)
+        initTariffsSelect(categories[0].tariffs)
       } else {
         showInfoModal(errortext)
       }
@@ -131,38 +156,5 @@ if (editBookingPage) {
     }
   })
 
-  const initRoomsCategories = () => {
-    const roomsCategoriesScript = roomsCategoriesSelectWrapper.dataset.script
-
-    const roomsCategoriesSelect =
-      roomsCategoriesSelectWrapper.querySelector('.main-input')
-
-    roomsCategoriesSelect.addEventListener('input', async (e) => {
-      const data = {
-        room_category: e.currentTarget.value,
-      }
-
-      const jsonData = JSON.stringify(data)
-
-      try {
-        const response = await sendData(jsonData, roomsCategoriesScript)
-        const finishedResponse = await response.json()
-
-        const { status, errortext, htmlRooms, htmlTariffs } = finishedResponse
-        if (status === 'ok') {
-          freeRoomsList.innerHTML = htmlRooms
-          roomsTariffsSelectWrapper.innerHTML = htmlTariffs
-          initBlockedInputs()
-        } else {
-          showInfoModal(errortext)
-        }
-      } catch (err) {
-        console.error(err)
-        showInfoModal('Во время выполнения запроса произошла ошибка')
-      }
-    })
-  }
-
-  initRoomsCategories()
   initBlockedInputs()
 }

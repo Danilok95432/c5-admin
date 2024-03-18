@@ -355,46 +355,44 @@
               Добавить еще один номер
             </button>
           </div>
+          <div class="rooms-search">
+            <button class="main-btn" type="button" data-script="./data/suitableRooms.json">
+              Найти
+              подходящие номера
+            </button>
+          </div>
+
           <div class="rooms-params">
             <div class="edit-booking-page__inputs-row booking-cost">
-              <div class="input-column-wrapper input-column-wrapper__categories-select" data-script="./data/editBooking.txt">
+              <div class="input-column-wrapper input-column-wrapper__categories-select">
                 <label>Категория номера</label>
-                <select class="main-input _block-search-input"
+                <select class="main-input"
                         name="room_category[1]">
-                  <option value="2">Обычный номер</option>
-                  <option value="3" selected>Люкс с бассейном</option>
+
                 </select>
               </div>
 
               <div class="input-column-wrapper input-column-wrapper__tariff-select">
                 <label>Тариф</label>
-                <select class="main-input _block-search-input" name="tariff">
-                  <option value="1">Люкс</option>
-                  <option value="2">Обычный</option>
+                <select class="main-input" name="tariff">
+
                 </select>
-              </div>
-              <div class="input-column-wrapper">
-                <label></label>
-                <button class="main-btn rooms-params__search-btn" type="button" data-script="./data/editBooking.txt">
-                  Найти
-                  подходящие номера
-                </button>
               </div>
             </div>
             <ul class="rooms-params__list">
-              <li>
-                <div class="input-column-wrapper floor">
-                  <label>1 номер бронирования</label>
-                  <select class="main-input"
-                          name="room_number[1]">
-                    <option value="3">15 (2 этаж)</option>
-                    <option value="4">4 (1 этаж)</option>
-                    <option value="5">13 (1 этаж)</option>
-                  </select>
-                </div>
-                <p>1 свободный номер, подходящий под
-                  заданные параметры. Выберите номер.</p>
-              </li>
+<!--              <li>-->
+<!--                <div class="input-column-wrapper floor">-->
+<!--                  <label>1 номер бронирования</label>-->
+<!--                  <select class="main-input"-->
+<!--                          name="room_number[1]">-->
+<!--                    <option value="3">15 (2 этаж)</option>-->
+<!--                    <option value="4">4 (1 этаж)</option>-->
+<!--                    <option value="5">13 (1 этаж)</option>-->
+<!--                  </select>-->
+<!--                </div>-->
+<!--                <p>1 свободный номер, подходящий под-->
+<!--                  заданные параметры. Выберите номер.</p>-->
+<!--              </li>-->
             </ul>
 
             <div class="rooms-params__btn-wrapper _blocked">

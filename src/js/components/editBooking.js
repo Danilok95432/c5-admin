@@ -261,4 +261,39 @@ if (editBookingPage) {
   })
 
   initBlockedInputs()
+
+  // логика быстрого сохранения выбранных номеров
+
+  const roomSaveButtonInner = roomsSaveBtn.querySelector('button')
+
+  const roomSaveScript = roomSaveButtonInner.dataset.script
+
+  roomSaveButtonInner.addEventListener('click', async (e) => {
+    e.preventDefault()
+    if (!editBookingForm.checkValidity()) {
+      const invalidElements = editBookingForm.querySelectorAll(':invalid')
+      invalidElements[0].reportValidity()
+      return
+    }
+
+    const formData = new FormData(editBookingForm)
+    const data = Object.fromEntries(formData.entries())
+
+    const jsonData = JSON.stringify(data)
+    try {
+      const response = await sendData(jsonData, roomSaveScript)
+      const finishedResponse = await response.json()
+      const { status, errortext } = finishedResponse
+      if (status === 'ok') {
+        showInfoModal('Данные сохранены')
+      } else {
+        roomsSaveBtn.classList.add('_blocked')
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      roomsSaveBtn.classList.add('_blocked')
+      console.error(err)
+      showInfoModal('Во время выполнения запроса произошла ошибка')
+    }
+  })
 }

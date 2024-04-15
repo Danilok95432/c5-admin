@@ -19,6 +19,10 @@ $black: #000000;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+@mixin opensans-medium {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+}
 @mixin opensans-semibold {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;

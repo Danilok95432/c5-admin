@@ -13,7 +13,8 @@
     user-select: none;
     cursor: pointer;
     font-size: 15px;
-    color: $black;
+    line-height: 1.1;
+    color: #1D1B1B;
   }
 
   input + label::before {
@@ -23,16 +24,17 @@
     height: 15px;
     flex-shrink: 0;
     flex-grow: 0;
-    background-color: $white;
-    border: 1px solid #868585;
-    border-radius: 0;
-    margin-right: 6px;
+    background-color: transparent;
+    border: 1px solid #064AB1;
+    border-radius: 3px;
+    margin-right: 5px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 11px 8px;
   }
 
   input:checked + label::before {
+    background-color: #064AB1;
     background-image: url("../img/check-mark.svg");
   }
 }

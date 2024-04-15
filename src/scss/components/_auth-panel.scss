@@ -1,69 +1,89 @@
 .auth-panel {
-  background: #F6F6F6;
-  padding: 25px 0;
-  border-bottom: 1px solid #D0D5DF;
-  margin-bottom: 15px;
+  background: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #C3D5F5;
 
   .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 45px;
     @media (max-width: 1024px) {
       flex-direction: column;
     }
   }
 
-  &__welcome {
-    @include opensans-regular;
-    font-size: 15px;
-
-    span {
-      font-weight: 700;
-    }
-  }
-
-  &__right {
-    max-width: 695px;
+  &__menu {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    flex-grow: 1;
-    gap: 10px;
-
-    @media (max-width: 1024px) {
-      max-width: 100%;
-      width: 100%;
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 9.5px 21px;
+        width: 100%;
+        height: 100%;
+        @include opensans-medium;
+        color: #064AB1;
+        &._active {
+          border-radius: 5px;
+          border: 2px solid #BBD6FF;
+        }
+      }
     }
-
-    label {
-      min-width: 152px;
-      font-weight: 300;
-    }
-
-    select {
-      width: 40%;
-      min-width: 180px;
-      outline: none;
-    }
-
-    .main-btn {
-      min-width: 150px;
-      padding: 10px 0;
-      background-color: transparent;
-    }
-
   }
 
-  &__escape {
+  &__notice {
+    position: relative;
+    .auth-panel__notice-counter {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1;
+      width: 18px;
+      height: 18px;
+      background-color: #FF6716;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      @include opensans-bold;
+      font-size: 13px;
+      right: -8px;
+      top: -1px;
+    }
+  }
+
+  &__personal {
     margin-left: auto;
     display: flex;
     align-items: center;
-    color: #920303;
+    gap: 35px;
+  }
+  &__controllers {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(6, 74, 177, 0.15);
+  }
+  &__controllers-info {
+    padding-right: 10px;
+    border-right: 2px solid #deebff;
 
-    svg {
-      margin-left: 8px;
+    a {
+      font-size: 13px;
+      @include opensans-bold;
+      color: #064AB1;
+      display: block;
+      line-height: 1;
     }
   }
+
+
 }

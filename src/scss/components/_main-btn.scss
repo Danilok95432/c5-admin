@@ -1,20 +1,20 @@
 .main-btn {
-  color: $black;
+  color: #ffffff;
   text-align: center;
-  @include opensans-regular;
+  @include opensans-semibold;
   font-size: 15px;
-  padding: 10px 20px;
-  border-radius: 3px;
-  border: 1px solid $black;
-  background: $white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background: #064AB1;
 
   svg {
     margin-right: 2px;
     vertical-align: middle;
   }
 
-  &._blue {
-    border-color: #064AB1;
+  &._blue-outlined {
+    background: transparent;
+    border: 1px solid #064AB1;
     color: #064AB1;
   }
 
@@ -27,10 +27,12 @@
     border-color: #00754A;
     color: #00754A;
   }
+
   &._orange {
     border-color: #D53E07;
     color: #D53E07;
   }
+
   &._white {
     border: none;
     color: #064AB1;

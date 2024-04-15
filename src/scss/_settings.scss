@@ -16,13 +16,19 @@ body {
   @include opensans-regular;
   font-size: 15px;
   line-height: 25px;
-  background-color: #ffffff;
+  background-color: #E8F1F8;
   color: $black;
   position: relative;
 }
 
 main {
   min-height: 100vh;
+  h1 {
+    font-size: 25px;
+    @include opensans-bold;
+    color: #064AB1;
+    padding: 40px 0 30px;
+  }
 }
 
 ul,

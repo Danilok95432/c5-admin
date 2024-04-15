@@ -45,9 +45,11 @@
   }
 
   label:not(.main-btn)  {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    color: #A5AFBB;
+    @include opensans-semibold;
     display: block;
-    font-weight: 300;
     min-height: 25px;
     @media (max-width: 768px) {
       min-height: auto;
@@ -64,13 +66,15 @@
 
 .main-input {
   padding: 10px 10px;
-  color: $black;
-  @include opensans-regular;
+  color: #1D1B1B;
+  @include opensans-medium;
   font-size: 15px;
   width: 100%;
   border-radius: 3px;
-  border: 1px solid #E3DDDD;
-  border-bottom: 1px solid #868585;
+  border: 1px solid #6DB4F5;
+  &::placeholder {
+    color: #A5AFBB;
+  }
 }
 
 select.main-input {
@@ -82,17 +86,15 @@ select.main-input {
 
   input {
     padding: 10px 25px 10px 10px;
-    color: $black;
-    @include opensans-regular;
+    color: #1D1B1B;
+    @include opensans-medium;
     font-size: 15px;
     width: 100%;
     border-radius: 3px;
-    border: 1px solid #E3DDDD;
-    border-bottom: 1px solid #868585;
+    border: 1px solid #6DB4F5;
 
     &::placeholder {
-      color: #91969A;
-      font-size: 13px;
+      color: #A5AFBB;
     }
   }
 

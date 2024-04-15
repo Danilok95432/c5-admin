@@ -4,12 +4,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-
-  a, button {
-    background: transparent;
-  }
-
+  gap: 30px;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -20,7 +15,7 @@
   &__btns-right {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
 
     @media (max-width: 500px) {
       flex-direction: column;

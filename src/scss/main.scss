@@ -36,6 +36,7 @@
 @import "./components/ui-components";
 @import "./components/toggle-menu";
 @import "./components/section-block";
+@import "./components/tab-menu";
 
 //Страницы
 
@@ -64,3 +65,7 @@
 @import "./pages/edit-booking-ban";
 @import "./pages/manage-restaurant";
 @import "./pages/dashboard";
+@import "./pages/booking-services";
+@import "./pages/booking-documents";
+@import "./pages/booking-notes";
+@import "./pages/booking-journal";

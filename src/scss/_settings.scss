@@ -23,6 +23,7 @@ body {
 
 main {
   min-height: 100vh;
+
   h1 {
     font-size: 25px;
     @include opensans-bold;
@@ -228,13 +229,6 @@ textarea {
   }
 }
 
-.booking-balance {
-  &__total {
-    color: #920303;
-    font-weight: 600;
-  }
-}
-
 .booking-status {
   margin-left: auto;
   display: flex;
@@ -311,4 +305,27 @@ textarea {
 
 .currency-mask-text {
   text-align: left !important;
+}
+
+.title-controllers-block {
+  padding: 30px 0 22px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+
+  h1 {
+    padding: 0;
+  }
+
+  &__controllers {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    .main-btn {
+      padding: 10px 20px;
+    }
+  }
 }

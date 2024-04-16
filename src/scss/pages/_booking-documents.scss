@@ -1,0 +1,59 @@
+.booking-documents-page {
+
+  .main-btn {
+    padding: 10px 19px;
+  }
+
+  .section-block {
+    padding-top: 30px;
+    min-height: 800px;
+  }
+
+  h3 {
+    color: #000000;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .booking-documents-table {
+    margin-bottom: 20px;
+    .main-table__cell {
+      &:nth-child(1) {
+        min-width: 4%;
+      }
+
+      &:nth-child(2) {
+        min-width: 9%;
+      }
+
+      &:nth-child(3) {
+        min-width: 65%;
+      }
+
+      &:nth-child(4) {
+        min-width: 12%;
+      }
+
+      &:nth-child(5) {
+        min-width: 10%;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}

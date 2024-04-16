@@ -1,0 +1,63 @@
+.booking-journal-page {
+  .section-block {
+    padding-top: 30px;
+    min-height: 800px;
+  }
+
+  &__table-subtitle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+
+    h3 {
+      color: #000000;
+      margin: 0;
+    }
+
+    a {
+      padding: 2px 8px;
+      border: 1px solid rgba(#064AB1, 0.5);
+      border-radius: 3px;
+      color: #064AB1;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .journal-table {
+    .main-table__cell {
+      &:nth-child(1) {
+        min-width: 15%;
+      }
+
+      &:nth-child(2) {
+        min-width: 11%;
+      }
+
+      &:nth-child(3) {
+        min-width: 14%;
+      }
+
+      &:nth-child(4) {
+        min-width: 21%;
+      }
+
+      &:nth-child(5) {
+        min-width: 30%;
+      }
+
+      &:nth-child(6) {
+        min-width: 9%;
+        text-align: right;
+      }
+    }
+  }
+
+}

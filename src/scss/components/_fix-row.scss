@@ -1,20 +1,27 @@
 .fix-row {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 
   &._no-margin {
     margin: 0;
   }
 
   &__title {
-    min-width: 220px;
-    margin-right: 23px;
-    font-weight: 300;
+    min-width: 235px;
+    margin-right: 20px;
+    @include opensans-regular;
+    font-size: 15px;
 
     &._bold {
-      font-weight: 600;
+      font-weight: 700;
     }
+
     @media (max-width: 768px) {
       margin-right: 0;
       margin-bottom: 3px;
@@ -22,9 +29,15 @@
     }
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
+  &__desc {
+    @include opensans-medium;
+    a {
+      color: #064AB1;
+    }
+  }
+
+  a.fix-row__desc {
+    color: #064AB1;
   }
 }
 

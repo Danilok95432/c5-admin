@@ -106,4 +106,46 @@
 
   }
 
+
+  &._min {
+    border: none;
+    margin: 0;
+    @media (max-width: 1024px) {
+      overflow-x: auto;
+    }
+
+    .main-table__row {
+      background-color: transparent;
+      padding: 12px 10px;
+      @media (max-width: 1024px) {
+        min-width: 1000px;
+      }
+
+      &:nth-child(odd) {
+        background-color: #F4F8FC;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid #D0D5DF;
+      }
+      &:first-child{
+        border-bottom: 1px solid #D0D5DF;
+        border-top: 1px solid #D0D5DF;
+      }
+
+      &:hover {
+        background: #FFEDBD;
+      }
+
+      &.main-table__title-row {
+        background-color: #FCFDFE;
+      }
+
+
+      &.main-table__title-row .main-table__cell {
+        font-size: 15px;
+      }
+    }
+  }
+
 }

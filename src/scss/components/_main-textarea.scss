@@ -19,18 +19,17 @@
 }
 
 .main-textarea {
-  padding: 10px 10px;
+  padding: 15px 20px;
   color: $black;
   @include opensans-regular;
   font-size: 15px;
   resize: none;
   width: 100%;
   height: 105px;
-  border-radius: 3px;
-  border: 1px solid #E3DDDD;
-  border-bottom: 1px solid #868585;
+  border-radius: 5px;
+  border: 1px solid #6DB4F5;
 
   &::placeholder {
-    color: #91969A;
+    color: #A5AFBB;
   }
 }

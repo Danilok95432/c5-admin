@@ -2,18 +2,19 @@ import { newAdultGuest, newChildGuest, newRoom } from '../_vars'
 import { initAllDates } from './customDate'
 import { sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
+import { initFileUploading } from './fileUpload'
 
 const editBookingPage = document.querySelector('.edit-booking-page')
 
 if (editBookingPage) {
-  const roomsWrapper = editBookingPage.querySelector('.rooms-category')
+  const roomsWrapper = editBookingPage.querySelector('.rooms-category-section')
   const roomsList = editBookingPage.querySelector('.rooms-list')
   const editBookingForm = editBookingPage.querySelector(
     '.edit-booking-page__form',
   )
 
   const searchRoomsBtn = editBookingPage.querySelector(
-    '.rooms-search .main-btn',
+    '.rooms-search-section .main-btn',
   )
   const freeRoomsList = editBookingPage.querySelector('.rooms-params__list')
   const roomsCategoriesSelect = editBookingPage.querySelector(
@@ -34,7 +35,7 @@ if (editBookingPage) {
 
   let observer = new MutationObserver(() => {
     ;[...roomsList.children].forEach((room, roomIdx) => {
-      const roomAmount = room.querySelector('h4 .changeable-amount')
+      const roomAmount = room.querySelector('h3 .changeable-amount')
       const roomOrderInput = room.querySelector('.room-order-input')
       const initialName = roomOrderInput.name.split('[')[0]
       roomOrderInput.name = `${initialName}[${roomIdx + 1}]`
@@ -67,6 +68,7 @@ if (editBookingPage) {
       roomsList.insertAdjacentHTML('beforeend', newRoom)
       initAllDates()
       initAllMasks()
+      initFileUploading()
     }
 
     if (

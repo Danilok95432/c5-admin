@@ -33,7 +33,6 @@
 
 
       &.main-checkbox {
-        margin-left: 11px;
         padding-top: 33px;
 
         @media (max-width: 768px) {
@@ -97,14 +96,121 @@
     &__inputs {
       display: flex;
       flex-wrap: wrap;
-      gap: 50px;
+      gap: 35px;
     }
+
     .main-checkbox {
       min-width: 135px;
       line-height: 1.1;
     }
   }
 
+
+  .rooms-category-section {
+
+    padding-top: 28px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+
+    .edit-booking-page__inputs-row:not(:last-child) {
+      margin-bottom: 18px;
+    }
+
+    .rooms-list {
+      &__item {
+        &:not(:first-child) {
+          padding-top: 30px;
+        }
+
+        padding-bottom: 30px;
+        border-bottom: 1px solid #C3D5F5;
+      }
+    }
+
+    .guests-list {
+      h5 {
+        color: #1D1B1B;
+        font-size: 18px;
+        @include opensans-bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .delete-btn {
+          height: 20px;
+          width: 20px;
+          position: static;
+          display: inline-block;
+        }
+      }
+    }
+
+    &__scan-upload {
+      max-width: 200px;
+
+      .file-upload__add-label {
+        max-width: 155px;
+        padding: 15px 0;
+      }
+
+      .file-upload__name {
+        color: #064AB1;
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+
+    &__controllers {
+      padding-right: 115px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @media (max-width: 1024px) {
+        padding-right: 0;
+        gap: 15px;
+      }
+
+      button {
+        padding: 10px 24px;
+      }
+
+      button[data-template="new-room"] {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .rooms-search-section {
+    padding-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .main-btn {
+      min-width: 280px;
+      padding: 10px 0;
+    }
+
+    &__prompt {
+      svg {
+        min-width: 15px;
+        height: 15px;
+      }
+      max-width: 770px;
+
+      line-height: 1.3;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #95A0AC;
+      font-size: 13px;
+    }
+  }
 
   //&__comment-inputs-row {
   //  align-items: flex-start;

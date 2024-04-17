@@ -7,7 +7,7 @@ import { initFileUploading } from './fileUpload'
 const editBookingPage = document.querySelector('.edit-booking-page')
 
 if (editBookingPage) {
-  const roomsWrapper = editBookingPage.querySelector('.rooms-category-section')
+  const roomsWrapper = editBookingPage.querySelector('.rooms-list-section')
   const roomsList = editBookingPage.querySelector('.rooms-list')
   const editBookingForm = editBookingPage.querySelector(
     '.edit-booking-page__form',
@@ -25,7 +25,7 @@ if (editBookingPage) {
   )
 
   const roomsSaveBtn = editBookingPage.querySelector(
-    '.rooms-params__btn-wrapper',
+    '.rooms-choice-section__btn-wrapper',
   )
 
   let initialSum = 0

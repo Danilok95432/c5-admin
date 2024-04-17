@@ -130,7 +130,7 @@ export const newRoom = `<li class="rooms-list__item">
                       </div>
                     </div>
                   </div>
-                  <div class="input-column-wrapper rooms-category-section__scan-upload">
+                  <div class="input-column-wrapper rooms-list-section__scan-upload">
                     <label>Скан документа</label>
                     <div class="file-upload">
                       <div class="file-upload__info">

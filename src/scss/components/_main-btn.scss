@@ -24,18 +24,21 @@
   }
 
   &._red {
-    border-color: #920303;
+    border: 1px solid #920303;
     color: #920303;
+    background: transparent;
   }
 
   &._green {
-    border-color: #00754A;
+    border: 1px solid #00754A;
     color: #00754A;
+    background: transparent;
   }
 
   &._orange {
-    border-color: #D53E07;
+    border: 1px solid #D53E07;
     color: #D53E07;
+    background: transparent;
   }
 
   &._white {

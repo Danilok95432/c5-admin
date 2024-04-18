@@ -1,0 +1,21 @@
+.booking-confirm-modal {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+    h2 {
+      font-size: 25px;
+      @include opensans-semibold;
+    }
+
+    padding-bottom: 27px;
+    margin-bottom: 27px;
+    border-bottom: 1px solid #C3D5F5;
+  }
+
+  &__id {
+    @include opensans-bold;
+    font-size: 20px;
+  }
+}

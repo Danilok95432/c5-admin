@@ -1,10 +1,21 @@
-import { newAdultGuest, newChildGuest, newRoom } from '../_vars'
+import {
+  bookingConfirmModal,
+  modalOverlay,
+  newAdultGuest,
+  newChildGuest,
+  newRoom,
+} from '../_vars'
 import { initAllDates } from './customDate'
 import { sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
 import { initFileUploading } from './fileUpload'
+import AirDatepicker from 'air-datepicker'
 
 const editBookingPage = document.querySelector('.edit-booking-page')
+
+const getInitialName = (fullName) => {
+  return fullName.split('[')[0]
+}
 
 if (editBookingPage) {
   const roomsWrapper = editBookingPage.querySelector('.rooms-list-section')
@@ -16,7 +27,9 @@ if (editBookingPage) {
   const searchRoomsBtn = editBookingPage.querySelector(
     '.rooms-search-section .main-btn',
   )
-  const freeRoomsList = editBookingPage.querySelector('.rooms-params__list')
+  const freeRoomsList = editBookingPage.querySelector(
+    '.rooms-choice-section__list',
+  )
   const roomsCategoriesSelect = editBookingPage.querySelector(
     '.input-column-wrapper__categories-select select',
   )
@@ -31,14 +44,59 @@ if (editBookingPage) {
   let initialSum = 0
   let globalRoomsData = []
 
+  // логика связанная с выбором дат заезда и выезда
+
+  const nightCounter = editBookingPage.querySelector(
+    '.dates-section__days-counter span',
+  )
+
+  const dateInputs = editBookingPage.querySelectorAll(
+    '.check-in-input, .check-out-input',
+  )
+
+  let checkInDate
+  let checkOutDate
+
+  dateInputs.forEach((el, _, arr) => {
+    const customDate = new AirDatepicker(el, {
+      container: '.date-custom-container',
+
+      onSelect: ({ date, _, datepicker }) => {
+        roomsSaveBtn.classList.add('_blocked')
+        if (datepicker.$el.classList.contains('check-in-input') && date) {
+          checkInDate = date
+        }
+
+        if (datepicker.$el.classList.contains('check-out-input') && date) {
+          checkOutDate = date
+        }
+
+        if (checkInDate && checkOutDate) {
+          const diffInMs = checkOutDate - checkInDate
+          const daysDifference = Math.ceil(diffInMs / (1000 * 60 * 60 * 24))
+          nightCounter.textContent = daysDifference < 1 ? '0' : daysDifference
+        }
+      },
+    })
+
+    el.addEventListener('click', (e) => {
+      const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
+      if (featuredDate) {
+        customDate.selectDate(featuredDate)
+        customDate.setViewDate(featuredDate)
+      }
+    })
+  })
+
   // Логика добавления номеров и гостей с нумерацией имен инпутов
 
   let observer = new MutationObserver(() => {
     ;[...roomsList.children].forEach((room, roomIdx) => {
       const roomAmount = room.querySelector('h3 .changeable-amount')
       const roomOrderInput = room.querySelector('.room-order-input')
-      const initialName = roomOrderInput.name.split('[')[0]
-      roomOrderInput.name = `${initialName}[${roomIdx + 1}]`
+      roomOrderInput.name = `${getInitialName(roomOrderInput.name)}[${
+        roomIdx + 1
+      }]`
       roomAmount.textContent = roomIdx + 1
       const guestsList = room.querySelector('.guests-list')
       ;[...guestsList.children].forEach((guest, guestIdx) => {
@@ -46,8 +104,9 @@ if (editBookingPage) {
         guestAmount.textContent = guestIdx + 1
         const guestInputs = guest.querySelectorAll('.main-input')
         guestInputs.forEach((input) => {
-          const initialName = input.name.split('[')[0]
-          input.name = `${initialName}[${roomIdx + 1}][${guestIdx + 1}]`
+          input.name = `${getInitialName(input.name)}[${roomIdx + 1}][${
+            guestIdx + 1
+          }]`
         })
       })
     })
@@ -75,16 +134,19 @@ if (editBookingPage) {
       e.target.dataset.template === 'new-adult' ||
       e.target.dataset.template === 'new-child'
     ) {
-      const guestsList = e.target.parentElement.querySelector('.guests-list')
+      const lastGuestsList = roomsList.querySelector(
+        '.rooms-list__item:last-child .guests-list',
+      )
 
       if (e.target.dataset.template === 'new-adult') {
-        guestsList.insertAdjacentHTML('beforeend', newAdultGuest)
+        lastGuestsList.insertAdjacentHTML('beforeend', newAdultGuest)
       }
       if (e.target.dataset.template === 'new-child') {
-        guestsList.insertAdjacentHTML('beforeend', newChildGuest)
+        lastGuestsList.insertAdjacentHTML('beforeend', newChildGuest)
       }
       initAllDates()
       initAllMasks()
+      initFileUploading()
     }
   })
 
@@ -101,7 +163,7 @@ if (editBookingPage) {
   const discountSumInput = editBookingPage.querySelector('.result-sum input')
 
   const totalCostToPay = editBookingPage.querySelector(
-    '.total-cost-item__to-pay h3 span',
+    '.total-cost__item._to-pay h3 span',
   )
 
   discountPercentInput.addEventListener('input', (e) => {
@@ -287,7 +349,10 @@ if (editBookingPage) {
       const finishedResponse = await response.json()
       const { status, errortext } = finishedResponse
       if (status === 'ok') {
-        showInfoModal('Данные сохранены')
+        // showInfoModal('Данные сохранены')
+        modalOverlay.classList.add('_active')
+
+        bookingConfirmModal.classList.add('_active')
       } else {
         roomsSaveBtn.classList.add('_blocked')
         showInfoModal(errortext)

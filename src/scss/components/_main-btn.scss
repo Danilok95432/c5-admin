@@ -17,6 +17,11 @@
     border: 1px solid #064AB1;
     color: #064AB1;
   }
+  &._orange {
+    border: none;
+    color: #ffffff;
+    background: #FF6716;
+  }
   &._orange-outlined {
     background: transparent;
     border: 1px solid #FF6716;
@@ -35,11 +40,6 @@
     background: transparent;
   }
 
-  &._orange {
-    border: 1px solid #D53E07;
-    color: #D53E07;
-    background: transparent;
-  }
 
   &._white {
     border: none;

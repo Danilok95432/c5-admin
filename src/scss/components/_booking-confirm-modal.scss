@@ -1,21 +1,61 @@
 .booking-confirm-modal {
+
+  .fix-row {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__title {
+      font-weight: 300;
+      min-width: 207px;
+    }
+    &__desc {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
   &__title {
     display: flex;
     align-items: center;
     gap: 15px;
     justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #C3D5F5;
     h2 {
       font-size: 25px;
       @include opensans-semibold;
-    }
 
-    padding-bottom: 27px;
-    margin-bottom: 27px;
-    border-bottom: 1px solid #C3D5F5;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__id {
     @include opensans-bold;
     font-size: 20px;
+  }
+
+  .booking-info-list {
+    margin-bottom: 37px;
+    li {
+      padding: 27px 30px;
+      border-bottom: 1px solid #C3D5F5;
+      &:nth-child(even) {
+        background-color: #F4F8FC;
+      }
+    }
+  }
+
+  &__controllers {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .modal-close-btn {
+      position: static;
+    }
   }
 }

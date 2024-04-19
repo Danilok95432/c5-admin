@@ -1,6 +1,5 @@
 .modal{
     position: fixed;
-    overflow-y: auto;
     overflow-x: hidden;
     left: 50%;
     top: 50%;
@@ -27,6 +26,22 @@
         width: 95%;
     }
 
+    &__inner {
+        border-radius: 10px;
+        background-color: #fff;
+        width: 760px;
+        padding: 25px 30px;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        @media (max-width: 768px) {
+            padding: 15px 10px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
     .styled-form {
         width: 485px;
         padding: 25px 30px 35px 30px;
@@ -47,18 +62,6 @@
         }
     }
 
-    &__inner {
-        border-radius: 10px;
-        background-color: #fff;
-        width: 760px;
-        padding: 30px;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            width: 0;
-        }
-    }
 }
 
 .modal-links {

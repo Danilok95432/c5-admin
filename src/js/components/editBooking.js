@@ -58,6 +58,9 @@ if (editBookingPage) {
   let checkOutDate
 
   dateInputs.forEach((el, _, arr) => {
+    el.addEventListener('keydown', (e) => e.preventDefault())
+    el.addEventListener('paste', (e) => e.preventDefault())
+
     const customDate = new AirDatepicker(el, {
       container: '.date-custom-container',
 
@@ -332,6 +335,11 @@ if (editBookingPage) {
 
   const roomSaveScript = roomSaveButtonInner.dataset.script
 
+  const bookingConfirmBtn = editBookingPage.querySelector(
+    '.booking-confirm-modal__confirm-btn',
+  )
+  const bookingConfirmScript = bookingConfirmBtn.dataset.script
+
   roomSaveButtonInner.addEventListener('click', async (e) => {
     e.preventDefault()
     if (!editBookingForm.checkValidity()) {
@@ -347,12 +355,134 @@ if (editBookingPage) {
     try {
       const response = await sendData(jsonData, roomSaveScript)
       const finishedResponse = await response.json()
+      const {
+        status,
+        errortext,
+        bookingId,
+        receiptDate,
+        receiptTime,
+        adultCount,
+        childCount,
+        clientName,
+        clientPhone,
+        checkInDate,
+        checkOutDate,
+        checkInTime,
+        checkOutTime,
+        roomCategory,
+        tariff,
+        bookingSource,
+        price,
+        bookingRoom,
+        totalPrice,
+        totalPaid,
+      } = finishedResponse
+      if (status === 'ok') {
+        modalOverlay.classList.add('_active')
+        bookingConfirmModal.classList.add('_active')
+
+        bookingConfirmBtn.dataset.id = bookingId ?? 'no-id'
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__id span',
+        ).textContent = bookingId ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__receipt-date',
+        ).textContent = receiptDate ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__receipt-time',
+        ).textContent = receiptTime ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__adult-count',
+        ).textContent = adultCount ?? '0'
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__child-count',
+        ).textContent = childCount ?? '0'
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__client-name',
+        ).textContent = clientName ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__client-phone',
+        ).textContent = clientPhone ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__check-in-date',
+        ).textContent = checkInDate ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__check-in-time',
+        ).textContent = checkInTime ?? ''
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__check-out-date',
+        ).textContent = checkOutDate ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__check-out-time',
+        ).textContent = checkOutTime ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__room-category',
+        ).textContent = roomCategory ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__room-tariff',
+        ).textContent = tariff ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__booking-source',
+        ).textContent = bookingSource ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__price',
+        ).textContent = price ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__booking-room',
+        ).textContent = bookingRoom ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__total-price',
+        ).textContent = totalPrice ?? ''
+
+        bookingConfirmModal.querySelector(
+          '.booking-confirm-modal__total-paid',
+        ).textContent = totalPaid ?? ''
+      } else {
+        roomsSaveBtn.classList.add('_blocked')
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      roomsSaveBtn.classList.add('_blocked')
+      console.error(err)
+      showInfoModal('Во время выполнения запроса произошла ошибка')
+    }
+  })
+
+  bookingConfirmBtn.addEventListener('click', async (e) => {
+    e.preventDefault()
+
+    const bookingId = e.currentTarget.dataset.id
+
+    const data = {
+      bookingId: bookingId,
+    }
+    const jsonData = JSON.stringify(data)
+
+    try {
+      const response = await sendData(jsonData, bookingConfirmScript)
+      const finishedResponse = await response.json()
+
       const { status, errortext } = finishedResponse
       if (status === 'ok') {
-        // showInfoModal('Данные сохранены')
-        modalOverlay.classList.add('_active')
-
-        bookingConfirmModal.classList.add('_active')
+        modalOverlay.classList.remove('_active')
+        bookingConfirmModal.classList.remove('_active')
+        showInfoModal('Бронирование подтверждено')
       } else {
         roomsSaveBtn.classList.add('_blocked')
         showInfoModal(errortext)

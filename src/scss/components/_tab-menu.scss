@@ -1,6 +1,11 @@
 .tab-menu {
   display: flex;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
   li {
     a {
@@ -12,6 +17,10 @@
       @include opensans-medium;
       color: #064AB1;
       background-color: transparent;
+      @media (max-width: 768px) {
+        padding: 10px 0;
+        width: 300px;
+      }
       &._active {
         position: relative;
         background-color: #fff;
@@ -19,6 +28,10 @@
         color: #3090F6;
         box-shadow: 0px -3px 19px -6px rgba(6, 74, 177, 0.25);
         @include opensans-bold;
+        @media (max-width: 768px) {
+          box-shadow: none;
+          border-radius: 5px;
+        }
         &::after {
           content: '';
           position: absolute;
@@ -27,6 +40,10 @@
           bottom: -7px;
           left: 0;
           background: #ffffff;
+          @media (max-width: 768px) {
+            width: 0;
+            height: 0;
+          }
         }
       }
     }

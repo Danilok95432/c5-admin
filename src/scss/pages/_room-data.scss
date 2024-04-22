@@ -81,6 +81,10 @@
     line-height: 1.2;
     color: #A5AFBB;
 
+    svg {
+      min-width: 18px;
+    }
+
     @media (max-width: 800px) {
       font-size: 12px;
       padding: 8px;

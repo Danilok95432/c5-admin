@@ -8,7 +8,7 @@
 
   p {
     max-width: 217px;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   &__info {
@@ -19,13 +19,16 @@
   }
 
   &__info-title {
-    margin-bottom: 12px;
+    margin-bottom: 3px;
   }
 
   .general-dropzone__add-btn {
-    padding: 8px 22px;
+    padding: 10px 22px;
     max-width: 160px;
     background: transparent;
+    border: 1px solid #064AB1;
+    color: #064AB1;
+    @include opensans-regular;
     margin-top: auto;
   }
 
@@ -36,7 +39,7 @@
     flex-direction: column;
     width: 230px;
     height: 108px;
-    border: 1px dashed #7B7B7B;
+    border: 1px dashed #6DB4F5;
     border-radius: 5px;
     background-color: #FFFFFF;
 
@@ -47,7 +50,7 @@
     p {
       text-align: center;
       font-size: 13px;
-      line-height: 1.1;
+      line-height: 1.45;
       max-width: 168px;
     }
   }
@@ -55,10 +58,10 @@
   .general-dropzone__previews {
     width: 100%;
     background-color: #FFFFFF;
-    padding: 19px;
+    padding: 17px;
     border-radius: 5px;
-    border: 1px solid #D0D5DF;
-    min-height: 162px;
+    border: 1px solid #6DB4F5;
+    min-height: 152px;
     margin-top: 20px;
     gap: 15px;
     display: flex;
@@ -66,14 +69,14 @@
   }
 
   .dz-preview {
-    border: 1px solid #D0D5DF;
+    border: 1px solid #6DB4F5;
     width: 175px;
     height: 115px;
     border-radius: 3px;
     position: relative;
 
     .dz-image {
-      height: 115px;
+      height: 113px;
     }
 
     img {
@@ -91,7 +94,7 @@
     top: 5px;
     width: 20px;
     height: 20px;
-    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect opacity='0.3' width='20' height='20' rx='1' fill='black'/%3e%3cpath d='M10.7522 10.0002L15.8447 4.90761C16.0526 4.69977 16.0526 4.36336 15.8447 4.15552C15.6369 3.94816 15.3005 3.94816 15.0926 4.15552L10.0001 9.24809L4.90797 4.15552C4.70013 3.94816 4.36372 3.94816 4.15588 4.15552C3.94852 4.36336 3.94852 4.69977 4.15588 4.90761L9.24845 10.0002L4.15588 15.0923C3.94804 15.3001 3.94804 15.6365 4.15588 15.8444C4.2598 15.9483 4.39562 16 4.53193 16C4.66823 16 4.80405 15.9483 4.90797 15.8444L10.0005 10.7518L15.0931 15.8444C15.197 15.9483 15.3329 16 15.4692 16C15.6055 16 15.7413 15.9483 15.8452 15.8444C16.053 15.6365 16.053 15.3001 15.8452 15.0923L10.7522 10.0002Z' fill='white' stroke='white'/%3e%3c/svg%3e") no-repeat;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect opacity="0.6" width="20" height="20" rx="1" fill="%23064AB1"/><path d="M10.7522 10.0002L15.8447 4.90761C16.0526 4.69977 16.0526 4.36336 15.8447 4.15552C15.6369 3.94816 15.3005 3.94816 15.0926 4.15552L10.0001 9.24809L4.90797 4.15552C4.70013 3.94816 4.36372 3.94816 4.15588 4.15552C3.94852 4.36336 3.94852 4.69977 4.15588 4.90761L9.24845 10.0002L4.15588 15.0923C3.94804 15.3001 3.94804 15.6365 4.15588 15.8444C4.2598 15.9483 4.39562 16 4.53193 16C4.66823 16 4.80405 15.9483 4.90797 15.8444L10.0005 10.7518L15.0931 15.8444C15.197 15.9483 15.3329 16 15.4692 16C15.6055 16 15.7413 15.9483 15.8452 15.8444C16.053 15.6365 16.053 15.3001 15.8452 15.0923L10.7522 10.0002Z" fill="white" stroke="white"/></svg>') no-repeat;
   }
 
 }

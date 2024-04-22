@@ -1,16 +1,6 @@
 .edit-booking-page {
   padding-bottom: 160px;
 
-  select {
-    padding: 10px 25px 10px 10px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L5 6.24998L0 0H10Z" fill="%23064AB1"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 15px top 16px, 0 0;
-  }
-
   &__inputs-row {
     display: flex;
     flex-wrap: wrap;

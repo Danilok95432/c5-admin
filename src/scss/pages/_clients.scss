@@ -1,0 +1,113 @@
+.clients-page {
+    .clients-table-toggle {
+        margin: 10px 0 22px 0;
+        border: 1px solid #6DB4F5;
+        border-radius: 3px;
+        width: max-content;
+
+        a {
+            display: inline-block;
+            padding: 7px 18px;
+            color: $black;
+        }
+
+        ._active {
+            color: $white;
+            background: #064AB1;
+            border-radius: 3px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            padding-top: 15px;
+        }
+
+        .main-btn {
+            padding: 10px 20px;
+            align-self: flex-start;
+        }
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .clients-table {
+        margin-bottom: 20px;
+
+        .main-table__cell {
+            .input-column-wrapper {
+                display: inline-block;
+                width: 300px;
+
+                &:has(.phone-mask) {
+                    width: 160px;
+                }
+
+                input {
+                    padding: 8px 10px;
+
+                    &:focus+svg {
+                        display: none;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                min-width: 3%;
+            }
+
+            &:nth-child(2) {
+                min-width: 49%;
+            }
+
+            &:nth-child(3) {
+                min-width: 35%;
+            }
+
+            &:nth-child(4) {
+                min-width: 13%;
+            }
+        }
+    }
+
+    .table-navigation {
+        margin-left: auto;
+        margin-right: 0;
+
+        border-radius: 3px;
+        display: flex;
+        width: max-content;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 16px;
+            @include opensans-medium;
+            font-size: 15px;
+            color: #064AB1;
+            border: 1px solid #6DB4F5;
+
+            &._blocked {
+                color: #91969A;
+                background: #F4F8FC;
+                border: 1px solid #D0D5DF;
+            }
+        }
+
+        &__prev {
+            border-radius: 3px 0px 0px 3px;
+        }
+
+        &__next {
+            border-radius: 0px 3px 3px 0px;
+        }
+    }
+}

@@ -75,7 +75,11 @@
   &::placeholder {
     color: #A5AFBB;
   }
+  &[type="search"] {
+    outline-offset: 0;
+  }
 }
+
 
 select.main-input {
   padding: 10px 25px 10px 10px;

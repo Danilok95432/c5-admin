@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Карточка клиента' })
+
+  <body class="page__body client-card-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание/редактирование карточки клиента</h1>
+          <form class="client-card-page__form" action="#">
+            <section class="section-block">
+              <a class="back-button" href="clients-individuals.html">
+                <svg
+                  width="9"
+                  height="16"
+                  viewBox="0 0 9 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.58236 1L1 8L7.58236 15"
+                    stroke="#064AB1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Назад к списку клиентов
+              </a>
+              <div>
+                <h3>Физическое лицо</h3>
+
+                <div class="inputs-wrapper">
+                  <div class="input-column-wrapper">
+                    <label>Фамилия клиента</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      placeholder="Фамилия"
+                      name="last-name"
+                      value="Константинопольский"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Имя клиента</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      placeholder="Имя"
+                      name="first-name"
+                      value="Иван"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Отчество клиента</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      placeholder="Отчество"
+                      name="patronymic"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Номер телефона</label>
+                    <input
+                      class="main-input phone-mask"
+                      type="text"
+                      placeholder="+7 (___) ___-__-__"
+                      name="phone"
+                      value=" +7 (999) 999-99-99"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>E-mail</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      name="email"
+                      value="konstantinopoltheboss@mail.ru"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

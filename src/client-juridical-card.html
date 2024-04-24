@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Карточка клиента' })
+
+  <body class="page__body client-card-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание/редактирование карточки клиента</h1>
+          <form class="client-card-page__form" action="#">
+            <section class="section-block">
+              <a class="back-button" href="clients-juridicals.html">
+                <svg
+                  width="9"
+                  height="16"
+                  viewBox="0 0 9 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.58236 1L1 8L7.58236 15"
+                    stroke="#064AB1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Назад к списку клиентов
+              </a>
+              <div>
+                <h3>Юридическое лицо</h3>
+
+                <div class="inputs-wrapper juridical">
+                  <div class="input-column-wrapper">
+                    <label>Название организации</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      placeholder="Название организации"
+                      name="organization-name"
+                      value='ООО "НПО "ТАУ"'
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Номер телефона</label>
+                    <input
+                      class="main-input phone-mask"
+                      type="text"
+                      placeholder="+7 (___) ___-__-__"
+                      name="phone"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>ИНН</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      placeholder="ИНН"
+                      name="tax-number"
+                      value="6829163664"
+                    />
+                  </div>
+
+                  <div class="input-column-wrapper textarea-container">
+                    <label>Юридический адрес</label>
+                    <textarea class="main-textarea" name="address">
+392003, Тамбовская Область, г.о. Город Тамбов, г Тамбов, б-р Энтузиастов, д. 2А, этаж 4</textarea
+                    >
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Адрес электронной почты</label>
+                    <input
+                      class="main-input"
+                      type="text"
+                      name="email"
+                      placeholder="example@example.ru"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

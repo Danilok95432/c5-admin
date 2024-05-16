@@ -7,12 +7,12 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main">
         <div class="container">
-          <h1>Создание/редактирование номера</h1>
-          <form class="room-data-page__form" action="#">
-            <section class="section-block room-data-wrapper">
+          <h1>Создание/редактирование тарифа</h1>
+          <form class="create-tariff-page__form" action="#">
+            <section class="section-block create-tariff-wrapper">
               <div>
                 <h3>Основные данные</h3>
-                <div class="content-column room-data">
+                <div class="content-column create-tariff-data">
                   <div class="input-column-wrapper">
                     <label>Название тарифа</label>
                     <select class="main-input" name="tariff-name">
@@ -23,7 +23,7 @@
 
                   <div class="input-column-wrapper">
                     <label>Питание</label>
-                    <select class="main-input" name="tariff-name">
+                    <select class="main-input" name="food">
                       <option value="1">Завтрак/Шведский стол</option>
                       <option value="2">Завтрак/Шведский стол</option>
                     </select>
@@ -31,7 +31,7 @@
 
                   <div class="input-column-wrapper">
                     <label>Трансфер</label>
-                    <select class="main-input" name="tariff-name">
+                    <select class="main-input" name="transfer">
                       <option value="1">От аэропорта или ж/д вокзала</option>
                       <option value="2">От аэропорта или ж/д вокзала</option>
                     </select>
@@ -39,7 +39,7 @@
 
                   <div class="input-column-wrapper">
                     <label>Курение в номере</label>
-                    <select class="main-input" name="tariff-name">
+                    <select class="main-input" name="smoking">
                       <option value="1">Номер для некурящих</option>
                       <option value="2">Номер для некурящих</option>
                     </select>
@@ -47,7 +47,7 @@
 
                   <div class="input-column-wrapper">
                     <label>Животные</label>
-                    <select class="main-input" name="tariff-name">
+                    <select class="main-input" name="animals">
                       <option value="1">
                         Разрешено с кошками или некрупными собаками
                       </option>
@@ -59,47 +59,176 @@
 
                   <div class="input-column-wrapper content-column">
                     <label>Описание</label>
-                    <textarea class="main-textarea" name="comment">
+                    <textarea class="main-textarea" name="description">
 Описание тарифа для показа на сайте
                     </textarea>
                   </div>
                 </div>
               </div>
 
-              <ul class="room-data-page__checkbox-list">
-                <li class="main-checkbox">
-                  <input type="checkbox" name="active_room" id="activeRoom" />
-                  <label for="activeRoom">Активный номер</label>
-                </li>
-                <li class="main-checkbox">
-                  <input type="checkbox" name="hide_room" id="hideRoom" />
-                  <label for="hideRoom">Скрыть номер</label>
-                </li>
-                <li class="main-checkbox">
-                  <input type="checkbox" name="booking_site" id="bookingSite" />
-                  <label for="bookingSite">Бронирование через наш сайт</label>
-                </li>
-                <li class="main-checkbox">
+              <div class="create-tariff-page__checkbox-list">
+                <div class="main-checkbox">
                   <input
                     type="checkbox"
-                    name="booking_other"
-                    id="bookingOther"
+                    name="active_tariff"
+                    id="activeTariff"
                   />
-                  <label for="bookingOther"
-                    >Бронирование через сторонние сервисы</label
-                  >
-                </li>
-                <li class="main-checkbox">
-                  <input
-                    type="checkbox"
-                    name="booking_stand"
-                    id="bookingStand"
-                  />
-                  <label for="bookingStand"
-                    >Бронирование на стойке объекта</label
-                  >
-                </li>
-              </ul>
+                  <label for="activeTariff">Активный тариф</label>
+                </div>
+                <div class="main-checkbox">
+                  <input type="checkbox" name="hide_tariff" id="hideTariff" />
+                  <label for="hideTariff">Скрыть тариф</label>
+                </div>
+
+                <div>
+                  <h6>Тариф применим к категориям номеров</h6>
+                  <div class="main-checkbox">
+                    <input
+                      type="checkbox"
+                      name="all-caterories"
+                      id="all-caterories"
+                    />
+                    <label for="all-caterories">Все категории</label>
+                  </div>
+                </div>
+
+                <div class="two-colums-checkboxes">
+                  <div>
+                    <div class="main-checkbox">
+                      <input type="checkbox" name="standard" id="standard" />
+                      <label for="standard">Стандарт</label>
+                    </div>
+                    <div class="main-checkbox">
+                      <input
+                        type="checkbox"
+                        name="standard-plus"
+                        id="standard-plus"
+                      />
+                      <label for="standard-plus">Стандарт +</label>
+                    </div>
+
+                    <div class="main-checkbox">
+                      <input type="checkbox" name="comfort" id="comfort" />
+                      <label for="comfort">Комфорт</label>
+                    </div>
+                    <div class="main-checkbox">
+                      <input type="checkbox" name="family" id="family" />
+                      <label for="family">Семейный</label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="main-checkbox">
+                      <input
+                        type="checkbox"
+                        name="family-lux"
+                        id="family-lux"
+                      />
+                      <label for="family-lux">Семейный люкс с бассейном</label>
+                    </div>
+                    <div class="main-checkbox">
+                      <input type="checkbox" name="wedding" id="wedding" />
+                      <label for="wedding">Свадебный люкс</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block prepayment-section">
+              <h3>Условия предоплаты и отмены бронирования</h3>
+              <div class="main-checkbox">
+                <input
+                  type="checkbox"
+                  checked
+                  name="non-refundable"
+                  id="non-refundable"
+                />
+                <label for="non-refundable">Невозвратный тариф</label>
+              </div>
+
+              <div class="section-row">
+                <span class="row-title">Предоплата</span>
+
+                <div class="row-data">
+                  <p class="input-column-wrapper">
+                    <input
+                      class="main-input"
+                      type="text"
+                      name="prepayment"
+                      required
+                      value="30"
+                    />
+                  </p>
+                  <span>% от стоимости бронирования</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block room-square-section">
+              <h3>Площадь номера</h3>
+
+              <div>
+                <div class="row-wrapper">
+                  <div class="row">
+                    <p class="row-title">
+                      <span class="_bold">Создать наценку</span><br />
+                      <span>(увеличить стоимость)</span>
+                    </p>
+
+                    <div class="row-data">
+                      <p class="input-column-wrapper">
+                        <input
+                          class="main-input"
+                          type="text"
+                          name="extra-charge"
+                          required
+                          value="22,5"
+                        />
+                      </p>
+
+                      <select class="main-input" name="extra-charge-currency">
+                        <option value="1">₽</option>
+                        <option value="2">₽</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p>
+                    Указанная выше сумма или процент будут прибавлены к базовой
+                    стоимости категории номера.
+                  </p>
+                </div>
+
+                <div class="row-wrapper">
+                  <div class="row">
+                    <p class="row-title">
+                      <span class="_bold">Создать скидку</span><br />
+                      <span>(уменьшить стоимость)</span>
+                    </p>
+
+                    <div class="row-data">
+                      <p class="input-column-wrapper">
+                        <input
+                          class="main-input"
+                          type="text"
+                          name="discount"
+                          required
+                          value="22,5"
+                        />
+                      </p>
+
+                      <select class="main-input" name="discount-currency">
+                        <option value="1">₽</option>
+                        <option value="2">₽</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p>
+                    Указанная выше сумма или процент будут вычтены из базовой
+                    стоимости категории номера
+                  </p>
+                </div>
+              </div>
             </section>
 
             <div class="main-controllers">

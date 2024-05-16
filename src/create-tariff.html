@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Создание/редактирование тарифа' })
+
+  <body class="page__body create-tariff-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание/редактирование номера</h1>
+          <form class="room-data-page__form" action="#">
+            <section class="section-block room-data-wrapper">
+              <div>
+                <h3>Основные данные</h3>
+                <div class="content-column room-data">
+                  <div class="input-column-wrapper">
+                    <label>Название тарифа</label>
+                    <select class="main-input" name="tariff-name">
+                      <option value="1">Тариф 111</option>
+                      <option value="2">Тариф 222</option>
+                    </select>
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Питание</label>
+                    <select class="main-input" name="tariff-name">
+                      <option value="1">Завтрак/Шведский стол</option>
+                      <option value="2">Завтрак/Шведский стол</option>
+                    </select>
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Трансфер</label>
+                    <select class="main-input" name="tariff-name">
+                      <option value="1">От аэропорта или ж/д вокзала</option>
+                      <option value="2">От аэропорта или ж/д вокзала</option>
+                    </select>
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Курение в номере</label>
+                    <select class="main-input" name="tariff-name">
+                      <option value="1">Номер для некурящих</option>
+                      <option value="2">Номер для некурящих</option>
+                    </select>
+                  </div>
+
+                  <div class="input-column-wrapper">
+                    <label>Животные</label>
+                    <select class="main-input" name="tariff-name">
+                      <option value="1">
+                        Разрешено с кошками или некрупными собаками
+                      </option>
+                      <option value="2">
+                        Разрешено с кошками или некрупными собаками
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="input-column-wrapper content-column">
+                    <label>Описание</label>
+                    <textarea class="main-textarea" name="comment">
+Описание тарифа для показа на сайте
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="room-data-page__checkbox-list">
+                <li class="main-checkbox">
+                  <input type="checkbox" name="active_room" id="activeRoom" />
+                  <label for="activeRoom">Активный номер</label>
+                </li>
+                <li class="main-checkbox">
+                  <input type="checkbox" name="hide_room" id="hideRoom" />
+                  <label for="hideRoom">Скрыть номер</label>
+                </li>
+                <li class="main-checkbox">
+                  <input type="checkbox" name="booking_site" id="bookingSite" />
+                  <label for="bookingSite">Бронирование через наш сайт</label>
+                </li>
+                <li class="main-checkbox">
+                  <input
+                    type="checkbox"
+                    name="booking_other"
+                    id="bookingOther"
+                  />
+                  <label for="bookingOther"
+                    >Бронирование через сторонние сервисы</label
+                  >
+                </li>
+                <li class="main-checkbox">
+                  <input
+                    type="checkbox"
+                    name="booking_stand"
+                    id="bookingStand"
+                  />
+                  <label for="bookingStand"
+                    >Бронирование на стойке объекта</label
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+.tariff-list-page {
+    .main-btn {
+        display: inline-block;
+        margin: 10px 0 30px 0;
+        padding: 10px 20px;
+
+        &.grid-mode-link {
+            display: block;
+            width: max-content;
+            margin-bottom: 17px;
+            padding: 9px 16px;
+        }
+    }
+
+
+
+    .tariff-list-table {
+        margin-bottom: 20px;
+
+        .main-table__row:first-child {
+            max-height: 45px;
+        }
+
+        ._blocked-tariff {
+            pointer-events: none;
+            opacity: 0.5;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        .main-table__cell {
+            .main-checkbox {
+                label::before {
+                    border-radius: 0;
+                    border: 1px solid #868585;
+                    margin-left: 20px;
+                }
+
+                input:checked+label::before {
+                    background-color: $white;
+                    background-image: url('../img/check-mark-black.svg');
+                }
+            }
+
+            .input-column-wrapper {
+                display: inline-block;
+
+                input {
+                    padding: 8px 10px;
+                    height: 30px;
+
+                    &:focus+svg {
+                        display: none;
+                    }
+
+                    &::placeholder {
+                        @include opensans-regular;
+                        font-size: 15px;
+                        line-height: 1.2;
+                        color: #91969A;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                min-width: 4%;
+            }
+
+            &:nth-child(2) {
+                min-width: 19%;
+
+                input {
+                    width: 180px;
+                }
+            }
+
+            &:nth-child(3) {
+                min-width: 12%;
+            }
+
+            &:nth-child(4) {
+                min-width: 18%;
+            }
+
+            &:nth-child(5) {
+                min-width: 16%;
+            }
+
+            &:nth-child(6) {
+                min-width: 15%;
+            }
+
+            &:nth-child(7) {
+                min-width: 9%;
+            }
+
+            &:nth-child(8) {
+                min-width: 8%;
+
+                .main-checkbox:hover {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+
+                        width: 23px;
+                        height: 23px;
+
+                        right: 7px;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        background-image: url('../img/orange-cross.svg');
+                    }
+                }
+            }
+        }
+    }
+
+    .table-footer {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-count {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            select {
+                min-width: 70px;
+            }
+        }
+    }
+
+    .table-navigation {
+        border-radius: 3px;
+        display: flex;
+        width: max-content;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 16px;
+            @include opensans-medium;
+            font-size: 15px;
+            color: #064AB1;
+            border: 1px solid #6DB4F5;
+
+            &._blocked {
+                color: #91969A;
+                background: #F4F8FC;
+                border: 1px solid #D0D5DF;
+            }
+        }
+
+        &__prev {
+            border-radius: 3px 0px 0px 3px;
+        }
+
+        &__next {
+            border-radius: 0px 3px 3px 0px;
+        }
+    }
+}

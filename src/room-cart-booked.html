@@ -2,7 +2,7 @@
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
   @include('partials/head.html', { 'title': 'Карточка номера' })
 
-  <body class="page__body room-cart-page room-cart-page-booking-ban">
+  <body class="page__body room-cart-page room-cart-page-booked">
     <div class="site-container">
       <header>@include('partials/auth-panel.html')</header>
       <main class="main">
@@ -46,34 +46,13 @@
           </ul>
           <section class="section-block _no-border">
             <div class="left-content">
-              <h2>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.25 9C17.25 13.5563 13.5563 17.25 9 17.25C4.44365 17.25 0.75 13.5563 0.75 9C0.75 4.44365 4.44365 0.75 9 0.75C13.5563 0.75 17.25 4.44365 17.25 9Z"
-                    stroke="#D61A00"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M5 12.999L12.9994 4.99962"
-                    stroke="#D61A00"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M5 5.00098L12.9994 13.0004"
-                    stroke="#D61A00"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
-
-                <span>Запрет бронирования</span>
+              <h2>                
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.25 9C17.25 13.5563 13.5563 17.25 9 17.25C4.44365 17.25 0.75 13.5563 0.75 9C0.75 4.44365 4.44365 0.75 9 0.75C13.5563 0.75 17.25 4.44365 17.25 9Z" stroke="#FF6716" stroke-width="1.5"/>
+                  <path d="M10.0503 10.6994H8.37714L8.02743 4H10.4L10.0503 10.6994ZM8 13.0446C8 12.6149 8.11657 12.3131 8.34971 12.1394C8.58743 11.9657 8.87314 11.8789 9.20686 11.8789C9.53143 11.8789 9.81029 11.9657 10.0434 12.1394C10.2811 12.3131 10.4 12.6149 10.4 13.0446C10.4 13.456 10.2811 13.7531 10.0434 13.936C9.81029 14.1189 9.53143 14.2103 9.20686 14.2103C8.87314 14.2103 8.58743 14.1189 8.34971 13.936C8.11657 13.7531 8 13.456 8 13.0446Z" fill="#FF6716"/>
+                  </svg>
+                                              
+                <span>Номер забронирован</span>
               </h2>
 
               <div class="top-block">
@@ -272,37 +251,7 @@
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div class="right-content__bottom">
-                <h6 class="aside-color-title">Запрет бронирования</h6>
-
-                <div class="data-table">
-                  <div class="data-table__row">
-                    <span>Начало запрета:</span>
-                    <span>05.10.2023 :: 01:56</span>
-                  </div>
-
-                  <div class="data-table__row">
-                    <span>Окончание запрета:</span>
-                    <span>05.10.2023 :: 01:56</span>
-                  </div>
-
-                  <div class="data-table__row">
-                    <span>Всего ночей:</span>
-                    <span>4, осталось 2</span>
-                  </div>
-
-                  <div class="data-table__row">
-                    <span>Основание запрета:</span>
-                    <span>Ремонт</span>
-                  </div>
-                </div>
-
-                <a class="main-btn _blue-outlined" href="#"
-                  >Перейти к запрету бронирования</a
-                >
-              </div>
+              </div>              
             </div>
           </section>
         </div>

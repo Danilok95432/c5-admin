@@ -8,23 +8,22 @@
     .rooms-registry-table {
         margin-bottom: 20px;
 
-        .main-table__row:first-child {
-            max-height: 45px;
-        }
 
-        .main-table__cell {
-            .main-checkbox {
-                label::before {
-                    border-radius: 0;
-                    border: 1px solid #868585;
-                    margin-left: 20px;
-                }
-
-                input:checked+label::before {
-                    background-color: $white;
-                    background-image: url('../img/check-mark-black.svg');
+        .main-table__row {
+            &:first-child {
+                max-height: 45px;
+            }
+            &:hover {
+                .main-table__cell {
+                    .delete-link {
+                        opacity: 1;
+                    }
                 }
             }
+        }
+
+
+        .main-table__cell {
 
             .input-column-wrapper {
                 display: inline-block;
@@ -79,7 +78,7 @@
             }
 
             &:nth-child(6) {
-                min-width: 17%;
+                min-width: 15%;
             }
 
             &:nth-child(7) {
@@ -91,23 +90,21 @@
             }
 
             &:nth-child(8) {
-                min-width: 8%;
-
-                .main-checkbox:hover {
-                    position: relative;
-
-                    &::after {
-                        position: absolute;
-                        content: '';
-
-                        width: 23px;
-                        height: 23px;
-
-                        right: 7px;
-                        top: 50%;
-                        transform: translateY(-50%);
-
-                        background-image: url('../img/orange-cross.svg');
+                min-width: 6%;
+                display: flex;
+                justify-content: center;
+            }
+            &:nth-child(9) {
+                display: flex;
+                justify-content: center;
+                max-width: 4%;
+                .delete-link {
+                    opacity: 0;
+                    transition: all .2s;
+                    width: 23px;
+                    height: 23px;
+                    @media (max-width: 1024px) {
+                        opacity: 1;
                     }
                 }
             }

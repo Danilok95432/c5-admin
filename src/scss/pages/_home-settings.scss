@@ -1,0 +1,144 @@
+.home-settings-page {
+
+&__save-block-btn {
+  padding: 11px 20px;
+}
+
+  .fix-row {
+    margin-bottom: 21px;
+    &__title {
+      padding-top: 7px;
+      min-width: 230px;
+      span {
+        color: #FF6716;
+        font-weight: 500;
+      }
+    }
+    &__desc {
+      flex-grow: 1;
+    }
+  }
+
+  &__desc {
+    @include opensans-light;
+    margin-bottom: 27px;
+
+    span {
+      color: #FF6716;
+      font-weight: 500;
+    }
+  }
+
+
+  .promo-section {
+    .general-dropzone  {
+      &__previews {
+        padding: 0;
+        margin-top: 0;
+        max-width: 330px;
+        flex-grow: 1;
+        min-height: 108px;
+        height: 108px;
+      }
+       .dz-preview {
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        position: relative;
+         .dz-image {
+           height: 100%;
+         }
+      }
+    }
+
+    &__promo-photo-row {
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #C3D5F5;
+      margin-bottom: 30px;
+    }
+  }
+
+  .table-section {
+
+    h3 {
+      margin-bottom: 25px;
+    }
+
+    .main-btn {
+      display: inline-block;
+      padding: 11px 19px;
+    }
+
+    .main-table {
+      max-width: 100%;
+      overflow: auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      &__row {
+        &.main-table__title-row {
+          padding: 12px 2px;
+        }
+        &:not(.main-table__title-row) {
+          padding: 9px 2px;
+        }
+        @media (max-width: 768px) {
+          min-width: 800px;
+        }
+
+        &:hover {
+          .main-table__cell {
+            .delete-link {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .main-checkbox input + label::before {
+        margin-right: 0;
+      }
+
+      &__cell {
+        text-align: center;
+        &:nth-child(1) {
+          max-width: 5%;
+        }
+
+        &:nth-child(2) {
+          max-width: 20%;
+          text-align: left;
+        }
+
+        &:nth-child(3) {
+          max-width: 65%;
+        }
+
+        &:nth-child(4) {
+          max-width: 5%;
+          .main-checkbox {
+            span {
+              justify-content: center;
+            }
+          }
+        }
+        &:nth-child(5) {
+          display: flex;
+          justify-content: center;
+          max-width: 5%;
+          .delete-link {
+            opacity: 0;
+            transition: all .2s;
+            width: 23px;
+            height: 23px;
+            @media (max-width: 1024px) {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

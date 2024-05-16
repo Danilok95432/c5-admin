@@ -1,8 +1,12 @@
-.create-section-page {
+.create-offer-page {
   padding-bottom: 50px;
 
   .section-block {
-    padding: 20px 70px 35px 30px;
+    padding: 20px 70px 25px 30px;
+  }
+
+  .main-textarea {
+    height: 120px;
   }
 
   .upload-photos .dz-preview {
@@ -14,7 +18,9 @@
   }
 
   .fix-row {
-    margin-bottom: 21px;
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
 
     &__title {
       padding-top: 7px;
@@ -33,7 +39,7 @@
 
   &__desc {
     @include opensans-light;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
     span {
       color: #FF6716;
@@ -41,13 +47,8 @@
     }
   }
 
-  .unit-section {
-    .main-checkbox {
-      margin-bottom: 45px;
-    }
-  }
 
-  .image-section {
+  .photo-section {
     .general-dropzone {
       &__previews {
         padding: 0;

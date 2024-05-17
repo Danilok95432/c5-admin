@@ -122,30 +122,31 @@
             <section class="section-block prepayment-section">
               <h3>Условия предоплаты и отмены бронирования</h3>
               <label class="main-checkbox">
-                <input type="checkbox" name="non-refundable" />
+                <input
+                  class="non-refundable-checkbox"
+                  type="checkbox"
+                  name="non-refundable"
+                />
                 <span>Невозвратный тариф</span>
               </label>
 
               <div class="prepayment-settings">
+                <div class="section-row">
+                  <span class="row-title">Предоплата</span>
 
-              <div class="section-row">
-                <span class="row-title">Предоплата</span>
-
-                <div class="row-data">
-                  <p class="input-column-wrapper">
-                    <input
-                      class="main-input"
-                      type="text"
-                      name="prepayment"
-                      required
-                      value="30"
-                    />
-                  </p>
-                  <span>% от стоимости бронирования</span>
+                  <div class="row-data">
+                    <p class="input-column-wrapper">
+                      <input
+                        class="main-input"
+                        type="text"
+                        name="prepayment"
+                        required
+                        value="30"
+                      />
+                    </p>
+                    <span>% от стоимости бронирования</span>
+                  </div>
                 </div>
-              </div>
-
-           
                 <div class="section-row condition-block">
                   <span class="row-title">Бесплатная отмена за</span>
 
@@ -189,9 +190,7 @@
                     </select>
                   </div>
                 </div>
-
               </div>
-              
             </section>
 
             <section class="section-block room-square-section">

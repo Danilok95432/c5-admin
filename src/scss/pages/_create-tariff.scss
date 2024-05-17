@@ -77,16 +77,12 @@
             margin-bottom: 25px;
 
             &+.main-checkbox {
-                margin-bottom: 18px;
+                margin-bottom: 24px;
             }
         }
 
         .section-row {
-            @media (max-width: 520px) {
-                gap: 20px;
-            }
-
-            @media (max-width: 400px) {
+            @media (max-width: 700px) {
                 flex-direction: column;
                 gap: 0;
                 align-items: flex-start;
@@ -97,7 +93,20 @@
     .section-row {
         display: flex;
         align-items: center;
-        gap: 135px;
+
+        .row-title {
+            width: 225px;
+        }
+
+        select {
+            width: 90px;
+        }
+    }
+
+    .prepayment-settings {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .row-data {
@@ -124,7 +133,7 @@
             gap: 60px;
             margin-bottom: 10px;
 
-            @media (max-width: 400px) {
+            @media (max-width: 450px) {
                 gap: 20px;
             }
         }

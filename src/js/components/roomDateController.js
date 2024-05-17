@@ -131,16 +131,6 @@ if (roomDateController) {
   const datePreview = roomDateController.querySelector(
     '.room-date-controller__date-preview',
   )
-  const switcherDate = roomDateController.querySelector(
-    '.room-date-controller__switcher-date',
-  )
-
-  const prevCalendarBtn = roomDateController.querySelector(
-    '.room-date-controller__switcher-btn.prev-btn',
-  )
-  const nextCalendarBtn = roomDateController.querySelector(
-    '.room-date-controller__switcher-btn.next-btn',
-  )
 
   const presentDay = new Date()
   getCellsContent(presentDay).then(() => initRowsVisibleHandler())
@@ -148,16 +138,6 @@ if (roomDateController) {
   const customRoomCalendar = new AirDatepicker(calendarInput, {
     onSelect: ({ date, formattedDate }) => {
       datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
-      const nowDateFormatted = customRoomCalendar.formatDate(
-        presentDay,
-        'dd.MM.yyyy',
-      )
-
-      if (formattedDate === nowDateFormatted) {
-        switcherDate.textContent = 'сегодня'
-      } else {
-        switcherDate.textContent = formattedDate
-      }
 
       renderDateRow(customRoomCalendar.getViewDates('days'))
       getCellsContent(date).then(() => initRowsVisibleHandler())
@@ -175,27 +155,6 @@ if (roomDateController) {
       customRoomCalendar.selectDate(featuredDate)
       customRoomCalendar.setViewDate(featuredDate)
     }
-  })
-
-  const getInputDate = (input) => {
-    if (input.value) {
-      const formatDate = input.value.split('.').reverse().join('-')
-      const resDate = new Date(formatDate)
-      return resDate
-    } else {
-      return new Date()
-    }
-  }
-
-  nextCalendarBtn.addEventListener('click', () => {
-    const currentDate = getInputDate(calendarInput)
-    let nextDate = currentDate.setDate(currentDate.getDate() + 1)
-    customRoomCalendar.selectDate(nextDate)
-  })
-  prevCalendarBtn.addEventListener('click', () => {
-    const currentDate = getInputDate(calendarInput)
-    let prevDate = currentDate.setDate(currentDate.getDate() - 1)
-    customRoomCalendar.selectDate(prevDate)
   })
 
   //отрисовка таблицы с датами бронирования

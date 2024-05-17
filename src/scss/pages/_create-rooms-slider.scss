@@ -1,0 +1,74 @@
+.create-rooms-slider-page {
+  padding-bottom: 50px;
+
+  .section-block {
+    padding: 20px 70px 25px 30px;
+  }
+
+  .main-textarea {
+    height: 120px;
+  }
+
+  .upload-photos .dz-preview {
+    height: 108px;
+    width: 325px;
+    .dz-image {
+      height: 106px;
+    }
+  }
+
+  .fix-row {
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
+
+    &__title {
+      padding-top: 7px;
+      min-width: 190px;
+
+      span {
+        color: #FF6716;
+        font-weight: 500;
+      }
+    }
+
+    &__desc {
+      flex-grow: 1;
+    }
+  }
+
+  &__desc {
+    @include opensans-light;
+    margin-bottom: 25px;
+
+    span {
+      color: #FF6716;
+      font-weight: 500;
+    }
+  }
+
+
+  .photo-section {
+    .general-dropzone {
+      &__previews {
+        padding: 0;
+        border: none;
+        margin-top: 0;
+        max-width: 325px;
+        flex-grow: 1;
+        min-height: 108px;
+        height: 108px;
+      }
+    }
+
+    &__desc {
+      font-size: 15px;
+      margin-bottom: 20px;
+
+      span {
+        color: #FF6716;
+        font-weight: 500
+      }
+    }
+  }
+}

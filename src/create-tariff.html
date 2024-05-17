@@ -121,30 +121,74 @@
 
             <section class="section-block prepayment-section">
               <h3>Условия предоплаты и отмены бронирования</h3>
-              <div class="main-checkbox">
+              <label class="main-checkbox">
                 <input
+                  class="non-refundable-checkbox"
                   type="checkbox"
-                  checked
                   name="non-refundable"
-                  id="non-refundable"
                 />
-                <label for="non-refundable">Невозвратный тариф</label>
-              </div>
+                <span>Невозвратный тариф</span>
+              </label>
 
-              <div class="section-row">
-                <span class="row-title">Предоплата</span>
+              <div class="prepayment-settings">
+                <div class="section-row">
+                  <span class="row-title">Предоплата</span>
 
-                <div class="row-data">
-                  <p class="input-column-wrapper">
-                    <input
-                      class="main-input"
-                      type="text"
-                      name="prepayment"
-                      required
-                      value="30"
-                    />
-                  </p>
-                  <span>% от стоимости бронирования</span>
+                  <div class="row-data">
+                    <p class="input-column-wrapper">
+                      <input
+                        class="main-input"
+                        type="text"
+                        name="prepayment"
+                        required
+                        value="30"
+                      />
+                    </p>
+                    <span>% от стоимости бронирования</span>
+                  </div>
+                </div>
+                <div class="section-row condition-block">
+                  <span class="row-title">Бесплатная отмена за</span>
+
+                  <div class="row-data">
+                    <p class="input-column-wrapper">
+                      <input
+                        class="main-input"
+                        type="text"
+                        name="free-cancel"
+                        required
+                        value="48"
+                      />
+                    </p>
+
+                    <select class="main-input" name="free-cancel-time-unit">
+                      <option value="1">часов</option>
+                      <option value="2">часов</option>
+                    </select>
+
+                    <span>до времени заезда</span>
+                  </div>
+                </div>
+
+                <div class="section-row condition-block">
+                  <span class="row-title">Штраф за позднюю отмену</span>
+
+                  <div class="row-data">
+                    <p class="input-column-wrapper">
+                      <input
+                        class="main-input"
+                        type="text"
+                        name="fine"
+                        required
+                        value="1000"
+                      />
+                    </p>
+
+                    <select class="main-input" name="fine-currency">
+                      <option value="1">₽</option>
+                      <option value="2">₽</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </section>

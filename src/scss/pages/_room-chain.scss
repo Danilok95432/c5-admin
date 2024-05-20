@@ -1,6 +1,10 @@
 .room-chain-page {
   background-color: #ffffff;
 
+  .modal-overlay {
+    background: transparent;
+  }
+
   .container {
     max-width: 1560px;
   }
@@ -9,6 +13,7 @@
     padding-top: 27px;
     padding-bottom: 22px;
     background-color: #E8F1F8;
+    border-bottom: 1px solid #C3D5F5;
 
     .main-input {
       margin-bottom: 15px;
@@ -45,4 +50,23 @@
     }
   }
 
+  &__inner {
+    .container {
+      position: relative;
+      padding: 0;
+
+      .room-chain-page__prompt-btn {
+        position: absolute;
+        right: 17px;
+        top: 23px;
+        width: 18px;
+        height: 18px;
+        z-index: 10;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,38 @@
+.chain-legend-modal {
+  padding: 18px 73px 18px 18px;
+  max-width: 490px;
+  background:#ffffff;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
+
+  .modal-close-btn {
+    top: 18px;
+    right: 15px;
+  }
+  h4 {
+    font-size: 15px;
+    @include opensans-bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E7E9ED;
+    margin-bottom: 0;
+  }
+  ul {
+    padding-left: 20px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 75px;
+      @media (max-width: 550px) {
+        gap: 20px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 1.3;
+      }
+    }
+  }
+}

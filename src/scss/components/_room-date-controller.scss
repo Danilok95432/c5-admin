@@ -1,113 +1,116 @@
-.room-date-controller {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  height: 66px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-
-
-  .date-mask {
-    border-radius: 3px;
-    border: 1px solid #6DB4F5;
-    background: #ffffff;
-    max-width: 130px;
-    font-size: 15px;
-    @include opensans-medium;
-  }
-
-  &__reload {
-    color: #064AB1;
-    border-radius: 3px;
-    border: 1px solid #D0D5DF;
-    background: #FFF;
-    font-size: 13px;
-    height: 30px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 155px;
-  }
-
-
-  &__calendar {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    min-width: 192px;
-    width: 192px;
-    .icon-input {
-      input {
-        padding: 0 12px;
-        height: 35px;
-      }
-    }
-  }
-
-  &__previews-list {
-    display: flex;
-    align-items: center;
-
-    li {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      width: 407px;
-      padding-left: 10px;
-      border-left: 1px solid #6DB4F5;
-      h3 {
-        @include opensans-bold;
-        font-size: 15px;
-        text-transform: capitalize;
-      }
-    }
-  }
-
-  &__current-day-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 3px;
-    border: 1px solid #6DB4F5;
-  }
-
-  &__search {
-    flex-grow: 1;
-    position: relative;
-
-    svg {
-      position: absolute;
-      left: 10px;
-      height: 13px;
-      width: 13px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .main-input {
-      padding: 8px 10px 8px 30px;
-
-      &::placeholder {
-        color: #91969A
-      }
-    }
-  }
-
-  .booking-search-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35.25px;
-    color: #ffffff;
-    background-color: #064AB1;
-    border: transparent;
-  }
-
-
-
-
-}
+//.room-date-controller {
+//  display: flex;
+//  gap: 10px;
+//  width: 100%;
+//  height: 66px;
+//
+//  @media (max-width: 768px) {
+//    flex-direction: column;
+//  }
+//
+//
+//
+//
+//  .date-mask {
+//    border-radius: 3px;
+//    border: 1px solid #6DB4F5;
+//    background: #ffffff;
+//    max-width: 130px;
+//    font-size: 15px;
+//    @include opensans-medium;
+//  }
+//
+//  &__reload {
+//    color: #064AB1;
+//    border-radius: 3px;
+//    border: 1px solid #D0D5DF;
+//    background: #FFF;
+//    font-size: 13px;
+//    height: 30px;
+//    padding: 0;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    width: 155px;
+//  }
+//
+//
+//  &__calendar {
+//    display: flex;
+//    gap: 15px;
+//    align-items: center;
+//    min-width: 179px;
+//    width: 179px;
+//    .icon-input {
+//      input {
+//        padding: 0 12px;
+//        height: 35px;
+//      }
+//    }
+//  }
+//
+//  &__previews-list {
+//    display: flex;
+//    align-items: center;
+//
+//    li {
+//      display: flex;
+//      align-items: center;
+//      height: 100%;
+//      width: 407px;
+//      padding-left: 10px;
+//      border-left: 1px solid #6DB4F5;
+//      h3 {
+//        @include opensans-bold;
+//        font-size: 15px;
+//        text-transform: capitalize;
+//      }
+//    }
+//  }
+//
+//  &__current-day-btn {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    width: 35px;
+//    height: 35px;
+//    border-radius: 3px;
+//    border: 1px solid #6DB4F5;
+//  }
+//
+//  &__search {
+//    flex-grow: 1;
+//    position: relative;
+//
+//    svg {
+//      position: absolute;
+//      left: 10px;
+//      height: 13px;
+//      width: 13px;
+//      top: 50%;
+//      transform: translateY(-50%);
+//    }
+//
+//    .main-input {
+//      padding: 8px 10px 8px 30px;
+//
+//      &::placeholder {
+//        color: #91969A
+//      }
+//    }
+//  }
+//
+//  .booking-search-btn {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    height: 35.25px;
+//    color: #ffffff;
+//    background-color: #064AB1;
+//    border: transparent;
+//  }
+//
+//
+//
+//
+//}

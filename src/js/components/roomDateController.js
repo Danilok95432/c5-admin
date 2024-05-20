@@ -137,17 +137,17 @@ if (roomDateController) {
 
   const customRoomCalendar = new AirDatepicker(calendarInput, {
     onSelect: ({ date, formattedDate }) => {
-      datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
+      // datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
 
       renderDateRow(customRoomCalendar.getViewDates('days'))
       getCellsContent(date).then(() => initRowsVisibleHandler())
     },
     selectedDates: [presentDay],
   })
-  datePreview.textContent = customRoomCalendar.formatDate(
-    presentDay,
-    'MMMM yyyy',
-  )
+  // datePreview.textContent = customRoomCalendar.formatDate(
+  //   presentDay,
+  //   'MMMM yyyy',
+  // )
 
   calendarInput.addEventListener('click', (e) => {
     const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
@@ -177,14 +177,13 @@ if (roomDateController) {
     if (nowDateFormatted === checkedDateFormatted) {
       return '_active-day'
     }
-    if (nowMonthFormatted !== checkedMonthFormatted) {
-      return '_no-current'
-    }
     return ''
   }
 
   const bookingTable = document.querySelector('.room-booking-calendar table')
-  const bookingTableTitleRow = bookingTable.querySelector('thead tr')
+  const bookingTableTitleRow = bookingTable.querySelector(
+    'thead tr.room-booking-calendar__dates-row',
+  )
 
   const renderDateRow = (cellArr) => {
     const html = cellArr.map((dateEl) => {

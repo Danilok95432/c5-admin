@@ -1,0 +1,72 @@
+.room-chain-page {
+  background-color: #ffffff;
+
+  .modal-overlay {
+    background: transparent;
+  }
+
+  .container {
+    max-width: 1560px;
+  }
+
+  &__search {
+    padding-top: 27px;
+    padding-bottom: 22px;
+    background-color: #E8F1F8;
+    border-bottom: 1px solid #C3D5F5;
+
+    .main-input {
+      margin-bottom: 15px;
+      max-width: 900px;
+      padding-right: 35px;
+      background: #ffffff url('data:image/svg+xml,<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.63487 11.9266C6.93935 12.0761 8.25148 11.7689 9.35042 11.0637L12.3312 14.0445C12.3313 14.0445 12.3313 14.0446 12.3313 14.0446C12.5587 14.272 12.8671 14.3999 13.1887 14.4C13.5103 14.4001 13.8188 14.2725 14.0463 14.0451C14.2738 13.8177 14.4017 13.5093 14.4018 13.1877C14.4019 12.866 14.2743 12.5575 14.0469 12.33L14.0468 12.3299L11.0651 9.3482C11.7701 8.2485 12.0767 6.93568 11.9262 5.63083C11.7621 4.20834 11.067 2.90024 9.97991 1.96824C8.89281 1.03625 7.49389 0.549083 6.06303 0.604217C4.63217 0.65935 3.27489 1.25272 2.26273 2.2656C1.25056 3.27849 0.658171 4.63619 0.604061 6.06709C0.549952 7.49799 1.03812 8.89656 1.97089 9.983C2.90367 11.0694 4.21226 11.7636 5.63487 11.9266ZM10.3517 6.28029C10.3517 6.81467 10.2465 7.34381 10.042 7.83751C9.83749 8.33121 9.53775 8.7798 9.15989 9.15766C8.78203 9.53552 8.33344 9.83525 7.83974 10.0398C7.34605 10.2442 6.8169 10.3495 6.28252 10.3495C5.74815 10.3495 5.219 10.2442 4.72531 10.0398C4.23161 9.83525 3.78302 9.53552 3.40516 9.15766C3.0273 8.7798 2.72756 8.33121 2.52306 7.83751C2.31857 7.34381 2.21331 6.81467 2.21331 6.28029C2.21331 5.20107 2.64203 4.16605 3.40516 3.40292C4.16828 2.6398 5.2033 2.21108 6.28252 2.21108C7.36175 2.21108 8.39677 2.6398 9.15989 3.40292C9.92302 4.16605 10.3517 5.20107 10.3517 6.28029Z" fill="%23064AB1" stroke="%23064AB1" stroke-width="0.8"/></svg>') no-repeat calc(100% - 13px) center;
+    }
+
+    .search-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &__count {
+        font-size: 15px;
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      &__prompt {
+        font-size: 15px;
+        line-height: 1;
+
+        span {
+          padding: 1px 3px;
+          display: inline-block;
+          border: 2px solid #3045FF;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    .container {
+      position: relative;
+      padding: 0;
+
+      .room-chain-page__prompt-btn {
+        position: absolute;
+        right: 17px;
+        top: 23px;
+        width: 18px;
+        height: 18px;
+        z-index: 10;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,11 @@
-const nonRefundableCheckbox = document.querySelector('[name="non-refundable"]')
+const createTariffPage = document.querySelector('.create-tariff-page')
 
-const conditionBlocks = document.querySelectorAll('.condition-block')
+if (createTariffPage) {
+  const nonRefundableCheckbox = createTariffPage.querySelector(
+    '.non-refundable-checkbox',
+  )
+  const conditionBlocks = createTariffPage.querySelectorAll('.condition-block')
+
 
 nonRefundableCheckbox?.addEventListener('click', () => {
   if (nonRefundableCheckbox.checked) {
@@ -9,3 +14,5 @@ nonRefundableCheckbox?.addEventListener('click', () => {
     conditionBlocks.forEach((item) => (item.style.display = 'flex'))
   }
 })
+}
+

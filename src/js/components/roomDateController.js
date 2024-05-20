@@ -131,43 +131,23 @@ if (roomDateController) {
   const datePreview = roomDateController.querySelector(
     '.room-date-controller__date-preview',
   )
-  const switcherDate = roomDateController.querySelector(
-    '.room-date-controller__switcher-date',
-  )
-
-  const prevCalendarBtn = roomDateController.querySelector(
-    '.room-date-controller__switcher-btn.prev-btn',
-  )
-  const nextCalendarBtn = roomDateController.querySelector(
-    '.room-date-controller__switcher-btn.next-btn',
-  )
 
   const presentDay = new Date()
   getCellsContent(presentDay).then(() => initRowsVisibleHandler())
 
   const customRoomCalendar = new AirDatepicker(calendarInput, {
     onSelect: ({ date, formattedDate }) => {
-      datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
-      const nowDateFormatted = customRoomCalendar.formatDate(
-        presentDay,
-        'dd.MM.yyyy',
-      )
-
-      if (formattedDate === nowDateFormatted) {
-        switcherDate.textContent = 'сегодня'
-      } else {
-        switcherDate.textContent = formattedDate
-      }
+      // datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
 
       renderDateRow(customRoomCalendar.getViewDates('days'))
       getCellsContent(date).then(() => initRowsVisibleHandler())
     },
     selectedDates: [presentDay],
   })
-  datePreview.textContent = customRoomCalendar.formatDate(
-    presentDay,
-    'MMMM yyyy',
-  )
+  // datePreview.textContent = customRoomCalendar.formatDate(
+  //   presentDay,
+  //   'MMMM yyyy',
+  // )
 
   calendarInput.addEventListener('click', (e) => {
     const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
@@ -175,27 +155,6 @@ if (roomDateController) {
       customRoomCalendar.selectDate(featuredDate)
       customRoomCalendar.setViewDate(featuredDate)
     }
-  })
-
-  const getInputDate = (input) => {
-    if (input.value) {
-      const formatDate = input.value.split('.').reverse().join('-')
-      const resDate = new Date(formatDate)
-      return resDate
-    } else {
-      return new Date()
-    }
-  }
-
-  nextCalendarBtn.addEventListener('click', () => {
-    const currentDate = getInputDate(calendarInput)
-    let nextDate = currentDate.setDate(currentDate.getDate() + 1)
-    customRoomCalendar.selectDate(nextDate)
-  })
-  prevCalendarBtn.addEventListener('click', () => {
-    const currentDate = getInputDate(calendarInput)
-    let prevDate = currentDate.setDate(currentDate.getDate() - 1)
-    customRoomCalendar.selectDate(prevDate)
   })
 
   //отрисовка таблицы с датами бронирования
@@ -218,14 +177,13 @@ if (roomDateController) {
     if (nowDateFormatted === checkedDateFormatted) {
       return '_active-day'
     }
-    if (nowMonthFormatted !== checkedMonthFormatted) {
-      return '_no-current'
-    }
     return ''
   }
 
   const bookingTable = document.querySelector('.room-booking-calendar table')
-  const bookingTableTitleRow = bookingTable.querySelector('thead tr')
+  const bookingTableTitleRow = bookingTable.querySelector(
+    'thead tr.room-booking-calendar__dates-row',
+  )
 
   const renderDateRow = (cellArr) => {
     const html = cellArr.map((dateEl) => {

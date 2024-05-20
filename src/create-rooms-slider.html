@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-@include('partials/head.html', { 'title': 'Создать или редактировать спецпредложение' })
+@include('partials/head.html', { 'title': 'Создать или редактировать слайдер с номерами' })
 
-<body class="page__body create-offer-page">
+<body class="page__body create-rooms-slider-page">
 <div class="site-container">
   <div class="modal-overlay"></div>
   <header>
@@ -11,24 +11,38 @@
   <main class="main">
     <div class="container">
       <h1>
-        Создать или редактировать спецпредложение
+        Создать или редактировать слайдер с номерами
       </h1>
-      <form class="create-offer-page__form" action="#">
-        <section class="section-block offer-section">
-          <h3>Спецпредложение</h3>
-          <p class="create-offer-page__desc">
+      <form class="create-rooms-slider-page__form" action="#">
+        <section class="section-block room-section">
+          <h3>Номер</h3>
+          <p class="create-rooms-slider-page__desc">
             поля, отмеченные символом <span>*</span>, обязательны для заполнения
           </p>
 
           <div class="fix-row">
             <h5 class="fix-row__title">
-              Название<span>*</span>
+              Наименование<span>*</span>
             </h5>
             <div class="fix-row__desc">
               <input
                 class="main-input"
                 type="text"
-                name="offer_title"
+                name="room_title"
+                required
+              />
+            </div>
+          </div>
+          <div class="fix-row">
+            <h5 class="fix-row__title">
+              Ссылка<span>*</span>
+            </h5>
+            <div class="fix-row__desc">
+              <input
+                class="main-input"
+                type="text"
+                name="room_link"
+                placeholder="/sitepage/"
                 required
               />
             </div>
@@ -38,7 +52,7 @@
               Описание<span>*</span>
             </h5>
             <div class="fix-row__desc">
-              <textarea class="main-textarea" name="offer_desc"
+              <textarea class="main-textarea" name="room_desc"
                         required></textarea>
             </div>
           </div>
@@ -48,10 +62,10 @@
           <p class="photo-section__desc">Загрузить изображение<span>*</span></p>
           <div class="upload-photos general-dropzone-wrapper">
             <div
-              id="offerPhoto"
+              id="roomPhoto"
               data-show-preview="true"
               class="dropzone general-dropzone"
-              data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "175", "height": "108", "acceptedFiles": ".jpeg, .jpg", "type": "offerPhoto", "filesCount": "1", "additional": "доп.контент"}'
+              data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "325", "height": "108", "acceptedFiles": ".jpeg, .jpg", "type": "roomPhoto", "filesCount": "1", "additional": "доп.контент"}'
             >
               <div class="dz-message">
                 <svg
@@ -84,7 +98,7 @@
                 </svg>
                 <p>Перетащите изображение на это поле</p>
                 <p>
-                  380px * 230px, JPEG
+                  1134px * 401px, JPEG
                 </p>
               </div>
               <div class="upload-photos__info">
@@ -94,7 +108,7 @@
                 <p>Перетащите его на поле слева или нажмите на ссылку</p>
                 <button
                   class="general-dropzone__add-btn main-btn"
-                  id="offer-photo"
+                  id="room-photo"
                   type="button"
                 >
                   Загрузить

@@ -1,278 +1,378 @@
 <!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-  @include('partials/head.html', { 'title': 'Сервисы в номере' })
+  @include('partials/head.html', { 'title': 'Услуги в категории' })
 
   <body class="page__body room-services-page">
     <div class="site-container">
-      <header>
-        @include('partials/auth-panel.html')
-        <div class="container main-menu">
-          <ul>
-            <li>
-              <a href="#"> Настройки </a>
-            </li>
-            <li>
-              <a href="rooms-structure.html"> Базовые модули </a>
-            </li>
-            <li>
-              <a href="#"> Контент </a>
-            </li>
-            <li class="_active">
-              <a href="objects-list.html"> Номерной фонд </a>
-            </li>
-            <li>
-              <a href="view-booking.html"> Бронирование </a>
-            </li>
-            <li>
-              <a href="manage-restaurant.html"> Ресторан </a>
-            </li>
-          </ul>
-          <a class="main-menu__dashboard" href="dashboard.html">
-            <svg
-              width="15"
-              height="14"
-              viewBox="0 0 15 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.256282 0.256283C0.0921873 0.420377 0 0.642936 0 0.875V13.125C0 13.3571 0.0921873 13.5796 0.256282 13.7437C0.420376 13.9078 0.642936 14 0.875 14H5.25C5.48206 14 5.70462 13.9078 5.86872 13.7437C6.03281 13.5796 6.125 13.3571 6.125 13.125V0.875C6.125 0.642936 6.03281 0.420377 5.86872 0.256283C5.70462 0.0921885 5.48206 0 5.25 0H0.875C0.642936 0 0.420376 0.0921885 0.256282 0.256283Z"
-                fill="#064AB1"
-              />
-              <path
-                d="M8 10.875C8 10.6429 8.09219 10.4204 8.25628 10.2563C8.42038 10.0922 8.64294 10 8.875 10H13.25C13.4821 10 13.7046 10.0922 13.8687 10.2563C14.0328 10.4204 14.125 10.6429 14.125 10.875V13.125C14.125 13.3571 14.0328 13.5796 13.8687 13.7437C13.7046 13.9078 13.4821 14 13.25 14H8.875C8.64294 14 8.42038 13.9078 8.25628 13.7437C8.09219 13.5796 8 13.3571 8 13.125V10.875Z"
-                fill="#064AB1"
-              />
-              <path
-                d="M8.25628 0.256283C8.09219 0.420377 8 0.642936 8 0.875V7.125C8 7.35706 8.09219 7.57962 8.25628 7.74372C8.42038 7.90781 8.64294 8 8.875 8H13.25C13.4821 8 13.7046 7.90781 13.8687 7.74372C14.0328 7.57962 14.125 7.35706 14.125 7.125V0.875C14.125 0.642936 14.0328 0.420377 13.8687 0.256283C13.7046 0.0921885 13.4821 0 13.25 0H8.875C8.64294 0 8.42038 0.0921885 8.25628 0.256283Z"
-                fill="#064AB1"
-              />
-            </svg>
-
-            Дашборд
-          </a>
-        </div>
-        <div class="container room-fund-menu">
-          <ul>
-            <li>
-              <a href="objects-list.html"> Объекты </a>
-            </li>
-            <li class="_active">
-              <a href="rooms-categories.html"> Категории номеров </a>
-            </li>
-            <li>
-              <a href="rooms-list.html"> Реестр номеров </a>
-            </li>
-            <li>
-              <a href="room-chain.html"> Сетка номера/даты </a>
-            </li>
-          </ul>
-        </div>
-      </header>
+      <header>@include('partials/auth-panel.html')</header>
       <main class="main">
         <div class="container">
-          <section class="main-section">
-            <h1>Создание / редактирование категории (сервисы в категории)</h1>
-            <ul class="main-section__menu">
-              <li>
-                <a href="index.html"> Данные категории </a>
-              </li>
-              <li>
-                <a href="rooms-apartment.html"> Комнаты в категории </a>
-              </li>
-              <li class="_active">
-                <a href="rooms-services.html"> Услуги в категории </a>
-              </li>
-              <li>
-                <a href="rooms-photos.html"> Фотографии категории </a>
-              </li>
-            </ul>
-            <form action="#">
-              <div class="room-services-page__content">
-                <ul class="room-services-page__list services-list">
-                  <li class="services-list__title">
-                    <h3>Мультимедиа</h3>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="tv" id="tv" />
-                      <label for="tv">Телевизор</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="tv_max" id="tvMax" />
-                      <label for="tvMax"
-                        >Телевизор 32"+ или высокой четкости</label
-                      >
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="dvd" id="dvd" />
-                      <label for="dvd">DVD-плейер</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="multimedia"
-                        id="multimedia"
-                      />
-                      <label for="multimedia">Мультимедиа-портал</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="paid_channels"
-                        id="paidСhannels"
-                      />
-                      <label for="paidСhannels">Платные каналы</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="paid_films" id="paidFilms" />
-                      <label for="paidFilms">Платные фильмы</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="radio" id="radio" />
-                      <label for="radio">Радио AM/FM</label>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="room-services-page__list services-list">
-                  <li class="services-list__title">
-                    <h3>Климат</h3>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="conditioner"
-                        id="conditioner"
-                      />
-                      <label for="conditioner">Кондиционер</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="ventilation"
-                        id="ventilation"
-                      />
-                      <label for="ventilation">Вытяжная вентиляция</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="heating" id="heating" />
-                      <label for="heating">Отопление</label>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="room-services-page__list services-list">
-                  <li class="services-list__title">
-                    <h3>Связь</h3>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="local_phone"
-                        id="localPhone"
-                      />
-                      <label for="localPhone">Местный телефон</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="city_phone" id="cityPhone" />
-                      <label for="cityPhone">Городской телефон</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="long_phone" id="longPhone" />
-                      <label for="longPhone">Междугородный телефон</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="free_wifi" id="freeWifi" />
-                      <label for="freeWifi">Бесплатный Wi-FI</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="paid_wifi" id="paidWifi" />
-                      <label for="paidWifi">Платный Wi-FI</label>
-                    </div>
-                  </li>
-                </ul>
+          <h1>Создание/редактирование категории</h1>
+          <ul class="tab-menu">
+            <li>
+              <a href="create-category.html">Данные категории</a>
+            </li>
+            <li>
+              <a href="rooms-apartment.html">Комнаты в категории</a>
+            </li>
 
-                <ul class="room-services-page__list services-list">
-                  <li class="services-list__title">
-                    <h3>Прочее</h3>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="fridge" id="fridge" />
-                      <label for="fridge">Холодильник</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="writing_table"
-                        id="writingTable"
-                      />
-                      <label for="writingTable">Письменный стол</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input type="checkbox" name="chair" id="chair" />
-                      <label for="chair">Кресло для отдыха</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="main-checkbox">
-                      <input
-                        type="checkbox"
-                        name="coffee_table"
-                        id="coffeeTable"
-                      />
-                      <label for="coffeeTable">Журнальный столик</label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="main-controllers">
-                <div class="main-controllers__btns-left">
-                  <button class="main-btn _green" type="submit">
-                    Сохранить и закрыть
-                  </button>
-                  <button
-                    class="main-btn _blue"
-                    type="button"
-                    data-action="./data/test.txt"
-                  >
-                    Применить и продолжить
-                  </button>
-                </div>
-                <div class="main-controllers__btns-right">
-                  <a href="#" class="main-btn _red">Отменить изменения</a>
-                </div>
-              </div>
-            </form>
+            <li>
+              <a class="_active" href="#">Услуги в категории</a>
+            </li>
+            <li>
+              <a href="accommodation-includes.html">Включено в размещение</a>
+            </li>
+            <li>
+              <a href="category-photos.html">Фотографии категории</a>
+            </li>
+          </ul>
+          <section class="section-block _no-border">
+            <h3>Связь и электроприборы</h3>
+
+            <div class="checkboxes-container">
+              <label class="main-checkbox">
+                <input type="checkbox" name="tv" />
+                <span>Телевизор</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="phone" />
+                <span>Телефон</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bar" />
+                <span>Мини-бар</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="teapot" />
+                <span>Электрический чайник</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="iron" />
+                <span>Утюг</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="fan" />
+                <span>Фен</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="lamp" />
+                <span>Светильник</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="table-lamp" />
+                <span>Настольная лампа</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="wifi" />
+                <span>Wi-Fi</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="mini-fridge" />
+                <span>Мини-холодильник</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3>Климат и интерьер</h3>
+
+            <div class="checkboxes-container">
+              <label class="main-checkbox">
+                <input type="checkbox" name="conditioner" />
+                <span>Кондиционер</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="electronic-locks" />
+                <span>Электронные замки</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="carpet" />
+                <span>Ковер</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="carpet-covering" />
+                <span>Ковровое покрытие</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="sound-insulation" />
+                <span>Звукоизоляция</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="heating" />
+                <span>Отопление</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="courtyard-view" />
+                <span>Вид во двор</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="private-entrance" />
+                <span>Отдельный вход в номер</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="water-view" />
+                <span>Вид на воду</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="two-single-beds" />
+                <span>Две односпальные кровати</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="double-bed" />
+                <span>Двуспальная кровать</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="single-bed" />
+                <span>Односпальная кровать</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="luggage-rack" />
+                <span>Багажная тумба</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="mirror" />
+                <span>Зеркало</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="desktop" />
+                <span>Рабочий стол</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="wardrobe" />
+                <span>Шкаф для одежды</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="pedestal" />
+                <span>Тумба</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="wardrobe-2" />
+                <span>Шкаф-купе</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="desk" />
+                <span>Письменный стол</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="table" />
+                <span>Стол</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="sofa" />
+                <span>Раскладной диван</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3>Гигиена и комфорт</h3>
+
+            <div class="checkboxes-container">
+              <label class="main-checkbox">
+                <input type="checkbox" name="fridge" />
+                <span>Холодильник</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="glasses" />
+                <span>Стаканы</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="kitchenette" />
+                <span>Мини-кухня</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="water" />
+                <span>Питьевая вода</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="tea-station" />
+                <span>Чайная станция</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="towel" />
+                <span>Полотенце</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="hygiene-products" />
+                <span>Гигиенические средства</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="sauna" />
+                <span>Сауна</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bathrobes" />
+                <span>Халаты</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="toilet-facilities" />
+                <span>Туалетные средства</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="toilet" />
+                <span>Унитаз</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="shower" />
+                <span>Душ</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="shower-cabin" />
+                <span>Душевая кабина</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bath" />
+                <span>Ванна</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bathroom" />
+                <span>Санузел</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bathroom-2" />
+                <span>Ванная комната</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="armchair" />
+                <span>Кресло</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="hangers" />
+                <span>Вешалки</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="chairs" />
+                <span>Стулья</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="chair" />
+                <span>Стул</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="table-and-chairs" />
+                <span>Столик и кресла</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="toilet" />
+                <span>Туалет</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3>Прочее</h3>
+
+            <div class="checkboxes-container">
+              <label class="main-checkbox">
+                <input type="checkbox" name="safe-deposit" />
+                <span>Сейф</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="alarm" />
+                <span>Будильник</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="tea-set" />
+                <span>Чайный набор</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="information-card" />
+                <span>Информационная карта</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="ironing-board" />
+                <span>Гладильная доска</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="room-service" />
+                <span>Обслуживание номеров</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="cosmetic-mirror" />
+                <span>Косметическое зеркало</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="mineral-water" />
+                <span>Минеральная вода</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="laminate " />
+                <span>Ламинат</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="cooler" />
+                <span>Кулер на этаже</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="non-smoking" />
+                <span>Номер для некурящих</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="writing-materials" />
+                <span>Письменные принадлежности</span>
+              </label>
+            </div>
           </section>
         </div>
       </main>

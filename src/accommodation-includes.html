@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Включено в размещение' })
+
+  <body class="page__body accommodation-includes-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание/редактирование категории</h1>
+          <ul class="tab-menu">
+            <li>
+              <a href="create-category.html">Данные категории</a>
+            </li>
+            <li>
+              <a href="rooms-apartment.html">Комнаты в категории</a>
+            </li>
+
+            <li>
+              <a href="rooms-services.html">Услуги в категории</a>
+            </li>
+            <li>
+              <a class="_active" href="#">Включено в размещение</a>
+            </li>
+            <li>
+              <a href="category-photos.html">Фотографии категории</a>
+            </li>
+          </ul>
+
+          <section class="section-block _no-border">
+            <h3>Включено в размещение</h3>
+
+            <div class="checkboxes-container">
+              <label class="main-checkbox">
+                <input type="checkbox" name="free-wifi" />
+                <span>Бесплатный WiFi интернет</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="satellite-tv" />
+                <span>Спутниковое телевидение</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="hypoallergenic-underwear" />
+                <span>Гипоаллергенное белье</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bottled-water" />
+                <span>Бутилированная вода</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="tea-set" />
+                <span>Чайный набор</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="hygiene-supplies" />
+                <span>Гигиенические принадлежности</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="bathrobe" />
+                <span>Халат</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="slippers" />
+                <span>Тапочки</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="not-include-breakfast" />
+                <span>Завтрак не входит в стоимость</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="include-breakfast" />
+                <span>Завтрак включен в стоимость</span>
+              </label>
+
+              <label class="main-checkbox">
+                <input type="checkbox" name="mattress" />
+                <span>Ортопедический матрас</span>
+              </label>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

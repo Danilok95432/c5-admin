@@ -1,0 +1,33 @@
+.accommodation-includes-page {
+    padding-bottom: 40px;
+
+    .section-block {
+        padding: 30px 28px;
+
+        h3 {
+            margin-bottom: 25px;
+        }
+    }
+
+    .checkboxes-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-flow: column;
+
+        label {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1120px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 850px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 560px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

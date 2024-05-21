@@ -4,6 +4,7 @@ export const infoModal = document.querySelector('.info-modal')
 export const bookingConfirmModal = document.querySelector(
   '.booking-confirm-modal',
 )
+
 export const loader = document.querySelector('.loader')
 export const bigImgModal = document.querySelector('.big-img-modal')
 

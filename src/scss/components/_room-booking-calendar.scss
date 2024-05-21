@@ -12,12 +12,25 @@
 
 
   .room-date-controller {
-
+    position: relative;
     th {
       border: none;
     }
     th.room-date-controller__calendar {
       background-color: transparent;
+    }
+
+    th.room-date-controller__date-preview {
+      position: absolute;
+      left: 850px;
+      top: 50%;
+      transform: translateY(-50%);
+
+
+      @include opensans-bold;
+      min-width: 130px;
+      height: auto;
+      font-size: 15px;
     }
 
 
@@ -78,7 +91,8 @@
       text-align: left;
       font-size: 15px;
       background-color: #fff;
-      min-width: 205px;
+      min-width: 207px;
+      border-right: 1px solid #C3D5F5;
     }
 
     &:last-child {
@@ -204,6 +218,13 @@
     }
     td:first-child {
       padding-left: 35px;
+      color: #A5AFBB;
+      font-size: 15px;
+      @include opensans-medium;
+      line-height: 1.1;
+      p {
+        color: #000000;
+      }
     }
 
     &._visible {

@@ -177,3 +177,14 @@ export const setContextOptions = (value, contentSelect, stateOptions) => {
     contentSelect.append(filEl)
   })
 }
+
+// Удаление пробелов при передаче json в data-атрибут
+
+export const escapeHtml = (unsafe) => {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}

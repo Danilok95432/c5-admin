@@ -1,0 +1,69 @@
+.track-info-modal {
+  padding: 22px 73px 30px 22px;
+  max-width: 490px;
+  background: #ffffff;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
+  min-width: 490px;
+  gap: 0;
+  @media (max-width: 768px) {
+    min-width: auto;
+  }
+  h4 {
+    font-size: 22px;
+    @include opensans-bold;
+    margin-bottom: 26px;
+  }
+
+  .fix-row {
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+    @media (max-width: 768px) {
+      align-items: flex-start;
+    }
+
+    &__title {
+      @include opensans-light;
+      min-width: 137px;
+    }
+
+    &__desc {
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    &.source-row {
+      margin-bottom: 18px;
+    }
+
+    &.room-row {
+      margin-bottom: 21px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #E7E9ED;
+    }
+
+    &.paid-row {
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #E7E9ED;
+
+      .fix-row__title, .fix-row__desc {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .modal-close-btn {
+    top: 18px;
+    right: 15px;
+  }
+
+  &__open-booking {
+    max-width: 222px;
+    padding: 11px 10px;
+  }
+}

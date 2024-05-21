@@ -19,7 +19,10 @@
       svg path {
         fill: #0E8128;
       }
+    }
 
+    h6 {
+      background: #0E8128;
     }
   }
 
@@ -31,6 +34,9 @@
       svg path {
         fill: #D53E07;
       }
+    }
+    h6 {
+      background: #920303;
     }
   }
 
@@ -56,7 +62,11 @@
   border-radius: 2px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 4px;
   padding: 3px;
+  cursor: pointer;
+
   &._searched {
     border: 2px solid #3045FF !important;
   }
@@ -66,18 +76,28 @@
     max-width: 170px;
     line-height: 1.02;
     text-align: left;
-    overflow: hidden;
-    margin-right: 4px;
     text-overflow: ellipsis;
   }
 
   h6 {
-    @include opensans-regular;
+    @include opensans-bold;
+    color: #FFFFFF;
     font-size: 11px;
     line-height: 1;
     min-width: 38px;
     text-align: right;
+    padding: 3px;
+    border-radius: 3px;
   }
 
+
+  &__short-info {
+    overflow: hidden;
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 
 }

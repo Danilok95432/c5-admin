@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Блоки' })
+
+  <body class="page__body blocks-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Блоки</h1>
+          <form class="blocks-page__form" action="#">
+            <section class="section-block">
+              <div class="block-item">
+                <div class="block-item__title">Почта {block.email}</div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
+&lt;a href="mailto:info@slavianskaia.ru"&gt;info@slavianskaia.ru&lt;/a&gt;
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Первый телефон, для показа {block.pretelphone}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
++7 (4752) 71-42-20
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Первый телефон, для набора {block.telphone}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
++74752714220
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">Копирайт {block.copyright}</div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
+Copyright © 2008-2023 Гостиница «Славянская»
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">Адрес {block.address}</div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea placeholder" name="comment">
+Более длинная надпись, сделанная буквами поменьше
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Время работы {block.worktime}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea placeholder" name="comment">
+Более длинная надпись, сделанная буквами поменьше
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">ВКонтакте {block.vklink}</div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea placeholder" name="comment">
+Более длинная надпись, сделанная буквами поменьше
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Одноклассники {block.oklink}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea placeholder" name="comment">
+Более длинная надпись, сделанная буквами поменьше
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Второй телефон, для показа {block.pretelphone2}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
++7 (4752) 14-13-12
+                </textarea
+                  >
+                </div>
+              </div>
+
+              <div class="block-item">
+                <div class="block-item__title">
+                  Второй телефон, для набора {block.telphone2}
+                </div>
+                <div class="input-column-wrapper content-column">
+                  <textarea class="main-textarea" name="comment">
++74752141312
+                </textarea
+                  >
+                </div>
+              </div>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.category-photos-page {
+
+    .dropzone-previews {
+        border: none;
+        min-height: 130px;
+        padding: 0;
+    }
+
+    .dz-default {
+        display: none;
+    }
+
+    .upload-photos__info {
+        min-height: 40px;
+        background: #064AB1;
+        border: 1px solid #064AB1;
+        border-radius: 5px;
+
+        #offer-photo {
+            max-width: 180px;
+            min-width: 180px;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 1.2;
+            color: #FFFFFF;
+        }
+    }
+}

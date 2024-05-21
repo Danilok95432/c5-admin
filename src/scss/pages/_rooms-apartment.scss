@@ -1,67 +1,67 @@
 .room-apartment-page {
   padding-bottom: 95px;
 
-  .main-input-wrapper {
+  .section-block {
+    border-radius: 5px;
+    padding-top: 30px;
+  }
 
+  .main-input-wrapper {
+    margin-bottom: 21px;
 
     label {
-      min-width: 170px;
+      min-width: 172px;
+      margin: 0;
+    }
+
+    .short-input {
+      width: 80px;
+    }
+
+    .middle-input {
+      max-width: 215px;
     }
   }
 
   .main-btn {
-    //background-color: transparent;
-  }
-
-  button[data-btn="add"] {
-    margin-top: 23px;
-    margin-left: 215px;
-
-    @media (max-width: 768px) {
-      margin-left: 0;
-    }
-  }
-
-  .main-controllers {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #D0D5DF;
+    padding: 10px 20px 12px 22px;
   }
 
   .apart-list {
     li {
-      padding: 20px 190px 26px 20px;
+      padding: 25px 190px 10px 24px;
       border-radius: 5px;
-      border: 1px dashed #868585;
+      border: 1px dashed #6DB4F5;
       position: relative;
+      margin-bottom: 30px;
 
       @media (max-width: 1024px) {
         padding-right: 20px;
       }
-
 
       &:not(:last-child) {
         margin-bottom: 20px;
       }
 
       h3 {
-        @include opensans-semibold;
-        font-size: 21px;
-        margin-bottom: 20px;
+        @include opensans-bold;
+        margin-bottom: 26px;
+        font-size: 20px;
       }
     }
 
     &__content {
       display: flex;
-      justify-content: space-between;
+      gap: 95px;
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1160px) {
         flex-direction: column;
+        gap: 0px;
       }
     }
 
     &__left {
-      margin-right: 15px;
+      margin-right: 16px;
       min-width: 470px;
 
       @media (max-width: 768px) {
@@ -82,7 +82,7 @@
       }
 
       .main-input-wrapper label {
-        min-width: 106px;
+        min-width: 112px;
 
         @media (max-width: 1024px) {
           min-width: 170px;
@@ -97,12 +97,16 @@
         }
 
         &._md {
-          max-width: 215px;
+          max-width: 300px;
+          min-width: 300px;
+
+          @media (max-width: 460px) {
+            min-width: 100%;
+          }
+
         }
       }
-
     }
-
   }
 
   .checkbox-list {

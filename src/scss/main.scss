@@ -40,6 +40,8 @@
 @import "./components/choice-controller";
 @import "./components/chain-legend-modal";
 @import "./components/track-info-modal";
+@import "./components/add-service-modal";
+
 
 //Страницы
 
@@ -83,3 +85,8 @@
 @import "./pages/accommodation-includes";
 @import "./pages/category-photos";
 @import "./pages/blocks";
+@import "./pages/booking-ban-list";
+@import "./pages/create-booking-ban";
+@import "./pages/site-stocks";
+@import "./pages/create-stock";
+@import "./pages/workers";

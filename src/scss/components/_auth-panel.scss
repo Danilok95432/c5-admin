@@ -2,6 +2,132 @@
   background: #ffffff;
   padding: 20px 0;
   border-bottom: 1px solid #C3D5F5;
+  position: relative;
+  z-index: 200;
+
+  .settings-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #C3D5F5;
+    top: -200%;
+    opacity: 0;
+    z-index: -10;
+    visibility: hidden;
+    background: #ffffff;
+    gap: 15px;
+    width: 100vw;
+    min-height: 370px;
+    padding: 28px 0;
+    transition: all .3s;
+
+    .settings-menu__overlay {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      height: 999999px;
+      background: rgba(#002968, 0.4);
+    }
+
+    &._active {
+      top: 100%;
+      opacity: 1;
+      visibility: visible;
+      z-index: 190;
+    }
+
+    .main-input-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 24px;
+
+      label {
+        font-size: 13px;
+        @include opensans-semibold;
+      }
+    }
+
+
+    &__wrapper {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    &__list {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        &.settings-menu__list-title {
+          @include opensans-semibold;
+          margin-bottom: 11px;
+        }
+
+        a {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          font-size: 15px;
+          @include opensans-regular;
+          color: #1D1B1B;
+        }
+      }
+    }
+
+    &__info {
+      min-width: 260px;
+      width: 260px;
+
+      a {
+        color: #064AB1;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+
+    &__info-list {
+      margin-bottom: 15px;
+
+      li {
+        font-size: 13px;
+        color: #8F8F8F;
+        line-height: 1;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        a {
+          display: inline;
+        }
+
+        &.settings-menu__info-list-title {
+          font-size: 13px;
+          @include opensans-semibold;
+          margin-bottom: 11px;
+          color: #1D1B1B;
+        }
+
+        &:last-child {
+          margin-top: 17px;
+        }
+      }
+
+    }
+
+  }
+
 
   .container {
     display: flex;
@@ -16,6 +142,7 @@
   &__menu {
     display: flex;
     flex-wrap: wrap;
+
     li {
       a {
         display: flex;
@@ -27,6 +154,7 @@
         height: 100%;
         @include opensans-medium;
         color: #064AB1;
+
         &._active {
           border-radius: 5px;
           border: 2px solid #BBD6FF;
@@ -37,6 +165,8 @@
 
   &__notice {
     position: relative;
+    cursor: pointer;
+
     .auth-panel__notice-counter {
       position: absolute;
       display: flex;
@@ -55,6 +185,81 @@
       right: -8px;
       top: -1px;
     }
+
+    .notice-menu {
+      position: absolute;
+      cursor: initial;
+      display: none;
+      box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
+      background: #ffffff;
+      top: calc(100% - 2px);
+      left: -115px;
+      min-width: 240px;
+      min-height: 190px;
+      border-radius: 10px;
+      padding: 15px 5px 20px 20px;
+      @media (max-width: 550px) {
+        left: 0;
+      }
+
+      h4 {
+        color: #1D1B1B;
+        font-size: 15px;
+        @include opensans-semibold;
+        margin-bottom: 7px;
+      }
+
+      .fix-row {
+        align-items: center;
+        cursor: pointer;
+        gap: 5px;
+        @media (max-width: 768px) {
+          gap: 0;
+          align-items: flex-start;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        &__title {
+          color: #FF6716;
+          font-size: 15px;
+          line-height: 1;
+          @include opensans-bold;
+          min-width: 15px;
+          margin-right: 0;
+          @media (max-width: 768px) {
+            margin-right: 0;
+          }
+        }
+
+        &__desc {
+          color: #4F4E4E;
+          font-size: 15px;
+          @include opensans-regular;
+        }
+      }
+    }
+
+    &:hover .notice-menu {
+      display: block;
+    }
+  }
+
+  &__settings {
+
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        path {
+          fill: #FF6716;
+          stroke: #FF6716;
+        }
+      }
+    }
+
   }
 
   &__personal {
@@ -63,6 +268,7 @@
     align-items: center;
     gap: 35px;
   }
+
   &__controllers {
     margin-left: auto;
     display: flex;
@@ -72,6 +278,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 15px 0 rgba(6, 74, 177, 0.15);
   }
+
   &__controllers-info {
     padding-right: 10px;
     border-right: 2px solid #deebff;

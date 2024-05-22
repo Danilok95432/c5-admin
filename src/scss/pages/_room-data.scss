@@ -1,5 +1,7 @@
 .room-data-page {
-  padding-bottom: 150px;
+  .main {
+    padding-bottom: 150px;
+  }
 
   .section-block {
     @media (max-width: 650px) {

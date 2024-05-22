@@ -10,6 +10,7 @@
   @media (max-width: 768px) {
     min-width: auto;
   }
+
   h4 {
     font-size: 22px;
     @include opensans-bold;
@@ -22,6 +23,7 @@
     &:not(:last-child) {
       margin-bottom: 6px;
     }
+
     @media (max-width: 768px) {
       align-items: flex-start;
     }
@@ -66,4 +68,53 @@
     max-width: 222px;
     padding: 11px 10px;
   }
+
+  // стили для варианта "новое бронирование"
+
+
+  .track-info-modal__new-prompt {
+    display: none;
+    gap: 10px;
+    align-items: flex-start;
+    background: rgba(#9AFF8A, 0.3);
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 13px;
+    color: #0E8128;
+    line-height: 1.3;
+    margin-bottom: 20px;
+
+    svg {
+      min-width: 18px;
+      width: 18px;
+    }
+  }
+
+  &._new {
+    .track-info-modal__new-prompt {
+      display: flex;
+    }
+
+    h4 {
+      span {
+        position: relative;
+
+        &::after {
+          content: 'Новое';
+          position: absolute;
+          right: calc(-100% + 3px);
+          line-height: 1;
+          top: 0;
+          font-size: 11px;
+          color: #FFFFFF;
+          padding: 3px 3px 4px 3px;
+          background: #0E8128;
+          border-radius: 3px;
+        }
+      }
+    }
+
+  }
+
+
 }

@@ -15,6 +15,13 @@
     background-color: #E8F1F8;
     border-bottom: 1px solid #C3D5F5;
 
+    h2 {
+      font-size: 25px;
+      @include opensans-bold;
+      margin-bottom: 25px;
+      color: #064AB1;
+    }
+
     .main-input {
       margin-bottom: 15px;
       max-width: 900px;

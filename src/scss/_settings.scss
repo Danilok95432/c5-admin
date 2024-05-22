@@ -19,6 +19,9 @@ body {
   background-color: #E8F1F8;
   color: $black;
   position: relative;
+  &._lock {
+    overflow-y: hidden;
+  }
 }
 
 main {

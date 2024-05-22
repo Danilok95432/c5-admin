@@ -12,7 +12,7 @@ const roomDateController = document.querySelector('.room-date-controller')
 
 const setInfoModalsHandlers = () => {
   const infoCells = document.querySelectorAll(
-    '.room-booking-calendar td .booking-track',
+    '.room-booking-calendar td .booking-track[data-json]',
   )
   if (infoCells) {
     const trackModal = document.querySelector('.track-info-modal')
@@ -40,8 +40,9 @@ const setInfoModalsHandlers = () => {
     )
 
     infoCells.forEach((cellBtn) => {
+      const dataObj = JSON.parse(cellBtn.dataset.json)
+
       cellBtn?.addEventListener('click', (e) => {
-        const dataObj = JSON.parse(e.currentTarget.dataset.json)
         trackModal.classList.add('_active')
         modalOverlay.classList.add('_active')
         idField.textContent = dataObj?.id
@@ -59,6 +60,26 @@ const setInfoModalsHandlers = () => {
         paidField.textContent = dataObj?.paid
         openBookingLink.href = dataObj?.link
       })
+
+      if (dataObj.comment) {
+        cellBtn.parentElement.insertAdjacentHTML(
+          'beforeend',
+          `<div class="booking-track__comment">
+                       <h5>Комментарий к бронированию:</h5>
+                       <p>${dataObj.comment}</p>
+                  </div>`,
+        )
+        const commentBlock = cellBtn.parentElement.querySelector(
+          '.booking-track__comment',
+        )
+
+        cellBtn?.addEventListener('mouseover', () => {
+          commentBlock.classList.add('_active')
+        })
+        cellBtn?.addEventListener('mouseout', () => {
+          commentBlock.classList.remove('_active')
+        })
+      }
     })
   }
 }
@@ -196,9 +217,17 @@ if (roomDateController) {
   const datePreview = roomDateController.querySelector(
     '.room-date-controller__date-preview',
   )
-
   const presentDay = new Date()
   getCellsContent(presentDay).then(() => initRowsVisibleHandler())
+
+  const currentDayBtn = roomDateController.querySelector(
+    '.room-date-controller__current-day-btn',
+  )
+
+  currentDayBtn.addEventListener('click', () => {
+    customRoomCalendar.selectDate(presentDay)
+    customRoomCalendar.setViewDate(presentDay)
+  })
 
   const customRoomCalendar = new AirDatepicker(calendarInput, {
     onSelect: ({ date, formattedDate }) => {

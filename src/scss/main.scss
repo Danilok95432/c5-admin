@@ -41,17 +41,16 @@
 @import "./components/chain-legend-modal";
 @import "./components/track-info-modal";
 @import "./components/add-service-modal";
+@import "./components/reload-btn";
 
 
 //Страницы
 
 @import "./pages/room-data";
-@import "./pages/rooms-list";
 @import "./pages/rooms-apartment";
 @import "./pages/rooms-services";
 @import "./pages/view-booking";
 @import "./pages/edit-booking";
-@import "./pages/create-booking";
 @import "./pages/rooms-structure";
 @import "./pages/rooms-categories";
 @import "./pages/create-category";
@@ -93,3 +92,4 @@
 @import "./pages/worker-profile";
 @import "./pages/services-list";
 @import "./pages/create-service";
+@import "./pages/price-chain";

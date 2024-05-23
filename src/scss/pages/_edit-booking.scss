@@ -1,5 +1,19 @@
 .edit-booking-page {
   padding-bottom: 160px;
+  &._edit {
+    .rooms-cost-section__discount-row {
+      ._disabled {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+  }
+
+  label:not(.main-checkbox) {
+    span {
+      color: #FF6716;
+    }
+  }
 
   &__inputs-row {
     display: flex;
@@ -68,6 +82,33 @@
         width: 100%;
         margin-bottom: 10px;
       }
+    }
+  }
+
+  .client-section {
+
+    .edit-booking-page__org-row {
+      justify-content: space-between;
+      .input-column-wrapper {
+        flex-grow: 0.37;
+        &:nth-child(2) {
+          flex-grow: 6;
+        }
+      }
+    }
+
+    &__type-client-select {
+      select {
+        max-width: 280px;
+      }
+      padding-bottom: 30px;
+      border-bottom: 1px solid #C3D5F5;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    &__type-client {
+      margin-bottom: 18px;
     }
   }
 

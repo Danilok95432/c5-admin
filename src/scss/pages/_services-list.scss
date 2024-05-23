@@ -1,18 +1,11 @@
-.tariff-list-page {
+.services-list-page {
     .main-btn {
         display: inline-block;
         margin: 10px 0 30px 0;
         padding: 10px 20px;
-
-        &.grid-mode-link {
-            display: block;
-            width: max-content;
-            margin-bottom: 17px;
-            padding: 9px 16px;
-        }
     }
 
-    .tariff-list-table {
+    .services-list-table {
         margin-bottom: 20px;
 
         @media (max-width: 1120px) {
@@ -39,7 +32,7 @@
             }
         }
 
-        ._blocked-tariff {
+        ._blocked-service {
             pointer-events: none;
             opacity: 0.5;
 
@@ -69,48 +62,58 @@
                 }
             }
 
+            .sorting-button {
+                margin-left: 2px;
+            }
+
             &:nth-child(1) {
-                min-width: 5%;
+                min-width: 4%;
             }
 
             &:nth-child(2) {
-                min-width: 19%;
+                min-width: 24%;
 
                 input {
-                    width: 180px;
+                    width: 230px;
                 }
             }
 
             &:nth-child(3) {
-                min-width: 12%;
-            }
-
-            &:nth-child(4) {
-                min-width: 18%;
-            }
-
-            &:nth-child(5) {
                 min-width: 16%;
             }
 
-            &:nth-child(6) {
-                min-width: 14%;
+            &:nth-child(4) {
+                min-width: 17%;
             }
 
-            &:nth-child(7) {
+            &:nth-child(5) {
                 min-width: 9%;
                 display: flex;
                 justify-content: center;
             }
 
+            &:nth-child(6) {
+                min-width: 12%;
+                display: flex;
+                justify-content: center;
+            }
+
+            &:nth-child(7) {
+                min-width: 10%;
+                display: flex;
+                justify-content: center;
+            }
+
             &:nth-child(8) {
-                min-width: 5%;
+
+                min-width: 6%;
                 display: flex;
                 justify-content: center;
 
             }
 
             &:nth-child(9) {
+
                 display: flex;
                 justify-content: center;
                 max-width: 2%;

@@ -5,7 +5,11 @@ if (toggleMenus) {
     menu.addEventListener('click', (e) => {
       const target = e.target
       const parentNode = target.closest('.toggle-menu__item')
-      parentNode.classList.toggle('_active')
+
+      const toggleMenusItems = menu.querySelectorAll('.toggle-menu__item')
+
+      toggleMenusItems.forEach((item) => item.classList.remove('_active'))
+      parentNode.classList.add('_active')
     })
   })
 }

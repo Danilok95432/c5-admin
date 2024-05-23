@@ -41,8 +41,35 @@ if (editBookingPage) {
     '.rooms-choice-section__btn-wrapper',
   )
 
-  let initialSum = 0
   let globalRoomsData = []
+
+  // Логика выбора типа клиента
+
+  const clientSelect = editBookingPage.querySelector(
+    '.client-section__type-client-select select',
+  )
+  const typeClientContent = editBookingPage.querySelector(
+    '.client-section__type-client',
+  )
+
+  const individualTypeTmpl =
+    editBookingPage.querySelector('#type-individual')?.content
+  const orgTypeTmpl = editBookingPage.querySelector('#type-org')?.content
+  const individualTypeClone = individualTypeTmpl
+    .querySelector('.edit-booking-page__inputs-row')
+    .cloneNode(true)
+  const orgTypeClone = orgTypeTmpl
+    .querySelector('.edit-booking-page__inputs-row')
+    .cloneNode(true)
+
+  clientSelect.addEventListener('input', (e) => {
+    typeClientContent.innerHTML = ''
+    if (e.currentTarget.value === '0') {
+      typeClientContent.append(individualTypeClone)
+    } else {
+      typeClientContent.append(orgTypeClone)
+    }
+  })
 
   // логика связанная с выбором дат заезда и выезда
 
@@ -91,7 +118,7 @@ if (editBookingPage) {
     })
   })
 
-  // Логика добавления номеров и гостей с нумерацией имен инпутов
+  // Логика добавления номеров и гостей с нумерацией имен инпутов при любом измененни списка номеров
 
   let observer = new MutationObserver(() => {
     ;[...roomsList.children].forEach((room, roomIdx) => {
@@ -168,6 +195,8 @@ if (editBookingPage) {
   const totalCostToPay = editBookingPage.querySelector(
     '.total-cost__item._to-pay h3 span',
   )
+
+  let initialSum = Number(discountSumInput.value) ?? 0
 
   discountPercentInput.addEventListener('input', (e) => {
     discountSumInput.value = initialSum - initialSum * (+e.target.value / 100)
@@ -277,6 +306,7 @@ if (editBookingPage) {
     initRooms(currentCategory.rooms)
     setDiscountSum(currentCategory.tariffs[0].tariffPrice ?? 0)
   })
+
   roomsTariffsSelect.addEventListener('input', (e) => {
     const currentSelectValue = e.target.value
     let currentTariff = {}

@@ -31,10 +31,14 @@
     height: 40px;
     cursor: pointer;
   }
+  label {
+    position: relative;
+  }
   &__add {
     opacity: 0;
     visibility: hidden;
     position: absolute;
+    left: 0;
   }
 
   &__name {

@@ -14,7 +14,7 @@ const setInfoModalsHandlers = () => {
   const infoCells = document.querySelectorAll(
     '.room-booking-calendar td .booking-track[data-json]',
   )
-  if (infoCells) {
+  if (infoCells && infoCells?.length) {
     const trackModal = document.querySelector('.track-info-modal')
     const idField = trackModal.querySelector('.track-info-modal__title span')
     const customerField = trackModal.querySelector(

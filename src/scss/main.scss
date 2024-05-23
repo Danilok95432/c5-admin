@@ -41,6 +41,7 @@
 @import "./components/chain-legend-modal";
 @import "./components/track-info-modal";
 @import "./components/add-service-modal";
+@import "./components/reload-btn";
 
 
 //Страницы
@@ -50,7 +51,6 @@
 @import "./pages/rooms-services";
 @import "./pages/view-booking";
 @import "./pages/edit-booking";
-@import "./pages/create-booking";
 @import "./pages/rooms-structure";
 @import "./pages/rooms-categories";
 @import "./pages/create-category";
@@ -89,3 +89,4 @@
 @import "./pages/site-stocks";
 @import "./pages/create-stock";
 @import "./pages/workers";
+@import "./pages/price-chain";

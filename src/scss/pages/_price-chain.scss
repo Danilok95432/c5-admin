@@ -1,0 +1,61 @@
+.price-chain-page {
+  background-color: #ffffff;
+
+  .modal-overlay {
+    background: transparent;
+  }
+
+  .container {
+    max-width: 1560px;
+  }
+
+
+  &__controllers {
+    padding-top: 27px;
+    padding-bottom: 30px;
+    background-color: #E8F1F8;
+    border-bottom: 1px solid #C3D5F5;
+
+    h2 {
+      font-size: 25px;
+      @include opensans-bold;
+      margin-bottom: 23px;
+      color: #064AB1;
+    }
+
+
+  }
+
+  &__controllers-row {
+    display: flex;
+    gap: 10px;
+    @media (max-width: 550px) {
+      flex-wrap: wrap;
+    }
+    .main-input {
+      max-width: 350px;
+    }
+  }
+
+  &__settings-btn {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #6DB4F5;
+    margin-left: auto;
+    @media (max-width: 550px) {
+      margin-left: 0;
+    }
+  }
+
+  &__inner {
+    .container {
+      padding: 0;
+    }
+  }
+}

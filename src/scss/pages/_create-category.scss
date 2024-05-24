@@ -174,39 +174,43 @@
   }
 
   .equipment-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+
+    &__icon {
+      width: 23px;
+      min-width: 23px;
+      height: 20px;
+    }
 
     &__item {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 7px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      & > span {
+        margin-right: 10px;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
 
       select {
         width: 450px;
-      }
+        @media (max-width: 768px) {
+          width: auto;
 
-      svg {
-        margin-left: -10px;
-      }
-
-      @media (max-width: 720px) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        position: relative;
-
-        svg {
-          position: absolute;
-          top: 0;
-          left: 120px;
-        }
-
-        select {
-          width: 70vw;
         }
       }
+
     }
+
   }
 }

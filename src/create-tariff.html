@@ -198,24 +198,44 @@
 
               <div>
                 <div class="row-wrapper">
-                  <div class="row">
+                  <div class="column">
                     <p class="row-title">
-                      <span class="_bold">Создать наценку</span><br />
-                      <span>(увеличить стоимость)</span>
+                      <span class="_bold">Одноместное размещение</span><br />
                     </p>
 
                     <div class="row-data">
+                      <select class="main-input" name="one-place-cost">
+                        <option value="1">Не применять</option>
+                        <option value="2">Не применять</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-wrapper">
+                  <div class="column">
+                    <p class="row-title">
+                      <span class="_bold">Стандартное размещение</span><br />
+                    </p>
+
+                    <div class="row-data">
+                      <select class="main-input" name="standard-place-cost">
+                        <option value="1">Создать наценку</option>
+                        <option value="2">Создать наценку</option>
+                      </select>
                       <p class="input-column-wrapper">
                         <input
                           class="main-input"
                           type="text"
-                          name="extra-charge"
+                          name="standard-place-cost-value"
                           required
                           value="22,5"
                         />
                       </p>
 
-                      <select class="main-input" name="extra-charge-currency">
+                      <select
+                        class="main-input short-select"
+                        name="standard-place-cost-currency"
+                      >
                         <option value="1">₽</option>
                         <option value="2">₽</option>
                       </select>
@@ -228,26 +248,32 @@
                 </div>
 
                 <div class="row-wrapper">
-                  <div class="row">
+                  <div class="column">
                     <p class="row-title">
-                      <span class="_bold">Создать скидку</span><br />
-                      <span>(уменьшить стоимость)</span>
+                      <span class="_bold">Дополнительное место</span><br />
                     </p>
 
                     <div class="row-data">
+                      <select class="main-input" name="add-place-cost">
+                        <option value="1">Создать скидку</option>
+                        <option value="2">Создать скидку</option>
+                      </select>
                       <p class="input-column-wrapper">
                         <input
                           class="main-input"
                           type="text"
-                          name="discount"
+                          name="add-place-cost-value"
                           required
-                          value="22,5"
+                          value="10"
                         />
                       </p>
 
-                      <select class="main-input" name="discount-currency">
-                        <option value="1">₽</option>
-                        <option value="2">₽</option>
+                      <select
+                        class="main-input short-select"
+                        name="add-place-cost-currency"
+                      >
+                        <option value="1">%</option>
+                        <option value="2">%</option>
                       </select>
                     </div>
                   </div>

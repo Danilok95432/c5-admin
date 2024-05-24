@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Создание страницы' })
+
+  <body class="page__body create-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание / редактирование страницы</h1>
+          <form class="create-page__form" action="#">
+            <section class="section-block">
+              <h3>Основные данные</h3>
+              <div class="content-column">
+                <div class="input-column-wrapper">
+                  <p class="row-title">Введите название</p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="title"
+                  />
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Введите заголовок H1</p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="h1"
+                  />
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Модуль</p>
+                  <select class="main-input" name="module">
+                    <option value="1">Не выбрано</option>
+                  </select>
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Раздел родитель</p>
+                  <select class="main-input" name="parent">
+                    <option value="1">Корневой каталог</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block">
+              <h3>Описание и текст</h3>
+              <div class="content-column">
+                <div class="input-column-wrapper">
+                  <p class="row-title">Краткое описание</p>
+                  <textarea class="main-textarea" name="comment"> </textarea>
+                </div>
+
+                <div class="input-column-wrapper controled-textarea">
+                  <p class="row-title">Введите текст для страницы</p>
+                  <div class="controled-textarea-wrapper">
+                    <textarea
+                    class="main-textarea"
+                    name="comment"
+                  >
+                  </textarea>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block">
+              <h3>Размещение</h3>
+              <div class="content-column">
+                <div class="input-column-wrapper">
+                  <p class="row-title">Спрятать?</p>
+                  <select class="main-input" name="module">
+                    <option value="1">Нет</option>
+                  </select>
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Нельзя удалять?</p>
+                  <select class="main-input" name="parent">
+                    <option value="1">Нет</option>
+                  </select>
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Правая колонка?</p>
+                  <select class="main-input" name="parent">
+                    <option value="1">Не выбрано</option>
+                  </select>
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Заголовок?</p>
+                  <select class="main-input" name="parent">
+                    <option value="1">Корневой каталог</option>
+                  </select>
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title">Нет хлебных крошек</p>
+                  <select class="main-input" name="parent">
+                    <option value="1">Корневой каталог</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block photo-section">
+              <h3>Фотография</h3>
+              <p class="photo-section__desc">
+                Загрузить новую фотографию
+              </p>
+              <div class="upload-photos general-dropzone-wrapper">
+                <div
+                  id="roomPhoto"
+                  data-show-preview="true"
+                  class="dropzone general-dropzone"
+                  data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "325", "height": "108", "acceptedFiles": ".jpeg, .jpg", "type": "roomPhoto", "filesCount": "1", "additional": "доп.контент"}'
+                >
+                  <div class="dz-message">
+                    <svg
+                      width="30"
+                      height="21"
+                      viewBox="0 0 30 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M27.9213 0H2.07723C0.930008 0 0 0.930008 0 2.07723V18.8413C0 19.9885 0.930008 20.9186 2.07723 20.9186H27.9213C29.0685 20.9186 29.9985 19.9885 29.9985 18.8413V2.07723C29.9985 0.930008 29.0685 0 27.9213 0Z"
+                        fill="#F4F7FA"
+                      />
+                      <path
+                        d="M9.93867 8.59755C11.3804 8.59755 12.5492 7.42877 12.5492 5.987C12.5492 4.54524 11.3804 3.37646 9.93867 3.37646C8.4969 3.37646 7.32812 4.54524 7.32812 5.987C7.32812 7.42877 8.4969 8.59755 9.93867 8.59755Z"
+                        fill="#064AB1"
+                      />
+                      <path
+                        d="M8.78741 8.32995C9.59336 8.32995 10.2467 7.28097 10.2467 5.98699C10.2467 4.69302 9.59336 3.64404 8.78741 3.64404C7.98147 3.64404 7.32812 4.69302 7.32812 5.98699C7.32812 7.28097 7.98147 8.32995 8.78741 8.32995Z"
+                        fill="#91D9F9"
+                      />
+                      <path
+                        d="M18.5482 20.9187H1.96335C1.44269 20.9186 0.943398 20.7116 0.575234 20.3435C0.207071 19.9753 0.000164949 19.476 0 18.9554V15.374L4.77427 12.0174C5.03395 11.835 5.34439 11.739 5.66166 11.7428C5.97893 11.7466 6.28698 11.85 6.54222 12.0385L18.5482 20.9187Z"
+                        fill="#91D9F9"
+                      />
+                      <path
+                        d="M21.8706 9.09274L29.9991 14.0045V18.8908C29.9989 19.4286 29.7852 19.9443 29.4049 20.3245C29.0245 20.7047 28.5088 20.9183 27.971 20.9183H3.73438L18.5451 9.2981C19.0131 8.93059 19.5819 8.71413 20.1759 8.67745C20.7698 8.64078 21.3609 8.78561 21.8706 9.09274Z"
+                        fill="#064AB1"
+                      />
+                    </svg>
+                    <p>Перетащите изображение на это поле</p>
+                   
+                  </div>
+                  <div class="upload-photos__info">
+                    <p class="upload-photos__info-title">
+                      Файл еще не загружен
+                    </p>
+                    <p>Перетащите его на поле слева или нажмите на ссылку</p>
+                    <button
+                      class="general-dropzone__add-btn main-btn"
+                      id="room-photo"
+                      type="button"
+                    >
+                      Загрузить
+                    </button>
+                  </div>
+                  <div
+                    class="dropzone-previews general-dropzone__previews"
+                  ></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-block">
+              <h3>Заголовки, ключевые слова</h3>
+              <div class="content-column">
+                <div class="input-column-wrapper">
+                  <p class="row-title long">Введите заголовок окна (title)</p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="title"
+                  />
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title long">Введите описание (description)</p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="h1"
+                  />
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title long">Введите ключевые слова (keywords)</p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="h1"
+                  />
+                </div>
+
+                <div class="input-column-wrapper">
+                  <p class="row-title long">
+                    Введите виртуальный заголовок (слова маленькими буквами с
+                    пробелам)
+                  </p>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Надпись большими буквами"
+                    name="h1"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

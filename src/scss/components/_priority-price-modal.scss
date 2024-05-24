@@ -1,0 +1,66 @@
+.priority-price-modal {
+
+  &__title {
+    h3 {
+      padding: 0 25px;
+      @include opensans-semibold;
+      font-size: 20px;
+      color: #1D1B1B;
+    }
+    padding-bottom: 15px;
+    border-bottom: 1px solid #C3D5F5;
+  }
+  &__inputs {
+    display: flex;
+    gap: 20px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    &:not(:last-child) {
+      margin-bottom: 23px;
+    }
+    .input-column-wrapper {
+      flex-grow: 1;
+      margin-right: 0;
+
+      label {
+        font-size: 15px;
+        color: #000000;
+      }
+    }
+
+  }
+  &__inner {
+    padding: 17px 35px 35px 25px;
+
+  }
+  .weekday-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    margin-top: 33px;
+    margin-bottom: 24px;
+  }
+
+  &__controllers {
+    padding-top: 25px;
+    border-top: 1px solid #C3D5F5;
+
+  }
+  &__controllers-wrapper {
+    padding: 0 35px 10px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+    .main-btn {
+      padding: 11px 20px;
+      &:first-child {
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -9,7 +9,6 @@
     max-width: 1560px;
   }
 
-
   &__controllers {
     padding-top: 27px;
     padding-bottom: 30px;
@@ -57,5 +56,37 @@
     .container {
       padding: 0;
     }
+  }
+
+  .room-booking-calendar {
+
+    .trigger-row {
+      td {
+        &:first-child {
+          font-size: 15px;
+          max-width: 140px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-right: 35px;
+        }
+      }
+    }
+
+    .child-row  {
+      td {
+        font-size: 11px;
+        line-height: 1.2;
+        color: #064AB1;
+        @include opensans-medium;
+        &:first-child {
+          padding-left: 35px;
+          color: #000000;
+          font-size: 13px;
+          line-height: 1.3;
+        }
+      }
+    }
+
   }
 }

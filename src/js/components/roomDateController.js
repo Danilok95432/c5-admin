@@ -101,6 +101,12 @@ const initRowsVisibleHandler = () => {
 const renderCells = (cells) => {
   if (cells) {
     const html = cells.map((cell, i) => {
+      if (Array.isArray(cell)) {
+        return `<td>
+              ${cell.map((cellEl) => `<p>${cellEl}</p>`).join('')}
+          </td>`
+      }
+
       if (cell.title) {
         return `<td>
           <p>${cell.title}</p>

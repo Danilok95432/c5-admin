@@ -1,0 +1,39 @@
+.create-booking-ban-basis-page {
+    .section-block {
+        padding-bottom: 40px;
+    }
+
+    .content-row .input-column-wrapper {
+        padding-top: 15px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @media (max-width: 770px) {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+
+            input {
+                max-width: 100%;
+            }
+        }
+
+        label {
+            min-width: 175px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.2;
+            color: #000000;
+        }
+
+        input {
+            width: 587px;
+        }
+
+        .main-checkbox {
+            align-self: flex-start;
+            margin-left: 10px;
+        }
+    }
+}

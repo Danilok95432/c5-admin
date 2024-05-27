@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Создание основания запрета' })
+
+  <body class="page__body create-booking-ban-basis-page">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main">
+        <div class="container">
+          <h1>Создание / редактирование основания запрета</h1>
+          <form class="create-booking-ban-basis-page__form" action="#">
+            <section class="section-block">
+              <h3>Основание для скидки</h3>
+              <div class="content-row">
+                <div class="input-column-wrapper">
+                  <label>Введите наименование</label>
+                  <input
+                    class="main-input"
+                    type="text"
+                    value="Административное"
+                    name="full-title"
+                  />
+
+                  <label class="main-checkbox">
+                    <input type="checkbox" name="active_option" />
+                    <span>Скрыть элемент</span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+@include('partials/head.html', { 'title': 'Создание/редактирование канала'})
+
+<body class="page__body edit-channel-page">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  <header>
+    @include('partials/auth-panel.html')
+  </header>
+  <main class="main">
+    <div class="container">
+      <h1>
+        Создание/редактирование канала
+      </h1>
+      <form class="edit-channel-page__form" action="#">
+        <section class="section-block channel-section">
+          <h3>Канал продаж</h3>
+          <div class="edit-channel-page__inner">
+            <div class="edit-channel-page__left">
+              <div class="input-column-wrapper">
+                <label>Название канала</label>
+                <input
+                  class="main-input"
+                  type="text"
+                  name="name_channel"
+                />
+              </div>
+              <div class="input-column-wrapper">
+                <label>Тип основания</label>
+                <select class="main-input"
+                        name="type_channel">
+                  <option value="0">Агрегатор</option>
+                  <option value="1">Тип 2</option>
+                  <option value="2">Тип 3</option>
+                </select>
+              </div>
+              <div class="input-column-wrapper">
+                <label>Регион</label>
+                <select class="main-input"
+                        name="region">
+                  <option value="0">РФ и СНГ</option>
+                  <option value="1">Регион 2</option>
+                  <option value="2">Регион 3</option>
+                </select>
+              </div>
+              <div class="fix-row fix-row__segments-row">
+                <h5 class="fix-row__title">
+                  Сегменты
+                </h5>
+                <ul class="fix-row__desc">
+                  <li>
+                    <label class="main-checkbox">
+                      <input type="checkbox" name="b2b" />
+                      <span>B2B</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="main-checkbox">
+                      <input type="checkbox" name="ota" />
+                      <span>OTA</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="main-checkbox">
+                      <input type="checkbox" name="loc" />
+                      <span>LOC</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="main-checkbox">
+                      <input type="checkbox" name="opn" />
+                      <span>OPN</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="input-column-wrapper">
+                <label>Приоритет</label>
+                <select class="main-input"
+                        name="priority">
+                  <option value="0">Средний</option>
+                  <option value="1">Низкий</option>
+                  <option value="2">Высокий</option>
+                </select>
+              </div>
+            </div>
+            <div class="edit-channel-page__right">
+              <label class="main-checkbox">
+                <input type="checkbox" name="active_channel" />
+                <span>Активный канал</span>
+              </label>
+              <label class="main-checkbox">
+                <input type="checkbox" name="hidden_channel" />
+                <span>Скрыть канал</span>
+              </label>
+            </div>
+          </div>
+        </section>
+        <section class="section-block data-section">
+          <h3>Данные подключения</h3>
+          <div class="edit-channel-page__left">
+            <div class="input-column-wrapper">
+              <label>Ссылка API</label>
+              <input
+                class="main-input"
+                type="text"
+                name="api_link"
+              />
+            </div>
+            <div class="input-column-wrapper">
+              <label>ID клиента</label>
+              <input
+                class="main-input"
+                type="text"
+                name="client_id"
+              />
+            </div>
+            <div class="input-column-wrapper">
+              <label>Ключ клиента</label>
+              <input
+                class="main-input"
+                type="text"
+                name="client_key"
+              />
+            </div>
+            <div class="input-column-wrapper input-column-wrapper__token">
+              <label>Токен</label>
+              <textarea class="main-textarea" name="token"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn" type="submit">
+              Сохранить и закрыть
+            </button>
+            <button class="main-btn _blue-outlined" type="button"
+                    data-action="./data/test.txt">Применить и продолжить
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+  @include('partials/info-modal.html')
+</div>
+</body>
+
+
+</html>

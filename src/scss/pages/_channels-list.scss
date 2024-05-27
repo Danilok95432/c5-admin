@@ -1,0 +1,145 @@
+.channels-list-page {
+
+.section-block {
+  padding: 30px 30px 35px;
+  min-height: 710px;
+  @media (max-width: 1024px) {
+    min-height: auto;
+  }
+}
+
+  &__add-el-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 208px;
+    gap: 8px;
+    padding: 0;
+    height: 40px;
+    margin-bottom: 30px;
+  }
+
+  &__search-input {
+    max-width: 225px;
+    position: relative;
+    height: 30px;
+
+    input.main-input {
+      @include opensans-regular;
+      font-size: 15px;
+      height: 100%;
+    }
+    svg {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .main-table {
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    &__row {
+      &.main-table__title-row {
+        padding: 0 2px;
+        height: 45px;
+      }
+      &:not(.main-table__title-row) {
+        padding: 9px 2px;
+      }
+
+      @media (max-width: 768px) {
+        min-width: 800px;
+      }
+
+      &:hover {
+        .main-table__cell {
+          .delete-link {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .main-checkbox {
+      span {
+        justify-content: center;
+      }
+    }
+
+
+    .main-checkbox input + label::before {
+      margin-right: 0;
+    }
+
+    &__cell {
+      text-align: center;
+
+      &:nth-child(1) {
+        max-width: 5%;
+      }
+
+      &:nth-child(2) {
+        max-width: 31%;
+        text-align: left;
+      }
+
+      &:nth-child(3) {
+        max-width: 14%;
+        text-align: left;
+      }
+
+      &:nth-child(4) {
+        max-width: 11%;
+        text-align: left;
+      }
+
+      &:nth-child(5) {
+        max-width: 11%;
+        text-align: left;
+      }
+      &:nth-child(6) {
+        max-width: 9%;
+        text-align: left;
+        &._medium {
+          color: #064AB1;
+        }
+        &._high {
+          color: #FFA031;
+        }
+        &._higher {
+          color: #D61A00;
+        }
+        &._no {
+          color: #91969A;
+        }
+      }
+      &:nth-child(7) {
+        max-width: 10%;
+      }
+      &:nth-child(8) {
+        max-width: 6%;
+      }
+
+      &:nth-child(9) {
+        display: flex;
+        justify-content: center;
+        max-width: 3%;
+
+        .delete-link {
+          opacity: 0;
+          transition: all .2s;
+          width: 23px;
+          height: 23px;
+          @media (max-width: 1024px) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

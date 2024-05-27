@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+@include('partials/head.html', { 'title': 'Создание/редактирование основания для скидки'})
+
+<body class="page__body edit-discount-page">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  <header>
+    @include('partials/auth-panel.html')
+  </header>
+  <main class="main">
+    <div class="container">
+      <h1>
+        Создание/редактирование основания для скидки
+      </h1>
+      <form class="edit-discount-page__form" action="#">
+        <section class="section-block">
+          <h3>Основание для скидки</h3>
+
+          <div class="edit-discount-page__inner">
+            <div class="edit-discount-page__left">
+              <div class="input-column-wrapper">
+                <label>Название основания</label>
+                <input
+                  class="main-input"
+                  type="text"
+                  name="name_basis"
+                />
+              </div>
+              <div class="input-column-wrapper">
+                <label>Тип основания</label>
+                <select class="main-input"
+                        name="type_basis">
+                  <option value="0">Административное</option>
+                  <option value="1">Основание 2</option>
+                  <option value="2">Основание 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="edit-discount-page__right">
+              <label class="main-checkbox">
+                <input type="checkbox" name="active_el" />
+                <span>Активный элемент</span>
+              </label>
+              <label class="main-checkbox">
+                <input type="checkbox" name="hidden_el" />
+                <span>Скрыть элемент</span>
+              </label>
+            </div>
+          </div>
+
+
+
+        </section>
+
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn" type="submit">
+              Сохранить и закрыть
+            </button>
+            <button class="main-btn _blue-outlined" type="button"
+                    data-action="./data/test.txt">Применить и продолжить
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+  @include('partials/info-modal.html')
+</div>
+</body>
+
+
+</html>

@@ -1,15 +1,19 @@
 .auth-panel {
   background: #ffffff;
-  padding: 20px 0;
   border-bottom: 1px solid #C3D5F5;
   position: relative;
-  z-index: 200;
+
+  &__container {
+    z-index: 200;
+    position: relative;
+    padding: 20px 0;
+    background-color: #ffffff;
+  }
 
   .settings-menu {
     position: absolute;
     left: 0;
     right: 0;
-    border-top: 1px solid #C3D5F5;
     top: -200%;
     opacity: 0;
     z-index: -10;
@@ -19,7 +23,14 @@
     width: 100vw;
     min-height: 370px;
     padding: 28px 0;
-    transition: all .3s;
+    transition: all .2s linear;
+
+    &._active {
+      top: calc(100% + 1px);
+      opacity: 1;
+      visibility: visible;
+      z-index: 100;
+    }
 
     .settings-menu__overlay {
       position: absolute;
@@ -31,12 +42,6 @@
       background: rgba(#002968, 0.4);
     }
 
-    &._active {
-      top: 100%;
-      opacity: 1;
-      visibility: visible;
-      z-index: 190;
-    }
 
     .main-input-wrapper {
       flex-direction: column;

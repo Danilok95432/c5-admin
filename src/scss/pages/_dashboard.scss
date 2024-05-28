@@ -1,36 +1,28 @@
 .dashboard-page {
-  background-color: #F6F6F6;
   padding-bottom: 100px;
 
-  .auth-panel {
-    background-color: #ffffff;
-    padding: 10px 0;
-  }
+  .container {
+    min-width: 1600px;
 
-
-  .main-menu {
-    margin-bottom: 25px;
-
-    li {
-      background-color: #fff;
-    }
-
-    &__dashboard {
-      background-color: #064AB1;
-      color: #fff;
-    }
-
-    @media (max-width: 360px) {
-      width: 90vw;
+    @media (max-width: 1620px) {
+      max-width: 100vw;
+      min-width: 100%;
     }
   }
 
   .dashboard {
+    border-radius: 0;
+    border-top: 1px solid #6DB4F5;
+
+    @media (max-width: 470px) {
+      padding: 0;
+    }
+
     &__title-block {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
+      gap: 22px;
+      margin-bottom: 8px;
 
       h2 {
         @include opensans-semibold;
@@ -38,12 +30,11 @@
       }
 
       .icon-input {
-        width: 130px;
+        width: 176px;
+        margin-top: 10px;
 
         input {
-          background: transparent;
-          border: 1px solid #D0D5DF;
-          padding: 8px 25px 8px 10px;
+          border: 1px solid #6DB4F5;
         }
       }
     }
@@ -53,7 +44,7 @@
       justify-content: space-between;
       gap: 10px;
 
-      @media (max-width: 1280px) {
+      @media (max-width: 1600px) {
         flex-wrap: wrap;
         gap: 60px 10px;
       }
@@ -61,15 +52,16 @@
       ul {
         width: 24.5%;
 
-        @media (max-width: 1280px) {
-          width: 49%;
+        @media (max-width: 1510px) {
+          min-width: 49%;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
           width: 100%;
         }
 
-        &:nth-child(3), &:nth-child(4) {
+        &:nth-child(3),
+        &:nth-child(4) {
           li {
             min-height: auto;
           }
@@ -77,7 +69,7 @@
       }
 
       li {
-        border: 1px solid #D0D5DF;
+        border: 1px solid #6DB4F5;
         background: #ffffff;
         border-radius: 5px;
         @include opensans-regular;
@@ -113,10 +105,12 @@
         min-height: 260px;
 
         .guest-action {
-          padding: 6px 9px;
+          margin-top: 2px;
+          margin-bottom: auto;
+          padding: 10px 14px;
           @include opensans-regular;
           font-size: 15px;
-          border-radius: 3px;
+          border-radius: 5px;
           color: #064AB1;
 
           &._initial {
@@ -126,30 +120,28 @@
           &._success {
             background: #CFF4C9;
             font-weight: 600;
-            color: #000000;
+            color: #006B2B;
             position: relative;
-            width: 92px;
-            height: 30px;
             text-align: right;
             justify-content: flex-end;
-            padding: 0 7px 0 0;
             display: flex;
             align-items: center;
             pointer-events: none;
+            padding-left: 28px;
 
             &::before {
               content: '';
               position: absolute;
-              width: 11px;
-              height: 8px;
+              width: 15px;
+              height: 12px;
               left: 7px;
               top: 50%;
               z-index: 5;
               transform: translateY(-50%);
-              background: url('data:image/svg+xml,<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9483 0.409621C10.9187 0.325792 10.8669 0.257204 10.8078 0.196237C10.7487 0.13527 10.6747 0.0819243 10.6008 0.0514408C10.4456 -0.0171469 10.2608 -0.0171469 10.1055 0.0514408C10.0242 0.0819243 9.95766 0.13527 9.89852 0.196237L3.88105 6.392L1.10887 3.52655C0.864919 3.27507 0.436156 3.27507 0.192204 3.52655C0.0665323 3.65611 0 3.82377 0 3.99905C0 4.17433 0.0665323 4.34199 0.192204 4.47154L3.42272 7.80186C3.48185 7.86282 3.55578 7.91617 3.6371 7.94665C3.71841 7.97714 3.79973 8 3.88105 8C3.96237 8 4.05108 7.98476 4.125 7.94665C4.20632 7.91617 4.27285 7.86282 4.33199 7.80186L10.8078 1.1336C10.8669 1.07264 10.9187 0.996428 10.9483 0.920219C10.9778 0.83639 11 0.75256 11 0.668731C11 0.584901 10.9852 0.493451 10.9483 0.417242V0.409621Z" fill="black"/></svg>') no-repeat;
+              background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0538 0.563229C15.0132 0.447964 14.942 0.353656 14.8607 0.269826C14.7794 0.185997 14.6778 0.112646 14.5761 0.0707311C14.3627 -0.023577 14.1085 -0.023577 13.8951 0.0707311C13.7833 0.112646 13.6918 0.185997 13.6105 0.269826L5.33644 8.789L1.5247 4.84901C1.18926 4.50321 0.599714 4.50321 0.264281 4.84901C0.0914818 5.02715 0 5.25768 0 5.49869C0 5.7397 0.0914818 5.97023 0.264281 6.14837L4.70623 10.7276C4.78755 10.8114 4.8892 10.8847 5.00101 10.9266C5.11282 10.9686 5.22463 11 5.33644 11C5.44825 11 5.57023 10.979 5.67188 10.9266C5.78369 10.8847 5.87517 10.8114 5.95649 10.7276L14.8607 1.5587C14.942 1.47487 15.0132 1.37009 15.0538 1.2653C15.0945 1.15004 15.125 1.03477 15.125 0.919505C15.125 0.804239 15.1047 0.678495 15.0538 0.573708V0.563229Z' fill='%23006B2B'/%3E%3C/svg%3E%0A");
+              background-repeat: no-repeat;
             }
           }
-
         }
 
         &__title {
@@ -172,18 +164,28 @@
               font-weight: 400;
             }
           }
-
         }
 
         &__inner {
           padding: 11px 15px 7px;
         }
 
-        &__inner-type {
+        &__inner-info {
           display: flex;
-          gap: 5px;
+          gap: 10px;
           justify-content: space-between;
           align-items: center;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 20px;
+          color: #000000;
+
+          @media (max-width: 400px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            margin-bottom: 20px;
+          }
 
           p {
             @include montserrat-bold;
@@ -191,19 +193,23 @@
 
             span {
               font-weight: 400;
+              font-size: 15px;
             }
           }
-        }
 
-        &__inner-guest {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 15px;
-          margin-bottom: 15px;
+          .guest-container {
+            margin-bottom: 12px;
+          }
 
-          a {
-            max-width: 110px;
+          .guest {
+            margin-bottom: 5px;
+          }
+
+          .count {
+            font-weight: 700;
+          }
+
+          .name {
             color: #064AB1;
             font-size: 15px;
             @include opensans-bold;
@@ -214,15 +220,19 @@
         &__info-row {
           @include opensans-regular;
           font-size: 15px;
-          margin-bottom: 5px;
+          margin-bottom: 2px;
 
           span {
             font-weight: 700;
           }
+
+          ._red {
+            color: #D61A00;
+          }
         }
 
         &__comment {
-          margin-top: 10px;
+          margin-top: 15px;
           line-height: 1.3;
         }
 
@@ -231,9 +241,6 @@
           @include opensans-light;
         }
       }
-
     }
-
   }
-
 }

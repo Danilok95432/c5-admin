@@ -1,4 +1,4 @@
-.booking-ban-page {
+.admission-card-page{
 
   .section-block {
     padding: 24px 30px 20px;
@@ -6,15 +6,12 @@
 
   .fix-row {
     &__title {
-      min-width: 228px;
+      min-width: 212px;
     }
     &._border {
       padding-bottom: 22px;
       margin-bottom: 22px;
       border-bottom: 1px solid #C3D5F5;
-    }
-    &._indent {
-      margin-bottom: 17px;
     }
   }
 

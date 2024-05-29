@@ -3,8 +3,8 @@
   &__title {
     h3 {
       padding: 0 25px;
-      @include opensans-semibold;
-      font-size: 20px;
+      @include opensans-bold;
+      font-size: 22px;
       color: #1D1B1B;
     }
     padding-bottom: 15px;
@@ -12,6 +12,7 @@
   }
   &__inputs {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
     @media (max-width: 768px) {
       flex-direction: column;
@@ -20,11 +21,15 @@
       margin-bottom: 23px;
     }
     .input-column-wrapper {
-      flex-grow: 1;
+      width: 48%;
       margin-right: 0;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       label {
         font-size: 15px;
+        @include opensans-semibold;
         color: #000000;
       }
     }
@@ -52,15 +57,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-end;
     @media (max-width: 768px) {
       justify-content: flex-start;
+      flex-direction: column;
     }
     .main-btn {
       padding: 11px 20px;
-      &:first-child {
-        margin-right: auto;
-      }
+      flex-grow: 1;
     }
   }
 }

@@ -66,38 +66,18 @@
         </div>
         <div class="priority-price-modal__inputs">
           <div class="input-column-wrapper">
-            <label>Стоимость номера</label>
-            <input class="main-input currency-mask"
-                   name="room_price" type="text" />
+            <label>Категория номера</label>
+            <select class="main-input" name="room_category">
+              <option value="1">Стандарт</option>
+              <option value="2">Категория 2</option>
+              <option value="3">Категория 3</option>
+              <option value="3">Категория 4</option>
+            </select>
           </div>
           <div class="input-column-wrapper">
-            <label>Дополнительное место</label>
+            <label>Базовая стоимость</label>
             <input class="main-input currency-mask"
-                   name="add_place" type="text" />
-          </div>
-        </div>
-        <div class="priority-price-modal__inputs">
-          <div class="input-column-wrapper">
-            <label>Детское место 1</label>
-            <input class="main-input currency-mask"
-                   name="child_place_1" type="text" />
-          </div>
-          <div class="input-column-wrapper">
-            <label>Доставная кровать</label>
-            <input class="main-input currency-mask"
-                   name="add_bed" type="text" />
-          </div>
-        </div>
-        <div class="priority-price-modal__inputs">
-          <div class="input-column-wrapper">
-            <label>Детское место 2</label>
-            <input class="main-input currency-mask"
-                   name="child_place_2" type="text" />
-          </div>
-          <div class="input-column-wrapper">
-            <label>Одноместное заселение</label>
-            <input class="main-input currency-mask"
-                   name="single_checkin" type="text" />
+                   name="base_price" type="text" />
           </div>
         </div>
         <ul class="weekday-list">
@@ -151,7 +131,6 @@
       </div>
       <div class="priority-price-modal__controllers">
         <div class="priority-price-modal__controllers-wrapper">
-          <button class="main-btn _orange" type="button">Удалить</button>
           <button class="main-btn _blue" type="submit">Сохранить</button>
           <button class="main-btn _blue-outlined" type="button" data-custom-close="true">Отменить</button>
         </div>

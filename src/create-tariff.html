@@ -1,307 +1,323 @@
 <!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-  @include('partials/head.html', { 'title': 'Создание/редактирование тарифа' })
+@include('partials/head.html', { 'title': 'Создание/редактирование тарифа' })
 
-  <body class="page__body create-tariff-page">
-    <div class="site-container">
-      <header>@include('partials/auth-panel.html')</header>
-      <main class="main">
-        <div class="container">
-          <h1>Создание/редактирование тарифа</h1>
-          <form class="create-tariff-page__form" action="#">
-            <section class="section-block create-tariff-wrapper">
-              <div>
-                <h3>Основные данные</h3>
-                <div class="content-column create-tariff-data">
-                  <div class="input-column-wrapper">
-                    <label>Название тарифа</label>
-                    <select class="main-input" name="tariff-name">
-                      <option value="1">Тариф 111</option>
-                      <option value="2">Тариф 222</option>
-                    </select>
-                  </div>
+<body class="page__body create-tariff-page">
+<div class="site-container">
+  <header>@include('partials/auth-panel.html')</header>
+  <main class="main">
+    <div class="container">
+      <h1>Создание/редактирование тарифа</h1>
+      <form class="create-tariff-page__form" action="#">
+        <section class="section-block create-tariff-wrapper">
+          <div>
+            <h3>Основные данные</h3>
+            <div class="content-column create-tariff-data">
+              <div class="input-column-wrapper">
+                <label>Название тарифа</label>
+                <select class="main-input" name="tariff-name">
+                  <option value="1">Тариф 111</option>
+                  <option value="2">Тариф 222</option>
+                </select>
+              </div>
 
-                  <div class="input-column-wrapper">
-                    <label>Питание</label>
-                    <select class="main-input" name="food">
-                      <option value="1">Завтрак/Шведский стол</option>
-                      <option value="2">Завтрак/Шведский стол</option>
-                    </select>
-                  </div>
+              <div class="input-column-wrapper">
+                <label>Питание</label>
+                <select class="main-input" name="food">
+                  <option value="1">Завтрак/Шведский стол</option>
+                  <option value="2">Завтрак/Шведский стол</option>
+                </select>
+              </div>
 
-                  <div class="input-column-wrapper">
-                    <label>Трансфер</label>
-                    <select class="main-input" name="transfer">
-                      <option value="1">От аэропорта или ж/д вокзала</option>
-                      <option value="2">От аэропорта или ж/д вокзала</option>
-                    </select>
-                  </div>
+              <div class="input-column-wrapper">
+                <label>Трансфер</label>
+                <select class="main-input" name="transfer">
+                  <option value="1">От аэропорта или ж/д вокзала</option>
+                  <option value="2">От аэропорта или ж/д вокзала</option>
+                </select>
+              </div>
 
-                  <div class="input-column-wrapper">
-                    <label>Курение в номере</label>
-                    <select class="main-input" name="smoking">
-                      <option value="1">Номер для некурящих</option>
-                      <option value="2">Номер для некурящих</option>
-                    </select>
-                  </div>
+              <div class="input-column-wrapper">
+                <label>Курение в номере</label>
+                <select class="main-input" name="smoking">
+                  <option value="1">Номер для некурящих</option>
+                  <option value="2">Номер для некурящих</option>
+                </select>
+              </div>
 
-                  <div class="input-column-wrapper">
-                    <label>Животные</label>
-                    <select class="main-input" name="animals">
-                      <option value="1">
-                        Разрешено с кошками или некрупными собаками
-                      </option>
-                      <option value="2">
-                        Разрешено с кошками или некрупными собаками
-                      </option>
-                    </select>
-                  </div>
+              <div class="input-column-wrapper">
+                <label>Животные</label>
+                <select class="main-input" name="animals">
+                  <option value="1">
+                    Разрешено с кошками или некрупными собаками
+                  </option>
+                  <option value="2">
+                    Разрешено с кошками или некрупными собаками
+                  </option>
+                </select>
+              </div>
 
-                  <div class="input-column-wrapper content-column">
-                    <label>Описание</label>
-                    <textarea class="main-textarea" name="description">
+              <div class="input-column-wrapper content-column">
+                <label>Описание</label>
+                <textarea class="main-textarea" name="description">
 Описание тарифа для показа на сайте
                     </textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="create-tariff-page__checkbox-list">
-                <label class="main-checkbox">
-                  <input type="checkbox" name="active_tariff" />
-                  <span>Активный тариф</span>
-                </label>
-                <label class="main-checkbox">
-                  <input type="checkbox" name="hide_tariff" />
-                  <span>Скрыть тариф</span>
-                </label>
-
-                <div>
-                  <h6>Тариф применим к категориям номеров</h6>
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="all-caterories" />
-                    <span>Все категории</span>
-                  </label>
-                </div>
-
-                <div class="two-colums-checkboxes">
-                  <div>
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="standard" />
-                      <span>Стандарт</span>
-                    </label>
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="standard-plus" />
-                      <span>Стандарт +</span>
-                    </label>
-
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="comfort" />
-                      <span>Комфорт</span>
-                    </label>
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="family" />
-                      <span>Семейный</span>
-                    </label>
-                  </div>
-
-                  <div>
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="family-lux" />
-                      <span>Семейный люкс с бассейном</span>
-                    </label>
-                    <label class="main-checkbox">
-                      <input type="checkbox" name="wedding" />
-                      <span>Свадебный люкс</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="section-block prepayment-section">
-              <h3>Условия предоплаты и отмены бронирования</h3>
-              <label class="main-checkbox">
-                <input
-                  class="non-refundable-checkbox"
-                  type="checkbox"
-                  name="non-refundable"
-                />
-                <span>Невозвратный тариф</span>
-              </label>
-
-              <div class="prepayment-settings">
-                <div class="section-row">
-                  <span class="row-title">Предоплата</span>
-
-                  <div class="row-data">
-                    <p class="input-column-wrapper">
-                      <input
-                        class="main-input"
-                        type="text"
-                        name="prepayment"
-                        required
-                        value="30"
-                      />
-                    </p>
-                    <span>% от стоимости бронирования</span>
-                  </div>
-                </div>
-                <div class="section-row condition-block">
-                  <span class="row-title">Бесплатная отмена за</span>
-
-                  <div class="row-data">
-                    <p class="input-column-wrapper">
-                      <input
-                        class="main-input"
-                        type="text"
-                        name="free-cancel"
-                        required
-                        value="48"
-                      />
-                    </p>
-
-                    <select class="main-input" name="free-cancel-time-unit">
-                      <option value="1">часов</option>
-                      <option value="2">часов</option>
-                    </select>
-
-                    <span>до времени заезда</span>
-                  </div>
-                </div>
-
-                <div class="section-row condition-block">
-                  <span class="row-title">Штраф за позднюю отмену</span>
-
-                  <div class="row-data">
-                    <p class="input-column-wrapper">
-                      <input
-                        class="main-input"
-                        type="text"
-                        name="fine"
-                        required
-                        value="1000"
-                      />
-                    </p>
-
-                    <select class="main-input" name="fine-currency">
-                      <option value="1">₽</option>
-                      <option value="2">₽</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="section-block room-square-section">
-              <h3>Стоимость тарифа</h3>
-
-              <div>
-                <div class="row-wrapper">
-                  <div class="column">
-                    <p class="row-title">
-                      <span class="_bold">Одноместное размещение</span><br />
-                    </p>
-
-                    <div class="row-data">
-                      <select class="main-input" name="one-place-cost">
-                        <option value="1">Не применять</option>
-                        <option value="2">Не применять</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="row-wrapper">
-                  <div class="column">
-                    <p class="row-title">
-                      <span class="_bold">Стандартное размещение</span><br />
-                    </p>
-
-                    <div class="row-data">
-                      <select class="main-input" name="standard-place-cost">
-                        <option value="1">Создать наценку</option>
-                        <option value="2">Создать наценку</option>
-                      </select>
-                      <p class="input-column-wrapper">
-                        <input
-                          class="main-input"
-                          type="text"
-                          name="standard-place-cost-value"
-                          required
-                          value="22,5"
-                        />
-                      </p>
-
-                      <select
-                        class="main-input short-select"
-                        name="standard-place-cost-currency"
-                      >
-                        <option value="1">₽</option>
-                        <option value="2">₽</option>
-                      </select>
-                    </div>
-                  </div>
-                  <p>
-                    Указанная выше сумма или процент будут прибавлены к базовой
-                    стоимости категории номера.
-                  </p>
-                </div>
-
-                <div class="row-wrapper">
-                  <div class="column">
-                    <p class="row-title">
-                      <span class="_bold">Дополнительное место</span><br />
-                    </p>
-
-                    <div class="row-data">
-                      <select class="main-input" name="add-place-cost">
-                        <option value="1">Создать скидку</option>
-                        <option value="2">Создать скидку</option>
-                      </select>
-                      <p class="input-column-wrapper">
-                        <input
-                          class="main-input"
-                          type="text"
-                          name="add-place-cost-value"
-                          required
-                          value="10"
-                        />
-                      </p>
-
-                      <select
-                        class="main-input short-select"
-                        name="add-place-cost-currency"
-                      >
-                        <option value="1">%</option>
-                        <option value="2">%</option>
-                      </select>
-                    </div>
-                  </div>
-                  <p>
-                    Указанная выше сумма или процент будут вычтены из базовой
-                    стоимости категории номера
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <div class="main-controllers">
-              <div class="main-controllers__btns-left">
-                <button class="main-btn" type="submit">
-                  Сохранить и закрыть
-                </button>
-                <button
-                  class="main-btn _blue-outlined"
-                  type="button"
-                  data-action="./data/test.txt"
-                >
-                  Применить и продолжить
-                </button>
               </div>
             </div>
-          </form>
+          </div>
+
+          <div class="create-tariff-page__checkbox-list">
+            <label class="main-checkbox">
+              <input type="checkbox" name="active_tariff" />
+              <span>Активный тариф</span>
+            </label>
+            <label class="main-checkbox">
+              <input type="checkbox" name="hide_tariff" />
+              <span>Скрыть тариф</span>
+            </label>
+
+            <div>
+              <h6>Тариф применим к категориям номеров</h6>
+              <label class="main-checkbox">
+                <input type="checkbox" name="all-caterories" />
+                <span>Все категории</span>
+              </label>
+            </div>
+
+            <div class="two-colums-checkboxes">
+              <div>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="standard" />
+                  <span>Стандарт</span>
+                </label>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="standard-plus" />
+                  <span>Стандарт +</span>
+                </label>
+
+                <label class="main-checkbox">
+                  <input type="checkbox" name="comfort" />
+                  <span>Комфорт</span>
+                </label>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="family" />
+                  <span>Семейный</span>
+                </label>
+              </div>
+
+              <div>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="family-lux" />
+                  <span>Семейный люкс с бассейном</span>
+                </label>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="wedding" />
+                  <span>Свадебный люкс</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block prepayment-section">
+          <h3>Условия предоплаты и отмены бронирования</h3>
+          <label class="main-checkbox">
+            <input
+              class="non-refundable-checkbox"
+              type="checkbox"
+              name="non-refundable"
+            />
+            <span>Невозвратный тариф</span>
+          </label>
+
+          <div class="prepayment-settings">
+            <div class="section-row">
+              <span class="row-title">Предоплата</span>
+
+              <div class="row-data">
+                <p class="input-column-wrapper">
+                  <input
+                    class="main-input"
+                    type="text"
+                    name="prepayment"
+                    required
+                    value="30"
+                  />
+                </p>
+                <span>% от стоимости бронирования</span>
+              </div>
+            </div>
+            <div class="section-row condition-block">
+              <span class="row-title">Бесплатная отмена за</span>
+
+              <div class="row-data">
+                <p class="input-column-wrapper">
+                  <input
+                    class="main-input"
+                    type="text"
+                    name="free-cancel"
+                    required
+                    value="48"
+                  />
+                </p>
+
+                <select class="main-input" name="free-cancel-time-unit">
+                  <option value="1">часов</option>
+                  <option value="2">часов</option>
+                </select>
+
+                <span>до времени заезда</span>
+              </div>
+            </div>
+
+            <div class="section-row condition-block">
+              <span class="row-title">Штраф за позднюю отмену</span>
+
+              <div class="row-data">
+                <p class="input-column-wrapper">
+                  <input
+                    class="main-input"
+                    type="text"
+                    name="fine"
+                    required
+                    value="1000"
+                  />
+                </p>
+
+                <select class="main-input" name="fine-currency">
+                  <option value="1">₽</option>
+                  <option value="2">₽</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block room-square-section">
+          <h3>Стоимость тарифа</h3>
+
+          <div>
+            <div class="row-wrapper price-type" data-price-type="1">
+              <div class="column">
+                <p class="row-title">
+                  <span class="_bold">Одноместное размещение</span><br />
+                </p>
+                <div class="row-data">
+                  <select class="main-input price-type__select" name="one-place-cost">
+                    <option value="1">Без наценки или скидки</option>
+                    <option value="2">Создать наценку</option>
+                    <option value="3">Создать скидку</option>
+                  </select>
+                  <p class="input-column-wrapper price-type__value">
+                    <input
+                      class="main-input number-mask"
+                      type="text"
+                      name="one-place-value"
+                    />
+                  </p>
+                  <select
+                    class="main-input short-select price-type__currency"
+                    name="one-place-currency"
+                  >
+                    <option value="1">₽</option>
+                    <option value="2">%</option>
+                  </select>
+                </div>
+              </div>
+              <p class="price-type__desc">
+                <span class="_increment">Указанная выше сумма или процент будут прибавлены к
+                  базовой стоимости категории номера.</span>
+                <span class="_decrement">Указанная выше сумма или процент будут вычтены из базовой стоимости категории номера</span>
+              </p>
+            </div>
+            <div class="row-wrapper price-type" data-price-type="1">
+              <div class="column">
+                <p class="row-title">
+                  <span class="_bold">Стандартное размещение</span><br />
+                </p>
+
+                <div class="row-data">
+                  <select class="main-input price-type__select" name="standard-place-cost">
+                    <option value="1">Без наценки или скидки</option>
+                    <option value="2">Создать наценку</option>
+                    <option value="3">Создать скидку</option>
+                  </select>
+                  <p class="input-column-wrapper price-type__value">
+                    <input
+                      class="main-input number-mask"
+                      type="text"
+                      name="standard-place-cost-value"
+                    />
+                  </p>
+
+                  <select
+                    class="main-input short-select price-type__currency"
+                    name="standard-place-cost-currency"
+                  >
+                    <option value="1">₽</option>
+                    <option value="2">%</option>
+                  </select>
+                </div>
+              </div>
+              <p class="price-type__desc">
+                <span class="_increment">Указанная выше сумма или процент будут прибавлены к
+                  базовой стоимости категории номера.</span>
+                <span class="_decrement">Указанная выше сумма или процент будут вычтены из базовой стоимости категории номера</span>
+              </p>
+            </div>
+            <div class="row-wrapper price-type" data-price-type="1">
+              <div class="column">
+                <p class="row-title">
+                  <span class="_bold">Дополнительное место</span><br />
+                </p>
+                <div class="row-data">
+                  <select class="main-input price-type__select" name="add-place-cost">
+                    <option value="1">Без наценки или скидки</option>
+                    <option value="2">Создать наценку</option>
+                    <option value="3">Создать скидку</option>
+                  </select>
+                  <p class="input-column-wrapper price-type__value">
+                    <input
+                      class="main-input number-mask"
+                      type="text"
+                      name="add-place-cost-value"
+                    />
+                  </p>
+                  <select
+                    class="main-input short-select price-type__currency"
+                    name="add-place-cost-currency"
+                  >
+                    <option value="1">₽</option>
+                    <option value="2">%</option>
+                  </select>
+                </div>
+              </div>
+              <p class="price-type__desc">
+                <span class="_increment">Указанная выше сумма или процент будут прибавлены к
+                  базовой стоимости категории номера.</span>
+                <span class="_decrement">Указанная выше сумма или процент будут вычтены из базовой стоимости категории номера</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn" type="submit">
+              Сохранить и закрыть
+            </button>
+            <button
+              class="main-btn _blue-outlined"
+              type="button"
+              data-action="./data/test.txt"
+            >
+              Применить и продолжить
+            </button>
+          </div>
         </div>
-      </main>
+      </form>
     </div>
-  </body>
+  </main>
+</div>
+</body>
 </html>

@@ -59,13 +59,9 @@
                 <div class="input-column-wrapper controled-textarea">
                   <p class="row-title">Введите текст для страницы</p>
                   <div class="controled-textarea-wrapper">
-                    <textarea
-                    class="main-textarea"
-                    name="comment"
-                  >
-                  </textarea>
+                    <span class="textarea-label">*управление текстом*</span>
+                    <textarea class="main-textarea" name="comment"> </textarea>
                   </div>
-                  
                 </div>
               </div>
             </section>
@@ -112,9 +108,7 @@
 
             <section class="section-block photo-section">
               <h3>Фотография</h3>
-              <p class="photo-section__desc">
-                Загрузить новую фотографию
-              </p>
+              <p class="photo-section__desc">Загрузить новую фотографию</p>
               <div class="upload-photos general-dropzone-wrapper">
                 <div
                   id="roomPhoto"
@@ -152,7 +146,6 @@
                       />
                     </svg>
                     <p>Перетащите изображение на это поле</p>
-                   
                   </div>
                   <div class="upload-photos__info">
                     <p class="upload-photos__info-title">
@@ -198,7 +191,9 @@
                 </div>
 
                 <div class="input-column-wrapper">
-                  <p class="row-title long">Введите ключевые слова (keywords)</p>
+                  <p class="row-title long">
+                    Введите ключевые слова (keywords)
+                  </p>
                   <input
                     class="main-input"
                     type="text"

@@ -40,17 +40,16 @@ export const newRoom = `<li class="rooms-list__item">
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Фамилия клиента<span>*</span></label>
+                      <label>Фамилия гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Фамилия"
                         name="adult_surname[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Имя клиента<span>*</span></label>
+                      <label>Имя гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -60,17 +59,16 @@ export const newRoom = `<li class="rooms-list__item">
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Отчество клиента<span>*</span></label>
+                      <label>Отчество гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Отчество"
                         name="adult_patronymic[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper _md">
-                      <label>Дата рождения<span>*</span></label>
+                      <label>Дата рождения</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -79,7 +77,6 @@ export const newRoom = `<li class="rooms-list__item">
                           data-date-start=""
                           autocomplete="off"
                           name="adult_birthday[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -96,7 +93,7 @@ export const newRoom = `<li class="rooms-list__item">
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Документ<span>*</span></label>
+                      <label>Документ</label>
                       <select
                         class="main-input"
                         name="adult_doc[1][1]"
@@ -108,18 +105,17 @@ export const newRoom = `<li class="rooms-list__item">
                       </select>
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Серия и номер<span>*</span></label>
+                      <label>Серия и номер</label>
                       <input
                         class="main-input number-mask"
                         type="text"
                         placeholder="Серия и номер"
                         name="adult_series[1][1]"
-                        required
                       />
                     </div>
 
                     <div class="input-column-wrapper _md">
-                      <label>Дата выдачи<span>*</span></label>
+                      <label>Дата выдачи</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -128,7 +124,6 @@ export const newRoom = `<li class="rooms-list__item">
                           data-date-start=""
                           autocomplete="off"
                           name="adult_issue[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -141,7 +136,7 @@ export const newRoom = `<li class="rooms-list__item">
                     </div>
                   </div>
                   <div class="input-column-wrapper rooms-list-section__scan-upload">
-                    <label>Скан документа<span>*</span></label>
+                    <label>Скан документа</label>
                     <div class="file-upload">
                       <div class="file-upload__info">
                         <button class="file-upload__delete-btn" type="button">
@@ -161,7 +156,7 @@ export const newRoom = `<li class="rooms-list__item">
                       >
                         <input type="file" class="file-upload__add main-input"
                                name="adult_scan[1][1]"
-                               accept="application/pdf" required>
+                               accept="application/pdf">
                         Загрузить скан
                       </label>
                     </div>
@@ -187,17 +182,16 @@ export const newAdultGuest = `<li>
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Фамилия клиента<span>*</span></label>
+                      <label>Фамилия гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Фамилия"
                         name="adult_surname[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Имя клиента<span>*</span></label>
+                      <label>Имя гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -207,17 +201,16 @@ export const newAdultGuest = `<li>
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Отчество клиента<span>*</span></label>
+                      <label>Отчество гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Отчество"
                         name="adult_patronymic[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper _md">
-                      <label>Дата рождения<span>*</span></label>
+                      <label>Дата рождения</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -226,7 +219,6 @@ export const newAdultGuest = `<li>
                           data-date-start=""
                           autocomplete="off"
                           name="adult_birthday[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -243,7 +235,7 @@ export const newAdultGuest = `<li>
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Документ<span>*</span></label>
+                      <label>Документ</label>
                       <select
                         class="main-input"
                         name="adult_doc[1][1]"
@@ -255,18 +247,17 @@ export const newAdultGuest = `<li>
                       </select>
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Серия и номер<span>*</span></label>
+                      <label>Серия и номер</label>
                       <input
                         class="main-input number-mask"
                         type="text"
                         placeholder="Серия и номер"
                         name="adult_series[1][1]"
-                        required
                       />
                     </div>
 
                     <div class="input-column-wrapper _md">
-                      <label>Дата выдачи<span>*</span></label>
+                      <label>Дата выдачи</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -275,7 +266,6 @@ export const newAdultGuest = `<li>
                           data-date-start=""
                           autocomplete="off"
                           name="adult_issue[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -289,7 +279,7 @@ export const newAdultGuest = `<li>
                   </div>
                   <div
                     class="input-column-wrapper rooms-list-section__scan-upload">
-                    <label>Скан документа<span>*</span></label>
+                    <label>Скан документа</label>
                     <div class="file-upload">
                       <div class="file-upload__info">
                         <button class="file-upload__delete-btn" type="button">
@@ -309,7 +299,7 @@ export const newAdultGuest = `<li>
                       >
                         <input type="file" class="file-upload__add main-input"
                                name="adult_scan[1][1]"
-                               accept="application/pdf" required>
+                               accept="application/pdf">
                         Загрузить скан
                       </label>
                     </div>
@@ -333,7 +323,7 @@ export const newChildGuest = `<li>
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Фамилия клиента<span>*</span></label>
+                      <label>Фамилия гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -343,7 +333,7 @@ export const newChildGuest = `<li>
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Имя клиента<span>*</span></label>
+                      <label>Имя гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -353,7 +343,7 @@ export const newChildGuest = `<li>
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Отчество клиента<span>*</span></label>
+                      <label>Отчество гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -461,37 +451,3 @@ export const newChildGuest = `<li>
                     </div>
                   </div>
                 </li>`
-
-export const typeClient = [
-  '<div class="edit-booking-page__inputs-row">\n' +
-    '              <div class="input-column-wrapper">\n' +
-    '                <label>Фамилия клиента<span>*</span></label>\n' +
-    '                <input\n' +
-    '                  class="main-input"\n' +
-    '                  type="text"\n' +
-    '                  placeholder="Фамилия"\n' +
-    '                  name="surname"\n' +
-    '                  required\n' +
-    '                />\n' +
-    '              </div>\n' +
-    '              <div class="input-column-wrapper">\n' +
-    '                <label>Имя клиента<span>*</span></label>\n' +
-    '                <input\n' +
-    '                  class="main-input"\n' +
-    '                  type="text"\n' +
-    '                  placeholder="Имя"\n' +
-    '                  name="name"\n' +
-    '                  required\n' +
-    '                />\n' +
-    '              </div>\n' +
-    '              <div class="input-column-wrapper">\n' +
-    '                <label>Отчество клиента</label>\n' +
-    '                <input\n' +
-    '                  class="main-input"\n' +
-    '                  type="text"\n' +
-    '                  placeholder="Отчество"\n' +
-    '                  name="patronymic"\n' +
-    '                />\n' +
-    '              </div>\n' +
-    '            </div>',
-]

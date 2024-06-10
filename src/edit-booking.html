@@ -26,69 +26,71 @@
             </select>
           </div>
           <div class="client-section__type-client">
-            <div class="edit-booking-page__inputs-row">
-              <div class="input-column-wrapper">
-                <label>Фамилия клиента<span>*</span></label>
-                <input
-                  class="main-input"
-                  type="text"
-                  placeholder="Фамилия"
-                  name="surname"
-                  required
-                />
+            <div class="edit-booking-page__individual-content">
+              <div class="edit-booking-page__inputs-row">
+                <div class="input-column-wrapper">
+                  <label>Фамилия клиента<span>*</span></label>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Фамилия"
+                    name="surname"
+                    required
+                  />
+                </div>
+                <div class="input-column-wrapper">
+                  <label>Имя клиента<span>*</span></label>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Имя"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="input-column-wrapper">
+                  <label>Отчество клиента</label>
+                  <input
+                    class="main-input"
+                    type="text"
+                    placeholder="Отчество"
+                    name="patronymic"
+                  />
+                </div>
               </div>
-              <div class="input-column-wrapper">
-                <label>Имя клиента<span>*</span></label>
-                <input
-                  class="main-input"
-                  type="text"
-                  placeholder="Имя"
-                  name="name"
-                  required
-                />
-              </div>
-              <div class="input-column-wrapper">
-                <label>Отчество клиента</label>
-                <input
-                  class="main-input"
-                  type="text"
-                  placeholder="Отчество"
-                  name="patronymic"
-                />
+              <div class="edit-booking-page__inputs-row">
+                <div class="input-column-wrapper">
+                  <label>Номер телефона<span>*</span></label>
+                  <input
+                    class="main-input phone-mask"
+                    type="text"
+                    placeholder="Телефон"
+                    name="phone"
+                    required
+                  />
+                </div>
+                <div class="input-column-wrapper">
+                  <label>E-mail</label>
+                  <input
+                    class="main-input"
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                  />
+                </div>
+                <div class="input-column-wrapper">
+                  <label>ИНН</label>
+                  <input
+                    class="main-input number-mask"
+                    type="text"
+                    placeholder="ИНН"
+                    name="inn"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div class="edit-booking-page__inputs-row">
-            <div class="input-column-wrapper">
-              <label>Номер телефона<span>*</span></label>
-              <input
-                class="main-input phone-mask"
-                type="text"
-                placeholder="Телефон"
-                name="phone"
-                required
-              />
-            </div>
-            <div class="input-column-wrapper">
-              <label>E-mail</label>
-              <input
-                class="main-input"
-                type="email"
-                placeholder="E-mail"
-                name="email"
-              />
-            </div>
-            <div class="input-column-wrapper">
-              <label>ИНН<span>*</span></label>
-              <input
-                class="main-input number-mask"
-                type="text"
-                placeholder="ИНН"
-                name="inn"
-                required
-              />
-            </div>
-          </div>
+
         </section>
         <section class="section-block dates-section">
           <h3>Даты проживания</h3>
@@ -205,17 +207,16 @@
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Фамилия клиента<span>*</span></label>
+                      <label>Фамилия гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Фамилия"
                         name="adult_surname[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Имя клиента<span>*</span></label>
+                      <label>Имя гостя<span>*</span></label>
                       <input
                         class="main-input"
                         type="text"
@@ -225,17 +226,16 @@
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Отчество клиента<span>*</span></label>
+                      <label>Отчество гостя</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Отчество"
                         name="adult_patronymic[1][1]"
-                        required
                       />
                     </div>
                     <div class="input-column-wrapper _md">
-                      <label>Дата рождения<span>*</span></label>
+                      <label>Дата рождения</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -244,7 +244,6 @@
                           data-date-start=""
                           autocomplete="off"
                           name="adult_birthday[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -261,7 +260,7 @@
                     style="border: none"
                   >
                     <div class="input-column-wrapper">
-                      <label>Документ<span>*</span></label>
+                      <label>Документ</label>
                       <select
                         class="main-input"
                         name="adult_doc[1][1]"
@@ -273,18 +272,17 @@
                       </select>
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Серия и номер<span>*</span></label>
+                      <label>Серия и номер</label>
                       <input
                         class="main-input"
                         type="text"
                         placeholder="Серия и номер"
                         name="adult_series[1][1]"
-                        required
                       />
                     </div>
 
                     <div class="input-column-wrapper _md">
-                      <label>Дата выдачи<span>*</span></label>
+                      <label>Дата выдачи</label>
                       <div class="icon-input">
                         <input
                           class="main-input date-mask"
@@ -293,7 +291,6 @@
                           data-date-start=""
                           autocomplete="off"
                           name="adult_issue[1][1]"
-                          required
                         />
                         <svg width="14" height="10" viewBox="0 0 14 10"
                              fill="none"
@@ -307,7 +304,7 @@
                   </div>
                   <div
                     class="input-column-wrapper rooms-list-section__scan-upload">
-                    <label>Скан документа<span>*</span></label>
+                    <label>Скан документа</label>
                     <div class="file-upload">
                       <div class="file-upload__info">
                         <button class="file-upload__delete-btn" type="button">
@@ -327,7 +324,7 @@
                       >
                         <input type="file" class="file-upload__add main-input"
                                name="adult_scan[1][1]"
-                               accept="application/pdf" required>
+                               accept="application/pdf">
                         Загрузить скан
                       </label>
                     </div>
@@ -637,67 +634,133 @@
 
 
 <template id="type-individual">
-  <div class="edit-booking-page__inputs-row">
-    <div class="input-column-wrapper">
-      <label>Фамилия клиента<span>*</span></label>
-      <input
-        class="main-input"
-        type="text"
-        placeholder="Фамилия"
-        name="surname"
-        required
-      />
+  <div class="edit-booking-page__individual-content">
+    <div class="edit-booking-page__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Фамилия клиента<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Фамилия"
+          name="surname"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Имя клиента<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Имя"
+          name="name"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Отчество клиента</label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Отчество"
+          name="patronymic"
+        />
+      </div>
     </div>
-    <div class="input-column-wrapper">
-      <label>Имя клиента<span>*</span></label>
-      <input
-        class="main-input"
-        type="text"
-        placeholder="Имя"
-        name="name"
-        required
-      />
-    </div>
-    <div class="input-column-wrapper">
-      <label>Отчество клиента</label>
-      <input
-        class="main-input"
-        type="text"
-        placeholder="Отчество"
-        name="patronymic"
-      />
+    <div class="edit-booking-page__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Номер телефона<span>*</span></label>
+        <input
+          class="main-input phone-mask"
+          type="text"
+          placeholder="Телефон"
+          name="phone"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>E-mail</label>
+        <input
+          class="main-input"
+          type="email"
+          placeholder="E-mail"
+          name="email"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>ИНН</label>
+        <input
+          class="main-input number-mask"
+          type="text"
+          placeholder="ИНН"
+          name="inn"
+        />
+      </div>
     </div>
   </div>
+
 </template>
 <template id="type-org">
-  <div class="edit-booking-page__inputs-row edit-booking-page__org-row">
-    <div class="input-column-wrapper">
-      <label>Форма<span>*</span></label>
-      <select class="main-input"
-              name="org_form">
-        <option value="0">ООО</option>
-        <option value="1">АО</option>
-        <option value="1">ИП</option>
-      </select>
+  <div class="edit-booking-page__org-content">
+    <div class="edit-booking-page__inputs-row edit-booking-page__org-row">
+      <div class="input-column-wrapper">
+        <label>Форма<span>*</span></label>
+        <select class="main-input"
+                name="org_form">
+          <option value="0">ООО</option>
+          <option value="1">АО</option>
+          <option value="1">ИП</option>
+        </select>
+      </div>
+      <div class="input-column-wrapper">
+        <label>Полное название</label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Полное название"
+          name="org_fullname"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Краткое название<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Краткое название"
+          name="org_shortname"
+          required
+        />
+      </div>
     </div>
-    <div class="input-column-wrapper">
-      <label>Полное название</label>
-      <input
-        class="main-input"
-        type="text"
-        placeholder="Полное название"
-        name="org_fullname"
-      />
-    </div>
-    <div class="input-column-wrapper">
-      <label>Краткое название<span>*</span></label>
-      <input
-        class="main-input"
-        type="text"
-        placeholder="Краткое название"
-        name="org_shortname"
-        required
-      />
+    <div class="edit-booking-page__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Номер телефона<span>*</span></label>
+        <input
+          class="main-input phone-mask"
+          type="text"
+          placeholder="Телефон"
+          name="phone"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>E-mail</label>
+        <input
+          class="main-input"
+          type="email"
+          placeholder="E-mail"
+          name="email"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>ИНН<span>*</span></label>
+        <input
+          class="main-input number-mask"
+          type="text"
+          placeholder="ИНН"
+          name="inn"
+          required
+        />
+      </div>
     </div>
   </div>
 </template>

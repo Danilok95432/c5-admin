@@ -33,12 +33,16 @@
   }
   label {
     position: relative;
+    cursor: pointer;
   }
   &__add {
+    cursor: pointer;
     opacity: 0;
-    visibility: hidden;
     position: absolute;
-    left: 0;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
   }
 
   &__name {

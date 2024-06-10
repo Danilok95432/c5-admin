@@ -56,10 +56,10 @@ if (editBookingPage) {
     editBookingPage.querySelector('#type-individual')?.content
   const orgTypeTmpl = editBookingPage.querySelector('#type-org')?.content
   const individualTypeClone = individualTypeTmpl
-    .querySelector('.edit-booking-page__inputs-row')
+    .querySelector('.edit-booking-page__individual-content')
     .cloneNode(true)
   const orgTypeClone = orgTypeTmpl
-    .querySelector('.edit-booking-page__inputs-row')
+    .querySelector('.edit-booking-page__org-content')
     .cloneNode(true)
 
   clientSelect.addEventListener('input', (e) => {

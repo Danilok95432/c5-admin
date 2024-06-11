@@ -48,39 +48,6 @@
             }
         }
 
-        .units-buttons {
-            display: flex;
-            min-width: 210px;
-
-
-            button {
-                flex: 1;
-                padding: 10px;
-                background-color: #F1F7FF;
-                border: 1px solid #6DB4F5;
-                border-right: none;
-                margin: 0;
-                text-align: center;
-                background-image: none;
-                border-radius: 0;
-
-                &._active {
-                    color: #FFFFFF;
-                    border-radius: 3px;
-                    background-color: #064AB1;
-                    border: none;
-                }
-
-                &:first-child {
-                    border-radius: 3px 0 0 3px;
-                }
-
-                &:last-child {
-                    border-radius: 0 3px 3px 0;
-                    border: 1px solid #6DB4F5;
-                }
-            }
-        }
 
         &__info {
             margin-top: 5px;

@@ -8,19 +8,26 @@
   .container {
     max-width: 1560px;
   }
+  &__title-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    h1 {
+      padding: 0;
+      font-size: 25px;
+      @include opensans-bold;
+      color: #064AB1;
+    }
+  }
 
   &__search {
-    padding-top: 27px;
+    padding-top: 21px;
     padding-bottom: 22px;
     background-color: #E8F1F8;
     border-bottom: 1px solid #C3D5F5;
-
-    h2 {
-      font-size: 25px;
-      @include opensans-bold;
-      margin-bottom: 25px;
-      color: #064AB1;
-    }
 
     .main-input {
       margin-bottom: 15px;

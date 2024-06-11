@@ -1,0 +1,112 @@
+.services-list-admin-page {
+    .main-btn {
+        display: inline-block;
+        margin: 10px 0 30px 0;
+        padding: 10px 20px;
+    }
+
+    .services-list-table {
+        margin-bottom: 20px;
+
+        @media (max-width: 1120px) {
+            overflow-x: auto;
+        }
+
+        .main-table__row {
+            max-height: 42px;
+
+            @media (max-width: 1024px) {
+                min-width: 1000px;
+            }
+
+            &:first-child {
+                max-height: 45px;
+            }
+
+            &:hover {
+                .main-table__cell {
+                    .delete-link {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        ._blocked-service {
+            pointer-events: none;
+            opacity: 0.5;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        .main-table__cell {
+            .input-column-wrapper {
+                display: inline-block;
+
+                input {
+                    padding: 8px 10px;
+                    height: 30px;
+
+                    &:focus+svg {
+                        display: none;
+                    }
+
+                    &::placeholder {
+                        @include opensans-regular;
+                        font-size: 15px;
+                        line-height: 1.2;
+                        color: #91969A;
+                    }
+                }
+            }
+
+            .sorting-button {
+                margin-left: 2px;
+            }
+
+            &:nth-child(1) {
+                min-width: 5%;
+            }
+
+            &:nth-child(2) {
+                min-width: 35%;
+
+                input {
+                    width: 250px;
+                }
+            }
+
+            &:nth-child(3) {
+                min-width: 25%;
+            }
+
+            &:nth-child(4) {
+                min-width: 20%;
+            }
+
+
+            &:nth-child(5) {
+                min-width: 10%;
+                display: flex;
+                justify-content: center;
+            }
+            &:nth-child(6) {
+                display: flex;
+                justify-content: center;
+                max-width: 5%;
+                .delete-link {
+                    opacity: 0;
+                    transition: all .2s;
+                    width: 23px;
+                    height: 23px;
+
+                    @media (max-width: 1024px) {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

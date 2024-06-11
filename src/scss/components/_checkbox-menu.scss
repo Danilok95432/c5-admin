@@ -1,8 +1,44 @@
 .checkbox-menu {
+  display: flex;
+  background: #F1F7FF;
+  border: 1px solid #6DB4F5;
+  border-radius: 3px;
+  height: 40px;
+
+  &__item {
+    &:last-child {
+      span {
+        border-right: none;
+      }
+    }
+  }
+
   input {
     z-index: -1;
     opacity: 0;
     pointer-events: none;
     display: none;
+  }
+
+  span {
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 15px;
+    color: #000000;
+    @include opensans-medium;
+    cursor: pointer;
+    border-right: 1px solid #6DB4F5;
+  }
+
+  input:checked + span{
+    background: #064AB1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #064AB1;
+    outline: 1px solid #064AB1;
   }
 }

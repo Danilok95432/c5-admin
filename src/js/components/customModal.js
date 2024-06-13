@@ -14,10 +14,20 @@ if (customModals) {
   }
 
   customModals.forEach((modal) => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === e.currentTarget || e.target.dataset.customClose) {
-        modal.classList.remove('_active')
-      }
-    })
+    const isLocalClose = modal.dataset?.localClose
+
+    if (isLocalClose) {
+      modal.addEventListener('click', (e) => {
+        if (e.target.dataset.customClose) {
+          modal.classList.remove('_active')
+        }
+      })
+    } else {
+      modal.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget || e.target.dataset.customClose) {
+          modal.classList.remove('_active')
+        }
+      })
+    }
   })
 }

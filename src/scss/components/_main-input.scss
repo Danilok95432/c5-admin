@@ -3,7 +3,7 @@
   align-items: center;
   margin-bottom: 15px;
 
-  label{
+  label {
     min-width: 200px;
     margin-right: 23px;
     cursor: initial;
@@ -32,7 +32,8 @@
   &._sm {
     max-width: 94px;
   }
-  &._md{
+
+  &._md {
     max-width: 180px;
   }
 
@@ -44,7 +45,7 @@
     }
   }
 
-  label:not(.main-btn)  {
+  label:not(.main-btn) {
     margin-bottom: 2px;
     font-size: 13px;
     color: #A5AFBB;
@@ -72,9 +73,11 @@
   width: 100%;
   border-radius: 3px;
   border: 1px solid #6DB4F5;
+
   &::placeholder {
     color: #A5AFBB;
   }
+
   &[type="search"] {
     outline-offset: 0;
   }
@@ -108,18 +111,18 @@ select.main-input {
     }
   }
 
-  svg {
+  & > svg {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-
   }
 }
 
 .week-view-input {
   position: relative;
   width: 100%;
+
   &__info {
     position: absolute;
     left: 88px;

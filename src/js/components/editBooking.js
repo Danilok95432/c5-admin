@@ -10,6 +10,7 @@ import { sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
 import { initFileUploading } from './fileUpload'
 import AirDatepicker from 'air-datepicker'
+import Inputmask from 'inputmask'
 
 const editBookingPage = document.querySelector('.edit-booking-page')
 
@@ -61,6 +62,27 @@ if (editBookingPage) {
   const orgTypeClone = orgTypeTmpl
     .querySelector('.edit-booking-page__org-content')
     .cloneNode(true)
+
+  Inputmask({
+    alias: 'numeric',
+    allowMinus: false,
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+    shortcuts: null,
+  }).mask([
+    individualTypeClone.querySelector('.number-mask'),
+    orgTypeClone.querySelector('.number-mask'),
+  ])
+
+  Inputmask({
+    mask: '+7 (999) 999-99-99',
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+    shortcuts: null,
+  }).mask([
+    individualTypeClone.querySelector('.phone-mask'),
+    orgTypeClone.querySelector('.phone-mask'),
+  ])
 
   clientSelect.addEventListener('input', (e) => {
     typeClientContent.innerHTML = ''
@@ -160,20 +182,20 @@ if (editBookingPage) {
       initFileUploading()
     }
 
-    if (
-      e.target.dataset.template === 'new-adult' ||
-      e.target.dataset.template === 'new-child'
-    ) {
-      const lastGuestsList = roomsList.querySelector(
-        '.rooms-list__item:last-child .guests-list',
-      )
-
-      if (e.target.dataset.template === 'new-adult') {
-        lastGuestsList.insertAdjacentHTML('beforeend', newAdultGuest)
-      }
-      if (e.target.dataset.template === 'new-child') {
-        lastGuestsList.insertAdjacentHTML('beforeend', newChildGuest)
-      }
+    if (e.target.dataset.template === 'new-adult') {
+      const currentRoomGuests = e.target
+        .closest('.rooms-list__item')
+        .querySelector('.guests-list')
+      currentRoomGuests.insertAdjacentHTML('beforeend', newAdultGuest)
+      initAllDates()
+      initAllMasks()
+      initFileUploading()
+    }
+    if (e.target.dataset.template === 'new-child') {
+      const currentRoomGuests = e.target
+        .closest('.rooms-list__item')
+        .querySelector('.guests-list')
+      currentRoomGuests.insertAdjacentHTML('beforeend', newChildGuest)
       initAllDates()
       initAllMasks()
       initFileUploading()

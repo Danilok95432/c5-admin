@@ -162,9 +162,17 @@
         padding-bottom: 30px;
         border-bottom: 1px solid #C3D5F5;
       }
+      &__item-controllers {
+        display: flex;
+        gap: 20px;
+        .main-btn {
+          padding: 10px 25px;
+        }
+      }
     }
 
     .guests-list {
+      margin-bottom: 25px;
       li:not(:last-child) {
         padding-bottom: 30px;
         margin-bottom: 28px;
@@ -206,23 +214,9 @@
     }
 
     &__controllers {
-      padding-right: 115px;
       margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-
-      @media (max-width: 1024px) {
-        padding-right: 0;
-        gap: 15px;
-      }
-
       button {
         padding: 10px 24px;
-      }
-
-      button[data-template="new-room"] {
-        margin-left: auto;
       }
     }
 

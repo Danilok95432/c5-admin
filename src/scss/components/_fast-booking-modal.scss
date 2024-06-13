@@ -1,0 +1,240 @@
+.fast-booking-modal {
+  .custom-modal__content-wrapper {
+    width: 820px;
+  }
+
+  .main-input {
+    &::placeholder {
+      color: #A5AFBB;
+    }
+  }
+
+  &__title {
+    h3 {
+      padding: 0 25px;
+      @include opensans-bold;
+      font-size: 22px;
+      color: #1D1B1B;
+    }
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid #C3D5F5;
+  }
+
+  &__inner {
+    padding: 24px 24px 35px 25px;
+  }
+
+  section {
+    h3 {
+      @include opensans-bold;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #3090F6;
+    }
+  }
+
+  label:not(.main-checkbox) {
+    span {
+      color: #FF6716;
+    }
+  }
+
+  &__inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
+
+    .input-column-wrapper {
+      width: 32%;
+
+      label {
+        height: 25px;
+      }
+
+
+      &.main-checkbox {
+        padding-top: 27px;
+
+        @media (max-width: 768px) {
+          padding-top: 0;
+          margin-left: 0;
+        }
+
+        label {
+          font-size: 15px;
+          display: flex;
+          color: #1D1B1B;
+          font-weight: 400;
+          line-height: 1;
+          align-items: center;
+        }
+      }
+
+      &._sm {
+
+        width: 90px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      &._md {
+        width: 135px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        width: 46%;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .client-section {
+    border-bottom: 1px solid #C3D5F5;
+    padding-bottom: 34px;
+    margin-bottom: 24px;
+
+    &__type-client-select {
+      select {
+        max-width: 246px;
+      }
+
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+
+  .dates-section {
+    border-bottom: 1px solid #C3D5F5;
+    padding-bottom: 34px;
+    margin-bottom: 24px;
+    .fast-booking-modal__inputs-row {
+      margin: 0;
+    }
+
+    &__inputs {
+      display: flex;
+      gap: 10px;
+    }
+
+    &__days-counter {
+      @include opensans-bold;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+
+    .main-input {
+      caret-color: transparent;
+    }
+
+    .main-checkbox {
+      min-width: 135px;
+      line-height: 1.1;
+    }
+  }
+
+  .rooms-section {
+    border-bottom: 1px solid #C3D5F5;
+    padding-bottom: 34px;
+    margin-bottom: 35px;
+    &__inputs {
+      display: flex;
+      gap: 68px;
+      .main-input {
+        max-width: 70px;
+        width: 70px;
+      }
+    }
+
+    .child-generate-select {
+      display: flex;
+      gap: 25px;
+      &__wrapper {
+        label {
+          @include opensans-semibold;
+          font-size: 13px;
+          color: #A5AFBB;
+          margin-bottom: 2px;
+          display: block;
+          min-height: 25px;
+          span {
+            color: #FF6716;
+          }
+        }
+      }
+      &__age-select-list {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+
+  .rooms-search-section {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #C3D5F5;
+    padding-bottom: 34px;
+    margin-bottom: 24px;
+    gap: 23px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .main-btn {
+      min-width: 280px;
+      padding: 10px 0;
+    }
+
+    &__prompt {
+      svg {
+        min-width: 15px;
+        height: 15px;
+      }
+
+      line-height: 1.3;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      color: #95A0AC;
+      font-size: 13px;
+    }
+  }
+
+
+  .controllers-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+
+    .main-btn {
+      padding: 11px 20px;
+      flex-grow: 1;
+    }
+  }
+}

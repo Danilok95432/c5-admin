@@ -1,172 +1,304 @@
 <!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-  @include('partials/head.html', { 'title': 'Данные номера' })
+@include('partials/head.html', { 'title': 'Данные номера' })
 
-  <body class="page__body room-data-page">
-    <div class="site-container">
-      <header>@include('partials/auth-panel.html')</header>
-      <main class="main">
-        <div class="container">
-          <h1>Создание/редактирование номера</h1>
-          <form class="room-data-page__form" action="#">
-            <section class="section-block room-data-wrapper">
-              <div>
-                <h3>Основные данные</h3>
-                <div class="content-column room-data">
-                  <div class="input-column-wrapper">
-                    <label>Полное название номера</label>
-                    <input
-                      class="main-input"
-                      type="text"
-                      placeholder="Первый номер один"
-                      name="room-full-title"
-                    />
-                  </div>
-                  <div class="input-column-wrapper">
-                    <label>Краткое название номера</label>
-                    <input
-                      class="main-input"
-                      type="text"
-                      placeholder="1 номер"
-                      name="room-short-title"
-                    />
-                  </div>
-                </div>
+<body class="page__body room-data-page">
+<div class="site-container">
+  <header>@include('partials/auth-panel.html')</header>
+  <main class="main">
+    <div class="container">
+      <h1>Создание/редактирование номера</h1>
+      <form class="room-data-page__form" action="#">
+        <section class="section-block room-data-wrapper">
+          <div>
+            <h3>Основные данные</h3>
+            <div class="content-column room-data">
+              <div class="input-column-wrapper">
+                <label>Полное название номера</label>
+                <input
+                  class="main-input"
+                  type="text"
+                  placeholder="Первый номер один"
+                  name="room-full-title"
+                />
               </div>
+              <div class="input-column-wrapper">
+                <label>Краткое название номера</label>
+                <input
+                  class="main-input"
+                  type="text"
+                  placeholder="1 номер"
+                  name="room-short-title"
+                />
+              </div>
+            </div>
+          </div>
 
-              <ul class="room-data-page__checkbox-list">
-                <li>
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="active_room" />
-                    <span>Активный номер</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="hide_room" />
-                    <span>Скрыть номер</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="booking_site" />
-                    <span>Бронирование через наш сайт</span>
-                  </label>
-                </li>
-                <li>
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="booking_other" />
-                    <span>Бронирование через сторонние сервисы</span>
-                  </label>
-                </li>
-                <li class="main-checkbox">
-                  <label class="main-checkbox">
-                    <input type="checkbox" name="booking_stand" />
-                    <span>Бронирование на стойке объекта</span>
-                  </label>
-                </li>
-              </ul>
-            </section>
-            <section class="section-block">
-              <h3>Категория номера</h3>
-              <div class="category-wrapper">
-                <div class="input-column-wrapper content-column">
-                  <select class="main-input" name="room-category">
-                    <option value="1">Люкс с бассейном</option>
-                    <option value="2">Люкс с бассейном 2</option>
-                    <option value="3">Люкс с бассейном 3</option>
-                    <option value="4">Люкс с бассейном 4</option>
-                  </select>
-                </div>
-              </div>
-            </section>
+          <ul class="room-data-page__checkbox-list">
+            <li>
+              <label class="main-checkbox">
+                <input type="checkbox" name="active_room" />
+                <span>Активный номер</span>
+              </label>
+            </li>
+            <li>
+              <label class="main-checkbox">
+                <input type="checkbox" name="hide_room" />
+                <span>Скрыть номер</span>
+              </label>
+            </li>
+            <li>
+              <label class="main-checkbox">
+                <input type="checkbox" name="booking_site" />
+                <span>Бронирование через наш сайт</span>
+              </label>
+            </li>
+            <li>
+              <label class="main-checkbox">
+                <input type="checkbox" name="booking_other" />
+                <span>Бронирование через сторонние сервисы</span>
+              </label>
+            </li>
+            <li class="main-checkbox">
+              <label class="main-checkbox">
+                <input type="checkbox" name="booking_stand" />
+                <span>Бронирование на стойке объекта</span>
+              </label>
+            </li>
+          </ul>
+        </section>
+        <section class="section-block">
+          <h3>Категория номера</h3>
+          <div class="category-wrapper">
+            <div class="input-column-wrapper content-column">
+              <select class="main-input" name="room-category">
+                <option value="1">Люкс с бассейном</option>
+                <option value="2">Люкс с бассейном 2</option>
+                <option value="3">Люкс с бассейном 3</option>
+                <option value="4">Люкс с бассейном 4</option>
+              </select>
+            </div>
+          </div>
+        </section>
 
-            <section class="section-block floor-section">
-              <h3>Этаж</h3>
-              <div class="content-column">
-                <div class="first-floor-wrapper">
-                  <span>Этаж:</span>
-                  <div class="input-column-wrapper">
-                    <select class="main-input" name="first-floor">
-                      <option value="1">выбрать этаж</option>
-                      <option value="2">1</option>
-                      <option value="3">2</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="second-floor-wrapper">
-                  <label class="input-column-wrapper main-checkbox">
-                    <input type="checkbox" name="two-floor" checked />
-                    <span>Два этажа</span>
-                  </label>
-                  <div class="input-column-wrapper">
-                    <select class="main-input" name="second-floor">
-                      <option value="1">выбрать этаж</option>
-                      <option value="2">1</option>
-                      <option value="3">2</option>
-                    </select>
-                  </div>
-                </div>
+        <section class="section-block floor-section">
+          <h3>Этаж</h3>
+          <div class="content-column">
+            <div class="first-floor-wrapper">
+              <span>Этаж:</span>
+              <div class="input-column-wrapper">
+                <select class="main-input" name="first-floor">
+                  <option value="1">выбрать этаж</option>
+                  <option value="2">1</option>
+                  <option value="3">2</option>
+                </select>
               </div>
-            </section>
-            <section class="section-block">
-              <h3>Описание номера</h3>
-              <div class="section-item">
-                <div class="input-column-wrapper content-column">
+            </div>
+            <div class="second-floor-wrapper">
+              <label class="input-column-wrapper main-checkbox">
+                <input type="checkbox" name="two-floor" checked />
+                <span>Два этажа</span>
+              </label>
+              <div class="input-column-wrapper">
+                <select class="main-input" name="second-floor">
+                  <option value="1">выбрать этаж</option>
+                  <option value="2">1</option>
+                  <option value="3">2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-block">
+          <h3>Описание номера</h3>
+          <div class="section-item">
+            <div class="input-column-wrapper content-column">
                   <textarea class="main-textarea" name="public-description">
 Описание номера для публичного ресурса
                 </textarea
-                  >
-                </div>
-              </div>
-              <h4>Особые условия для гостей</h4>
-              <div class="input-column-wrapper content-column">
+                >
+            </div>
+          </div>
+          <h4>Особые условия для гостей</h4>
+          <div class="input-column-wrapper content-column">
                 <textarea class="main-textarea" name="guests-conditions">
 Условия заселения, размещения и всего остального (кроме цен), в свободной форме
               </textarea
-                >
-              </div>
-            </section>
-            <section class="section-block">
-              <h3>Площадь номера</h3>
-              <div class="square-data-wrapper content-column">
-                <span>Площадь номера:</span>
-                <div class="input-column-wrapper">
-                  <input
-                    class="main-input"
-                    type="text"
-                    placeholder="22,5"
-                    name="room-square"
-                  />
-                </div>
-                <span>м<sup>2</sup></span>
-              </div>
-            </section>
-            <section class="section-block">
-              <h3>Комментарий</h3>
-              <div class="input-column-wrapper content-column">
+              >
+          </div>
+        </section>
+        <section class="section-block">
+          <h3>Площадь номера</h3>
+          <div class="square-data-wrapper content-column">
+            <span>Площадь номера:</span>
+            <div class="input-column-wrapper">
+              <input
+                class="main-input"
+                type="text"
+                placeholder="22,5"
+                name="room-square"
+              />
+            </div>
+            <span>м<sup>2</sup></span>
+          </div>
+        </section>
+        <section class="section-block">
+          <h3>Комментарий</h3>
+          <div class="input-column-wrapper content-column">
                 <textarea class="main-textarea" name="comment">
 Какой-то комментарий к номеру
                 </textarea>
-              </div>
-            </section>
-            <div class="main-controllers">
-              <div class="main-controllers__btns-left">
-                <button class="main-btn" type="submit">
-                  Сохранить и закрыть
-                </button>
-                <button
-                  class="main-btn _blue-outlined"
-                  type="button"
-                  data-action="./data/test.txt"
-                >
-                  Применить и продолжить
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
+        </section>
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn" type="submit">
+              Сохранить и закрыть
+            </button>
+            <button
+              class="main-btn _blue-outlined"
+              type="button"
+              data-action="./data/test.txt"
+            >
+              Применить и продолжить
+            </button>
+          </div>
         </div>
-      </main>
+      </form>
     </div>
-  </body>
+  </main>
+</div>
+@include('partials/fast-booking-modal.html')
+<template id="type-individual">
+  <div class="fast-booking-modal__individual-content">
+    <div class="fast-booking-modal__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Фамилия клиента<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Фамилия"
+          name="surname"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Имя клиента<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Имя"
+          name="name"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Отчество клиента</label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Отчество"
+          name="patronymic"
+        />
+      </div>
+    </div>
+    <div class="fast-booking-modal__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Номер телефона<span>*</span></label>
+        <input
+          class="main-input phone-mask"
+          type="text"
+          placeholder="Телефон"
+          name="phone"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>E-mail</label>
+        <input
+          class="main-input"
+          type="email"
+          placeholder="E-mail"
+          name="email"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>ИНН</label>
+        <input
+          class="main-input number-mask"
+          type="text"
+          placeholder="ИНН"
+          name="inn"
+        />
+      </div>
+    </div>
+  </div>
+
+</template>
+<template id="type-org">
+  <div class="fast-booking-modal__org-content">
+    <div class="fast-booking-modal__inputs-row fast-booking-modal__org-row">
+      <div class="input-column-wrapper">
+        <label>Форма<span>*</span></label>
+        <select class="main-input"
+                name="org_form">
+          <option value="0">ООО</option>
+          <option value="1">АО</option>
+          <option value="1">ИП</option>
+        </select>
+      </div>
+      <div class="input-column-wrapper">
+        <label>Полное название</label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Полное название"
+          name="org_fullname"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>Краткое название<span>*</span></label>
+        <input
+          class="main-input"
+          type="text"
+          placeholder="Краткое название"
+          name="org_shortname"
+          required
+        />
+      </div>
+    </div>
+    <div class="fast-booking-modal__inputs-row">
+      <div class="input-column-wrapper">
+        <label>Номер телефона<span>*</span></label>
+        <input
+          class="main-input phone-mask"
+          type="text"
+          placeholder="Телефон"
+          name="phone"
+          required
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>E-mail</label>
+        <input
+          class="main-input"
+          type="email"
+          placeholder="E-mail"
+          name="email"
+        />
+      </div>
+      <div class="input-column-wrapper">
+        <label>ИНН<span>*</span></label>
+        <input
+          class="main-input number-mask"
+          type="text"
+          placeholder="ИНН"
+          name="inn"
+          required
+        />
+      </div>
+    </div>
+  </div>
+</template>
+</body>
 </html>

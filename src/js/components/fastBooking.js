@@ -1,5 +1,6 @@
 import Inputmask from 'inputmask'
 import AirDatepicker from 'air-datepicker'
+import { sendData, showInfoModal } from '../_functions'
 
 const fastBookingModal = document.querySelector('.fast-booking-modal')
 
@@ -155,5 +156,108 @@ if (fastBookingModal) {
 
   childGenerateSelect.addEventListener('input', (e) => {
     renderAgeSelects(+e.currentTarget.value, childAgeSelects)
+  })
+
+  // Логика поиска подходящих номеров
+
+  let globalRoomsData = []
+
+  const roomsCategoriesSelect = fastBookingModal.querySelector(
+    '.fast-booking-modal__categories-select select',
+  )
+  const roomsTariffsSelect = fastBookingModal.querySelector(
+    '.fast-booking-modal__tariff-select select',
+  )
+
+  const freeRoomWrapper = fastBookingModal.querySelector(
+    '.rooms-category-section__free-room-wrapper',
+  )
+
+  const fastBookingForm = fastBookingModal.querySelector(
+    '.fast-booking-modal__form',
+  )
+
+  const initCategoriesSelect = (categoriesData) => {
+    if (!categoriesData) return
+    const optionsHtml = categoriesData.map(
+      ({ categoryName, categoryValue }) =>
+        `<option value="${categoryValue}">${categoryName}</option>`,
+    )
+    roomsCategoriesSelect.innerHTML = optionsHtml.join('')
+  }
+  const initTariffsSelect = (tariffsData) => {
+    if (!tariffsData) return
+
+    const optionsHtml = tariffsData.map(
+      ({ tariffName, tariffValue }) =>
+        `<option value="${tariffValue}">${tariffName}</option>`,
+    )
+    roomsTariffsSelect.innerHTML = optionsHtml.join('')
+  }
+  const initRooms = (roomsData) => {
+    if (!roomsData) return
+    const optionsHtml = roomsData
+      .map(
+        ({ roomName, roomValue }) =>
+          `<option value="${roomValue}">${roomName}</option>`,
+      )
+      .join()
+
+    const roomHtml = `
+            <div class="input-column-wrapper">
+                  <label>1 номер бронирования</label>
+                  <select class="main-input"
+                          name="room_number[1]">
+                      ${optionsHtml}
+                  </select>
+             </div>
+    `
+    freeRoomWrapper.innerHTML = roomHtml
+  }
+
+  roomsCategoriesSelect.addEventListener('input', (e) => {
+    const currentSelectValue = e.target.value
+    const currentCategory = globalRoomsData.find(
+      (category) => currentSelectValue === category.categoryValue,
+    )
+    initTariffsSelect(currentCategory.tariffs)
+    initRooms(currentCategory.rooms)
+  })
+
+  const searchRoomsBtn = fastBookingModal.querySelector(
+    '.rooms-search-section__search-btn',
+  )
+
+  const searchScript = searchRoomsBtn.dataset.script
+
+  searchRoomsBtn.addEventListener('click', async () => {
+    if (!fastBookingForm.checkValidity()) {
+      const invalidElements = fastBookingForm.querySelectorAll(':invalid')
+      invalidElements[0].reportValidity()
+      return
+    }
+
+    const formData = new FormData(fastBookingForm)
+    const data = Object.fromEntries(formData.entries())
+
+    const jsonData = JSON.stringify(data)
+
+    try {
+      const response = await sendData(jsonData, searchScript)
+      const finishedResponse = await response.json()
+
+      const { status, errortext, categories } = finishedResponse
+      if (status === 'ok') {
+        globalRoomsData = [...categories]
+        initCategoriesSelect(categories)
+        initTariffsSelect(categories[0].tariffs)
+        initRooms(categories[0].rooms)
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      console.error(err)
+      showInfoModal('Во время выполнения запроса произошла ошибка')
+    }
   })
 }

@@ -2,10 +2,10 @@
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
 @include('partials/head.html', { 'title': 'Данные номера' })
 
-<body class="page__body room-data-page">
+<body class="page__body">
 <div class="site-container">
   <header>@include('partials/auth-panel.html')</header>
-  <main class="main">
+  <main class="main room-data-page">
     <div class="container">
       <h1>Создание/редактирование номера</h1>
       <form class="room-data-page__form" action="#">
@@ -168,138 +168,5 @@
     </div>
   </main>
 </div>
-<template id="type-individual">
-  <div class="fast-booking-modal__individual-content">
-    <div class="fast-booking-modal__inputs-row">
-      <div class="input-column-wrapper">
-        <label>Фамилия клиента<span>*</span></label>
-        <input
-          class="main-input"
-          type="text"
-          placeholder="Фамилия"
-          name="surname"
-          required
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>Имя клиента<span>*</span></label>
-        <input
-          class="main-input"
-          type="text"
-          placeholder="Имя"
-          name="name"
-          required
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>Отчество клиента</label>
-        <input
-          class="main-input"
-          type="text"
-          placeholder="Отчество"
-          name="patronymic"
-        />
-      </div>
-    </div>
-    <div class="fast-booking-modal__inputs-row">
-      <div class="input-column-wrapper">
-        <label>Номер телефона<span>*</span></label>
-        <input
-          class="main-input phone-mask"
-          type="text"
-          placeholder="Телефон"
-          name="phone"
-          required
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>E-mail</label>
-        <input
-          class="main-input"
-          type="email"
-          placeholder="E-mail"
-          name="email"
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>ИНН</label>
-        <input
-          class="main-input number-mask"
-          type="text"
-          placeholder="ИНН"
-          name="inn"
-        />
-      </div>
-    </div>
-  </div>
-
-</template>
-<template id="type-org">
-  <div class="fast-booking-modal__org-content">
-    <div class="fast-booking-modal__inputs-row fast-booking-modal__org-row">
-      <div class="input-column-wrapper">
-        <label>Форма<span>*</span></label>
-        <select class="main-input"
-                name="org_form">
-          <option value="0">ООО</option>
-          <option value="1">АО</option>
-          <option value="1">ИП</option>
-        </select>
-      </div>
-      <div class="input-column-wrapper">
-        <label>Полное название</label>
-        <input
-          class="main-input"
-          type="text"
-          placeholder="Полное название"
-          name="org_fullname"
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>Краткое название<span>*</span></label>
-        <input
-          class="main-input"
-          type="text"
-          placeholder="Краткое название"
-          name="org_shortname"
-          required
-        />
-      </div>
-    </div>
-    <div class="fast-booking-modal__inputs-row">
-      <div class="input-column-wrapper">
-        <label>Номер телефона<span>*</span></label>
-        <input
-          class="main-input phone-mask"
-          type="text"
-          placeholder="Телефон"
-          name="phone"
-          required
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>E-mail</label>
-        <input
-          class="main-input"
-          type="email"
-          placeholder="E-mail"
-          name="email"
-        />
-      </div>
-      <div class="input-column-wrapper">
-        <label>ИНН<span>*</span></label>
-        <input
-          class="main-input number-mask"
-          type="text"
-          placeholder="ИНН"
-          name="inn"
-          required
-        />
-      </div>
-    </div>
-  </div>
-</template>
 </body>
-@include('partials/fast-booking-modal.html')
-
 </html>

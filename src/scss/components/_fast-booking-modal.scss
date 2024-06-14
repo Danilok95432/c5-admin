@@ -1,5 +1,7 @@
 .fast-booking-modal {
-
+  .input-column-wrapper:not(:last-child) {
+    margin-right: 0;
+  }
   .custom-modal__close-mobile-btn {
     position: absolute;
     width: 40px;
@@ -77,6 +79,8 @@
     justify-content: space-between;
     @media (max-width: 768px) {
       flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     &:not(:last-child) {
@@ -85,11 +89,16 @@
 
     .input-column-wrapper {
       width: 32%;
+      &._md {
+        width: 135px;
+      }
+      &._sm {
+        width: 90px;
+      }
 
       label {
         height: 25px;
       }
-
 
       &.main-checkbox {
         padding-top: 27px;
@@ -109,26 +118,6 @@
         }
       }
 
-      &._sm {
-
-        width: 90px;
-
-        @media (max-width: 768px) {
-          width: 100%;
-          margin-bottom: 10px;
-        }
-      }
-
-      &._md {
-        width: 135px;
-
-        @media (max-width: 768px) {
-          width: 100%;
-          margin-bottom: 10px;
-        }
-      }
-
-
       @media (max-width: 768px) {
         width: 100%;
         margin-bottom: 10px;
@@ -146,7 +135,6 @@
         max-width: 246px;
       }
 
-      padding-bottom: 16px;
       margin-bottom: 20px;
       margin-right: 0;
     }
@@ -339,6 +327,9 @@
 
     .input-column-wrapper__source-booking {
       width: 280px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     .fast-booking-modal__inputs-row {

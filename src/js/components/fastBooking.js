@@ -14,8 +14,10 @@ if (fastBookingModal) {
     '.client-section__type-client',
   )
 
-  const individualTypeTmpl = document.querySelector('#type-individual')?.content
-  const orgTypeTmpl = document.querySelector('#type-org')?.content
+  const individualTypeTmpl = fastBookingModal.querySelector(
+    '#type-individual-fast',
+  )?.content
+  const orgTypeTmpl = fastBookingModal.querySelector('#type-org-fast')?.content
   const individualTypeClone = individualTypeTmpl
     .querySelector('.fast-booking-modal__individual-content')
     .cloneNode(true)
@@ -72,7 +74,7 @@ if (fastBookingModal) {
     el.addEventListener('paste', (e) => e.preventDefault())
 
     const customDate = new AirDatepicker(el, {
-      container: '.date-custom-container',
+      container: '.date-fast-booking-container',
       onSelect: ({ date, _, datepicker }) => {
         // roomsSaveBtn.classList.add('_blocked')
         if (datepicker.$el.classList.contains('check-in-input') && date) {

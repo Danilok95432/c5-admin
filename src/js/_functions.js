@@ -188,3 +188,25 @@ export const escapeHtml = (unsafe) => {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;')
 }
+
+// рендер option в select, option в формате [{label: 'текст', value: 'значение'}]
+
+export const renderOptionsToSelect = (targetSelect, optionsArr) => {
+  if (!targetSelect || optionsArr?.length < 1) return
+  targetSelect.innerHTML = optionsArr
+    ?.map((opt) => {
+      return `
+      <option value="${opt.value}">${opt.label}</option>
+    `
+    })
+    .join('')
+}
+
+// форматировать строку формата "18.06.2024" к объекту Date
+
+export const formatStrToDate = (str) => {
+  if (!str) return
+  const strArr = str.split('.')
+  const formattedDateString = `${strArr[2]}-${strArr[1]}-${strArr[0]}`
+  return new Date(formattedDateString)
+}

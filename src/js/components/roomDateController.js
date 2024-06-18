@@ -84,7 +84,7 @@ const setInfoModalsHandlers = () => {
   }
 }
 
-const initRowsVisibleHandler = () => {
+export const initRowsVisibleHandler = () => {
   const triggerRows = document.querySelectorAll('tr.trigger-row')
   if (triggerRows) {
     triggerRows.forEach((rowEl) => {
@@ -178,7 +178,7 @@ const renderChildRows = (childRows) => {
     return html.join('')
   }
 }
-const renderRows = (rows) => {
+export const renderRows = (rows) => {
   if (rows) {
     const rowsContainer = document.querySelector('.room-booking-calendar tbody')
     const html = rows.map((row) => {

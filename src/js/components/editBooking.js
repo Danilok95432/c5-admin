@@ -171,8 +171,16 @@ if (editBookingPage) {
   })
 
   roomsWrapper.addEventListener('click', (e) => {
+    if (e.target.dataset.btn === 'delete-room') {
+      if (confirm('Вы действительно хотите удалить номер?')) {
+        e.target.closest('.rooms-list__item').remove()
+      }
+    }
+
     if (e.target.dataset.btn === 'delete') {
-      e.target.closest('li').remove()
+      if (confirm('Вы действительно хотите удалить гостя?')) {
+        e.target.closest('li').remove()
+      }
     }
 
     if (e.target.dataset.template === 'new-room') {

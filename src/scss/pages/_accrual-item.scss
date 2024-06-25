@@ -1,0 +1,43 @@
+.accrual-item-page {
+    .section-block {
+        padding: 24px 30px 20px;
+    }
+
+    .fix-row {
+        &__title {
+            min-width: 215px;
+        }
+
+        &._border {
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid #C3D5F5;
+        }
+
+        &._indent {
+            margin-bottom: 17px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 23px;
+        margin-top: 33px;
+
+        h1 {
+            padding: 0;
+        }
+
+        .main-btn {
+            padding: 10px 19px;
+        }
+    }
+
+    ._bold {
+        font-weight: 700;
+    }
+}

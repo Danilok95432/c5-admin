@@ -1,0 +1,197 @@
+ .accrual-plan-page {
+     h3 {
+         span {
+             color: #000000;
+         }
+
+         margin: 0;
+         padding-top: 10px;
+     }
+
+     .download-btn {
+         display: flex;
+         align-items: center;
+         gap: 4px;
+         padding: 0 8px;
+         border-radius: 3px;
+         height: 30px;
+         color: #064AB1;
+         border: 1px solid rgba(#064AB1, 0.5);
+     }
+
+     &__section-title {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 15px;
+         flex-wrap: wrap;
+         padding-bottom: 30px;
+         margin-bottom: 18px;
+         border-bottom: 1px solid #C3D5F5;
+     }
+
+     .section-block {
+         padding: 22px 30px 35px;
+         min-height: 710px;
+
+         @media (max-width: 1024px) {
+             min-height: auto;
+         }
+     }
+
+     &__search-input {
+         position: relative;
+         height: 30px;
+
+         input.main-input {
+             @include opensans-regular;
+             font-size: 15px;
+             height: 100%;
+         }
+
+         svg {
+             position: absolute;
+             right: 10px;
+             top: 50%;
+             transform: translateY(-50%);
+         }
+     }
+
+     &__info {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 15px;
+         flex-wrap: wrap;
+         border-radius: 5px;
+         padding: 12px;
+         background: #F4F8FC;
+     }
+
+     .main-table {
+         max-width: 100%;
+         overflow: auto;
+         margin-bottom: 20px;
+         margin-top: 20px;
+
+         &__row {
+             &.main-table__title-row {
+                 padding: 0 2px;
+                 height: 45px;
+             }
+
+             &:not(.main-table__title-row) {
+                 padding: 9px 2px;
+             }
+
+             @media (max-width: 768px) {
+                 min-width: 800px;
+             }
+
+             &:hover {
+                 .main-table__cell {
+                     .delete-link {
+                         opacity: 1;
+                     }
+                 }
+             }
+         }
+
+         &__cell {
+             text-align: center;
+
+             select {
+                 height: 30px;
+                 background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.23865L5 5L9 1.23865' stroke='%23064AB1' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                 background-position: 95%;
+
+                 font-family: 'Open Sans';
+                 font-weight: 400;
+                 font-size: 15px;
+                 color: #91969A;
+
+             }
+
+             &.dates-cell {
+                 display: flex;
+                 gap: 5px;
+                 align-items: center;
+                 justify-content: center;
+
+                 .icon-input {
+                     max-width: 123px;
+                 }
+
+                 .icon-input input {
+                     padding-top: 5.5px;
+                     padding-bottom: 5.5px;
+                     font-size: 15px;
+                 }
+             }
+
+             &:nth-child(1) {
+                 max-width: 4%;
+             }
+
+             &:nth-child(2) {
+                 max-width: 17%;
+                 text-align: left;
+
+                 select {
+                     max-width: 180px;
+                 }
+             }
+
+             &:nth-child(3) {
+                 max-width: 35%;
+                 text-align: left;
+
+                 .accrual-plan-page__search-input {
+                     max-width: 350px;
+                 }
+             }
+
+             &:nth-child(4) {
+                 max-width: 30%;
+
+                 input {
+                     width: 123px;
+                 }
+             }
+
+             &:nth-child(5) {
+                 max-width: 14%;
+                 text-align: right;
+                 font-weight: 600;
+                 display: flex;
+                 justify-content: flex-end;
+                 padding-right: 25px;
+
+                 @media (max-width: 1280px) {
+                     padding-right: 10px;
+                 }
+
+                 .accrual-plan-page__search-input {
+                     max-width: 130px;
+                 }
+             }
+
+             &:nth-child(6) {
+                 display: flex;
+                 justify-content: center;
+                 max-width: 2%;
+
+                 .delete-link {
+                     opacity: 0;
+                     transition: all .2s;
+                     width: 23px;
+                     height: 23px;
+
+                     @media (max-width: 1024px) {
+                         opacity: 1;
+                     }
+                 }
+             }
+         }
+     }
+ }

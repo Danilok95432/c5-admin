@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Поступление' })
+
+  <body class="page__body">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main receipt-item-page">
+        <div class="container">
+          <div class="receipt-item-page__title">
+            <h1>Поступление 00099929909</h1>
+            <a class="main-btn _orange-outlined" href="#">Удалить</a>
+          </div>
+
+          <section class="section-block">
+            <div class="fix-row _border">
+              <h5 class="fix-row__title">Название начисления</h5>
+              <p class="fix-row__desc">Оплата <a href="#">8934-008</a></p>
+            </div>
+            <div class="fix-row">
+              <h5 class="fix-row__title">Дата и время</h5>
+              <p class="fix-row__desc">05.10.2023 : 01:56</p>
+            </div>
+            <div class="fix-row">
+              <h5 class="fix-row__title">Сумма, ₽</h5>
+              <p class="fix-row__desc _bold">9 000.00</p>
+            </div>
+            <div class="fix-row _border">
+              <h5 class="fix-row__title">Тип поступления</h5>
+              <p class="fix-row__desc">БЕЗНАЛ : API агрегатора</p>
+            </div>
+            <div class="fix-row _border">
+              <h5 class="fix-row__title">Клиент</h5>
+              <p class="fix-row__desc">
+                Организация: <a href="#">ООО Татхимфармпрепарат</a>
+              </p>
+            </div>
+            <div class="fix-row">
+              <h5 class="fix-row__title">Начислено</h5>
+              <p class="fix-row__desc">05.10.2023, 01:56, Агрегатор (авто)</p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    @include('partials/info-modal.html')
+  </body>
+</html>

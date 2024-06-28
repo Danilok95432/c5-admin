@@ -208,22 +208,6 @@
       }
     }
 
-    &__scan-upload {
-      min-width: 200px;
-      width: max-content;
-
-      .file-upload__add-label {
-        max-width: 155px;
-        padding: 15px 0;
-      }
-
-      .file-upload__name {
-        color: #064AB1;
-        font-size: 15px;
-        font-weight: 600;
-      }
-    }
-
     &__controllers {
       margin-top: 30px;
       button {

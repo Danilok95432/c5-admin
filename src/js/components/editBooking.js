@@ -8,7 +8,6 @@ import {
 import { initAllDates } from './customDate'
 import { sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
-import { initFileUploading } from './fileUpload'
 import AirDatepicker from 'air-datepicker'
 import Inputmask from 'inputmask'
 
@@ -187,7 +186,6 @@ if (editBookingPage) {
       roomsList.insertAdjacentHTML('beforeend', newRoom)
       initAllDates()
       initAllMasks()
-      initFileUploading()
     }
 
     if (e.target.dataset.template === 'new-adult') {
@@ -197,7 +195,6 @@ if (editBookingPage) {
       currentRoomGuests.insertAdjacentHTML('beforeend', newAdultGuest)
       initAllDates()
       initAllMasks()
-      initFileUploading()
     }
     if (e.target.dataset.template === 'new-child') {
       const currentRoomGuests = e.target
@@ -206,7 +203,6 @@ if (editBookingPage) {
       currentRoomGuests.insertAdjacentHTML('beforeend', newChildGuest)
       initAllDates()
       initAllMasks()
-      initFileUploading()
     }
   })
 

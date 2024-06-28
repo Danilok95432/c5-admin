@@ -4,6 +4,35 @@
   .section-block {
     padding-top: 30px;
   }
+  .fix-row {
+    &._file {
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 23px;
+    }
+  }
+
+  .file-upload {
+    .main-btn {
+      height: 35px;
+      padding: 0 20px;
+    }
+    &__name {
+      padding-left: 35px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 30px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url('data:image/svg+xml,<svg width="23" height="30" viewBox="0 0 23 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.9969 28C22.9969 29.1046 22.1014 30 20.9969 30H2C0.89543 30 0 29.1046 0 28V2C0 0.89543 0.89543 0 2 0H14.5594L22.9969 8.4375V28Z" fill="%233090F6"/><path d="M22.9971 8.4375H15.5596C15.0073 8.4375 14.5596 7.98979 14.5596 7.4375V0L22.9971 8.4375Z" fill="%234FB6E9"/><path d="M14.5596 8.4375H22.9971V16.875L14.5596 8.4375Z" fill="%23064AB1"/></svg>') no-repeat;
+      }
+    }
+  }
+
 
   &__source-row {
     align-items: flex-start;
@@ -20,9 +49,5 @@
     @include opensans-bold;
     font-size: 15px;
   }
-
-
-
-
 
 }

@@ -235,18 +235,16 @@
               >
                 <li class="main-table__row main-table__title-row">
                   <p class="main-table__cell">Дата начисления</p>
-                  <p class="main-table__cell">Основной тариф</p>
-                  <p class="main-table__cell">Тарифные опции</p>
-                  <p class="main-table__cell">Скидка</p>
+                  <p class="main-table__cell">Раздел услуг</p>
+                  <p class="main-table__cell">Название услуги</p>
                   <p class="main-table__cell">Стоимость, руб</p>
                   <p class="main-table__cell">Оплата</p>
                   <p class="main-table__cell"></p>
                 </li>
                 <li class="main-table__row">
                   <p class="main-table__cell">23.07.2023</p>
-                  <p class="main-table__cell">Тариф Стандарт, Категория Люкс</p>
-                  <p class="main-table__cell">Ранний заезд, Животное</p>
-                  <p class="main-table__cell">7%: 2 200.00</p>
+                  <p class="main-table__cell">Услуги СПА</p>
+                  <p class="main-table__cell">Русская баня</p>
                   <p class="main-table__cell">30 500.00</p>
                   <p class="main-table__cell">
                     <span class="_green">оплачено</span>
@@ -278,9 +276,8 @@
                 </li>
                 <li class="main-table__row">
                   <p class="main-table__cell">24.07.2023</p>
-                  <p class="main-table__cell">Тариф Стандарт, Категория Люкс</p>
-                  <p class="main-table__cell">Животное</p>
-                  <p class="main-table__cell">7%: 2 200.00</p>
+                  <p class="main-table__cell">Услуги СПА</p>
+                  <p class="main-table__cell">Турецкий хамам</p>
                   <p class="main-table__cell">24 500.0</p>
                   <p class="main-table__cell">
                     <span class="_red">при выселении</span>
@@ -315,6 +312,7 @@
           </section>
         </div>
       </main>
+      @include('partials/info-modal.html')
       @include('partials/add-service-modal.html')
     </div>
   </body>

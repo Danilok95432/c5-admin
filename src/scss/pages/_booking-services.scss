@@ -91,35 +91,29 @@
 
     .main-table__cell {
       &:nth-child(1) {
-        min-width: 15%;
+        min-width: 22%;
       }
 
       &:nth-child(2) {
-        min-width: 25%;
+        min-width: 20%;
       }
 
       &:nth-child(3) {
-        min-width: 21%;
+        min-width: 20%;
       }
 
       &:nth-child(4) {
-        min-width: 10%;
+        min-width: 14%;
+        text-align: right;
       }
 
       &:nth-child(5) {
-        min-width: 12%;
+        min-width: 21%;
         text-align: right;
       }
 
       &:nth-child(6) {
-        min-width: 14%;
-        text-align: right;
-        text-align: right;
-      }
-
-      &:nth-child(7) {
         min-width: 3%;
-
       }
 
       span {

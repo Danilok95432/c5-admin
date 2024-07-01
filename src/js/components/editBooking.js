@@ -391,11 +391,6 @@ if (editBookingPage) {
 
   const roomSaveScript = roomSaveButtonInner.dataset.script
 
-  const bookingConfirmBtn = editBookingPage.querySelector(
-    '.booking-confirm-modal__confirm-btn',
-  )
-  const bookingConfirmScript = bookingConfirmBtn.dataset.script
-
   roomSaveButtonInner.addEventListener('click', async (e) => {
     e.preventDefault()
     if (!editBookingForm.checkValidity()) {
@@ -436,8 +431,6 @@ if (editBookingPage) {
       if (status === 'ok') {
         modalOverlay.classList.add('_active')
         bookingConfirmModal.classList.add('_active')
-
-        bookingConfirmBtn.dataset.id = bookingId ?? 'no-id'
 
         bookingConfirmModal.querySelector(
           '.booking-confirm-modal__id span',
@@ -509,36 +502,6 @@ if (editBookingPage) {
         bookingConfirmModal.querySelector(
           '.booking-confirm-modal__total-paid',
         ).textContent = totalPaid ?? ''
-      } else {
-        roomsSaveBtn.classList.add('_blocked')
-        showInfoModal(errortext)
-      }
-    } catch (err) {
-      roomsSaveBtn.classList.add('_blocked')
-      console.error(err)
-      showInfoModal('Во время выполнения запроса произошла ошибка')
-    }
-  })
-
-  bookingConfirmBtn.addEventListener('click', async (e) => {
-    e.preventDefault()
-
-    const bookingId = e.currentTarget.dataset.id
-
-    const data = {
-      bookingId: bookingId,
-    }
-    const jsonData = JSON.stringify(data)
-
-    try {
-      const response = await sendData(jsonData, bookingConfirmScript)
-      const finishedResponse = await response.json()
-
-      const { status, errortext } = finishedResponse
-      if (status === 'ok') {
-        modalOverlay.classList.remove('_active')
-        bookingConfirmModal.classList.remove('_active')
-        showInfoModal('Бронирование подтверждено')
       } else {
         roomsSaveBtn.classList.add('_blocked')
         showInfoModal(errortext)

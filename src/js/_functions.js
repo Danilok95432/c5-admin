@@ -93,11 +93,11 @@ export const limitationChangeableElements = (changeableList, addBtn) => {
 }
 
 // Фунцкия отправки fetch запросов
-export async function sendData(data, url) {
+export async function sendData(data, url, header) {
   return await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'multipart/form-data' },
     body: data,
+    headers: { 'Content-Type': header ?? 'multipart/form-data' },
   })
 }
 

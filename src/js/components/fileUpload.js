@@ -61,7 +61,11 @@ export const initFileUploading = () => {
             formData.append('file', fileItem)
 
             try {
-              const response = await sendData(formData, fileScript)
+              const response = await sendData(
+                formData,
+                fileScript,
+                'application/x-www-form-urlencoded',
+              )
               const finishedResponse = await response.json()
 
               const { status, errortext, removeId } = finishedResponse

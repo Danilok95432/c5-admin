@@ -50,12 +50,9 @@
   }
 
   &__controllers {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-    flex-wrap: wrap;
     .modal-close-btn {
       position: static;
+      padding: 16px 27px
     }
   }
 }

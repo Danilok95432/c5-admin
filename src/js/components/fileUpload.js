@@ -1,6 +1,6 @@
 // загрузка файлов
 
-import { sendData, showInfoModal } from '../_functions'
+import { sendData, sendDataDefault, showInfoModal } from '../_functions'
 
 export const initFileUploading = () => {
   const handleDeleteFile = async (e) => {
@@ -56,16 +56,12 @@ export const initFileUploading = () => {
         reader.readAsDataURL(fileItem)
 
         reader.addEventListener('load', async (e) => {
-          if (fileScript) {
+          if (fileScript && fileItem) {
             const formData = new FormData()
             formData.append('file', fileItem)
 
             try {
-              const response = await sendData(
-                formData,
-                fileScript,
-                'application/x-www-form-urlencoded',
-              )
+              const response = await sendDataDefault(formData, fileScript)
               const finishedResponse = await response.json()
 
               const { status, errortext, removeId } = finishedResponse

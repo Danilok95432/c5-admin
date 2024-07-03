@@ -10,6 +10,7 @@
   }
 
   .fix-row {
+    margin-bottom: 10px;
     &__title {
       min-width: 207px;
     }
@@ -48,23 +49,15 @@
   .services-price-table {
     .main-table__cell {
       &:nth-child(1) {
-        min-width: 19%;
+        min-width: 33.3%;
       }
 
       &:nth-child(2) {
-        min-width: 30%;
+        min-width: 33.3%;
       }
 
       &:nth-child(3) {
-        min-width: 26%;
-      }
-
-      &:nth-child(4) {
-        min-width: 14%;
-      }
-
-      &:nth-child(5) {
-        min-width: 11%;
+        min-width: 33.3%;
         text-align: right;
       }
     }

@@ -100,6 +100,13 @@ export async function sendData(data, url, header) {
     headers: { 'Content-Type': header ?? 'multipart/form-data' },
   })
 }
+// Фунцкия отправки fetch запросов с автоматическим определением headers
+export async function sendDataDefault(data, url) {
+  return await fetch(url, {
+    method: 'POST',
+    body: data,
+  })
+}
 
 export const getNoun = (number, one, two, five) => {
   let n = Math.abs(number)

@@ -20,22 +20,31 @@
     </button>
 
     <form class="add-service-modal-form" action="#">
-      <div class="input-column-wrapper">
-        <label>Раздел услуг</label>
-        <select class="main-input" name="service_section">
-          <option value="0">Выберите раздел</option>
-          <option value="1">Раздел 1</option>
-          <option value="2">Раздел 2</option>
-        </select>
-      </div>
+      <div class="context-select__wrapper">
+        <div class="input-column-wrapper">
+          <label>Раздел услуг</label>
+          <select class="main-input context-select" name="service_section">
+            <option value="0">Выберите раздел</option>
+            <option value="1">Раздел 1</option>
+            <option value="2">Раздел 2</option>
+            <option value="3">Раздел 3</option>
+          </select>
+        </div>
 
-      <div class="input-column-wrapper">
-        <label>Услуга</label>
-        <select class="main-input" name="service">
-          <option value="0">Выберите услугу</option>
-          <option value="1">Услуга 1</option>
-          <option value="2">Услуга 2</option>
-        </select>
+        <div class="input-column-wrapper">
+          <label>Услуга</label>
+          <select class="main-input context-content" name="service">
+            <option value="0" data-context="0">Выберите услугу</option>
+            <option value="1" data-context="1">Услуга 1</option>
+            <option value="2" data-context="1">Услуга 2</option>
+            <option value="3" data-context="1">Услуга 3</option>
+            <option value="4" data-context="2">Услуга 4</option>
+            <option value="5" data-context="2">Услуга 5</option>
+            <option value="6" data-context="3">Услуга 6</option>
+            <option value="7" data-context="3">Услуга 7</option>
+            <option value="8" data-context="3">Услуга 8</option>
+          </select>
+        </div>
       </div>
 
       <div class="input-column-wrapper">

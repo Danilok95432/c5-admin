@@ -55,7 +55,7 @@ const editServiceBtns = document.querySelectorAll(
   '.booking-services-page__edit-service-btn',
 )
 
-if (editServiceBtns) {
+if (editServiceBtns.length) {
   const editServiceModal = document.querySelector('.edit-service-modal')
   const editServiceForm = editServiceModal.querySelector(
     '.add-service-modal-form',

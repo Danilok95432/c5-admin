@@ -250,7 +250,7 @@
                     <span class="_green">оплачено</span>
                   </p>
                   <p class="main-table__cell">
-                    <button>
+                    <button class="booking-services-page__edit-service-btn" data-id="1" data-script="./data/editServiceModal.txt" type="button">
                       <svg
                         width="14"
                         height="14"
@@ -283,7 +283,7 @@
                     <span class="_red">при выселении</span>
                   </p>
                   <p class="main-table__cell">
-                    <button>
+                    <button class="booking-services-page__edit-service-btn" data-id="2" data-script="./data/editServiceModal.txt" type="button">
                       <svg
                         width="14"
                         height="14"
@@ -314,6 +314,7 @@
       </main>
       @include('partials/info-modal.html')
       @include('partials/add-service-modal.html')
+      @include('partials/edit-service-modal.html')
     </div>
   </body>
 </html>

@@ -11,6 +11,7 @@
 
   .fix-row {
     margin-bottom: 10px;
+
     &__title {
       min-width: 207px;
     }
@@ -79,16 +80,15 @@
 
     .main-table__row:hover {
       background-color: unset;
-
     }
 
     .main-table__cell {
       &:nth-child(1) {
-        min-width: 22%;
+        min-width: 20%;
       }
 
       &:nth-child(2) {
-        min-width: 20%;
+        min-width: 18%;
       }
 
       &:nth-child(3) {
@@ -101,12 +101,23 @@
       }
 
       &:nth-child(5) {
-        min-width: 21%;
+        min-width: 20%;
         text-align: right;
       }
 
       &:nth-child(6) {
         min-width: 3%;
+      }
+
+      &:nth-child(7) {
+        display: flex;
+        justify-content: center;
+        max-width: 5%;
+
+        .delete-link {
+          width: 23px;
+          height: 23px;
+        }
       }
 
       span {

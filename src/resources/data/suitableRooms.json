@@ -9,10 +9,10 @@
         {
           "tariffName": "Двухместный номер с питанием",
           "tariffValue": "tar1",
-          "tariffPrice": "30000"
+          "tariffPrice": "10000"
         },
         {
-          "tariffName": "Двухместные номер без питания",
+          "tariffName": "Двухместный номер без питания",
           "tariffValue": "tar2",
           "tariffPrice": "25000"
         }

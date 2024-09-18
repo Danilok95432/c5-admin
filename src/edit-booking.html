@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-@include('partials/head.html', { 'title': 'Редактирование бронирования' })
+@include('partials/head.html', {'title': 'Редактирование бронирования'})
 
 <body class="page__body">
 <div class="site-container ">
@@ -463,9 +463,9 @@
                   class="main-input _disabled"
                   type="text"
                   name="total_price"
-                  disabled
                 />
               </div>
+              <input class="edit-booking-page__clear-price-input" type="hidden" name="clear_price">
             </div>
             <h4>Внести оплату по заказу</h4>
             <div
@@ -475,7 +475,7 @@
                 <input
                   class="main-input edit-booking-page__make-payment-input currency-mask"
                   type="text"
-                  name="total_price"
+                  name="payment_made"
                   data-fetch-input="payments"
                 />
               </div>
@@ -739,7 +739,6 @@
   </main>
   @include('partials/info-modal.html')
 </div>
-
 
 
 </body>

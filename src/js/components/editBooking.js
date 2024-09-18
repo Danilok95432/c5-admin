@@ -222,30 +222,42 @@ if (editBookingPage) {
     '.total-cost__item._to-pay h3 span',
   )
 
+  const clearPriceInput = editBookingPage.querySelector(
+    '.edit-booking-page__clear-price-input',
+  )
+
   let initialSum = Number(discountSumInput.value) ?? 0
 
-  discountPercentInput.addEventListener('input', (e) => {
-    discountSumInput.value = initialSum - initialSum * (+e.target.value / 100)
+  const calcPercentDiscount = (percentValue) => {
+    discountSumInput.value =
+      initialSum - initialSum * (Number(percentValue) / 100)
     totalCostToPay.textContent = String(
-      initialSum - initialSum * (+e.target.value / 100),
+      initialSum - initialSum * (Number(percentValue) / 100),
     )
-
-    if (!e.target.value || e.target.value === '0') {
+    if (!percentValue || percentValue === '0') {
       discountRubInput.classList.remove('_disabled')
     } else {
       discountRubInput.value = '0'
       discountRubInput.classList.add('_disabled')
     }
-  })
-  discountRubInput.addEventListener('input', (e) => {
-    discountSumInput.value = initialSum - Number(e.target.value)
-    totalCostToPay.textContent = String(initialSum - Number(e.target.value))
-    if (!e.target.value || e.target.value === '0') {
+  }
+
+  const calcSumDiscount = (sumValue) => {
+    discountSumInput.value = initialSum - Number(sumValue)
+    totalCostToPay.textContent = String(initialSum - Number(sumValue))
+    if (!sumValue || sumValue === '0') {
       discountPercentInput.classList.remove('_disabled')
     } else {
       discountPercentInput.value = '0'
       discountPercentInput.classList.add('_disabled')
     }
+  }
+
+  discountPercentInput.addEventListener('input', (e) => {
+    calcPercentDiscount(e.target.value)
+  })
+  discountRubInput.addEventListener('input', (e) => {
+    calcSumDiscount(e.target.value)
   })
 
   const setDiscountSum = (price) => {
@@ -258,8 +270,15 @@ if (editBookingPage) {
       editBookingPage.querySelector('.rooms-list').children.length
     const totalPrice = price * roomsCount
     initialSum = totalPrice
+    clearPriceInput.value = totalPrice
     discountSumInput.value = totalPrice
     totalCostToPay.textContent = String(totalPrice)
+    if (discountPercentInput.value && discountPercentInput.value !== '0') {
+      calcPercentDiscount(discountPercentInput.value)
+    }
+    if (discountRubInput.value && discountRubInput.value !== '0') {
+      calcSumDiscount(discountRubInput.value)
+    }
   }
 
   // Логика поиска подходящих номеров
@@ -406,102 +425,14 @@ if (editBookingPage) {
     try {
       const response = await sendData(jsonData, roomSaveScript)
       const finishedResponse = await response.json()
-      const {
-        status,
-        errortext,
-        bookingId,
-        receiptDate,
-        receiptTime,
-        adultCount,
-        childCount,
-        clientName,
-        clientPhone,
-        checkInDate,
-        checkOutDate,
-        checkInTime,
-        checkOutTime,
-        roomCategory,
-        tariff,
-        bookingSource,
-        price,
-        bookingRoom,
-        totalPrice,
-        totalPaid,
-      } = finishedResponse
+      const { status, errortext, html } = finishedResponse
       if (status === 'ok') {
         modalOverlay.classList.add('_active')
         bookingConfirmModal.classList.add('_active')
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__id span',
-        ).textContent = bookingId ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__receipt-date',
-        ).textContent = receiptDate ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__receipt-time',
-        ).textContent = receiptTime ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__adult-count',
-        ).textContent = adultCount ?? '0'
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__child-count',
-        ).textContent = childCount ?? '0'
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__client-name',
-        ).textContent = clientName ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__client-phone',
-        ).textContent = clientPhone ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__check-in-date',
-        ).textContent = checkInDate ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__check-in-time',
-        ).textContent = checkInTime ?? ''
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__check-out-date',
-        ).textContent = checkOutDate ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__check-out-time',
-        ).textContent = checkOutTime ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__room-category',
-        ).textContent = roomCategory ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__room-tariff',
-        ).textContent = tariff ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__booking-source',
-        ).textContent = bookingSource ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__price',
-        ).textContent = price ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__booking-room',
-        ).textContent = bookingRoom ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__total-price',
-        ).textContent = totalPrice ?? ''
-
-        bookingConfirmModal.querySelector(
-          '.booking-confirm-modal__total-paid',
-        ).textContent = totalPaid ?? ''
+        const modalInnerContent = bookingConfirmModal.querySelector(
+          '.modal__inner-content',
+        )
+        modalInnerContent.innerHTML = html
       } else {
         roomsSaveBtn.classList.add('_blocked')
         showInfoModal(errortext)

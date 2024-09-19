@@ -226,7 +226,7 @@ if (editBookingPage) {
     '.edit-booking-page__clear-price-input',
   )
 
-  let initialSum = Number(discountSumInput.value) ?? 0
+  let initialSum = Number(clearPriceInput.value) ?? 0
 
   const calcPercentDiscount = (percentValue) => {
     discountSumInput.value =
@@ -433,12 +433,11 @@ if (editBookingPage) {
           '.modal__inner-content',
         )
         modalInnerContent.innerHTML = html
-      } else {
         roomsSaveBtn.classList.add('_blocked')
+      } else {
         showInfoModal(errortext)
       }
     } catch (err) {
-      roomsSaveBtn.classList.add('_blocked')
       console.error(err)
       showInfoModal('Во время выполнения запроса произошла ошибка')
     }

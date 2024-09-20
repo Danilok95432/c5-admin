@@ -217,3 +217,10 @@ export const formatStrToDate = (str) => {
   const formattedDateString = `${strArr[2]}-${strArr[1]}-${strArr[0]}`
   return new Date(formattedDateString)
 }
+
+// проверка, если меньше или равно нулю, то возврат нуля, иначе возврат исходного элемента
+
+export const returnMoreZero = (checkEl) => {
+  if (Number(checkEl) <= 0) return '0'
+  return checkEl
+}

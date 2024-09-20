@@ -6,7 +6,7 @@ import {
   newRoom,
 } from '../_vars'
 import { initAllDates } from './customDate'
-import { sendData, showInfoModal } from '../_functions'
+import { returnMoreZero, sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
 import AirDatepicker from 'air-datepicker'
 import Inputmask from 'inputmask'
@@ -221,18 +221,45 @@ if (editBookingPage) {
   const totalCostToPay = editBookingPage.querySelector(
     '.total-cost__item._to-pay h3 span',
   )
+  const totalCostIntroduces = editBookingPage.querySelector(
+    '.total-cost__item._introduced h3 span',
+  )
 
   const clearPriceInput = editBookingPage.querySelector(
     '.edit-booking-page__clear-price-input',
   )
+
+  // Расчет внесенных сумм
+
+  const paymentsList = editBookingPage.querySelector('.payments-list')
+
+  const calcTotalIntroduces = () => {
+    const introducedPaymentArr =
+      paymentsList.querySelectorAll('._introduced span')
+
+    let totalSum = 0
+    introducedPaymentArr.forEach((el) => {
+      const num = parseFloat(el.textContent.replace(/\s/g, ''))
+      totalSum += num
+    })
+    totalCostIntroduces.textContent = totalSum
+    const resultSum = discountSumInput.value - totalSum
+    totalCostToPay.textContent = returnMoreZero(resultSum)
+  }
+  calcTotalIntroduces()
+
+  const introducedObserver = new MutationObserver(calcTotalIntroduces)
+  introducedObserver.observe(paymentsList, { childList: true })
+
+  // Расчет сумм с учетом скидки и суммы к оплате
 
   let initialSum = Number(clearPriceInput.value) ?? 0
 
   const calcPercentDiscount = (percentValue) => {
     discountSumInput.value =
       initialSum - initialSum * (Number(percentValue) / 100)
-    totalCostToPay.textContent = String(
-      initialSum - initialSum * (Number(percentValue) / 100),
+    totalCostToPay.textContent = returnMoreZero(
+      discountSumInput.value - totalCostIntroduces.textContent,
     )
     if (!percentValue || percentValue === '0') {
       discountRubInput.classList.remove('_disabled')
@@ -244,7 +271,9 @@ if (editBookingPage) {
 
   const calcSumDiscount = (sumValue) => {
     discountSumInput.value = initialSum - Number(sumValue)
-    totalCostToPay.textContent = String(initialSum - Number(sumValue))
+    totalCostToPay.textContent = returnMoreZero(
+      discountSumInput.value - totalCostIntroduces.textContent,
+    )
     if (!sumValue || sumValue === '0') {
       discountPercentInput.classList.remove('_disabled')
     } else {
@@ -272,7 +301,9 @@ if (editBookingPage) {
     initialSum = totalPrice
     clearPriceInput.value = totalPrice
     discountSumInput.value = totalPrice
-    totalCostToPay.textContent = String(totalPrice)
+    totalCostToPay.textContent = returnMoreZero(
+      discountSumInput.value - totalCostIntroduces.textContent,
+    )
     if (discountPercentInput.value && discountPercentInput.value !== '0') {
       calcPercentDiscount(discountPercentInput.value)
     }

@@ -7,7 +7,7 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main dashboard-page">
         <div class="container">
-          <div class="dashboard__title-block">
+          <form class="dashboard__title-block" action="#">
             <h1>Размещения</h1>
             <div class="icon-input">
               <input
@@ -17,6 +17,7 @@
                 autocomplete="off"
                 name="dashboard_calendar"
                 data-date-start="now"
+                data-date-submit="true"
               />
               <svg
                 width="14"
@@ -31,7 +32,7 @@
                 />
               </svg>
             </div>
-          </div>
+          </form>
 
           <section class="section-block dashboard">
             <div class="dashboard__columns">
@@ -100,7 +101,7 @@
                         >
                       </div>
 
-                      <button class="guest-action _initial" type="button">
+                      <button class="guest-action _initial" type="button" data-submit="./data/test.txt" data-id="123dawd">
                         Заселить
                       </button>
                     </div>
@@ -196,7 +197,7 @@
                         >
                       </div>
 
-                      <button class="guest-action _initial" type="button">
+                      <button class="guest-action _initial" type="button" data-submit="./data/test.txt" data-id="awdytyawd">
                         Заселить
                       </button>
                     </div>
@@ -288,7 +289,7 @@
                         >
                       </div>
 
-                      <button class="guest-action _initial" type="button">
+                      <button class="guest-action _initial" type="button" data-submit="./data/test.txt" data-id="vicel124">
                         Выселить
                       </button>
                     </div>
@@ -566,6 +567,7 @@
           </section>
         </div>
       </main>
+      @include('partials/info-modal.html')
     </div>
   </body>
 </html>

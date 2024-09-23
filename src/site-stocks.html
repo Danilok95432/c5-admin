@@ -198,7 +198,7 @@
 
             <div class="table-footer">
               <div class="table-navigation">
-                <button class="table-navigation__prev _blocked">
+                <a class="table-navigation__prev _blocked" href="#">
                   <svg
                     width="9"
                     height="16"
@@ -214,10 +214,9 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-
                   Назад
-                </button>
-                <button class="table-navigation__next">
+                </a>
+                <a class="table-navigation__next" href="#">
                   Далее
                   <svg
                     width="9"
@@ -234,21 +233,21 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
 
-              <div class="content-count">
+              <form class="content-count auto-submit-form" action="#">
                 <span>Номеров на странице</span>
 
                 <div class="input-column-wrapper">
-                  <select class="main-input" name="content-count">
+                  <select class="main-input auto-submit-form__trigger" name="content-count">
                     <option value="1">10</option>
                     <option value="2">25</option>
                     <option value="3">50</option>
                     <option value="3">100</option>
                   </select>
                 </div>
-              </div>
+              </form>
             </div>
           </section>
         </div>

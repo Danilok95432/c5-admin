@@ -76,38 +76,4 @@
             }
         }
     }
-
-    .table-navigation {
-        margin-left: auto;
-        margin-right: 0;
-
-        border-radius: 3px;
-        display: flex;
-        width: max-content;
-
-        button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 10px 16px;
-            @include opensans-medium;
-            font-size: 15px;
-            color: #064AB1;
-            border: 1px solid #6DB4F5;
-
-            &._blocked {
-                color: #91969A;
-                background: #F4F8FC;
-                border: 1px solid #D0D5DF;
-            }
-        }
-
-        &__prev {
-            border-radius: 3px 0px 0px 3px;
-        }
-
-        &__next {
-            border-radius: 0px 3px 3px 0px;
-        }
-    }
 }

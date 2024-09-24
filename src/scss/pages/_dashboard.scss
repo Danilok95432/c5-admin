@@ -117,13 +117,10 @@
           font-size: 15px;
           border-radius: 5px;
           color: #064AB1;
-
-          &._initial {
-            border: 1px solid #064AB1;
-          }
-
+          border: 1px solid #064AB1;
           &._success {
             background: #CFF4C9;
+            border-color: #CFF4C9;
             font-weight: 600;
             color: #006B2B;
             position: relative;
@@ -131,7 +128,6 @@
             justify-content: flex-end;
             display: flex;
             align-items: center;
-            pointer-events: none;
             padding-left: 28px;
 
             &::before {

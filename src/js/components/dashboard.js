@@ -1,9 +1,11 @@
 import { sendData, showInfoModal } from '../_functions'
 
-const submitBtns = document.querySelectorAll('button[data-submit]')
+const dashboardPage = document.querySelector('.dashboard-page')
 
-if (submitBtns?.length) {
-  submitBtns.forEach((btnEl) => {
+if (dashboardPage) {
+  const checkBtns = dashboardPage.querySelectorAll('button[data-submit]')
+
+  checkBtns.forEach((btnEl) => {
     const submitScript = btnEl.dataset.submit
     const submitId = btnEl.dataset.id
     btnEl.addEventListener('click', async (e) => {
@@ -19,7 +21,17 @@ if (submitBtns?.length) {
 
         const { status, errortext } = finishedResponse
         if (status === 'ok') {
-          location.reload()
+          if (btnEl.classList.contains('_success')) {
+            btnEl.classList.remove('_success')
+            btnEl.textContent = btnEl.classList.contains('_check-in')
+              ? 'Заселить'
+              : 'Выселить'
+          } else {
+            btnEl.classList.add('_success')
+            btnEl.textContent = btnEl.classList.contains('_check-in')
+              ? 'Заселен'
+              : 'Выселен'
+          }
         } else {
           showInfoModal(errortext)
         }

@@ -24,7 +24,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 15px;
-    padding: 20px 10px 5px 0;
+    padding: 20px 0 5px 0;
     h1 {
       padding: 0;
     }
@@ -153,27 +153,40 @@
   }
 
   .main-btn {
-    padding: 10px 15px 10px 20px;
+    padding: 0 18px 0 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .tariff-list-table {
     margin-bottom: 20px;
 
     .main-table__title-row {
-
+      height: 45px;
       .main-table__cell {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 1.2;
-        color: #000000;
+        a {
+          font-weight: 700;
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          color: #000000;
+          gap: 4px;
+        }
+        &:nth-child(5) {
+          a {
+            max-width: 110px;
+            justify-content: flex-end;
+            text-align: right;
+          }
+
+        }
       }
     }
 
-    .main-table__row:not(.main-table__title-row) {
-      padding: 8px 40px 7px 0;
+    .main-table__row {
+      padding: 8px 15px 7px 0;
     }
 
     ._gray {
@@ -205,25 +218,27 @@
       }
 
       &:nth-child(1) {
-        min-width: 8%;
+        max-width: 8%;
         padding-left: 16px;
       }
 
       &:nth-child(2) {
-        min-width: 13%;
+        max-width: 13%;
       }
 
       &:nth-child(3) {
-        min-width: 38%;
+        max-width: 35%;
+        @media (max-width: 1280px) {
+          max-width: 30%;
+        }
       }
 
       &:nth-child(4) {
-        min-width: 19%;
+        max-width: 19%;
       }
 
       &:nth-child(5) {
-        min-width: 16%;
-        padding-right: 25px;
+        max-width: 16%;
 
         .cost-info {
           max-width: 110px;
@@ -232,7 +247,14 @@
       }
 
       &:nth-child(6) {
-        min-width: 6%;
+        max-width: 9%;
+        @media (max-width: 1280px) {
+          max-width: 14%;
+        }
+        p {
+          min-width: 119px;
+          width: 119px;
+        }
       }
     }
   }

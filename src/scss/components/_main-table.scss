@@ -134,7 +134,7 @@
 
     .main-table__row {
       background-color: transparent;
-      padding: 12px 10px;
+      padding: 12px 17px;
       @media (max-width: 1024px) {
         min-width: 1000px;
       }
@@ -148,7 +148,9 @@
       }
       &:first-child{
         border-bottom: 1px solid #D0D5DF;
-        border-top: 1px solid #D0D5DF;
+        border-top: 1px solid #E7EEFA;
+        border-left: 1px solid #E7EEFA;
+        border-right: 1px solid #E7EEFA;
       }
 
       &:hover {

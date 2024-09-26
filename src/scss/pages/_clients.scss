@@ -24,6 +24,7 @@
 
         h3 {
             padding-top: 15px;
+            margin-bottom: 20px;
         }
 
         .main-btn {
@@ -40,7 +41,9 @@
 
     .clients-table {
         margin-bottom: 20px;
-
+        .main-table__row.main-table__title-row {
+            padding: 5px 17px;
+        }
         .main-table__cell {
             .input-column-wrapper {
                 display: inline-block;

@@ -1,0 +1,24 @@
+.mobile-select {
+  width: 100%;
+  label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+  select {
+    height: 45px;
+    width: 100%;
+    padding: 10px 25px 10px 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2 0L5.60002 7L0 0H11.2Z" fill="%23064AB1"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px top 18px, 0 0;
+    border: 1px solid #6DB4F5;
+    border-radius: 3px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+}

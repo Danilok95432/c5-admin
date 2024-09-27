@@ -27,8 +27,9 @@
             </g>
           </svg>
         </a></h1>
-        <div class="title-controllers-block__controllers">
-          <a class="main-btn _blue-outlined" href="#">
+        <div class="title-controllers-block__controllers booking-script-control">
+          <button class="main-btn _blue-outlined _confirm-booking" type="button"
+                  data-script="./data/test.txt" data-id="conf123">
             <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -36,10 +37,11 @@
                 fill="#064AB1" stroke="#064AB1" stroke-width="0.5" />
             </svg>
             Подтвердить бронирование
-          </a>
-          <a class="main-btn _orange-outlined " href="#">
+          </button>
+          <button class="main-btn _orange-outlined _delete-booking" type="button"
+                  data-script="./data/test.txt" data-id="del1233">
             Удалить
-          </a>
+          </button>
         </div>
       </div>
       <ul class="tab-menu">
@@ -69,6 +71,7 @@
         </form>
       </section>
     </div>
+    @include('partials/info-modal.html')
   </main>
 </div>
 </body>

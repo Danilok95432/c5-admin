@@ -684,27 +684,21 @@
         font-size: 17px;
         color: #064AB1;
         font-weight: 500;
-        padding: 23px 30px 23px 15px;
+        padding: 26px 30px 26px 15px;
       }
     }
 
     &__list {
-      padding: 15px;
+      padding: 23px 15px;
       li {
         &:not(:last-child) {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
-
-        &.settings-menu__list-title {
-          @include opensans-semibold;
-          margin-bottom: 11px;
-        }
-
         a {
           display: flex;
-          gap: 10px;
+          gap: 13px;
           align-items: center;
-          font-size: 15px;
+          font-size: 17px;
           @include opensans-regular;
           color: #1D1B1B;
         }

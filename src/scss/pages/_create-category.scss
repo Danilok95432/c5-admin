@@ -95,11 +95,11 @@
     gap: 40px;
     padding-top: 14px;
 
-    input+label::before {
-      border-color: #064AB1;
+    input + label::before {
+      border-color: #064ab1;
     }
 
-    input:checked+label::before {
+    input:checked + label::before {
       background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='9' height='9' rx='4.5' fill='%23064AB1'/%3E%3C/svg%3E%0A");
     }
 
@@ -129,14 +129,13 @@
           font-weight: 600;
           font-size: 13px;
           line-height: 1.2;
-          color: #A5AFBB;
+          color: #a5afbb;
         }
 
         textarea {
           font-weight: 500;
           font-size: 15px;
           line-height: 1.2;
-          color: #A5AFBB;
           padding: 10px;
         }
       }
@@ -156,7 +155,7 @@
       max-width: max-content;
       opacity: 0.5;
       border-radius: 10px;
-      background-color: #E8F1F8;
+      background-color: #e8f1f8;
       padding: 12px 25px 14px 12px;
 
       display: flex;
@@ -168,14 +167,12 @@
         font-weight: 600;
         font-size: 15px;
         line-height: 1.2;
-        color: #A5AFBB;
+        color: #a5afbb;
       }
     }
   }
 
   .equipment-icons {
-
-
     &__icon {
       width: 23px;
       min-width: 23px;
@@ -206,11 +203,8 @@
         width: 450px;
         @media (max-width: 768px) {
           width: auto;
-
         }
       }
-
     }
-
   }
 }

@@ -7,7 +7,9 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main create-category-page">
         <div class="container">
-          <a class="return-link" href="rooms-categories.html">Возврат к списку категорий</a>
+          <a class="return-link" href="rooms-categories.html"
+            >Возврат к списку категорий</a
+          >
           <h1>Создание/редактирование категории</h1>
           <ul class="tab-menu">
             <li>
@@ -134,17 +136,19 @@
               <div class="descriptions">
                 <div class="input-column-wrapper">
                   <span>Краткое описание</span>
-                  <textarea class="main-textarea" name="short">
-Тут вводится описание категории, демонстрируемое на сайте
-              </textarea
-              >
+                  <textarea
+                    class="main-textarea"
+                    name="short"
+                    placeholder="Тут вводится описание категории, демонстрируемое на сайте"
+                  ></textarea>
                 </div>
                 <div class="input-column-wrapper">
                   <span>Описание</span>
-                  <textarea class="main-textarea" name="long">
-Тут вводится описание категории, демонстрируемое на сайте
-              </textarea
-              >
+                  <textarea
+                    class="main-textarea"
+                    name="long"
+                    placeholder="Тут вводится описание категории, демонстрируемое на сайте"
+                  ></textarea>
                 </div>
               </div>
             </section>
@@ -153,10 +157,11 @@
               <h3>Включено в размещение</h3>
               <div class="descriptions">
                 <div class="input-column-wrapper">
-                <textarea class="main-textarea" name="include">
-Тут вводится текст о том, что включено в размещение
-              </textarea
-              >
+                  <textarea
+                    class="main-textarea"
+                    name="include"
+                    placeholder="Тут вводится текст о том, что включено в размещение"
+                  ></textarea>
                 </div>
               </div>
             </section>
@@ -188,8 +193,8 @@
                   />
                 </svg>
                 <span
-                >Приоритетные элементы оснащения — это иконки оснащения, которые
-                выделяются в карточке номера.</span
+                  >Приоритетные элементы оснащения — это иконки оснащения,
+                  которые выделяются в карточке номера.</span
                 >
               </p>
 
@@ -197,7 +202,10 @@
                 <li class="equipment-icons__item change-icon-select">
                   <span>Иконка №1</span>
                   <div class="input-column-wrapper">
-                    <select class="main-input change-icon-select__select" name="icon_1">
+                    <select
+                      class="main-input change-icon-select__select"
+                      name="icon_1"
+                    >
                       <option value="1" data-icon="./img/equip-icon-1.svg">
                         письменный стол
                       </option>
@@ -216,17 +224,28 @@
                     </select>
                   </div>
                   <div class="equipment-icons__icon">
-                    <img class="change-icon-select__icon" src="./img/equip-icon-1.svg" alt="icon_1">
+                    <img
+                      class="change-icon-select__icon"
+                      src="./img/equip-icon-1.svg"
+                      alt="icon_1"
+                    />
                   </div>
                 </li>
                 <li class="equipment-icons__item change-icon-select">
                   <span>Иконка №2</span>
                   <div class="input-column-wrapper">
-                    <select class="main-input change-icon-select__select" name="icon_2">
+                    <select
+                      class="main-input change-icon-select__select"
+                      name="icon_2"
+                    >
                       <option value="1" data-icon="./img/equip-icon-1.svg">
                         письменный стол
                       </option>
-                      <option value="2" data-icon="./img/equip-icon-2.svg" selected>
+                      <option
+                        value="2"
+                        data-icon="./img/equip-icon-2.svg"
+                        selected
+                      >
                         гипоаллергенное белье
                       </option>
                       <option value="3" data-icon="./img/equip-icon-3.svg">
@@ -241,20 +260,31 @@
                     </select>
                   </div>
                   <div class="equipment-icons__icon">
-                    <img class="change-icon-select__icon" src="./img/equip-icon-2.svg" alt="icon_1">
+                    <img
+                      class="change-icon-select__icon"
+                      src="./img/equip-icon-2.svg"
+                      alt="icon_1"
+                    />
                   </div>
                 </li>
                 <li class="equipment-icons__item change-icon-select">
                   <span>Иконка №3</span>
                   <div class="input-column-wrapper">
-                    <select class="main-input change-icon-select__select" name="icon_3">
+                    <select
+                      class="main-input change-icon-select__select"
+                      name="icon_3"
+                    >
                       <option value="1" data-icon="./img/equip-icon-1.svg">
                         письменный стол
                       </option>
                       <option value="2" data-icon="./img/equip-icon-2.svg">
                         гипоаллергенное белье
                       </option>
-                      <option value="3" data-icon="./img/equip-icon-3.svg" selected>
+                      <option
+                        value="3"
+                        data-icon="./img/equip-icon-3.svg"
+                        selected
+                      >
                         мини-холодильник
                       </option>
                       <option value="4" data-icon="./img/equip-icon-4.svg">
@@ -266,13 +296,20 @@
                     </select>
                   </div>
                   <div class="equipment-icons__icon">
-                    <img class="change-icon-select__icon" src="./img/equip-icon-3.svg" alt="icon_1">
+                    <img
+                      class="change-icon-select__icon"
+                      src="./img/equip-icon-3.svg"
+                      alt="icon_1"
+                    />
                   </div>
                 </li>
                 <li class="equipment-icons__item change-icon-select">
                   <span>Иконка №4</span>
                   <div class="input-column-wrapper">
-                    <select class="main-input change-icon-select__select" name="icon_4">
+                    <select
+                      class="main-input change-icon-select__select"
+                      name="icon_4"
+                    >
                       <option value="1" data-icon="./img/equip-icon-1.svg">
                         письменный стол
                       </option>
@@ -282,7 +319,11 @@
                       <option value="3" data-icon="./img/equip-icon-3.svg">
                         мини-холодильник
                       </option>
-                      <option value="4" data-icon="./img/equip-icon-4.svg" selected>
+                      <option
+                        value="4"
+                        data-icon="./img/equip-icon-4.svg"
+                        selected
+                      >
                         кондиционер
                       </option>
                       <option value="5" data-icon="./img/equip-icon-5.svg">
@@ -291,13 +332,20 @@
                     </select>
                   </div>
                   <div class="equipment-icons__icon">
-                    <img class="change-icon-select__icon" src="./img/equip-icon-4.svg" alt="icon_1">
+                    <img
+                      class="change-icon-select__icon"
+                      src="./img/equip-icon-4.svg"
+                      alt="icon_1"
+                    />
                   </div>
                 </li>
                 <li class="equipment-icons__item change-icon-select">
                   <span>Иконка №5</span>
                   <div class="input-column-wrapper">
-                    <select class="main-input change-icon-select__select" name="icon_5">
+                    <select
+                      class="main-input change-icon-select__select"
+                      name="icon_5"
+                    >
                       <option value="1" data-icon="./img/equip-icon-1.svg">
                         письменный стол
                       </option>
@@ -310,13 +358,21 @@
                       <option value="4" data-icon="./img/equip-icon-4.svg">
                         кондиционер
                       </option>
-                      <option value="5" data-icon="./img/equip-icon-5.svg" selected>
+                      <option
+                        value="5"
+                        data-icon="./img/equip-icon-5.svg"
+                        selected
+                      >
                         электронные замки
                       </option>
                     </select>
                   </div>
                   <div class="equipment-icons__icon">
-                    <img class="change-icon-select__icon" src="./img/equip-icon-5.svg" alt="icon_1">
+                    <img
+                      class="change-icon-select__icon"
+                      src="./img/equip-icon-5.svg"
+                      alt="icon_1"
+                    />
                   </div>
                 </li>
               </ul>
@@ -336,7 +392,6 @@
                 </button>
               </div>
             </div>
-
           </form>
         </div>
       </main>

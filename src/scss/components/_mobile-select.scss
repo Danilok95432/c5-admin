@@ -1,11 +1,14 @@
 .mobile-select {
   width: 100%;
+  position: relative;
+
   label {
     display: block;
     font-size: 15px;
     font-weight: 500;
     margin-bottom: 7px;
   }
+
   select {
     height: 45px;
     width: 100%;
@@ -15,10 +18,66 @@
     appearance: none;
     background-image: url('data:image/svg+xml,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2 0L5.60002 7L0 0H11.2Z" fill="%23064AB1"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 15px top 18px, 0 0;
-    border: 1px solid #6DB4F5;
+    background-position:
+      right 15px top 18px,
+      0 0;
+    border: 1px solid #6db4f5;
     border-radius: 3px;
     font-size: 17px;
     font-weight: 500;
+  }
+}
+
+.opened-select-menu {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 9999;
+  display: none;
+  padding: 65px 20px;
+
+  &._active {
+    display: block;
+  }
+
+  h6 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  li {
+    padding: 14px 0;
+    cursor: pointer;
+    p {
+      color: #064ab1;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 18px 20px;
+      background: #ffffff;
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    &[data-selected="true"] {
+      p {
+        color: #000000;
+        background-color: #f4f8fc;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #c3d5f5;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 20px;
+    right: 20px;
+    background: url('data:image/svg+xml,<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5546 2.58313L2.58312 24.5546C1.9893 25.1485 1.03919 25.1485 0.445368 24.5546C-0.148456 23.9608 -0.148456 23.0107 0.445368 22.4169L22.4169 0.445368C23.0107 -0.148456 23.9608 -0.148456 24.5546 0.445368C25.1484 1.03919 25.1484 1.98931 24.5546 2.58313Z" fill="black"/><path d="M0.444185 2.58313L22.4157 24.5546C23.0095 25.1485 23.9596 25.1485 24.5534 24.5546C25.1473 23.9608 25.1473 23.0107 24.5534 22.4169L2.58194 0.445368C1.98811 -0.148456 1.03801 -0.148456 0.444185 0.445368C-0.0308742 1.03919 -0.0308742 1.98931 0.444185 2.58313Z" fill="black"/></svg>')
+      no-repeat;
   }
 }

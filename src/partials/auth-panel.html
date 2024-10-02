@@ -677,7 +677,7 @@
     </a>
     <ul class="auth-panel__menu">
       <li>
-        <a class="_active" href="#">
+        <button class="_active" type="button" data-custom-modal="fast-booking">
           <svg
             width="22"
             height="22"
@@ -711,12 +711,10 @@
             />
           </svg>
           Забронировать номер
-        </a>
+        </button>
       </li>
       <li>
-        <button type="button" data-custom-modal="fast-booking">
-          Бронирование
-        </button>
+        <a href="#"> Бронирование </a>
       </li>
       <li>
         <a href="#"> Размещение </a>
@@ -1606,7 +1604,11 @@
         />
       </svg>
     </a>
-    <a class="mobile-auth-panel__booking-link" href="#">
+    <button
+      class="mobile-auth-panel__booking-link"
+      type="button"
+      data-custom-modal="fast-booking"
+    >
       <svg
         width="22"
         height="22"
@@ -1640,7 +1642,7 @@
         />
       </svg>
       Забронировать номер
-    </a>
+    </button>
     <div class="mobile-auth-panel__personal">
       <a class="mobile-auth-panel__notice">
         <svg

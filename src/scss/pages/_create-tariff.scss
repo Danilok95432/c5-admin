@@ -1,218 +1,221 @@
 .create-tariff-page {
-    padding-bottom: 150px;
+  padding-bottom: 150px;
 
-    .section-block {
-        @media (max-width: 650px) {
-            padding: 20px;
-        }
+  .section-block {
+    @media (max-width: 650px) {
+      padding: 20px;
+    }
+  }
+
+  .content-column {
+    width: 560px;
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  input::placeholder {
+    color: $black;
+  }
+
+  textarea {
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #a5afbb;
+  }
+
+  .input-column-wrapper:not(:last-child) {
+    margin: 0;
+  }
+
+  .create-tariff-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      gap: 30px;
     }
 
-    .content-column {
-        width: 560px;
+    .create-tariff-data {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+  }
 
-        @media (max-width: 650px) {
-            width: 100%;
-        }
+  &__checkbox-list {
+    padding-top: 17px;
+    padding-right: 30px;
+
+    @media (max-width: 1280px) {
+      padding-right: 0;
     }
 
-    h4 {
-        font-size: 18px;
+    .main-checkbox {
+      margin-bottom: 20px;
     }
 
-    input::placeholder {
-        color: $black;
+    h6 {
+      margin-top: 30px;
+      margin-bottom: 14px;
+
+      & + .main-checkbox {
+        margin-bottom: 30px;
+      }
     }
-    textarea {
-        padding: 10px;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 20px;
-        color: #A5AFBB;
-    }
+  }
 
-    .input-column-wrapper:not(:last-child) {
-        margin: 0;
-    }
+  .two-colums-checkboxes {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+  }
 
-    .create-tariff-wrapper {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 40px;
+  .prepayment-section {
+    h3 {
+      margin-bottom: 25px;
 
-        @media (max-width: 1100px) {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .create-tariff-data {
-            display: flex;
-            flex-direction: column;
-            gap: 17px;
-        }
-    }
-
-    &__checkbox-list {
-        padding-top: 17px;
-        padding-right: 30px;
-
-        @media (max-width: 1280px) {
-            padding-right: 0;
-        }
-
-        .main-checkbox {
-            margin-bottom: 20px;
-        }
-
-        h6 {
-            margin-top: 30px;
-            margin-bottom: 14px;
-
-            &+.main-checkbox {
-                margin-bottom: 30px;
-            }
-        }
-    }
-
-    .two-colums-checkboxes {
-        display: flex;
-        align-items: flex-start;
-        gap: 25px;
-    }
-
-    .prepayment-section {
-        h3 {
-            margin-bottom: 25px;
-
-            &+.main-checkbox {
-                margin-bottom: 24px;
-            }
-        }
-
-        .section-row {
-            @media (max-width: 700px) {
-                flex-direction: column;
-                gap: 0;
-                align-items: flex-start;
-            }
-        }
+      & + .main-checkbox {
+        margin-bottom: 24px;
+      }
     }
 
     .section-row {
-        display: flex;
-        align-items: center;
+      &__first-day {
+        margin-top: -13px;
+      }
+      @media (max-width: 700px) {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+      }
+    }
+  }
 
-        .row-title {
-            width: 225px;
-        }
+  .section-row {
+    display: flex;
+    align-items: center;
 
-        select {
-            width: 90px;
-        }
+    .row-title {
+      width: 225px;
     }
 
-    .prepayment-settings {
-        display: flex;
-        flex-direction: column;
+    select {
+      width: 90px;
+    }
+  }
+
+  .prepayment-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .row-data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      width: 80px;
+    }
+  }
+
+  .room-square-section {
+    h3 {
+      margin-bottom: 25px;
+    }
+
+    .row-wrapper:not(:last-child) {
+      margin-bottom: 35px;
+    }
+
+    .row {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 10px;
+
+      @media (max-width: 450px) {
         gap: 20px;
+      }
+    }
+
+    .row-title {
+      ._bold {
+        display: inline-block;
+        font-weight: 700;
+      }
     }
 
     .row-data {
+      margin-bottom: 10px;
+
+      select {
+        width: 90px;
+      }
+
+      @media (max-width: 700px) {
         display: flex;
-        align-items: center;
-        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
 
-        input {
-            width: 80px;
+        select {
+          width: 80px;
         }
+      }
     }
 
-    .room-square-section {
-        h3 {
-            margin-bottom: 25px;
+    .column {
+      select {
+        width: 400px;
+
+        @media (max-width: 510px) {
+          width: 100%;
         }
+      }
 
-        .row-wrapper:not(:last-child) {
-            margin-bottom: 35px;
-        }
-
-        .row {
-            display: flex;
-            gap: 60px;
-            margin-bottom: 10px;
-
-            @media (max-width: 450px) {
-                gap: 20px;
-            }
-        }
-
-        .row-title {
-            ._bold {
-                display: inline-block;
-                font-weight: 700;
-            }
-        }
-
-        .row-data {
-            margin-bottom: 10px;
-
-            select {
-                width: 90px;
-            }
-
-            @media (max-width: 700px) {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-
-                select {
-                    width: 80px;
-                }
-            }
-        }
-
-        .column {
-            select {
-                width: 400px;
-
-                @media (max-width: 510px) {
-                    width: 100%;
-                }
-            }
-
-            .short-select {
-                width: 90px;
-            }
-        }
-
-
-        [data-price-type="1"]  {
-            .price-type__desc {
-                display: none;
-            }
-
-            .price-type__value{
-                display: none;
-            }
-            .price-type__currency {
-                display: none;
-            }
-
-        }
-        [data-price-type="2"] {
-            .price-type__desc {
-                ._decrement {
-                    display: none;
-                }
-            }
-        }
-        [data-price-type="3"] {
-            .price-type__desc {
-                ._increment {
-                    display: none;
-                }
-            }
-        }
+      .short-select {
+        width: 90px;
+      }
     }
 
+    [data-price-type="1"] {
+      .price-type__desc {
+        display: none;
+      }
 
+      .price-type__value {
+        display: none;
+      }
+
+      .price-type__currency {
+        display: none;
+      }
+    }
+
+    [data-price-type="2"] {
+      .price-type__desc {
+        ._decrement {
+          display: none;
+        }
+      }
+    }
+
+    [data-price-type="3"] {
+      .price-type__desc {
+        ._increment {
+          display: none;
+        }
+      }
+    }
+  }
 }

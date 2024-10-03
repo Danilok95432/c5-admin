@@ -7,24 +7,34 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main room-services-page">
         <div class="container">
-          <a class="return-link" href="rooms-categories.html">Возврат к списку категорий</a>
+          <a class="return-link" href="rooms-categories.html"
+            >Возврат к списку категорий</a
+          >
           <h1>Создание/редактирование категории</h1>
-          <ul class="tab-menu">
+          <ul class="tab-menu _save-data">
             <li>
-              <a href="create-category.html">Данные категории</a>
+              <a href="#" data-script="./data/test.txt">Данные категории</a>
             </li>
             <li>
-              <a href="rooms-apartment.html">Комнаты в категории</a>
+              <a href="rooms-apartment.html" data-script="#test2"
+                >Комнаты в категории</a
+              >
             </li>
 
             <li>
-              <a class="_active" href="#">Услуги в категории</a>
+              <a class="_active" href="rooms-services.html" data-script="test3"
+                >Услуги в категории</a
+              >
             </li>
             <li>
-              <a href="accommodation-includes.html">Включено в размещение</a>
+              <a href="accommodation-includes.html" data-script="test4"
+                >Включено в размещение</a
+              >
             </li>
             <li>
-              <a href="category-photos.html">Фотографии категории</a>
+              <a href="category-photos.html" data-script="test5"
+                >Фотографии категории</a
+              >
             </li>
           </ul>
           <form action="#">
@@ -392,7 +402,6 @@
               </div>
             </div>
           </form>
-
         </div>
       </main>
     </div>

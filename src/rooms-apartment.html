@@ -1,442 +1,450 @@
 <!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-@include('partials/head.html', { 'title': 'Комнаты в номере' })
+  @include('partials/head.html', { 'title': 'Комнаты в номере' })
 
-<body class="page__body">
-<div class="site-container">
-  <header>@include('partials/auth-panel.html')</header>
+  <body class="page__body">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
 
-  <main class="main room-apartment-page">
-    <div class="container">
-      <a class="return-link" href="rooms-categories.html">Возврат к списку категорий</a>
-      <h1>Создание/редактирование категории</h1>
+      <main class="main room-apartment-page">
+        <div class="container">
+          <a class="return-link" href="rooms-categories.html"
+            >Возврат к списку категорий</a
+          >
+          <h1>Создание/редактирование категории</h1>
 
-      <ul class="tab-menu">
-        <li>
-          <a href="create-category.html">Данные категории</a>
-        </li>
-        <li>
-          <a class="_active" href="#">Комнаты в категории</a>
-        </li>
+          <ul class="tab-menu _save-data">
+            <li>
+              <a href="#" data-script="./data/test.txt">Данные категории</a>
+            </li>
+            <li>
+              <a class="_active" href="rooms-apartment.html" data-script="test2"
+                >Комнаты в категории</a
+              >
+            </li>
 
-        <li>
-          <a href="rooms-services.html">Услуги в категории</a>
-        </li>
-        <li>
-          <a href="accommodation-includes.html">Включено в размещение</a>
-        </li>
-        <li>
-          <a href="category-photos.html">Фотографии категории</a>
-        </li>
-      </ul>
-      <form action="./data/test.txt">
+            <li>
+              <a href="rooms-services.html" data-script="test3"
+                >Услуги в категории</a
+              >
+            </li>
+            <li>
+              <a href="accommodation-includes.html" data-script="test4"
+                >Включено в размещение</a
+              >
+            </li>
+            <li>
+              <a href="category-photos.html" data-script="#test5"
+                >Фотографии категории</a
+              >
+            </li>
+          </ul>
+          <form action="./data/test.txt">
+            <section class="section-block _no-border">
+              <div class="room-apartment-page__content generate-select-wrapper">
+                <ul
+                  class="apart-list"
+                  data-list="changeable"
+                  data-changeable-id="true"
+                >
+                  <li class="room-state" data-state="1">
+                    <div class="changeable-input">
+                      <input
+                        class="room-id"
+                        type="hidden"
+                        name="room_id"
+                        value="1"
+                      />
+                    </div>
+                    <div class="changeable-input">
+                      <input
+                        class="state-info"
+                        type="hidden"
+                        name="data_state"
+                        value="1"
+                      />
+                    </div>
+                    <div class="room-state__content" data-content="1">
+                      <h3>Комната 1</h3>
+                      <div class="apart-list__content">
+                        <div class="apart-list__left">
+                          <div class="main-input-wrapper">
+                            <label>Название комнаты</label>
+                            <input
+                              class="main-input"
+                              type="text"
+                              name="apart_name"
+                              value="Первая спальня"
+                            />
+                          </div>
+                          <div
+                            class="main-input-wrapper generate-select"
+                            data-template="badSelect"
+                          >
+                            <label>Количество кроватей</label>
+                            <select
+                              class="main-input short-input"
+                              name="bed_count"
+                            >
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
+                          </div>
+                          <div class="generate-select__list">
+                            <div class="main-input-wrapper">
+                              <label
+                                >Кровать
+                                <!-- <span class="generate-select__count">1</span> -->
+                              </label>
+                              <select class="main-input" name="bed_type[0][0]">
+                                <option value="1">Односпальная</option>
+                                <option value="2">Детская</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Взрослых, не более</label>
+                            <input
+                              class="main-input number-mask _sm"
+                              type="text"
+                              name="adults_count"
+                              value="2"
+                            />
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Детей, не более</label>
+                            <input
+                              class="main-input number-mask _sm"
+                              type="text"
+                              name="children_count"
+                              value="1"
+                            />
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Ванная комната</label>
+                            <select
+                              class="main-input middle-input"
+                              name="bathroom"
+                            >
+                              <option value="1">Ванная в номере</option>
+                              <option value="2">Общая ванная</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="apart-list__right">
+                          <div class="main-input-wrapper">
+                            <label>Тип комнаты</label>
+                            <select
+                              class="main-input type-room-select _md"
+                              name="room_type"
+                            >
+                              <option value="1">Спальня</option>
+                              <option value="2">Гостиная</option>
+                              <option value="3">Ванная комната</option>
+                            </select>
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Окна</label>
 
-        <section class="section-block _no-border">
-          <div class="room-apartment-page__content generate-select-wrapper">
-            <ul
-              class="apart-list"
-              data-list="changeable"
-              data-changeable-id="true"
-            >
-              <li class="room-state" data-state="1">
-                <div class="changeable-input">
-                  <input
-                    class="room-id"
-                    type="hidden"
-                    name="room_id"
-                    value="1"
-                  />
-                </div>
-                <div class="changeable-input">
-                  <input
-                    class="state-info"
-                    type="hidden"
-                    name="data_state"
-                    value="1"
-                  />
-                </div>
-                <div class="room-state__content" data-content="1">
-                  <h3>Комната 1</h3>
-                  <div class="apart-list__content">
-                    <div class="apart-list__left">
-                      <div class="main-input-wrapper">
-                        <label>Название комнаты</label>
-                        <input
-                          class="main-input"
-                          type="text"
-                          name="apart_name"
-                          value="Первая спальня"
-                        />
-                      </div>
-                      <div
-                        class="main-input-wrapper generate-select"
-                        data-template="badSelect"
-                      >
-                        <label>Количество кроватей</label>
-                        <select
-                          class="main-input short-input"
-                          name="bed_count"
-                        >
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                        </select>
-                      </div>
-                      <div class="generate-select__list">
-                        <div class="main-input-wrapper">
-                          <label
-                          >Кровать
-                            <!-- <span class="generate-select__count">1</span> -->
-                          </label>
-                          <select class="main-input" name="bed_type[0][0]">
-                            <option value="1">Односпальная</option>
-                            <option value="2">Детская</option>
-                          </select>
+                            <select
+                              class="main-input type-room-select _md"
+                              name="window"
+                            >
+                              <option value="1">Несколько окон</option>
+                              <option value="2">Несколько окон</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                      <div class="main-input-wrapper">
-                        <label>Взрослых, не более</label>
-                        <input
-                          class="main-input number-mask _sm"
-                          type="text"
-                          name="adults_count"
-                          value="2"
-                        />
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Детей, не более</label>
-                        <input
-                          class="main-input number-mask _sm"
-                          type="text"
-                          name="children_count"
-                          value="1"
-                        />
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Ванная комната</label>
-                        <select
-                          class="main-input middle-input"
-                          name="bathroom"
-                        >
-                          <option value="1">Ванная в номере</option>
-                          <option value="2">Общая ванная</option>
-                        </select>
+                    </div>
+                    <div class="room-state__content" data-content="2">
+                      <h3>Комната <span class="changeable-amount">1</span></h3>
+                      <div class="apart-list__content">
+                        <div class="apart-list__left">
+                          <div class="main-input-wrapper">
+                            <label>Название комнаты:</label>
+                            <input
+                              class="main-input"
+                              type="text"
+                              name="apart_name"
+                            />
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Помывочное место:</label>
+                            <select class="main-input" name="washing_place">
+                              <option value="1">Ванна гидромассажная</option>
+                              <option value="2">Ванна</option>
+                              <option value="3">Душ</option>
+                            </select>
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Баня:</label>
+                            <select class="main-input" name="bath">
+                              <option value="1">Русская баня</option>
+                              <option value="2">Сауна</option>
+                            </select>
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Сантехника:</label>
+                            <ul class="checkbox-list">
+                              <li>
+                                <input type="checkbox" name="toilet" />
+                                <label>Унитаз</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="bidet" />
+                                <label>Биде</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="sink" />
+                                <label>Раковина</label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="apart-list__right">
+                          <div class="main-input-wrapper">
+                            <label>Тип комнаты:</label>
+                            <select
+                              class="main-input type-room-select _md"
+                              name="room_type"
+                            >
+                              <option value="1">Спальня</option>
+                              <option value="2">Гостиная</option>
+                              <option value="3">Ванная комната</option>
+                            </select>
+                          </div>
+                          <div class="main-input-wrapper">
+                            <label>Бассейн:</label>
+                            <select class="main-input" name="bathroom">
+                              <option value="1">Да</option>
+                              <option value="2">Нет</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="apart-list__right">
-                      <div class="main-input-wrapper">
-                        <label>Тип комнаты</label>
-                        <select
-                          class="main-input type-room-select _md"
-                          name="room_type"
-                        >
-                          <option value="1">Спальня</option>
-                          <option value="2">Гостиная</option>
-                          <option value="3">Ванная комната</option>
-                        </select>
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Окна</label>
+                  </li>
+                </ul>
+                <button
+                  class="main-btn"
+                  type="button"
+                  data-btn="add"
+                  data-template="room"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.0779 10.0703C10.08 11.0132 10.0827 12.1446 10.0849 13.0874C10.088 14.4074 10.0906 15.5388 10.0937 16.8588C10.0954 17.6131 9.62502 18.0835 8.96481 17.9877C8.3991 17.9863 7.83212 17.4194 7.8308 16.8537C7.82597 14.7794 7.82114 12.705 7.81631 10.6308C7.81587 10.4422 7.81587 10.4423 7.81543 10.2537C7.62686 10.2533 7.62684 10.2532 7.43827 10.2527C5.364 10.2479 3.28975 10.2432 1.21549 10.2383C0.272639 10.2361 -0.200716 9.38639 0.080601 8.72705C0.268292 8.35035 0.644507 7.97405 1.21022 7.97536C3.28448 7.9802 5.35873 7.98514 7.433 7.98997C7.62157 7.99041 7.62159 7.9903 7.81016 7.99074C7.80972 7.80217 7.80972 7.80226 7.80928 7.61369C7.80445 5.53942 7.79962 3.46511 7.79435 1.20227C7.88665 0.353927 8.63971 -0.209979 9.30036 0.0744129C9.77244 0.358366 10.0559 0.641948 10.0572 1.20766C10.062 3.28192 10.0669 5.35605 10.0717 7.43032C10.0721 7.61889 10.0721 7.61903 10.0726 7.8076C10.2611 7.80804 10.2612 7.80792 10.4497 7.80836C12.524 7.81319 14.5983 7.81814 16.6725 7.82297C17.2382 7.82429 17.7104 8.10817 17.8058 8.57982C17.9011 9.05146 17.8078 9.5226 17.3371 9.80435C17.0544 9.89798 16.7719 9.99167 16.5833 9.99123C14.509 9.9864 12.4347 9.98157 10.3604 9.97674C10.3609 10.1653 10.1724 10.1648 10.0779 10.0703Z"
+                      fill="white"
+                    />
+                  </svg>
 
-                        <select
-                          class="main-input type-room-select _md"
-                          name="window"
-                        >
-                          <option value="1">Несколько окон</option>
-                          <option value="2">Несколько окон</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="room-state__content" data-content="2">
-                  <h3>Комната <span class="changeable-amount">1</span></h3>
-                  <div class="apart-list__content">
-                    <div class="apart-list__left">
-                      <div class="main-input-wrapper">
-                        <label>Название комнаты:</label>
-                        <input
-                          class="main-input"
-                          type="text"
-                          name="apart_name"
-                        />
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Помывочное место:</label>
-                        <select class="main-input" name="washing_place">
-                          <option value="1">Ванна гидромассажная</option>
-                          <option value="2">Ванна</option>
-                          <option value="3">Душ</option>
-                        </select>
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Баня:</label>
-                        <select class="main-input" name="bath">
-                          <option value="1">Русская баня</option>
-                          <option value="2">Сауна</option>
-                        </select>
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Сантехника:</label>
-                        <ul class="checkbox-list">
-                          <li>
-                            <input type="checkbox" name="toilet" />
-                            <label>Унитаз</label>
-                          </li>
-                          <li>
-                            <input type="checkbox" name="bidet" />
-                            <label>Биде</label>
-                          </li>
-                          <li>
-                            <input type="checkbox" name="sink" />
-                            <label>Раковина</label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="apart-list__right">
-                      <div class="main-input-wrapper">
-                        <label>Тип комнаты:</label>
-                        <select
-                          class="main-input type-room-select _md"
-                          name="room_type"
-                        >
-                          <option value="1">Спальня</option>
-                          <option value="2">Гостиная</option>
-                          <option value="3">Ванная комната</option>
-                        </select>
-                      </div>
-                      <div class="main-input-wrapper">
-                        <label>Бассейн:</label>
-                        <select class="main-input" name="bathroom">
-                          <option value="1">Да</option>
-                          <option value="2">Нет</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <button
-              class="main-btn"
-              type="button"
-              data-btn="add"
-              data-template="room"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.0779 10.0703C10.08 11.0132 10.0827 12.1446 10.0849 13.0874C10.088 14.4074 10.0906 15.5388 10.0937 16.8588C10.0954 17.6131 9.62502 18.0835 8.96481 17.9877C8.3991 17.9863 7.83212 17.4194 7.8308 16.8537C7.82597 14.7794 7.82114 12.705 7.81631 10.6308C7.81587 10.4422 7.81587 10.4423 7.81543 10.2537C7.62686 10.2533 7.62684 10.2532 7.43827 10.2527C5.364 10.2479 3.28975 10.2432 1.21549 10.2383C0.272639 10.2361 -0.200716 9.38639 0.080601 8.72705C0.268292 8.35035 0.644507 7.97405 1.21022 7.97536C3.28448 7.9802 5.35873 7.98514 7.433 7.98997C7.62157 7.99041 7.62159 7.9903 7.81016 7.99074C7.80972 7.80217 7.80972 7.80226 7.80928 7.61369C7.80445 5.53942 7.79962 3.46511 7.79435 1.20227C7.88665 0.353927 8.63971 -0.209979 9.30036 0.0744129C9.77244 0.358366 10.0559 0.641948 10.0572 1.20766C10.062 3.28192 10.0669 5.35605 10.0717 7.43032C10.0721 7.61889 10.0721 7.61903 10.0726 7.8076C10.2611 7.80804 10.2612 7.80792 10.4497 7.80836C12.524 7.81319 14.5983 7.81814 16.6725 7.82297C17.2382 7.82429 17.7104 8.10817 17.8058 8.57982C17.9011 9.05146 17.8078 9.5226 17.3371 9.80435C17.0544 9.89798 16.7719 9.99167 16.5833 9.99123C14.509 9.9864 12.4347 9.98157 10.3604 9.97674C10.3609 10.1653 10.1724 10.1648 10.0779 10.0703Z"
-                  fill="white"
-                />
-              </svg>
-
-              Добавить комнату
-            </button>
-          </div>
-        </section>
-        <div class="main-controllers">
-          <div class="main-controllers__btns-left">
-            <button class="main-btn" type="submit">
-              Сохранить и закрыть
-            </button>
-            <button
-              class="main-btn _blue-outlined"
-              type="button"
-              data-action="./data/test.txt"
-            >
-              Применить и продолжить
-            </button>
-          </div>
+                  Добавить комнату
+                </button>
+              </div>
+            </section>
+            <div class="main-controllers">
+              <div class="main-controllers__btns-left">
+                <button class="main-btn" type="submit">
+                  Сохранить и закрыть
+                </button>
+                <button
+                  class="main-btn _blue-outlined"
+                  type="button"
+                  data-action="./data/test.txt"
+                >
+                  Применить и продолжить
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
+      </main>
+    </div>
 
-      </form>
-    </div>
-  </main>
-</div>
-
-<template id="badSelect">
-  <div class="main-input-wrapper">
-    <label>Кровать <span class="generate-select__count">1</span>:</label>
-    <select class="main-input" name="bed_type[0][0]">
-      <option value="1">Двуспальная</option>
-      <option value="2">Детская</option>
-    </select>
-  </div>
-</template>
-<template id="room">
-  <li class="room-state" data-state="1">
-    <div class="changeable-input">
-      <input class="room-id" type="hidden" name="room_id" value="" />
-    </div>
-    <div class="changeable-input">
-      <input class="state-info" type="hidden" name="data_state" value="1" />
-    </div>
-    <button class="delete-btn" type="button" data-btn="delete">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          width="21.657"
-          height="0.866282"
-          transform="matrix(0.706025 -0.708187 0.706025 0.708187 0.097168 15.3867)"
-          fill="black"
-        />
-        <rect
-          width="21.657"
-          height="0.866282"
-          transform="matrix(-0.706025 -0.708187 0.706025 -0.708187 15.2905 15.9507)"
-          fill="black"
-        />
-      </svg>
-    </button>
-    <h3>Комната <span class="changeable-amount">1</span></h3>
-    <div class="room-state__content" data-content="1">
-      <div class="apart-list__content">
-        <div class="apart-list__left">
-          <div class="main-input-wrapper changeable-input">
-            <label>Название комнаты:</label>
-            <input class="main-input" type="text" name="apart_name" />
-          </div>
-          <div
-            class="main-input-wrapper generate-select changeable-input"
-            data-template="badSelect"
+    <template id="badSelect">
+      <div class="main-input-wrapper">
+        <label>Кровать <span class="generate-select__count">1</span>:</label>
+        <select class="main-input" name="bed_type[0][0]">
+          <option value="1">Двуспальная</option>
+          <option value="2">Детская</option>
+        </select>
+      </div>
+    </template>
+    <template id="room">
+      <li class="room-state" data-state="1">
+        <div class="changeable-input">
+          <input class="room-id" type="hidden" name="room_id" value="" />
+        </div>
+        <div class="changeable-input">
+          <input class="state-info" type="hidden" name="data_state" value="1" />
+        </div>
+        <button class="delete-btn" type="button" data-btn="delete">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <label>Количество кроватей:</label>
-            <select class="main-input" name="bed_count">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="generate-select__list">
-            <div class="main-input-wrapper">
-              <label
-              >Кровать
-                <span class="generate-select__count">1</span>:</label
+            <rect
+              width="21.657"
+              height="0.866282"
+              transform="matrix(0.706025 -0.708187 0.706025 0.708187 0.097168 15.3867)"
+              fill="black"
+            />
+            <rect
+              width="21.657"
+              height="0.866282"
+              transform="matrix(-0.706025 -0.708187 0.706025 -0.708187 15.2905 15.9507)"
+              fill="black"
+            />
+          </svg>
+        </button>
+        <h3>Комната <span class="changeable-amount">1</span></h3>
+        <div class="room-state__content" data-content="1">
+          <div class="apart-list__content">
+            <div class="apart-list__left">
+              <div class="main-input-wrapper changeable-input">
+                <label>Название комнаты:</label>
+                <input class="main-input" type="text" name="apart_name" />
+              </div>
+              <div
+                class="main-input-wrapper generate-select changeable-input"
+                data-template="badSelect"
               >
-              <select class="main-input" name="bed_type[0][0]">
-                <option value="1">Двуспальная</option>
-                <option value="2">Детская</option>
-              </select>
+                <label>Количество кроватей:</label>
+                <select class="main-input" name="bed_count">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="generate-select__list">
+                <div class="main-input-wrapper">
+                  <label
+                    >Кровать
+                    <span class="generate-select__count">1</span>:</label
+                  >
+                  <select class="main-input" name="bed_type[0][0]">
+                    <option value="1">Двуспальная</option>
+                    <option value="2">Детская</option>
+                  </select>
+                </div>
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Взрослых, не более:</label>
+                <input
+                  class="main-input number-mask _sm"
+                  type="text"
+                  name="adults_count"
+                />
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Детей, не более:</label>
+                <input
+                  class="main-input number-mask _sm"
+                  type="text"
+                  name="children_count"
+                />
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Ванная комната:</label>
+                <select class="main-input _md" name="bathroom">
+                  <option value="1">Ванная в номере</option>
+                  <option value="2">Общая ванная</option>
+                </select>
+              </div>
+            </div>
+            <div class="apart-list__right">
+              <div class="main-input-wrapper changeable-input">
+                <label>Тип комнаты:</label>
+                <select
+                  class="main-input type-room-select _md"
+                  name="room_type"
+                >
+                  <option value="1">Спальня</option>
+                  <option value="2">Гостиная</option>
+                  <option value="3">Ванная комната</option>
+                </select>
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Окна:</label>
+                <input class="main-input" type="text" name="window" />
+              </div>
             </div>
           </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Взрослых, не более:</label>
-            <input
-              class="main-input number-mask _sm"
-              type="text"
-              name="adults_count"
-            />
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Детей, не более:</label>
-            <input
-              class="main-input number-mask _sm"
-              type="text"
-              name="children_count"
-            />
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Ванная комната:</label>
-            <select class="main-input _md" name="bathroom">
-              <option value="1">Ванная в номере</option>
-              <option value="2">Общая ванная</option>
-            </select>
+        </div>
+        <div class="room-state__content" data-content="2">
+          <div class="apart-list__content">
+            <div class="apart-list__left">
+              <div class="main-input-wrapper changeable-input">
+                <label>Название комнаты:</label>
+                <input class="main-input" type="text" name="apart_name" />
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Помывочное место:</label>
+                <select class="main-input" name="washing_place">
+                  <option value="1">Ванна гидромассажная</option>
+                  <option value="2">Ванна</option>
+                  <option value="3">Душ</option>
+                </select>
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Баня:</label>
+                <select class="main-input" name="bath">
+                  <option value="1">Русская баня</option>
+                  <option value="2">Сауна</option>
+                </select>
+              </div>
+              <div class="main-input-wrapper">
+                <label>Сантехника:</label>
+                <ul class="checkbox-list">
+                  <li class="changeable-input">
+                    <input type="checkbox" name="toilet" />
+                    <label>Унитаз</label>
+                  </li>
+                  <li class="changeable-input">
+                    <input type="checkbox" name="bidet" />
+                    <label>Биде</label>
+                  </li>
+                  <li class="changeable-input">
+                    <input type="checkbox" name="sink" />
+                    <label>Раковина</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="apart-list__right">
+              <div class="main-input-wrapper changeable-input">
+                <label>Тип комнаты:</label>
+                <select
+                  class="main-input type-room-select _md"
+                  name="room_type"
+                >
+                  <option value="1">Спальня</option>
+                  <option value="2">Гостиная</option>
+                  <option value="3">Ванная комната</option>
+                </select>
+              </div>
+              <div class="main-input-wrapper changeable-input">
+                <label>Бассейн:</label>
+                <select class="main-input" name="bathroom">
+                  <option value="1">Да</option>
+                  <option value="2">Нет</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="apart-list__right">
-          <div class="main-input-wrapper changeable-input">
-            <label>Тип комнаты:</label>
-            <select
-              class="main-input type-room-select _md"
-              name="room_type"
-            >
-              <option value="1">Спальня</option>
-              <option value="2">Гостиная</option>
-              <option value="3">Ванная комната</option>
-            </select>
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Окна:</label>
-            <input class="main-input" type="text" name="window" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="room-state__content" data-content="2">
-      <div class="apart-list__content">
-        <div class="apart-list__left">
-          <div class="main-input-wrapper changeable-input">
-            <label>Название комнаты:</label>
-            <input class="main-input" type="text" name="apart_name" />
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Помывочное место:</label>
-            <select class="main-input" name="washing_place">
-              <option value="1">Ванна гидромассажная</option>
-              <option value="2">Ванна</option>
-              <option value="3">Душ</option>
-            </select>
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Баня:</label>
-            <select class="main-input" name="bath">
-              <option value="1">Русская баня</option>
-              <option value="2">Сауна</option>
-            </select>
-          </div>
-          <div class="main-input-wrapper">
-            <label>Сантехника:</label>
-            <ul class="checkbox-list">
-              <li class="changeable-input">
-                <input type="checkbox" name="toilet" />
-                <label>Унитаз</label>
-              </li>
-              <li class="changeable-input">
-                <input type="checkbox" name="bidet" />
-                <label>Биде</label>
-              </li>
-              <li class="changeable-input">
-                <input type="checkbox" name="sink" />
-                <label>Раковина</label>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="apart-list__right">
-          <div class="main-input-wrapper changeable-input">
-            <label>Тип комнаты:</label>
-            <select
-              class="main-input type-room-select _md"
-              name="room_type"
-            >
-              <option value="1">Спальня</option>
-              <option value="2">Гостиная</option>
-              <option value="3">Ванная комната</option>
-            </select>
-          </div>
-          <div class="main-input-wrapper changeable-input">
-            <label>Бассейн:</label>
-            <select class="main-input" name="bathroom">
-              <option value="1">Да</option>
-              <option value="2">Нет</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-</template>
-</body>
+      </li>
+    </template>
+  </body>
 </html>

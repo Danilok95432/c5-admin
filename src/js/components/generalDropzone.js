@@ -19,6 +19,10 @@ if (genDropzones) {
       .closest('.general-dropzone-wrapper')
       ?.querySelector('.general-dropzone-amount')
 
+    const existingFiles = dropzoneEl
+      .closest('.general-dropzone-wrapper')
+      .querySelectorAll('.dz-preview')
+
     const isBigPreview = dropzoneEl.dataset.showPreview
 
     const hiddenOnLoadElements = dropzoneEl.querySelectorAll('._hidden-on-load')
@@ -52,7 +56,7 @@ if (genDropzones) {
     }
 
     const dataObj = JSON.parse(dropzoneEl.dataset.generalInfo)
-    const {
+    let {
       url,
       width,
       height,
@@ -74,6 +78,15 @@ if (genDropzones) {
       thumbnailHeight: height,
       previewsContainer: previewsWrapper || null,
       clickable: addBtn || '.dz-message',
+      accept: function (file, done) {
+        const uploadedFiles = dropzoneEl.querySelectorAll('.dz-preview')
+
+        if (uploadedFiles.length > +this.options.maxFiles) {
+          done('Превышено максимальное количество файлов!')
+        } else {
+          done()
+        }
+      },
       removedfile: async function (file) {
         const data = {
           filetype: type,
@@ -109,6 +122,10 @@ if (genDropzones) {
       },
     })
 
+    newGenDropzone.on('maxfilesexceeded', function () {
+      showInfoModal('Превышено максимальное количество файлов!')
+    })
+
     newGenDropzone.on('sending', function (file, xhr, formData) {
       formData.append('filetype', type)
       formData.append('additional', additional)
@@ -118,11 +135,11 @@ if (genDropzones) {
       }
     })
 
-    newGenDropzone.on('error', function (file) {
+    newGenDropzone.on('error', function (file, errorMessage) {
       if (customText) {
         showInfoModal(customText)
       } else {
-        showInfoModal('Ошибка 404')
+        showInfoModal(errorMessage ?? 'Ошибка 404')
       }
       file.previewElement.parentNode.removeChild(file.previewElement)
     })
@@ -130,7 +147,6 @@ if (genDropzones) {
     newGenDropzone.on('success', function (file, response) {
       const resObj = JSON.parse(response)
       const { status, errortext, id_person } = resObj
-
       if (status !== 'ok') {
         showInfoModal(errortext)
         file.previewElement.parentNode.removeChild(file.previewElement)
@@ -149,20 +165,17 @@ if (genDropzones) {
         updateAmountFiles()
         onShowBig(file)
         file._removeLink.setAttribute('data-id', id_person)
+        const uploadImg = file.previewElement.querySelector('img')
+        uploadImg.setAttribute('data-size', file.size)
       }
     })
 
-    const existingFiles = dropzoneEl
-      .closest('.general-dropzone-wrapper')
-      .querySelectorAll('.dz-preview')
     if (existingFiles.length > 0) {
       if (existingFiles.length >= filesCount) {
         addBtn?.classList.add('btn_disabled')
         hiddenOnLoadElements?.forEach((el) => el.classList.add('hidden'))
       }
-
       updateAmountFiles()
-
       existingFiles.forEach((el) => {
         const deleteBtn = el.querySelector('.dz-remove')
 

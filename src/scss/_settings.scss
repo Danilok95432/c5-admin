@@ -16,7 +16,7 @@ body {
   @include opensans-regular;
   font-size: 15px;
   line-height: 25px;
-  background-color: #E8F1F8;
+  background-color: #e8f1f8;
   color: $black;
   position: relative;
   &._lock {
@@ -30,7 +30,7 @@ main {
   h1 {
     font-size: 25px;
     @include opensans-bold;
-    color: #064AB1;
+    color: #064ab1;
     padding: 40px 0 30px;
   }
 }
@@ -84,7 +84,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -111,13 +111,11 @@ textarea {
   overflow: hidden;
 }
 
-
 .container {
   margin: 0 auto;
   max-width: 1920px;
   padding: 0 15px;
 }
-
 
 .dz-details,
 .dz-progress,
@@ -142,7 +140,6 @@ textarea {
   display: none;
 }
 
-
 .general-dropzone__previews {
   width: 100%;
   gap: 15px;
@@ -153,7 +150,7 @@ textarea {
 .dz-preview {
   width: 180px;
   height: 118px;
-  border: 1px solid #6DB4F5;
+  border: 1px solid #6db4f5;
   border-radius: 3px;
   position: relative;
 
@@ -173,7 +170,6 @@ textarea {
       display: block;
     }
   }
-
 }
 
 .dz-remove {
@@ -182,7 +178,8 @@ textarea {
   top: 5px;
   width: 20px;
   height: 20px;
-  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect opacity="0.6" width="20" height="20" rx="1" fill="%23064AB1"/><path d="M10.7522 10.0002L15.8447 4.90761C16.0526 4.69977 16.0526 4.36336 15.8447 4.15552C15.6369 3.94816 15.3005 3.94816 15.0926 4.15552L10.0001 9.24809L4.90797 4.15552C4.70013 3.94816 4.36372 3.94816 4.15588 4.15552C3.94852 4.36336 3.94852 4.69977 4.15588 4.90761L9.24845 10.0002L4.15588 15.0923C3.94804 15.3001 3.94804 15.6365 4.15588 15.8444C4.2598 15.9483 4.39562 16 4.53193 16C4.66823 16 4.80405 15.9483 4.90797 15.8444L10.0005 10.7518L15.0931 15.8444C15.197 15.9483 15.3329 16 15.4692 16C15.6055 16 15.7413 15.9483 15.8452 15.8444C16.053 15.6365 16.053 15.3001 15.8452 15.0923L10.7522 10.0002Z" fill="white" stroke="white"/></svg>') no-repeat;
+  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect opacity="0.6" width="20" height="20" rx="1" fill="%23064AB1"/><path d="M10.7522 10.0002L15.8447 4.90761C16.0526 4.69977 16.0526 4.36336 15.8447 4.15552C15.6369 3.94816 15.3005 3.94816 15.0926 4.15552L10.0001 9.24809L4.90797 4.15552C4.70013 3.94816 4.36372 3.94816 4.15588 4.15552C3.94852 4.36336 3.94852 4.69977 4.15588 4.90761L9.24845 10.0002L4.15588 15.0923C3.94804 15.3001 3.94804 15.6365 4.15588 15.8444C4.2598 15.9483 4.39562 16 4.53193 16C4.66823 16 4.80405 15.9483 4.90797 15.8444L10.0005 10.7518L15.0931 15.8444C15.197 15.9483 15.3329 16 15.4692 16C15.6055 16 15.7413 15.9483 15.8452 15.8444C16.053 15.6365 16.053 15.3001 15.8452 15.0923L10.7522 10.0002Z" fill="white" stroke="white"/></svg>')
+    no-repeat;
   display: none;
   @media (max-width: 1024px) {
     display: block;
@@ -229,7 +226,7 @@ textarea {
     pointer-events: none;
 
     path {
-      transition: all .3s;
+      transition: all 0.3s;
     }
   }
 }
@@ -252,18 +249,18 @@ textarea {
 
     &._red {
       color: #920303;
-      background: #FAEBEB;
+      background: #faebeb;
     }
 
     &._green {
-      color: #0E8128;
-      background: #DEF3DA;
+      color: #0e8128;
+      background: #def3da;
     }
   }
 }
 
 .air-datepicker-body--day-name {
-  color: #817D8C;
+  color: #817d8c;
   @include opensans-regular;
   font-size: 11px;
   text-transform: capitalize;
@@ -276,11 +273,10 @@ textarea {
   color: #000000;
 
   &.-selected- {
-    background-color: #064AB1;
+    background-color: #064ab1;
     color: #ffffff;
   }
 }
-
 
 .air-datepicker-nav--title {
   @include opensans-regular;
@@ -295,7 +291,6 @@ textarea {
     color: #000000;
   }
 }
-
 
 .air-datepicker-global-container {
   z-index: 9999;
@@ -320,7 +315,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
 
-
   h1 {
     padding: 0;
   }
@@ -333,4 +327,9 @@ textarea {
       padding: 10px 20px;
     }
   }
+}
+
+.btn_disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

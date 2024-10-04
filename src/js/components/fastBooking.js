@@ -57,49 +57,53 @@ if (fastBookingModal) {
   })
 
   // логика связанная с выбором дат заезда и выезда
-
   const nightCounter = fastBookingModal.querySelector(
     '.dates-section__days-counter span',
   )
 
-  const dateInputs = fastBookingModal.querySelectorAll(
-    '.check-in-input, .check-out-input',
-  )
+  const setStartDate = (input) => {
+    const inputValue = input.value
 
-  let checkInDate
-  let checkOutDate
+    return inputValue ? new Date(inputValue) : new Date()
+  }
 
-  dateInputs.forEach((el, _, arr) => {
-    el.addEventListener('keydown', (e) => e.preventDefault())
-    el.addEventListener('paste', (e) => e.preventDefault())
+  const setNightCounter = (checkInDate, checkOutDate) => {
+    if (checkInDate && checkOutDate) {
+      const diffInMs = checkOutDate - checkInDate
+      const daysDifference = Math.ceil(diffInMs / (1000 * 60 * 60 * 24))
+      nightCounter.textContent = daysDifference < 1 ? '0' : daysDifference
+    }
+  }
 
-    const customDate = new AirDatepicker(el, {
-      container: '.date-fast-booking-container',
-      onSelect: ({ date, _, datepicker }) => {
-        // roomsSaveBtn.classList.add('_blocked')
-        if (datepicker.$el.classList.contains('check-in-input') && date) {
-          checkInDate = date
-        }
+  const checkinInput = fastBookingModal.querySelector('.check-in-input')
+  const checkoutInput = fastBookingModal.querySelector('.check-out-input')
+  const checkoutDatepicker = new AirDatepicker(checkoutInput, {
+    container: '.date-fast-booking-container',
+    selectedDates: [setStartDate(checkoutInput)],
+    minDate: new Date(),
+    onSelect: ({ date }) => {
+      setNightCounter(checkinDatepicker.selectedDates[0], date)
+    },
+  })
 
-        if (datepicker.$el.classList.contains('check-out-input') && date) {
-          checkOutDate = date
-        }
-
-        if (checkInDate && checkOutDate) {
-          const diffInMs = checkOutDate - checkInDate
-          const daysDifference = Math.ceil(diffInMs / (1000 * 60 * 60 * 24))
-          nightCounter.textContent = daysDifference < 1 ? '0' : daysDifference
-        }
-      },
-    })
-
-    el.addEventListener('click', (e) => {
-      const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
-      if (featuredDate) {
-        customDate.selectDate(featuredDate)
-        customDate.setViewDate(featuredDate)
+  const checkinDatepicker = new AirDatepicker(checkinInput, {
+    container: '.date-fast-booking-container',
+    selectedDates: [setStartDate(checkinInput)],
+    minDate: new Date(),
+    onSelect: ({ date }) => {
+      setNightCounter(date, checkoutDatepicker.selectedDates[0])
+      if (checkoutDatepicker.selectedDates[0] < date) {
+        checkoutDatepicker.selectDate(date)
       }
-    })
+      checkoutDatepicker.update({
+        minDate: date,
+      })
+    },
+  })
+  const allDateInputs = [checkinInput, checkoutInput]
+  allDateInputs.forEach((dateInput) => {
+    dateInput.addEventListener('keydown', (e) => e.preventDefault())
+    dateInput.addEventListener('paste', (e) => e.preventDefault())
   })
 
   // генерация селектов с возрастом детей

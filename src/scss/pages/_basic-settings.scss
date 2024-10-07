@@ -1,0 +1,85 @@
+.basic-settings-page {
+  padding-bottom: 150px;
+  .main-prompt {
+    margin-bottom: 20px;
+  }
+
+  .section-block {
+    h3 {
+      margin-bottom: 21px;
+    }
+    &._price {
+      h3 {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__time-zone {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #c3d5f5;
+    }
+  }
+
+  .main-input-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 550px;
+    margin-bottom: 0;
+
+    label {
+      font-size: 13px;
+      color: #a5afbb;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+  }
+
+  .fix-row {
+    margin: 0;
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+
+    &._time {
+      gap: 20px;
+
+      .main-input-wrapper {
+        width: 110px;
+
+        select {
+          background:
+            url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13.3C3.55993 13.3 0.7 10.4401 0.7 7C0.7 3.55993 3.55993 0.7 7 0.7C10.4401 0.7 13.3 3.55993 13.3 7C13.3 10.4462 10.5273 13.3 7 13.3Z" stroke="%23064AB1" stroke-width="1.4"/><path d="M7.00632 8.04936C6.81966 8.04936 6.72633 7.95601 6.633 7.86268C6.44633 7.67601 6.53967 7.39603 6.72634 7.20936L10.4597 4.40936C10.6463 4.2227 10.9263 4.31604 11.113 4.5027C11.2997 4.68937 11.2063 4.96935 11.0197 5.15602L7.28634 7.95602C7.28634 8.04935 7.19299 8.04936 7.00632 8.04936Z" fill="%23064AB1" stroke="%23064AB1" stroke-width="0.5"/><path d="M7.00164 8.0506C6.9083 8.0506 6.81498 8.05059 6.72165 7.95726L3.92165 6.09059C3.73498 5.90392 3.64164 5.62394 3.82831 5.43727C4.01498 5.25061 4.29499 5.15727 4.48165 5.34393L7.28165 7.2106C7.46832 7.39727 7.56166 7.67725 7.37499 7.86392C7.37499 7.95725 7.1883 8.0506 7.00164 8.0506Z" fill="%23064AB1" stroke="%23064AB1" stroke-width="0.5"/></svg>')
+              no-repeat right 10px top 50%,
+            0 0;
+        }
+      }
+    }
+
+    &._percent {
+      align-items: flex-start;
+      gap: 10px;
+      @media (max-width: 550px) {
+        align-items: center;
+      }
+      &:not(:last-child) {
+        margin-bottom: 23px;
+      }
+
+      p {
+        padding-top: 30px;
+        font-weight: 500;
+        font-size: 15px;
+        @media (max-width: 550px) {
+          padding-top: 0;
+          line-height: 1.1;
+        }
+      }
+
+      .main-input-wrapper {
+        max-width: 110px;
+      }
+    }
+  }
+}

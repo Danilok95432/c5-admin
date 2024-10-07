@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Ключевые настройки' })
+
+  <body class="page__body">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main basic-settings-page">
+        <form class="container" action="#">
+          <h1>Ключевые настройки</h1>
+
+          <section class="section-block">
+            <h3>Время заезда и выезда</h3>
+            <div class="section-block__time-zone">
+              <div class="main-input-wrapper">
+                <label>Местное время</label>
+                <select class="main-input" name="time_zone">
+                  <option value="1">
+                    UTC/GMT +3 (Москва, Санкт-Петербург, Казань
+                  </option>
+                  <option value="2">UTC/GMT +4</option>
+                  <option value="2">UTC/GMT +5</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-prompt">
+              <p>
+                Это стандартное время заезда и выезда, действующее для всей
+                гостиницы. Вы всегда можете поменять оба параметра при
+                оформлении конкретного бронирования.
+              </p>
+            </div>
+            <div class="fix-row _time">
+              <div class="main-input-wrapper">
+                <label>Заезд</label>
+                <select class="main-input" name="check_in">
+                  <option value="1">14:00</option>
+                  <option value="2">15:00</option>
+                </select>
+              </div>
+              <div class="main-input-wrapper">
+                <label>Выезд</label>
+                <select class="main-input" name="check_out">
+                  <option value="1">12:00</option>
+                  <option value="2">13:00</option>
+                </select>
+              </div>
+            </div>
+          </section>
+          <section class="section-block _price">
+            <h3>Стоимость</h3>
+            <div class="main-prompt">
+              <p>
+                Это стандартная стоимость раннего заезда и позднего выезда,
+                действующая для всей гостиницы и прибавляющаяся к базовой
+                стоимости номера в сутки.
+              </p>
+            </div>
+            <div class="fix-row _percent">
+              <div class="main-input-wrapper">
+                <label>Ранний заезд</label>
+                <input class="main-input number-mask" name="early_percent" />
+              </div>
+              <p>% от базовой стоимости номера в сутки</p>
+            </div>
+            <div class="fix-row _percent">
+              <div class="main-input-wrapper">
+                <label>Поздний выезд</label>
+                <input class="main-input number-mask" name="late_percent" />
+              </div>
+              <p>% от базовой стоимости номера в сутки</p>
+            </div>
+          </section>
+          <div class="main-controllers">
+            <div class="main-controllers__btns-left">
+              <button class="main-btn" type="submit">
+                Сохранить и закрыть
+              </button>
+              <button
+                class="main-btn _blue-outlined"
+                type="button"
+                data-action="./data/test.txt"
+              >
+                Применить и продолжить
+              </button>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

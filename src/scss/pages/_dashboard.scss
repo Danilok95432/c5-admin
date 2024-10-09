@@ -7,17 +7,18 @@
       min-width: 100%;
     }
   }
-}
 
+  .air-datepicker-cell.-day-.-selected- {
+    pointer-events: none;
+  }
+}
 
 .dashboard-page {
   padding-bottom: 100px;
 
-
-
   .dashboard {
     border-radius: 0;
-    border-top: 1px solid #6DB4F5;
+    border-top: 1px solid #6db4f5;
 
     @media (max-width: 470px) {
       padding: 0;
@@ -39,7 +40,7 @@
         margin-top: 10px;
 
         input {
-          border: 1px solid #6DB4F5;
+          border: 1px solid #6db4f5;
         }
       }
     }
@@ -74,7 +75,7 @@
       }
 
       li {
-        border: 1px solid #6DB4F5;
+        border: 1px solid #6db4f5;
         background: #ffffff;
         border-radius: 5px;
         @include opensans-regular;
@@ -116,13 +117,14 @@
           @include opensans-regular;
           font-size: 15px;
           border-radius: 5px;
-          color: #064AB1;
-          border: 1px solid #064AB1;
+          color: #064ab1;
+          border: 1px solid #064ab1;
+
           &._success {
-            background: #CFF4C9;
-            border-color: #CFF4C9;
+            background: #cff4c9;
+            border-color: #cff4c9;
             font-weight: 600;
-            color: #006B2B;
+            color: #006b2b;
             position: relative;
             text-align: right;
             justify-content: flex-end;
@@ -131,7 +133,7 @@
             padding-left: 28px;
 
             &::before {
-              content: '';
+              content: "";
               position: absolute;
               width: 15px;
               height: 12px;
@@ -147,7 +149,7 @@
 
         &__title {
           padding: 11px 14px 7px;
-          border-bottom: 1px solid #D0D5DF;
+          border-bottom: 1px solid #d0d5df;
           display: flex;
           align-items: center;
           gap: 5px;
@@ -158,7 +160,7 @@
             @include opensans-bold;
 
             a {
-              color: #064AB1;
+              color: #064ab1;
             }
 
             span {
@@ -211,7 +213,7 @@
           }
 
           .name {
-            color: #064AB1;
+            color: #064ab1;
             font-size: 15px;
             @include opensans-bold;
             line-height: 1.2;
@@ -228,7 +230,7 @@
           }
 
           ._red {
-            color: #D61A00;
+            color: #d61a00;
           }
         }
 

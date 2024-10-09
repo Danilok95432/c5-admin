@@ -8,7 +8,9 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main create-stock-page">
         <div class="container">
-          <a class="return-link" href="site-stocks.html">Возврат к списку акций на сайте</a>
+          <a class="return-link" href="site-stocks.html"
+            >Возврат к списку акций на сайте</a
+          >
           <h1>Создание / редактирование акции</h1>
           <form class="create-stock-page__form" action="#">
             <section class="section-block stock-section">
@@ -41,9 +43,10 @@
               <div class="fix-row">
                 <h5 class="fix-row__title">Текст страницы<span>*</span></h5>
                 <div class="fix-row__desc">
-                  <textarea class="main-textarea" name="page-text" required>
-Гостиница «Славянская» — гостиница бизнес-класса, сочетающая в себе европейское качество и русское гостеприимство. Уютная обстановка создает особое настроение и ощущение внутреннего комфорта.</textarea
-                  >
+                  <div class="text-editor__wrapper">
+                    <input type="hidden" name="page_text" />
+                    <div class="text-editor"></div>
+                  </div>
                 </div>
               </div>
 

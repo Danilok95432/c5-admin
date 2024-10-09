@@ -51,8 +51,9 @@ export const initAllMasks = () => {
   const numberMasks = document.querySelectorAll('.number-mask')
   if (numberMasks) {
     numberMasks.forEach((itemMask) => {
+      const isInteger = itemMask.classList.contains('_integer')
       Inputmask({
-        alias: 'numeric',
+        alias: isInteger ? 'integer' : 'numeric',
         allowMinus: false,
         showMaskOnHover: false,
         showMaskOnFocus: false,

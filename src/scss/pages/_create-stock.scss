@@ -1,84 +1,93 @@
 .create-stock-page {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 
-    .section-block {
-        padding: 20px 70px 25px 30px;
+  .section-block {
+    padding: 20px 70px 25px 30px;
+  }
+
+  .main-textarea {
+    height: 105px;
+  }
+
+  .upload-photos .dz-preview {
+    height: 108px;
+
+    .dz-image {
+      height: 106px;
+    }
+  }
+
+  .fix-row {
+    gap: 40px;
+    @media (max-width: 768px) {
+      gap: 0;
     }
 
-    .main-textarea {
-        height: 120px;
+    &:not(:last-child) {
+      margin-bottom: 21px;
     }
 
-    .upload-photos .dz-preview {
-        height: 108px;
+    &__title {
+      padding-top: 7px;
+      min-width: 210px;
+      width: 210px;
+      margin-right: 0;
 
-        .dz-image {
-            height: 106px;
-        }
-    }
-
-    .fix-row {
-        &:not(:last-child) {
-            margin-bottom: 21px;
-        }
-
-        &__title {
-            padding-top: 7px;
-            min-width: 190px;
-
-            span {
-                color: #FF6716;
-                font-weight: 500;
-            }
-        }
-
-        &__desc {
-            flex-grow: 1;
-        }
+      span {
+        color: #ff6716;
+        font-weight: 500;
+      }
     }
 
     &__desc {
-        @include opensans-light;
-        margin-bottom: 25px;
-
-        span {
-            color: #FF6716;
-            font-weight: 500;
-        }
+      flex-grow: 1;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
+  }
 
+  &__desc {
+    @include opensans-light;
+    margin-bottom: 25px;
 
-    .photo-section {
-        .general-dropzone {
-            &__previews {
-                padding: 0;
-                border: none;
-                margin-top: 0;
-                max-width: 175px;
-                flex-grow: 1;
-                min-height: 108px;
-                height: 108px;
-            }
-        }
-
-        &__desc {
-            font-size: 15px;
-            margin-bottom: 20px;
-
-            span {
-                color: #FF6716;
-                font-weight: 500
-            }
-        }
+    span {
+      color: #ff6716;
+      font-weight: 500;
     }
+  }
 
-    .dropzone.general-dropzone {
-        align-items: flex-start;
-    }
-
-    .general-dropzone__previews {
-        width: auto;
-        margin: 0;
+  .photo-section {
+    .general-dropzone {
+      &__previews {
+        padding: 0;
         border: none;
+        margin-top: 0;
+        max-width: 175px;
+        flex-grow: 1;
+        min-height: 108px;
+        height: 108px;
+      }
     }
+
+    &__desc {
+      font-size: 15px;
+      margin-bottom: 20px;
+
+      span {
+        color: #ff6716;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .dropzone.general-dropzone {
+    align-items: flex-start;
+  }
+
+  .general-dropzone__previews {
+    width: auto;
+    margin: 0;
+    border: none;
+  }
 }

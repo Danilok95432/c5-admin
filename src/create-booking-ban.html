@@ -7,7 +7,9 @@
       <header>@include('partials/auth-panel.html')</header>
       <main class="main create-booking-ban-page">
         <div class="container">
-          <a class="return-link" href="booking-ban-list.html">Возврат к списку запретов бронирования</a>
+          <a class="return-link" href="booking-ban-list.html"
+            >Возврат к списку запретов бронирования</a
+          >
           <h1>Создать запрет брони</h1>
 
           <section class="section-block">
@@ -21,21 +23,30 @@
                   <option value="2">Генеральная уборка номера</option>
                 </select>
               </div>
-
-              <div class="select-row">
-                <div class="input-column-wrapper column">
+              <div class="context-select__wrapper select-row">
+                <div class="input-column-wrapper">
                   <label>Категория номера</label>
-                  <select class="main-input" name="room-category">
+                  <select
+                    class="main-input context-select"
+                    name="room_category"
+                  >
                     <option value="1">Люкс с бассейном</option>
-                    <option value="2">Люкс с бассейном</option>
+                    <option value="2">Простой номер</option>
+                    <option value="3">Президентский люкс</option>
                   </select>
                 </div>
 
-                <div class="input-column-wrapper column">
+                <div class="input-column-wrapper">
                   <label>Номер</label>
-                  <select class="main-input" name="room">
-                    <option value="1">33 (2 этаж)</option>
-                    <option value="2">33 (2 этаж)</option>
+                  <select class="main-input context-content" name="room">
+                    <option value="1" data-context="1">Номер 1</option>
+                    <option value="2" data-context="1">Номер 2</option>
+                    <option value="3" data-context="1">Номер 3</option>
+                    <option value="4" data-context="2">Номер 4</option>
+                    <option value="5" data-context="2">Номер 5</option>
+                    <option value="6" data-context="3">Номер 6</option>
+                    <option value="7" data-context="3">Номер 7</option>
+                    <option value="8" data-context="3">Номер 8</option>
                   </select>
                 </div>
               </div>

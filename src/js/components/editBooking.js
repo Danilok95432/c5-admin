@@ -301,12 +301,9 @@ if (editBookingPage) {
     discountPercentInput.classList.remove('_disabled')
     discountRubInput.classList.remove('_disabled')
 
-    const roomsCount =
-      editBookingPage.querySelector('.rooms-list').children.length
-    const totalPrice = price * roomsCount
-    initialSum = totalPrice
-    clearPriceInput.value = totalPrice
-    discountSumInput.value = totalPrice
+    initialSum = price
+    clearPriceInput.value = price
+    discountSumInput.value = price
     totalCostToPay.textContent = returnMoreZero(
       discountSumInput.value - totalCostIntroduces.textContent,
     )

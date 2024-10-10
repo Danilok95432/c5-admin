@@ -19,10 +19,11 @@
         }
     }
     .container {
-        max-width: 1220px;
+        margin: 0 auto;
+        max-width: 1920px;
+        padding: 0 15px;
     }
     .input-column-wrapper {
-        margin-bottom: 25px;
         @media (max-width: 600px) {
             display: flex;
             flex-direction: column;
@@ -33,6 +34,9 @@
     .manage-restaurant-data {
         display: flex;
         flex-direction: column;
+        .input-column-wrapper {
+            margin-bottom: 21px;
+        }
     }
     .manage-restaurant-input {
         max-width: 750px;
@@ -43,10 +47,12 @@
     .manage-restaurant-textarea {
         max-width: 750px;
         min-height: 80px;
+        height: 150px;
     }
     .manage-restaurant-time {
         display: flex;
         flex-direction: row;
+        gap: 15px;
     }
     .restaurant-time-input {
         padding: 10px 44px 10px 10px;
@@ -105,6 +111,7 @@
     }
     .dz-button {
         width: 169px;
+        font-size: 13px;
         text-align: center;
     }
 
@@ -132,7 +139,7 @@
     .banket-block {
         display: flex;
         flex-direction: column;
-        padding: 35px 0;
+        padding: 28px 0;
         border-bottom: 1px solid #C3D5F5;
         h3 {
             font-size: 18px;
@@ -148,12 +155,11 @@
         }
     }
     .set-menu-block {
-        width: 70%;
         display: flex;
         flex-direction: row;
+        align-items: center;
         max-height: 63px;
-        margin-bottom: 25px;
-        gap: 25px;
+        gap: 10px;
         @media (max-width: 800px) {
             width: 100%;
         }
@@ -171,6 +177,68 @@
                 margin-bottom: 0;
             }
         }
+        .input-column-wrapper {
+            margin-right: 11px;
+        }
+    }
+
+    .restaurant-menu-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .load-main-restaurant-image {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        line-height: 1.1;
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+
+    .load-btn {
+        height: 40px;
+        width: 180px;
+        padding: 0;
+        background: #ffffff;
+        border: 1px solid #064ab1;
+        border-radius: 5px;
+        color: #064ab1;
+        font-size: 15px;
+        font-weight: 600;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 5px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .file-upload__name {
+        padding-left: 35px;
+        position: relative;
+    }
+
+    .file-upload__name::before {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 30px;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='30' viewBox='0 0 23 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.9969 28C22.9969 29.1046 22.1014 30 20.9969 30H2C0.89543 30 0 29.1046 0 28V2C0 0.89543 0.89543 0 2 0H14.5594L22.9969 8.4375V28Z' fill='%233090F6'/%3E%3Cpath d='M23 8.4375H15.5625C15.0102 8.4375 14.5625 7.98979 14.5625 7.4375V0L23 8.4375Z' fill='%234FB6E9'/%3E%3Cpath d='M14.5625 8.4375H23V16.875L14.5625 8.4375Z' fill='%23064AB1'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .add-menu-btn {
@@ -206,6 +274,10 @@
     }
 
     .menu-column {
-        width: 100%;
+        min-width: 457px;
+    }
+
+    .banket-title {
+        margin-bottom: 0px;
     }
 }

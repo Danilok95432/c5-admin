@@ -48,6 +48,20 @@ export const initAllMasks = () => {
     })
   }
 
+  const currencyMasksRange = document.querySelectorAll('.currency-mask-range')
+  if (currencyMasksRange) {
+    currencyMasksRange.forEach((itemMask) => {
+      Inputmask({
+        mask: '9{1,}-9{1,}',
+        placeholder: '___-___',
+        showMaskOnHover: false,
+        showMaskOnFocus: false,
+        shortcuts: null,
+        allowMinus: false,
+      }).mask(itemMask)
+    })
+  }
+
   const numberMasks = document.querySelectorAll('.number-mask')
   if (numberMasks) {
     numberMasks.forEach((itemMask) => {

@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+  @include('partials/head.html', { 'title': 'Размещения' })
+
+  <body class="page__body">
+    <div class="site-container">
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main booking-list-page dashboard-page placements-page">
+        <div class="container">
+          <form class="dashboard__title-block" action="#">
+            <h1>Размещения</h1>
+            <div class="icon-input">
+              <input
+                class="main-input date-mask"
+                placeholder="дд.мм.гггг"
+                type="text"
+                autocomplete="off"
+                name="dashboard_calendar"
+                data-date-start="2024-10-15"
+                data-date-submit="true"
+              />
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 2.5C5.33152 2.5 5.64946 2.3683 5.88388 2.13388C6.1183 1.89946 6.25 1.58152 6.25 1.25C6.25 0.918479 6.1183 0.600537 5.88388 0.366117C5.64946 0.131696 5.33152 0 5 0C4.66848 0 4.35054 0.131696 4.11612 0.366117C3.8817 0.600537 3.75 0.918479 3.75 1.25C3.75 1.58152 3.8817 1.89946 4.11612 2.13388C4.35054 2.3683 4.66848 2.5 5 2.5ZM8.75 2.5C9.08152 2.5 9.39946 2.3683 9.63388 2.13388C9.8683 1.89946 10 1.58152 10 1.25C10 0.918479 9.8683 0.600537 9.63388 0.366117C9.39946 0.131696 9.08152 0 8.75 0C8.41848 0 8.10054 0.131696 7.86612 0.366117C7.6317 0.600537 7.5 0.918479 7.5 1.25C7.5 1.58152 7.6317 1.89946 7.86612 2.13388C8.10054 2.3683 8.41848 2.5 8.75 2.5ZM12.5 2.5C12.8315 2.5 13.1495 2.3683 13.3839 2.13388C13.6183 1.89946 13.75 1.58152 13.75 1.25C13.75 0.918479 13.6183 0.600537 13.3839 0.366117C13.1495 0.131696 12.8315 0 12.5 0C12.1685 0 11.8505 0.131696 11.6161 0.366117C11.3817 0.600537 11.25 0.918479 11.25 1.25C11.25 1.58152 11.3817 1.89946 11.6161 2.13388C11.8505 2.3683 12.1685 2.5 12.5 2.5ZM1.25 6.25C1.58152 6.25 1.89946 6.1183 2.13388 5.88388C2.3683 5.64946 2.5 5.33152 2.5 5C2.5 4.66848 2.3683 4.35054 2.13388 4.11612C1.89946 3.8817 1.58152 3.75 1.25 3.75C0.918479 3.75 0.600537 3.8817 0.366116 4.11612C0.131696 4.35054 0 4.66848 0 5C0 5.33152 0.131696 5.64946 0.366116 5.88388C0.600537 6.1183 0.918479 6.25 1.25 6.25ZM5 6.25C5.33152 6.25 5.64946 6.1183 5.88388 5.88388C6.1183 5.64946 6.25 5.33152 6.25 5C6.25 4.66848 6.1183 4.35054 5.88388 4.11612C5.64946 3.8817 5.33152 3.75 5 3.75C4.66848 3.75 4.35054 3.8817 4.11612 4.11612C3.8817 4.35054 3.75 4.66848 3.75 5C3.75 5.33152 3.8817 5.64946 4.11612 5.88388C4.35054 6.1183 4.66848 6.25 5 6.25ZM8.75 6.25C9.08152 6.25 9.39946 6.1183 9.63388 5.88388C9.8683 5.64946 10 5.33152 10 5C10 4.66848 9.8683 4.35054 9.63388 4.11612C9.39946 3.8817 9.08152 3.75 8.75 3.75C8.41848 3.75 8.10054 3.8817 7.86612 4.11612C7.6317 4.35054 7.5 4.66848 7.5 5C7.5 5.33152 7.6317 5.64946 7.86612 5.88388C8.10054 6.1183 8.41848 6.25 8.75 6.25ZM12.5 6.25C12.8315 6.25 13.1495 6.1183 13.3839 5.88388C13.6183 5.64946 13.75 5.33152 13.75 5C13.75 4.66848 13.6183 4.35054 13.3839 4.11612C13.1495 3.8817 12.8315 3.75 12.5 3.75C12.1685 3.75 11.8505 3.8817 11.6161 4.11612C11.3817 4.35054 11.25 4.66848 11.25 5C11.25 5.33152 11.3817 5.64946 11.6161 5.88388C11.8505 6.1183 12.1685 6.25 12.5 6.25ZM1.25 10C1.58152 10 1.89946 9.8683 2.13388 9.63388C2.3683 9.39946 2.5 9.08152 2.5 8.75C2.5 8.41848 2.3683 8.10054 2.13388 7.86612C1.89946 7.6317 1.58152 7.5 1.25 7.5C0.918479 7.5 0.600537 7.6317 0.366116 7.86612C0.131696 8.10054 0 8.41848 0 8.75C0 9.08152 0.131696 9.39946 0.366116 9.63388C0.600537 9.8683 0.918479 10 1.25 10ZM5 10C5.33152 10 5.64946 9.8683 5.88388 9.63388C6.1183 9.39946 6.25 9.08152 6.25 8.75C6.25 8.41848 6.1183 8.10054 5.88388 7.86612C5.64946 7.6317 5.33152 7.5 5 7.5C4.66848 7.5 4.35054 7.6317 4.11612 7.86612C3.8817 8.10054 3.75 8.41848 3.75 8.75C3.75 9.08152 3.8817 9.39946 4.11612 9.63388C4.35054 9.8683 4.66848 10 5 10ZM8.75 10C9.08152 10 9.39946 9.8683 9.63388 9.63388C9.8683 9.39946 10 9.08152 10 8.75C10 8.41848 9.8683 8.10054 9.63388 7.86612C9.39946 7.6317 9.08152 7.5 8.75 7.5C8.41848 7.5 8.10054 7.6317 7.86612 7.86612C7.6317 8.10054 7.5 8.41848 7.5 8.75C7.5 9.08152 7.6317 9.39946 7.86612 9.63388C8.10054 9.8683 8.41848 10 8.75 10Z"
+                  fill="#064AB1"
+                />
+              </svg>
+            </div>
+          </form>
+          <ul class="tab-menu">
+            <li>
+              <a href="placement-in.html">Заезд (34)</a>
+            </li>
+            <li>
+              <a href="placement-out.html">Выезд (22)</a>
+            </li>
+            <li>
+              <a class="_active" href="#">Проживают (304)</a>
+            </li>
+            <li>
+              <a href="placement-lost.html">Пропущенные (4)</a>
+            </li>
+          </ul>
+        </div>
+        <section class="section-block _no-border">
+          <div class="container booking-list-page__table-container">
+            <form class="filter-panel" action="#">
+              <div class="input-column-wrapper room-type">
+                <label for="#">Категория номера</label>
+                <select class="main-input" name="type">
+                  <option value="1">Люкс</option>
+                  <option value="2">Люкс</option>
+                </select>
+              </div>
+              <div class="input-column-wrapper icon-input search">
+                <input
+                  class="main-input"
+                  type="search"
+                  placeholder="Поиск по клиенту"
+                  name="name-search"
+                />
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.63487 11.9266C6.93935 12.0761 8.25148 11.7689 9.35042 11.0637L12.3312 14.0445C12.3313 14.0445 12.3313 14.0446 12.3313 14.0446C12.5587 14.272 12.8671 14.3999 13.1887 14.4C13.5103 14.4001 13.8188 14.2725 14.0463 14.0451C14.2738 13.8177 14.4017 13.5093 14.4018 13.1877C14.4019 12.866 14.2743 12.5575 14.0469 12.33L14.0468 12.3299L11.0651 9.3482C11.7701 8.2485 12.0767 6.93568 11.9262 5.63083C11.7621 4.20834 11.067 2.90024 9.97991 1.96824C8.89281 1.03625 7.49389 0.549083 6.06303 0.604217C4.63217 0.65935 3.27489 1.25272 2.26273 2.2656C1.25056 3.27849 0.658171 4.63619 0.604061 6.06709C0.549952 7.49799 1.03812 8.89656 1.97089 9.983C2.90367 11.0694 4.21226 11.7636 5.63487 11.9266ZM10.3517 6.28029C10.3517 6.81467 10.2465 7.34381 10.042 7.83751C9.83749 8.33121 9.53775 8.7798 9.15989 9.15766C8.78203 9.53552 8.33344 9.83525 7.83974 10.0398C7.34605 10.2442 6.8169 10.3495 6.28252 10.3495C5.74815 10.3495 5.219 10.2442 4.72531 10.0398C4.23161 9.83525 3.78302 9.53552 3.40516 9.15766C3.0273 8.7798 2.72756 8.33121 2.52306 7.83751C2.31857 7.34381 2.21331 6.81467 2.21331 6.28029C2.21331 5.20107 2.64203 4.16605 3.40516 3.40292C4.16828 2.6398 5.2033 2.21108 6.28252 2.21108C7.36175 2.21108 8.39677 2.6398 9.15989 3.40292C9.92302 4.16605 10.3517 5.20107 10.3517 6.28029Z"
+                    fill="#064AB1"
+                    stroke="#064AB1"
+                    stroke-width="0.8"
+                  />
+                </svg>
+              </div>
+              <button class="main-btn _blue-outlined" type="submit">Применить</button>
+            </form>
+            <ul class="main-table tariff-list-table _min">
+              <li class="main-table__row main-table__title-row">
+                <p class="main-table__cell">
+                  <a href="#">Бронирование<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  </a>
+                </p>
+                <p class="main-table__cell">
+                <a href="#">Категория номера<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                </a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">Номер <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">Гости <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">Баланс <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">Действие</a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">До даты <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></a>
+                </p>
+                <p class="main-table__cell">
+                  <a href="#">Комментарий</a>
+                </p>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+
+              <li class="main-table__row">
+                <div class="main-table__cell">
+                  <span>#</span>
+                  <a href="#">2632309887</a>
+                </div>
+                <div class="main-table__cell">
+                  <p>Стандарт двухместный</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <p>233-СО-4</p>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="main-table-guests">
+                    <a href="#">Христорождественский Константин<br>
+                      Феофилактович</a>
+                    <div class="table-count-guests">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
+                      </svg>
+                      <p>x <b>2</b></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <p class="_right">150.00 ₽</p>
+                </div>
+                <div class="main-table__cell">
+                  <button class="check-into-btn">Заселить</button>
+                </div>
+
+                <div class="main-table__cell">
+                  <div class="check-in-time">
+                    <p class="_left">30.09.2024</p>
+                    <p class="_gray _left">ещё 4 дня</p>
+                  </div>
+                </div>
+                <div class="main-table__cell">
+                  <a href="#">Конфликтный. В тот...</a>
+                </div>
+              </li>
+            </ul>
+            
+
+            <div class="table-footer">
+              <div class="table-navigation">
+                <a class="table-navigation__prev _blocked" href="#">
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.58236 1L1 8L7.58236 15"
+                      stroke="#91969A"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Назад
+                </a>
+                <a class="table-navigation__next" href="#">
+                  Далее
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.00358 15L7.58594 8L1.00358 1"
+                      stroke="#064AB1"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <form class="content-count auto-submit-form" action="#">
+                <span>Записей на странице</span>
+
+                <div class="input-column-wrapper">
+                  <select class="main-input auto-submit-form__trigger" name="content-count">
+                    <option value="1">10</option>
+                    <option value="2">25</option>
+                    <option value="3">50</option>
+                    <option value="3">100</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    @include('partials/info-modal.html') 
+  </body>
+</html>

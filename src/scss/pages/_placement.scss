@@ -1,0 +1,74 @@
+.placements-page {
+
+  .filter-panel {
+    padding-top: 30px;
+  }
+
+  .check-in-time {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-table-guests {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .table-count-guests {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+    width: 50px;
+  }
+
+  .check-into-btn {
+    color: #064AB1;
+    border: 1px solid #064AB1;
+    background: #fff;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px 20px;
+    border-radius: 5px;
+  }
+
+  #placement-table-cell:nth-child(1) {
+    max-width: 10%;
+  }
+
+  #placement-table-cell:nth-child(2) {
+    max-width: 13%;
+  }
+
+  #placement-table-cell:nth-child(3) {
+    max-width: 8%;
+  }
+
+  #placement-table-cell:nth-child(4) {
+    max-width: 20%;
+  }
+
+  #placement-table-cell:nth-child(5) {
+    max-width: 13%;
+    a {
+      justify-content: flex-start;
+    }
+  }
+
+  #placement-table-cell:nth-child(6) {
+    max-width: 8%;
+  }
+
+  #placement-table-cell:nth-child(7) {
+    max-width: 18%;
+  }
+
+  #placement-table-cell:nth-child(8) {
+    max-width: 8%;
+  }
+    
+}

@@ -145,7 +145,8 @@ if (genDropzones) {
     })
 
     newGenDropzone.on('success', function (file, response) {
-      const resObj = JSON.parse(response)
+      const resObj =
+        typeof response === 'string' ? JSON.parse(response) : response
       const { status, errortext, id_person } = resObj
       if (status !== 'ok') {
         showInfoModal(errortext)

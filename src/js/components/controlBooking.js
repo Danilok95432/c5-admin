@@ -37,16 +37,9 @@ if (bookingControl) {
     }
   }
 
-  const deleteBookingBtn = bookingControl.querySelector(
-    '.main-btn._delete-booking',
-  )
   const confirmBookingBtn = bookingControl.querySelector(
     '.main-btn._confirm-booking',
   )
-
-  deleteBookingBtn.addEventListener('click', (e) => {
-    handleSendId(e, 'Вы действительно хотите удалить бронирование?')
-  })
 
   confirmBookingBtn.addEventListener('click', (e) => {
     handleSendId(e, 'Бронирование подтверждено!')

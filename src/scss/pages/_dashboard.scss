@@ -1,4 +1,11 @@
-.dashboard-page-body {
+body:has(.dashboard-page) {
+  .air-datepicker-cell.-day-.-selected- {
+    pointer-events: none;
+  }
+}
+
+.dashboard-page {
+  padding-bottom: 100px;
   .container {
     min-width: 1600px;
 
@@ -7,14 +14,6 @@
       min-width: 100%;
     }
   }
-
-  .air-datepicker-cell.-day-.-selected- {
-    pointer-events: none;
-  }
-}
-
-.dashboard-page {
-  padding-bottom: 100px;
 
   .dashboard {
     border-radius: 0;

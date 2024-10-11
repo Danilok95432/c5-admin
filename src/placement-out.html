@@ -5,9 +5,9 @@
   <body class="page__body">
     <div class="site-container">
       <header>@include('partials/auth-panel.html')</header>
-      <main class="main booking-list-page dashboard-page placements-page placement-out">
+      <main class="main placements-page _out">
         <div class="container">
-          <form class="dashboard__title-block" action="#">
+          <form class="placements-page__title-block" action="#">
             <h1>Размещения</h1>
             <div class="icon-input">
               <input
@@ -35,10 +35,10 @@
           </form>
           <ul class="tab-menu">
             <li>
-              <a href="placement-in.html">Заезд (34)</a>
+              <a href="placement-in.html">Заезды (34)</a>
             </li>
             <li>
-              <a class="_active" href="#">Выезд (22)</a>
+              <a class="_active" href="#">Выезды (22)</a>
             </li>
             <li>
               <a href="placement-live.html">Проживают (304)</a>
@@ -146,8 +146,8 @@
               </div>
               <button class="main-btn _blue-outlined" type="submit">Применить</button>
             </form>
-            <ul class="main-table tariff-list-table _min">
-              <li class="main-table__row main-table__title-row">
+            <ul class="main-table tariff-list-table _min placements-table">
+              <li class="main-table__row main-table__title-row" id="placement-title-row">
                 <p class="main-table__cell" id="placement-table-cell">
                   <a href="#">Бронирование<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>

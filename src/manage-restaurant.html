@@ -17,7 +17,7 @@
               <h3>Основные данные</h3>
               <div class="content-column manage-restaurant-data">
                 <div class="input-column-wrapper">
-                  <label>Название ресторана</label>
+                  <label>Название ресторана</label> 
                   <input
                     class="main-input manage-restaurant-input"
                     type="text"
@@ -31,21 +31,20 @@
                   <textarea
                     class="main-input manage-restaurant-textarea"
                   >Для гостей отеля на первом этаже работает ресторан европейской и русской кухни, где каждый непременно найдет что-то по душе. Панорамные виды из окон ресторана станут прекрасным аккомпанементом Вашего обеда или ужина.
-
-                  
+            
 Каждую пятницу и субботу с 19:00 до 22:00 в ресторане играет живая музыка. В исполнении виртуозного саксофониста звучат мировые хиты и романтические мелодии.</textarea>
                 </div>
                 <div class="restaurant-work-time">
-                  <h4>Режим работы</h4>
+                  <h4 class="restaurant-work-time__title">Режим работы</h4>
                   <div class="manage-restaurant-time">
-                    <div class="input-column-wrapper">
+                    <div class="input-column-wrapper" id="input-column-time-wrapper">
                       <label>Открытие</label>
                       <select class="main-input restaurant-time-input" name="open">
                         <option value="1">12:00</option>
                         <option value="2">15:00</option>
                       </select>
                     </div>
-                    <div class="input-column-wrapper">
+                    <div class="input-column-wrapper" id="input-column-time-wrapper">
                       <label>Закрытие</label>
                       <select class="main-input restaurant-time-input" name="close">
                         <option value="1">10:00</option>
@@ -62,7 +61,7 @@
                       <option value="2">Другой вариант</option>
                     </select>
                   </div>
-                  <div class="input-column-wrapper">
+                  <div class="input-column-wrapper restaurant-cost-breakfast">
                     <label>Стоимость завтрака, руб</label>
                     <input
                     class="main-input currency-mask-range"
@@ -76,14 +75,14 @@
                 <div class="input-column-wrapper">
                   <label>Условия для детей</label>
                   <textarea
-                    class="main-input manage-restaurant-textarea"
+                    class="main-input manage-restaurant-textarea min-textarea"
                   >Дети до 7 лет — проживание и завтрак бесплатно.
 В обычное время работы ресторана предлагается детское меню.</textarea>
                 </div>
                 <div class="input-column-wrapper">
                   <label>Обслуживание в номерах</label>
                   <textarea
-                    class="main-input manage-restaurant-textarea"
+                    class="main-input manage-restaurant-textarea min-textarea"
                   >Доставка завтрака в номер в любое время дня для молодоженов.</textarea>
                 </div>
               </div>
@@ -135,8 +134,8 @@
             <section class="section-block _no-border">
               <h3>Меню ресторана</h3>
               <div class="restaurant-menu-block">
-                <div id="menu-1">
-                  <h4>Меню 1</h4>
+                <div>
+                  <h4 class="menu-title">Меню 1</h4>
                   <div class="set-menu-block">
                     <div class="input-column-wrapper menu-column">
                       <label>Название меню</label>
@@ -144,7 +143,7 @@
                         class="main-input manage-restaurant-input__menu"
                         type="text"
                         value="Основное"
-                        name="title-menu"
+                        name="title_menu"
                         required
                       />
                     </div>
@@ -180,7 +179,7 @@
                           <input
                             type="file"
                             class="file-upload__add main-input"
-                            name="scan[1][1]"
+                            name="scan_menu"
                             data-script="./data/test.txt"
                           />
                           Загрузить pdf-файл
@@ -219,7 +218,7 @@
                           <input
                             type="file"
                             class="file-upload__add main-input"
-                            name="scan[1][1]"
+                            name="scan_menu"
                             data-script="./data/test.txt"
                           />
                           Загрузить фото
@@ -229,7 +228,7 @@
                   </div>
                 </div>
                 <div id="menu-2">
-                  <h4>Меню 2</h4>
+                  <h4 class="menu-title">Меню 2</h4>
                   <div class="set-menu-block">
                     <div class="input-column-wrapper menu-column">
                       <label>Название меню</label>
@@ -237,11 +236,11 @@
                         class="main-input manage-restaurant-input__menu"
                         type="text"
                         value="Детское"
-                        name="title-menu"
+                        name="title_menu"
                         required
                       />
                     </div>
-                    <div class="input-column-wrapper">
+                    <div class="input-column-wrapper menu-load-column">
                       <label>Документ меню</label>
                       <div class="file-upload _loaded">
                         <div class="file-upload__info">
@@ -290,7 +289,7 @@
                         </label>
                       </div>
                     </div>
-                    <div class="input-column-wrapper">
+                    <div class="input-column-wrapper menu-load-column">
                       <label>Фото меню</label>
                       <div class="file-upload _loaded">
                         <div class="file-upload__info">
@@ -332,7 +331,7 @@
                           <input
                             type="file"
                             class="file-upload__add main-input"
-                            name="scan[1][2]"
+                            name="scan_menu"
                             data-script="./data/test.txt"
                           />
                           Загрузить скан
@@ -414,7 +413,7 @@
                 <div class="input-column-wrapper">
                   <label>Текст блока</label>
                   <textarea
-                    class="main-input manage-restaurant-textarea"
+                    class="main-input manage-restaurant-textarea banket-textarea"
                   >Доставка завтрака в номер в любое время дня для молодоженов.</textarea>
                 </div>
               </div>

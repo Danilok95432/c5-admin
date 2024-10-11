@@ -6,7 +6,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
+        } 
         .general-dropzone {
             @media (max-width: 600px) {
                 flex-direction: column;
@@ -16,6 +16,9 @@
         }
         h4 {
             margin-bottom: 10px;
+        }
+        .restaurant-work-time__title {
+            margin-bottom: 0px;
         }
     }
     .container {
@@ -35,7 +38,7 @@
         display: flex;
         flex-direction: column;
         .input-column-wrapper {
-            margin-bottom: 21px;
+            margin-bottom: 16px;
         }
     }
     .manage-restaurant-input {
@@ -48,11 +51,27 @@
         max-width: 750px;
         min-height: 80px;
         height: 150px;
+        line-height: 1.25;
+        display: block;
     }
+
+    #input-column-time-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .restaurant-cost-breakfast {
+        width: 170px;
+    }
+
+    .min-textarea {
+        height: auto;
+        display: block;
+    }
+
     .manage-restaurant-time {
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        gap: 6px;
     }
     .restaurant-time-input {
         padding: 10px 44px 10px 10px;
@@ -108,22 +127,26 @@
         width: 230px;
         height: 115px;
         stroke: #6DB4F5;
+        padding-bottom: 4px;
     }
     .dz-button {
         width: 169px;
         font-size: 13px;
         text-align: center;
+        line-height: 1.3;
     }
 
     .load-disclaimer {
-        width: 300px;
+        width: 195px;
         height: 115px;
         display: flex;
         flex-direction: column;
         gap: 30px;
         font-size: 13px;
+        margin-right: 45px;
         & .default-text {
             max-width: 100%;
+            line-height: 1.2;
         }
         & .dz-clickable {
             background: #fff;
@@ -160,6 +183,7 @@
         align-items: center;
         max-height: 63px;
         gap: 10px;
+        line-height: 1.3;
         @media (max-width: 800px) {
             width: 100%;
         }
@@ -179,6 +203,10 @@
         }
         .input-column-wrapper {
             margin-right: 11px;
+        }
+        .menu-load-column {
+            margin-right: 33px;
+            padding-bottom: 15px;
         }
     }
 
@@ -275,9 +303,22 @@
 
     .menu-column {
         min-width: 457px;
+        line-height: 1.1;
+        & .main-input {
+            line-height: 1.3;
+            padding: 10px 10px;
+        }
     }
 
     .banket-title {
         margin-bottom: 0px;
+    }
+
+    .delete-menu-btn {
+        margin-top: 18px;
+    }
+
+    .banket-textarea {
+        height: auto;
     }
 }

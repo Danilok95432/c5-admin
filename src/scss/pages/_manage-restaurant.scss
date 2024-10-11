@@ -37,7 +37,7 @@
             display: flex;
             flex-direction: row;
             & .restaurant-label-star {
-                color: red;
+                color: #FF6716;
             }
         }
     }
@@ -236,14 +236,24 @@
             display: flex;
             flex-direction: row;
             .restaurant-label-star {
-                color: red;
+                color: #FF6716;
             }
+        }
+    }
+
+    .file-upload {
+        height: 41.5px;
+    }
+
+    .file-upload__info {
+        a {
+            color: #064ab1;
         }
     }
 
     .load-btn {
         height: 40px;
-        width: 180px;
+        width: 188px;
         padding: 0;
         background: #ffffff;
         border: 1px solid #064ab1;
@@ -261,6 +271,10 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+    }
+
+    .load-photo-btn {
+        width: 155px;
     }
 
     .file-upload__name {
@@ -318,9 +332,21 @@
     .menu-column {
         min-width: 457px;
         line-height: 1.1;
+        label {
+            margin-bottom: 2px;
+            min-height: 18px;
+        }
         & .main-input {
             line-height: 1.3;
             padding: 10px 10px;
+        }
+    }
+
+    .restaurant-menu-wrapper {
+        label {
+            margin-bottom: 2px;
+            min-height: 18px;
+            line-height: 1.15;
         }
     }
 

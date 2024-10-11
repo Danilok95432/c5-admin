@@ -1,7 +1,29 @@
 .placements-page {
+  .dashboard__title-block {
+    padding-left: 105px;
+  }
+  .tab-menu {
+    padding-left: 95px;
+  }
+
+  .section-block {
+    border: none;
+  }
+
+  &__table-container {
+    padding: 0 105px 300px 105px;
+  }
 
   .filter-panel {
     padding-top: 30px;
+    & .search {
+      @media (max-width: 1920px) {
+        width: 695px;
+      }
+      @media (max-width: 1600px) {
+        width: 403px;
+      }
+    }
   }
 
   .check-in-time {
@@ -34,14 +56,46 @@
     font-size: 15px;
     padding: 15px 20px;
     border-radius: 5px;
+    &__active {
+      background: #CFF4C9;
+      border: none;
+      color: #006641;
+      padding: 15px 17px;
+    }
+  }
+
+  .main-table {
+    @media (max-width: 1500px) {
+      overflow-x: auto;
+    }
+  }
+
+  .main-table__row {
+    @media (max-width: 1500px) {
+      min-width: 1500px!important;
+    }
+  }
+
+  .main-table__row {
+    @media (max-width: 1024px) {
+      min-width: 1500px!important;
+    }
+  }
+
+  #placement-table-cell {
+    padding-right: 55px;
+  }
+
+  #placement-table-cell:last-child {
+    padding-right: 15px;
   }
 
   #placement-table-cell:nth-child(1) {
-    max-width: 10%;
+    max-width: 12%;
   }
 
   #placement-table-cell:nth-child(2) {
-    max-width: 13%;
+    max-width: 14%;
   }
 
   #placement-table-cell:nth-child(3) {
@@ -49,26 +103,52 @@
   }
 
   #placement-table-cell:nth-child(4) {
-    max-width: 20%;
+    max-width: 26%;
   }
 
   #placement-table-cell:nth-child(5) {
-    max-width: 13%;
+    max-width: 11%;
     a {
       justify-content: flex-start;
     }
   }
 
   #placement-table-cell:nth-child(6) {
-    max-width: 8%;
+    max-width: 10%;
   }
 
   #placement-table-cell:nth-child(7) {
-    max-width: 18%;
+    max-width: 13%;
   }
 
   #placement-table-cell:nth-child(8) {
     max-width: 8%;
+  }   
+}
+
+.placement-out {
+  #placement-table-cell:nth-child(5) {
+    max-width: 9%;
+    margin-right: 55px;
   }
-    
+  #placement-table-cell:nth-child(7) {
+    max-width: 4%;
+    margin-right: 55px;
+  }
+  #placement-table-cell:nth-child(8) {
+    max-width: 13%;
+  }   
+}
+
+.placement-live {
+  #placement-table-cell:nth-child(5) {
+    max-width: 9%;
+   
+  }
+  #placement-table-cell:nth-child(7) {
+    max-width: 8%;
+  }
+  #placement-table-cell:nth-child(8) {
+    max-width: 13%;
+  } 
 }

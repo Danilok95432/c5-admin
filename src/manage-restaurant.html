@@ -17,7 +17,7 @@
               <h3>Основные данные</h3>
               <div class="content-column manage-restaurant-data">
                 <div class="input-column-wrapper">
-                  <label>Название ресторана</label> 
+                  <label>Название ресторана<p class="restaurant-label-star">*</p></label> 
                   <input
                     class="main-input manage-restaurant-input"
                     type="text"
@@ -38,14 +38,14 @@
                   <h4 class="restaurant-work-time__title">Режим работы</h4>
                   <div class="manage-restaurant-time">
                     <div class="input-column-wrapper" id="input-column-time-wrapper">
-                      <label>Открытие</label>
+                      <label>Открытие<p class="restaurant-label-star">*</p></label>
                       <select class="main-input restaurant-time-input" name="open">
                         <option value="1">12:00</option>
                         <option value="2">15:00</option>
                       </select>
                     </div>
                     <div class="input-column-wrapper" id="input-column-time-wrapper">
-                      <label>Закрытие</label>
+                      <label>Закрытие<p class="restaurant-label-star">*</p></label>
                       <select class="main-input restaurant-time-input" name="close">
                         <option value="1">10:00</option>
                         <option value="2">13:00</option>
@@ -90,7 +90,7 @@
             <section class="section-block _no-border">
               <div class="load-main-restaurant-image">
                 <h3>Главное (большое) изображение</h3>
-                <span>Загрузить изображение*</span>
+                <span>Загрузить изображение<p class="restaurant-label-star">*</p></span>
                 <form action="#">
                   <div class="upload-photos general-dropzone-wrapper">
                   <div
@@ -138,7 +138,7 @@
                   <h4 class="menu-title">Меню 1</h4>
                   <div class="set-menu-block">
                     <div class="input-column-wrapper menu-column">
-                      <label>Название меню</label>
+                      <label>Название меню<p class="restaurant-label-star">*</p></label>
                       <input
                         class="main-input manage-restaurant-input__menu"
                         type="text"
@@ -148,7 +148,7 @@
                       />
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Документ меню</label>
+                      <label>Документ меню<p class="restaurant-label-star">*</p></label>
                       <div class="file-upload">
                         <div class="file-upload__info">
                           <button
@@ -181,13 +181,14 @@
                             class="file-upload__add main-input"
                             name="scan_menu"
                             data-script="./data/test.txt"
+                            accept="application/pdf"
                           />
                           Загрузить pdf-файл
                         </label>
                       </div>
                     </div>
                     <div class="input-column-wrapper">
-                      <label>Фото меню</label>
+                      <label>Фото меню<p class="restaurant-label-star">*</p></label>
                       <div class="file-upload">
                         <div class="file-upload__info">
                           <button
@@ -220,6 +221,7 @@
                             class="file-upload__add main-input"
                             name="scan_menu"
                             data-script="./data/test.txt"
+                            accept="image/png, image/jpeg, image/jpg"
                           />
                           Загрузить фото
                         </label>
@@ -231,7 +233,7 @@
                   <h4 class="menu-title">Меню 2</h4>
                   <div class="set-menu-block">
                     <div class="input-column-wrapper menu-column">
-                      <label>Название меню</label>
+                      <label>Название меню<p class="restaurant-label-star">*</p></label>
                       <input
                         class="main-input manage-restaurant-input__menu"
                         type="text"
@@ -241,7 +243,7 @@
                       />
                     </div>
                     <div class="input-column-wrapper menu-load-column">
-                      <label>Документ меню</label>
+                      <label>Документ меню<p class="restaurant-label-star">*</p></label>
                       <div class="file-upload _loaded">
                         <div class="file-upload__info">
                           <button
@@ -290,7 +292,7 @@
                       </div>
                     </div>
                     <div class="input-column-wrapper menu-load-column">
-                      <label>Фото меню</label>
+                      <label>Фото меню<p class="restaurant-label-star">*</p></label>
                       <div class="file-upload _loaded">
                         <div class="file-upload__info">
                           <button

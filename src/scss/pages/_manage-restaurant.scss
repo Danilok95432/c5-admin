@@ -33,6 +33,13 @@
             justify-content: center;
             align-items: center;
         }
+        label {
+            display: flex;
+            flex-direction: row;
+            & .restaurant-label-star {
+                color: red;
+            }
+        }
     }
     .manage-restaurant-data {
         display: flex;
@@ -224,6 +231,13 @@
         line-height: 1.1;
         h3 {
             margin-bottom: 0;
+        }
+        span {
+            display: flex;
+            flex-direction: row;
+            .restaurant-label-star {
+                color: red;
+            }
         }
     }
 

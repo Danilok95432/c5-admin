@@ -65,6 +65,7 @@ if(addMenuBtn){
                               class="file-upload__add main-input"
                               name="scan_menu[${blockCounter}]"
                               data-script="./data/test.txt"
+                              accept="application/pdf"
                             />
                             Загрузить pdf-файл
                           </label>
@@ -104,6 +105,7 @@ if(addMenuBtn){
                               class="file-upload__add main-input"
                               name="scan_menu[${blockCounter}]"
                               data-script="./data/test.txt"
+                              accept="image/png, image/jpeg, image/jpg"
                             />
                             Загрузить фото
                           </label>

@@ -222,6 +222,7 @@
         flex-direction: column;
         gap: 10px;
         margin-bottom: 20px;
+        
     }
 
     .load-main-restaurant-image {
@@ -332,6 +333,9 @@
     .menu-column {
         min-width: 457px;
         line-height: 1.1;
+        @media (max-width: 950px) {
+            min-width: 100px;
+        }
         label {
             margin-bottom: 2px;
             min-height: 18px;

@@ -1,3 +1,4 @@
+/*
 const addMenuBtn = document.querySelector(".add-menu-btn")
 const deleteMenuBtn = document.querySelectorAll(".delete-menu-btn")
 const restaurantMenu = document.querySelector(".restaurant-menu-block")
@@ -22,7 +23,7 @@ if(addMenuBtn){
                   <h4 class="menu-title">Меню ${blockCounter}</h4>
                     <div class="set-menu-block" id="set-menu-block-${blockCounter}">
                       <div class="input-column-wrapper menu-column">
-                        <label>Название меню</label>
+                        <label>Название меню<p class="restaurant-label-star">*</p></label>
                         <input
                           class="main-input manage-restaurant-input__menu"
                           type="text"
@@ -31,14 +32,14 @@ if(addMenuBtn){
                           required
                         />
                       </div>
-                      <div class="input-column-wrapper">
-                        <label>Документ меню</label>
+                      <div class="input-column-wrapper restaurant-menu-wrapper">
+                        <label>Документ меню<p class="restaurant-label-star">*</p></label>
                         <div class="file-upload">
                           <div class="file-upload__info">
                             <button
                               class="file-upload__delete-btn"
                               type="button"
-                              data-script="./data/test.txt"
+                              data-script="./data/test.txt" 
                               data-remove-id=""
                             >
                               <svg
@@ -71,8 +72,8 @@ if(addMenuBtn){
                           </label>
                         </div>
                       </div>
-                      <div class="input-column-wrapper">
-                        <label>Фото меню</label>
+                      <div class="input-column-wrapper restaurant-menu-wrapper">
+                        <label>Фото меню<p class="restaurant-label-star">*</p></label>
                         <div class="file-upload">
                           <div class="file-upload__info">
                             <button
@@ -98,7 +99,7 @@ if(addMenuBtn){
                             <a href="#" download="" class="file-upload__name"></a>
                           </div>
                           <label
-                            class="main-btn file-upload__add-label _blue-outlined load-btn"
+                            class="main-btn file-upload__add-label _blue-outlined load-btn load-photo-btn"
                           >
                             <input
                               type="file"
@@ -142,3 +143,4 @@ function updateMenuHeaders() {
   })
 }
 
+*/

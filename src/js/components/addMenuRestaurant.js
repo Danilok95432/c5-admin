@@ -1,10 +1,12 @@
 import { initFileUploading } from "./fileUpload"
 
-const addMenuBtn = document.querySelector(".add-menu-btn")
-const restaurantMenu = document.querySelector(".restaurant-menu-block")
+const restaurantPage = document.querySelector('.restaurant-page')
+
 let blockCounter = 2
 
-if(restaurantMenu){
+if(restaurantPage){
+  const addMenuBtn = restaurantPage.querySelector('.add-menu-btn')
+  const restaurantMenu = restaurantPage.querySelector('.restaurant-menu-block')
   addMenuBtn.addEventListener("click", () => {
     const newMenu = document.createElement('div')
     newMenu.className = 'restaurant-menu'
@@ -52,7 +54,7 @@ if(restaurantMenu){
                           >
                             <input
                               type="file"
-                              class="file-upload__add main-input"
+                              class="file-upload__add file-upload__add-scan main-input"
                               name="scan_menu[${blockCounter}]"
                               data-script="http://localhost:3333/api/test"
                               accept="application/pdf"
@@ -92,8 +94,8 @@ if(restaurantMenu){
                           >
                             <input
                               type="file"
-                              class="file-upload__add main-input"
-                              name="scan_menu[${blockCounter}]"
+                              class="file-upload__add file-upload__add-photo main-input"
+                              name="photo_menu[${blockCounter}]"
                               data-script="http://localhost:3333/api/test"
                               accept="image/png, image/jpeg, image/jpg"
                             />
@@ -114,7 +116,7 @@ if(restaurantMenu){
     initFileUploading()
   })
   restaurantMenu.addEventListener("click", (e) => {
-    if(e.target.className != 'delete-menu-btn') return
+    if(e.target.className !== 'delete-menu-btn') return
 
     let menuBlock = e.target.closest('.restaurant-menu')
     menuBlock.remove()
@@ -126,13 +128,18 @@ if(restaurantMenu){
 
 function updateMenu() {
   const menuHeaders = document.querySelectorAll(".menu-title")
-  const menuInputName = document.querySelectorAll(".file-upload__add")
+  const menuScanInputName = document.querySelectorAll(".file-upload__add-scan")
+  const menuPhotoInputName = document.querySelectorAll(".file-upload__add-photo")
   const titleMenuName = document.querySelectorAll(".manage-restaurant-input__menu")
   menuHeaders.forEach((header, index) => {
     header.textContent = `Меню ${index + 1}`
   })
-  menuInputName.forEach((input, index) => {
-    input.name = `scan_menu[${Math.floor((index + 1) / 2)}]`
+  menuScanInputName.forEach((input, index) => {
+    console.log(input.name)
+    input.name = `scan_menu[${(index + 1)}]`
+  })
+  menuPhotoInputName.forEach((input, index) => {
+    input.name = `photo_menu[${(index + 1)}]`
   })
   titleMenuName.forEach((input, index) => {
     input.name = `title_menu[${(index + 1)}]`

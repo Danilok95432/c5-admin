@@ -1,135 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
-@include('partials/head.html', { 'title': 'Гости' })
+  @include('partials/head.html', { 'title': 'Гости' })
 
-<body class="page__body">
-<div class="site-container">
-  <div class="modal-overlay"></div>
-  <header>
-    @include('partials/auth-panel.html')
-  </header>
-  <main class="main guests-page">
-    <div class="container">
-      <h1>
-        Гости
-      </h1>
-      <section class="section-block">
-        <ul class="main-table _min">
-          <li class="main-table__row main-table__title-row">
-            <p class="main-table__cell">№</p>
-            <div class="main-table__cell">
-              <div class="input-column-wrapper guests-page__search-input">
-                <input class="main-input" name="search_fullname"
-                       placeholder="ФИО" type="text">
+  <body class="page__body">
+    <div class="site-container">
+      <div class="modal-overlay"></div>
+      <header>@include('partials/auth-panel.html')</header>
+      <main class="main guests-page">
+        <div class="container">
+          <h1>Гости</h1>
+          <section class="section-block">
+            <ul class="main-table _min">
+              <li class="main-table__row main-table__title-row">
+                <p class="main-table__cell">№</p>
+                <div class="main-table__cell">
+                  <div class="input-column-wrapper guests-page__search-input">
+                    <input
+                      class="main-input"
+                      name="search_fullname"
+                      placeholder="ФИО"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <p class="main-table__cell">Номер</p>
+                <div class="main-table__cell">
+                  <a class="main-table__sort-link" href="#"> Заезд </a>
+                </div>
+                <div class="main-table__cell">
+                  <a class="main-table__sort-link" href="#"> Выезд </a>
+                </div>
+                <div class="main-table__cell">
+                  <input
+                    class="main-input phone-mask"
+                    type="text"
+                    placeholder="+7 (___) ___-__-__"
+                    name="phone"
+                  />
+                </div>
+              </li>
+              <li class="main-table__row">
+                <p class="main-table__cell">1</p>
+                <p class="main-table__cell">Кузнецов Константин Ярославович</p>
+                <p class="main-table__cell">223 (стандарт)</p>
+                <p class="main-table__cell">05.10.2023 01:56</p>
+                <p class="main-table__cell">05.10.2023 01:56</p>
+                <p class="main-table__cell">8-927-001-42-78</p>
+              </li>
+              <li class="main-table__row">
+                <p class="main-table__cell">2</p>
+                <p class="main-table__cell">
+                  Колобкова-Крупчатникова Маргарита Вильгельмовна
+                </p>
+                <p class="main-table__cell">303 (люкс)</p>
+                <p class="main-table__cell">06.10.2023 01:00</p>
+                <p class="main-table__cell">06.10.2023 01:00</p>
+                <p class="main-table__cell">8-900-263-81-03</p>
+              </li>
+              <li class="main-table__row">
+                <p class="main-table__cell">3</p>
+                <p class="main-table__cell">Шмелева Маргарита Александровна</p>
+                <p class="main-table__cell">223 (категория)</p>
+                <p class="main-table__cell">02.11.2023 10:30</p>
+                <p class="main-table__cell">02.11.2023 10:30</p>
+                <p class="main-table__cell">8-926-303-32-31</p>
+              </li>
+              <li class="main-table__row">
+                <p class="main-table__cell">4</p>
+                <p class="main-table__cell">Никольская Александра Филипповна</p>
+                <p class="main-table__cell">223 (категория)</p>
+                <p class="main-table__cell">07.11.2023 08:00</p>
+                <p class="main-table__cell">07.11.2023 08:00</p>
+                <p class="main-table__cell">8-911-721-11-65</p>
+              </li>
+              <li class="main-table__row">
+                <p class="main-table__cell">5</p>
+                <p class="main-table__cell">Фомин Алексей Владиславович</p>
+                <p class="main-table__cell">223 (категория)</p>
+                <p class="main-table__cell">04.11.2023 08:00</p>
+                <p class="main-table__cell">04.11.2023 08:00</p>
+                <p class="main-table__cell">8-926-034-63-58</p>
+              </li>
+            </ul>
+            <div class="table-footer">
+              <div class="table-navigation">
+                <a class="table-navigation__prev _blocked" href="#">
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.58236 1L1 8L7.58236 15"
+                      stroke="#91969A"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Назад
+                </a>
+                <a class="table-navigation__next" href="#">
+                  Далее
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.00358 15L7.58594 8L1.00358 1"
+                      stroke="#064AB1"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
               </div>
+
+              <form class="content-count auto-submit-form" action="#">
+                <span>Номеров на странице</span>
+
+                <div class="input-column-wrapper">
+                  <select
+                    class="main-input auto-submit-form__trigger"
+                    name="content-count"
+                  >
+                    <option value="1">10</option>
+                    <option value="2">25</option>
+                    <option value="3">50</option>
+                    <option value="3">100</option>
+                  </select>
+                </div>
+              </form>
             </div>
-            <p class="main-table__cell">
-              Номер
-            </p>
-            <div class="main-table__cell">
-              <a class="main-table__sort-link" href="#">
-                Заезд
-              </a>
-            </div>
-            <div class="main-table__cell">
-              <a class="main-table__sort-link" href="#">
-                Выезд
-              </a>
-            </div>
-            <div class="main-table__cell">
-              <input
-                class="main-input phone-mask"
-                type="text"
-                placeholder="+7 (___) ___-__-__"
-                name="phone"
-              />
-            </div>
-          </li>
-          <li class="main-table__row">
-            <p class="main-table__cell">1</p>
-            <p class="main-table__cell">Кузнецов Константин Ярославович</p>
-            <p class="main-table__cell">223 (стандарт)</p>
-            <p class="main-table__cell">05.10.2023 01:56</p>
-            <p class="main-table__cell">05.10.2023 01:56</p>
-            <p class="main-table__cell">8-927-001-42-78</p>
-          </li>
-          <li class="main-table__row">
-            <p class="main-table__cell">2</p>
-            <p class="main-table__cell">Колобкова-Крупчатникова Маргарита Вильгельмовна</p>
-            <p class="main-table__cell">303 (люкс)</p>
-            <p class="main-table__cell">06.10.2023 01:00</p>
-            <p class="main-table__cell">06.10.2023 01:00</p>
-            <p class="main-table__cell">8-900-263-81-03</p>
-          </li>
-          <li class="main-table__row">
-            <p class="main-table__cell">3</p>
-            <p class="main-table__cell">Шмелева Маргарита Александровна</p>
-            <p class="main-table__cell">223 (категория)</p>
-            <p class="main-table__cell">02.11.2023 10:30</p>
-            <p class="main-table__cell">02.11.2023 10:30</p>
-            <p class="main-table__cell">8-926-303-32-31</p>
-          </li>
-          <li class="main-table__row">
-            <p class="main-table__cell">4</p>
-            <p class="main-table__cell">Никольская Александра Филипповна</p>
-            <p class="main-table__cell">223 (категория)</p>
-            <p class="main-table__cell">07.11.2023 08:00</p>
-            <p class="main-table__cell">07.11.2023 08:00</p>
-            <p class="main-table__cell">8-911-721-11-65</p>
-          </li>
-          <li class="main-table__row">
-            <p class="main-table__cell">5</p>
-            <p class="main-table__cell">Фомин Алексей Владиславович</p>
-            <p class="main-table__cell">223 (категория)</p>
-            <p class="main-table__cell">04.11.2023 08:00</p>
-            <p class="main-table__cell">04.11.2023 08:00</p>
-            <p class="main-table__cell">8-926-034-63-58</p>
-          </li>
-        </ul>
-        <div class="table-navigation">
-          <a class="table-navigation__prev _blocked" href="#">
-            <svg
-              width="9"
-              height="16"
-              viewBox="0 0 9 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.58236 1L1 8L7.58236 15"
-                stroke="#91969A"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            Назад
-          </a>
-          <a class="table-navigation__next" href="#">
-            Далее
-            <svg
-              width="9"
-              height="16"
-              viewBox="0 0 9 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.00358 15L7.58594 8L1.00358 1"
-                stroke="#064AB1"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
+          </section>
         </div>
-      </section>
+      </main>
     </div>
-  </main>
-</div>
-@include('partials/info-modal.html')
-</body>
-
-
+    @include('partials/info-modal.html')
+  </body>
 </html>

@@ -317,6 +317,9 @@ if (editBookingPage) {
 
   // Логика поиска подходящих номеров
 
+  const categoryComment = editBookingPage.querySelector(
+    '.rooms-category-section__category-comment',
+  )
   const initBlockedInputs = () => {
     const blockedInputs = editBookingPage.querySelectorAll(
       '._block-search-input',
@@ -375,6 +378,9 @@ if (editBookingPage) {
       )
     freeRoomsList.innerHTML = roomsHtml.join('')
   }
+  const setComment = (comment) => {
+    categoryComment.textContent = comment ?? ''
+  }
 
   roomsCategoriesSelect.addEventListener('input', (e) => {
     const currentSelectValue = e.target.value
@@ -383,6 +389,7 @@ if (editBookingPage) {
     )
     initTariffsSelect(currentCategory.tariffs)
     initRooms(currentCategory.rooms)
+    setComment(currentCategory.categoryComment ?? '')
     setDiscountSum(currentCategory.tariffs[0].tariffPrice ?? 0)
   })
 
@@ -425,6 +432,7 @@ if (editBookingPage) {
         globalRoomsData = [...categories]
         initCategoriesSelect(categories)
         initTariffsSelect(categories[0].tariffs)
+        setComment(categories[0].categoryComment ?? '')
         initRooms(categories[0].rooms)
         setDiscountSum(categories[0].tariffs[0].tariffPrice)
       } else {

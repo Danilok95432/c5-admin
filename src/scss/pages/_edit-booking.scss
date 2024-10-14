@@ -11,7 +11,7 @@
 
   label:not(.main-checkbox) {
     span {
-      color: #FF6716;
+      color: #ff6716;
     }
   }
 
@@ -35,7 +35,6 @@
         height: 25px;
       }
 
-
       &.main-checkbox {
         padding-top: 33px;
 
@@ -47,7 +46,7 @@
         label {
           font-size: 15px;
           display: flex;
-          color: #1D1B1B;
+          color: #1d1b1b;
           font-weight: 400;
           line-height: 1;
           align-items: center;
@@ -55,7 +54,6 @@
       }
 
       &._sm {
-
         width: 90px;
 
         @media (max-width: 768px) {
@@ -86,7 +84,6 @@
   }
 
   .client-section {
-
     .edit-booking-page__org-row {
       justify-content: space-between;
       .input-column-wrapper {
@@ -102,7 +99,7 @@
         max-width: 280px;
       }
       padding-bottom: 30px;
-      border-bottom: 1px solid #C3D5F5;
+      border-bottom: 1px solid #c3d5f5;
       margin-bottom: 20px;
       margin-right: 0;
     }
@@ -113,11 +110,9 @@
   }
 
   .dates-section {
-
     .edit-booking-page__inputs-row {
       margin: 0;
     }
-
 
     &__days-counter {
       @include opensans-bold;
@@ -142,7 +137,6 @@
   }
 
   .rooms-list-section {
-
     padding-top: 28px;
 
     h3 {
@@ -171,7 +165,7 @@
         }
 
         padding-bottom: 30px;
-        border-bottom: 1px solid #C3D5F5;
+        border-bottom: 1px solid #c3d5f5;
       }
       &__item-controllers {
         display: flex;
@@ -187,11 +181,11 @@
       li:not(:last-child) {
         padding-bottom: 30px;
         margin-bottom: 28px;
-        border-bottom: 1px solid #C3D5F5;
+        border-bottom: 1px solid #c3d5f5;
       }
 
       h5 {
-        color: #1D1B1B;
+        color: #1d1b1b;
         font-size: 18px;
         @include opensans-bold;
         margin-bottom: 10px;
@@ -214,7 +208,6 @@
         padding: 10px 24px 10px 22px;
       }
     }
-
   }
 
   .rooms-search-section {
@@ -244,13 +237,20 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      color: #95A0AC;
+      color: #95a0ac;
       font-size: 13px;
     }
   }
 
   .rooms-category-section {
+    padding-bottom: 25px;
+    &__category-comment {
+      color: #ff6716;
+      font-size: 14px;
+    }
     .edit-booking-page__inputs-row {
+      margin-bottom: 10px;
+
       @media (max-width: 1024px) {
         flex-direction: column;
       }
@@ -294,7 +294,6 @@
           opacity: 0.5;
           pointer-events: none;
         }
-
       }
     }
 
@@ -317,7 +316,7 @@
         }
 
         p {
-          color: #95A0AC;
+          color: #95a0ac;
           font-size: 13px;
           padding-top: 39px;
           line-height: 1.2;
@@ -333,7 +332,6 @@
             width: 100%;
             min-width: 100%;
           }
-
         }
       }
     }
@@ -344,14 +342,16 @@
       width: 180px;
 
       input {
-        border: 1px solid #D3D9E0;
-        background: #E8F1F8 url('data:image/svg+xml,<svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.47009 11.0979C5.47009 11.008 5.4656 10.918 5.47009 10.828C5.47906 10.5806 5.45663 10.3781 5.2593 10.1667C4.89604 9.78432 4.98574 9.1725 5.39385 8.83061C5.79299 8.49321 6.39842 8.54269 6.73926 8.93857C7.08459 9.33446 7.05768 9.93278 6.66751 10.2882C6.5823 10.3691 6.54642 10.4411 6.54642 10.5581C6.55539 10.927 6.5509 11.3004 6.5509 11.6693C6.5509 11.9977 6.32218 12.2406 6.02171 12.2496C5.71675 12.2541 5.47906 12.0067 5.47457 11.6693C5.47009 11.4803 5.47009 11.2869 5.47009 11.0979Z" fill="%23A5AFBB"/><path d="M11.9966 6.92794C11.9966 6.78398 11.9966 6.63552 11.9697 6.49157C11.7948 5.51086 11.0638 4.81807 10.0996 4.6966V4.08028C10.0996 1.83095 8.27432 0 6.03195 0H5.96468C3.72232 0 1.89704 1.83095 1.89704 4.08028V4.6921C1.84771 4.6966 1.80286 4.7056 1.75801 4.7146C0.708586 4.91704 0.00896945 5.78528 0.00448472 6.87845C0 8.77689 0 10.6798 0 12.5783C0 12.7132 0.00448472 12.8482 0.0269083 12.9831C0.224236 14.0673 1.09427 14.7871 2.19751 14.7871C4.71344 14.7871 7.22937 14.7871 9.74979 14.7871C11.0728 14.7871 11.9966 13.8694 11.9966 12.5423C12.0011 10.6708 12.0011 8.79938 11.9966 6.92794ZM3.01822 4.08028C3.01822 2.45177 4.34121 1.12467 5.96468 1.12467H6.03644C7.65991 1.12467 8.9829 2.45177 8.9829 4.08028V4.46267H3.01822V4.08028ZM10.9203 12.5603C10.9203 13.2621 10.4673 13.7074 9.77221 13.7119C8.51201 13.7119 7.24731 13.7119 5.98711 13.7119C4.73587 13.7119 3.48463 13.7119 2.23788 13.7119C1.52032 13.7119 1.07633 13.2665 1.07633 12.5423C1.07633 10.6708 1.07633 8.79488 1.07633 6.92344C1.07633 6.20365 1.52481 5.75379 2.24236 5.75379C4.74932 5.75379 7.25628 5.75379 9.75876 5.75379C10.4673 5.75379 10.9203 6.19915 10.9203 6.90544C10.9248 8.79038 10.9248 10.6753 10.9203 12.5603Z" fill="%23A5AFBB"/></svg>') no-repeat 95% 50%;
+        border: 1px solid #d3d9e0;
+        background: #e8f1f8
+          url('data:image/svg+xml,<svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.47009 11.0979C5.47009 11.008 5.4656 10.918 5.47009 10.828C5.47906 10.5806 5.45663 10.3781 5.2593 10.1667C4.89604 9.78432 4.98574 9.1725 5.39385 8.83061C5.79299 8.49321 6.39842 8.54269 6.73926 8.93857C7.08459 9.33446 7.05768 9.93278 6.66751 10.2882C6.5823 10.3691 6.54642 10.4411 6.54642 10.5581C6.55539 10.927 6.5509 11.3004 6.5509 11.6693C6.5509 11.9977 6.32218 12.2406 6.02171 12.2496C5.71675 12.2541 5.47906 12.0067 5.47457 11.6693C5.47009 11.4803 5.47009 11.2869 5.47009 11.0979Z" fill="%23A5AFBB"/><path d="M11.9966 6.92794C11.9966 6.78398 11.9966 6.63552 11.9697 6.49157C11.7948 5.51086 11.0638 4.81807 10.0996 4.6966V4.08028C10.0996 1.83095 8.27432 0 6.03195 0H5.96468C3.72232 0 1.89704 1.83095 1.89704 4.08028V4.6921C1.84771 4.6966 1.80286 4.7056 1.75801 4.7146C0.708586 4.91704 0.00896945 5.78528 0.00448472 6.87845C0 8.77689 0 10.6798 0 12.5783C0 12.7132 0.00448472 12.8482 0.0269083 12.9831C0.224236 14.0673 1.09427 14.7871 2.19751 14.7871C4.71344 14.7871 7.22937 14.7871 9.74979 14.7871C11.0728 14.7871 11.9966 13.8694 11.9966 12.5423C12.0011 10.6708 12.0011 8.79938 11.9966 6.92794ZM3.01822 4.08028C3.01822 2.45177 4.34121 1.12467 5.96468 1.12467H6.03644C7.65991 1.12467 8.9829 2.45177 8.9829 4.08028V4.46267H3.01822V4.08028ZM10.9203 12.5603C10.9203 13.2621 10.4673 13.7074 9.77221 13.7119C8.51201 13.7119 7.24731 13.7119 5.98711 13.7119C4.73587 13.7119 3.48463 13.7119 2.23788 13.7119C1.52032 13.7119 1.07633 13.2665 1.07633 12.5423C1.07633 10.6708 1.07633 8.79488 1.07633 6.92344C1.07633 6.20365 1.52481 5.75379 2.24236 5.75379C4.74932 5.75379 7.25628 5.75379 9.75876 5.75379C10.4673 5.75379 10.9203 6.19915 10.9203 6.90544C10.9248 8.79038 10.9248 10.6753 10.9203 12.5603Z" fill="%23A5AFBB"/></svg>')
+          no-repeat 95% 50%;
       }
     }
 
     &__discount-row {
       padding-bottom: 35px;
-      border-bottom: 1px solid #C3D5F5;
+      border-bottom: 1px solid #c3d5f5;
     }
 
     &__payment-row {
@@ -367,16 +367,16 @@
 
       p {
         font-size: 13px;
-        color: #95A0AC;
+        color: #95a0ac;
         line-height: 1.25;
         max-width: 430px;
       }
     }
 
     .total-cost {
-      border: 1px solid #C3D5F5;
+      border: 1px solid #c3d5f5;
       border-radius: 10px;
-      background: #E8F1F8;
+      background: #e8f1f8;
       padding: 6px 10px;
       display: flex;
       justify-content: center;
@@ -394,7 +394,7 @@
       &__item {
         h4 {
           font-size: 13px;
-          color: #A5AFBB;
+          color: #a5afbb;
           @include opensans-semibold;
           margin: 0;
         }
@@ -407,27 +407,26 @@
 
         &._introduced {
           padding-right: 45px;
-          border-right: 1px solid #C3D5F5;
+          border-right: 1px solid #c3d5f5;
           @media (max-width: 550px) {
             padding-right: 0;
             padding-bottom: 20px;
-            border-bottom: 1px solid #C3D5F5;
+            border-bottom: 1px solid #c3d5f5;
             border-right: none;
           }
 
           h3 {
-            color: #12A43B;
+            color: #12a43b;
           }
         }
 
         &._to-pay {
           h3 {
-            color: #FF6716;
+            color: #ff6716;
           }
         }
       }
     }
-
 
     .payments-list {
       max-width: 812px;
@@ -437,7 +436,7 @@
         padding: 6px 10px;
 
         &:nth-child(even) {
-          background-color: #F4F8FC;
+          background-color: #f4f8fc;
         }
 
         &:nth-child(odd) {
@@ -445,10 +444,10 @@
         }
 
         &.main-table__title-row {
-          border: 1px solid #E7EEFA;
+          border: 1px solid #e7eefa;
 
           .main-table__cell {
-            color: #A5AFBB;
+            color: #a5afbb;
             font-size: 13px;
             font-weight: 600;
           }
@@ -456,7 +455,7 @@
       }
 
       .main-table__cell {
-        color: #1D1B1B;
+        color: #1d1b1b;
 
         &:nth-child(1) {
           min-width: 3%;
@@ -485,9 +484,7 @@
           text-align: right;
         }
       }
-
     }
-
   }
 
   .rooms-comment-section {

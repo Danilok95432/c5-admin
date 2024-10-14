@@ -5,6 +5,7 @@
     {
       "categoryName": "Двухместный номер",
       "categoryValue": "cat1",
+      "categoryComment": "Какой то комментарий по категории Двухместный номер",
       "tariffs": [
         {
           "tariffName": "Двухместный номер с питанием",
@@ -35,6 +36,7 @@
     {
       "categoryName": "Трехместный номер",
       "categoryValue": "cat2",
+      "categoryComment": "Какой то комментарий по категории Трехместный номер",
       "tariffs": [
         {
           "tariffName": "Трехместный номер с питанием",

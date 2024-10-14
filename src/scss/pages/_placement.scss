@@ -113,7 +113,7 @@
     @media (max-width: 1500px) {
       overflow-x: auto;
     }
-    &__row {
+    &._min .main-table__row {
       padding: 8px 15px 7px 0;
       height: 60px;
       @media (max-width: 1500px) {

@@ -1,5 +1,40 @@
 .placements-page {
 
+  &._out {
+    .main-table {
+      &__cell {
+        &:nth-child(5) {
+          max-width: 9%;
+          margin-right: 55px;
+        }
+        &:nth-child(7) {
+          max-width: 4%;
+          margin-right: 55px;
+        }
+        &:nth-child(8) {
+          max-width: 13%;
+        }
+      }
+    }  
+  }
+  
+  &._live {
+    .main-table {
+      &__cell {
+        &:nth-child(5) {
+          max-width: 9%;
+         
+        }
+        &:nth-child(7) {
+          max-width: 9%;
+        }
+        &:nth-child(8) {
+          max-width: 13%;
+        }
+      }
+    } 
+  }
+
   .section-block {
     padding: 0;
     border: none;
@@ -16,15 +51,6 @@
   &__icon-input {
     width: 176px;
     margin-top: 10px;
-  }
-
-  .container {
-    max-width: 1920px;
-  }
-
-  &__table-container {
-    background-color: #ffffff;
-    padding: 0 105px 300px 105px;
   }
 
   .tab-menu {
@@ -86,55 +112,24 @@
     gap: 6px;
   }
 
-  ._min {
-    border: 0;
-    margin: 0;
-  }
-
-  &._out {
-    .main-table {
-      &__cell {
-        &:nth-child(5) {
-          max-width: 9%;
-          margin-right: 55px;
-        }
-        &:nth-child(7) {
-          max-width: 4%;
-          margin-right: 55px;
-        }
-        &:nth-child(8) {
-          max-width: 13%;
-        }
-      }
-    }  
-  }
-  
-  &._live {
-    .main-table {
-      &__cell {
-        &:nth-child(5) {
-          max-width: 9%;
-         
-        }
-        &:nth-child(7) {
-          max-width: 9%;
-        }
-        &:nth-child(8) {
-          max-width: 13%;
-        }
-      }
-    }
-     
-  }
-
   .main-table {
     margin-bottom: 20px;
     @media (max-width: 1500px) {
       overflow-x: auto;
     }
+    &__row {
+      padding: 8px 15px 7px 0;
+      height: 60px;
+      @media (max-width: 1500px) {
+        min-width: 1700px;
+      }
+      @media (max-width: 1024px) {
+        min-width: 1700px;
+      }
+    }
     &__title-row {
       height: 45px;
-      & .main-table__cell {
+      .main-table__cell {
         padding-right: 55px;
         a {
           font-weight: 700;
@@ -208,16 +203,6 @@
         padding-right: 15px;
       }
     }
-    &__row {
-      padding: 8px 15px 7px 0;
-      height: 60px;
-      @media (max-width: 1500px) {
-        min-width: 1700px;
-      }
-      @media (max-width: 1024px) {
-        min-width: 1700px;
-      }
-    }
     &__guests {
       display: flex;
       flex-direction: row;
@@ -254,9 +239,5 @@
         width: 107px;
       }
     }
-  }
-
-  #placement-title-row {
-    height: 45px;
   }
 }

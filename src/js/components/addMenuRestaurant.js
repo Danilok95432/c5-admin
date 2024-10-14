@@ -1,10 +1,10 @@
-const addMenuBtn = document.querySelector(".add-menu-btn")
-const deleteMenuBtn = document.querySelectorAll(".delete-menu-btn")
-const restaurantMenu = document.querySelector(".restaurant-menu-block")
+import { initFileUploading } from "./fileUpload"
 
+const addMenuBtn = document.querySelector(".add-menu-btn")
+const restaurantMenu = document.querySelector(".restaurant-menu-block")
 let blockCounter = 2
 
-if(addMenuBtn){
+if(restaurantMenu){
   addMenuBtn.addEventListener("click", () => {
     const newMenu = document.createElement('div')
     newMenu.className = 'restaurant-menu'
@@ -16,7 +16,7 @@ if(addMenuBtn){
                         <input
                           class="main-input manage-restaurant-input__menu"
                           type="text"
-                          value="Основное"
+                          value=""
                           name="title_menu[${blockCounter}]"
                           required
                         />
@@ -28,7 +28,7 @@ if(addMenuBtn){
                             <button
                               class="file-upload__delete-btn"
                               type="button"
-                              data-script="./data/test.txt" 
+                              data-script="http://localhost:3333/api/test" 
                               data-remove-id=""
                             >
                               <svg
@@ -54,7 +54,7 @@ if(addMenuBtn){
                               type="file"
                               class="file-upload__add main-input"
                               name="scan_menu[${blockCounter}]"
-                              data-script="./data/test.txt"
+                              data-script="http://localhost:3333/api/test"
                               accept="application/pdf"
                             />
                             Загрузить pdf-файл
@@ -68,7 +68,7 @@ if(addMenuBtn){
                             <button
                               class="file-upload__delete-btn"
                               type="button"
-                              data-script="./data/test.txt"
+                              data-script="http://localhost:3333/api/test"
                               data-remove-id=""
                             >
                               <svg
@@ -94,7 +94,7 @@ if(addMenuBtn){
                               type="file"
                               class="file-upload__add main-input"
                               name="scan_menu[${blockCounter}]"
-                              data-script="./data/test.txt"
+                              data-script="http://localhost:3333/api/test"
                               accept="image/png, image/jpeg, image/jpg"
                             />
                             Загрузить фото
@@ -111,10 +111,8 @@ if(addMenuBtn){
                 `
     blockCounter += 1
     restaurantMenu.append(newMenu)
+    initFileUploading()
   })
-}
-
-if(restaurantMenu){
   restaurantMenu.addEventListener("click", (e) => {
     if(e.target.className != 'delete-menu-btn') return
 
@@ -125,13 +123,18 @@ if(restaurantMenu){
   })
 }
 
+
 function updateMenu() {
   const menuHeaders = document.querySelectorAll(".menu-title")
   const menuInputName = document.querySelectorAll(".file-upload__add")
+  const titleMenuName = document.querySelectorAll(".manage-restaurant-input__menu")
   menuHeaders.forEach((header, index) => {
     header.textContent = `Меню ${index + 1}`
   })
   menuInputName.forEach((input, index) => {
-    input.name = `scan_menu[${(index + 1) / 2}]`
+    input.name = `scan_menu[${Math.floor((index + 1) / 2)}]`
+  })
+  titleMenuName.forEach((input, index) => {
+    input.name = `title_menu[${(index + 1)}]`
   })
 }

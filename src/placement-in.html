@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html"> 
   @include('partials/head.html', { 'title': 'Размещения' })
 
   <body class="page__body">
@@ -9,7 +9,7 @@
         <div class="container">
           <form class="placements-page__title-block" action="#">
             <h1>Размещения</h1>
-            <div class="icon-input">
+            <div class="icon-input placements-page__icon-input">
               <input
                 class="main-input date-mask"
                 placeholder="дд.мм.гггг"
@@ -49,10 +49,10 @@
           </ul>
         </div>
         <section class="section-block _no-border">
-          <div class="container booking-list-page__table-container placements-page__table-container">
+          <div class="container">
             <form class="filter-panel" action="#">
-              <div class="calendar-block">
-                <div class="input-column-wrapper date">
+              <div class="filter-panel__calendar-block">
+                <div class="input-column-wrapper filter-panel__date">
                   <label>Заезд, от</label>
                   <div class="icon-input">
                     <input
@@ -78,9 +78,9 @@
                   </div>
                 </div>
 
-                <div class="dash">—</div>
+                <div class="filter-panel__dash">—</div>
 
-                <div class="input-column-wrapper date">
+                <div class="input-column-wrapper filter-panel__date">
                   <label>Выезд, до</label>
                   <div class="icon-input">
                     <input
@@ -107,22 +107,22 @@
                 </div>
               </div>
 
-              <div class="input-column-wrapper room-type">
-                <label for="#">Категория номера</label>
+              <div class="input-column-wrapper filter-panel__room-type">
+                <label>Категория номера</label>
                 <select class="main-input" name="type">
                   <option value="1">Люкс</option>
                   <option value="2">Люкс</option>
                 </select>
               </div>
 
-              <div class="input-column-wrapper booking-source">
-                <label for="#">Канал бронирования</label>
+              <div class="input-column-wrapper filter-panel__booking-source">
+                <label>Канал бронирования</label>
                 <select class="main-input" name="source">
                   <option value="1">Источник бронирования</option>
                   <option value="2">Источник бронирования</option>
                 </select>
               </div>
-              <div class="input-column-wrapper icon-input search">
+              <div class="input-column-wrapper icon-input filter-panel__search">
                 <input
                   class="main-input"
                   type="search"
@@ -146,64 +146,64 @@
               </div>
               <button class="main-btn _blue-outlined" type="submit">Применить</button>
             </form>
-            <ul class="main-table tariff-list-table _min placements-table">
-              <li class="main-table__row main-table__title-row" id="placement-title-row">
-                <p class="main-table__cell" id="placement-table-cell">
+            <ul class="main-table _min placements-table">
+              <li class="main-table__row main-table__title-row">
+                <p class="main-table__cell">
                   <a href="#">Бронирование<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                   </a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                 <a href="#">Категория номера<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
                 </a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Номер <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Гости <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Действие</a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Заезд <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.23865L5 5L9 1.23865" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Комментарий</a>
                 </p>
-                <p class="main-table__cell" id="placement-table-cell">
+                <p class="main-table__cell">
                   <a href="#">Канал</a>
                 </p>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -212,42 +212,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <a href="#">Конфликтный. В тот...</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Ostrovok</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Полулюкс двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -256,8 +256,8 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn check-into-btn__active">
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn _active">
                     <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12.3168 0.460824C12.2835 0.366516 12.2253 0.289355 12.1588 0.220767C12.0922 0.152179 12.0091 0.0921648 11.9259 0.0578709C11.7513 -0.0192903 11.5433 -0.0192903 11.3687 0.0578709C11.2772 0.0921648 11.2024 0.152179 11.1358 0.220767L4.36618 7.191L1.24748 3.96737C0.973034 3.68445 0.490675 3.68445 0.21623 3.96737C0.0748488 4.11312 0 4.30174 0 4.49893C0 4.69612 0.0748488 4.88473 0.21623 5.03048L3.85055 8.77709C3.91709 8.84568 4.00025 8.90569 4.09173 8.93999C4.18322 8.97428 4.2747 9 4.36618 9C4.45766 9 4.55746 8.98285 4.64062 8.93999C4.73211 8.90569 4.80696 8.84568 4.87349 8.77709L12.1588 1.2753C12.2253 1.20672 12.2835 1.12098 12.3168 1.03525C12.3501 0.940938 12.375 0.84663 12.375 0.752322C12.375 0.658014 12.3584 0.555132 12.3168 0.469397V0.460824Z" fill="#006641"/>
                     </svg>                      
@@ -265,38 +265,38 @@
                   </button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">12:00</p>
                     <p class="_gray _left">ранний</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Стойка</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Люкс четырехместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -305,8 +305,8 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn check-into-btn__active">
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn _active">
                     <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12.3168 0.460824C12.2835 0.366516 12.2253 0.289355 12.1588 0.220767C12.0922 0.152179 12.0091 0.0921648 11.9259 0.0578709C11.7513 -0.0192903 11.5433 -0.0192903 11.3687 0.0578709C11.2772 0.0921648 11.2024 0.152179 11.1358 0.220767L4.36618 7.191L1.24748 3.96737C0.973034 3.68445 0.490675 3.68445 0.21623 3.96737C0.0748488 4.11312 0 4.30174 0 4.49893C0 4.69612 0.0748488 4.88473 0.21623 5.03048L3.85055 8.77709C3.91709 8.84568 4.00025 8.90569 4.09173 8.93999C4.18322 8.97428 4.2747 9 4.36618 9C4.45766 9 4.55746 8.98285 4.64062 8.93999C4.73211 8.90569 4.80696 8.84568 4.87349 8.77709L12.1588 1.2753C12.2253 1.20672 12.2835 1.12098 12.3168 1.03525C12.3501 0.940938 12.375 0.84663 12.375 0.752322C12.375 0.658014 12.3584 0.555132 12.3168 0.469397V0.460824Z" fill="#006641"/>
                     </svg>                      
@@ -314,38 +314,38 @@
                   </button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell" >
+                  <div class="main-table__time">
                     <p class="_left">09:00</p>
                     <p class="_gray _left">сверхранний</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <a href="#">Эстонцы!</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell" >
                   <p class="_gray">Ostrovok</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell" >
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell" >
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell" >
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -354,42 +354,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">18:00</p>
                     <p class="_gray _left">поздний</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <a href="#">Не говорит по-русски...</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Ostrovok</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -398,42 +398,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <a href="#">С собакой</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Броневик</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -442,42 +442,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <a href="#">Еда без лука!</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Ostrovok</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -486,42 +486,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Стойка</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -530,42 +530,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Сайт</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -574,42 +574,42 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Ostrovok</p>
                 </div>
               </li>
 
               <li class="main-table__row">
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <span>#</span>
                   <a href="#">2632309887</a>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>Стандарт двухместный</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p>233-СО-4</p>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="main-table-guests">
+                <div class="main-table__cell">
+                  <div class="main-table__guests">
                     <a href="#">Христорождественский Константин<br>
                       Феофилактович</a>
-                    <div class="table-count-guests">
+                    <div class="main-table__count-guests">
                       <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 12C7 12 6 12 6 11C6 10 7 7 11 7C15 7 16 10 16 11C16 12 15 12 15 12H7ZM11 6C11.7956 6 12.5587 5.68393 13.1213 5.12132C13.6839 4.55871 14 3.79565 14 3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.316071 11.7956 0 11 0C10.2044 0 9.44129 0.316071 8.87868 0.87868C8.31607 1.44129 8 2.20435 8 3C8 3.79565 8.31607 4.55871 8.87868 5.12132C9.44129 5.68393 10.2044 6 11 6ZM5.216 12C5.06776 11.6878 4.99382 11.3455 5 11C5 9.645 5.68 8.25 6.936 7.28C6.30909 7.08684 5.65595 6.99237 5 7C1 7 0 10 0 11C0 12 1 12 1 12H5.216ZM4.5 6C5.16304 6 5.79893 5.73661 6.26777 5.26777C6.73661 4.79893 7 4.16304 7 3.5C7 2.83696 6.73661 2.20107 6.26777 1.73223C5.79893 1.26339 5.16304 1 4.5 1C3.83696 1 3.20107 1.26339 2.73223 1.73223C2.26339 2.20107 2 2.83696 2 3.5C2 4.16304 2.26339 4.79893 2.73223 5.26777C3.20107 5.73661 3.83696 6 4.5 6Z" fill="#ADB9C7"/>
                       </svg>
@@ -618,19 +618,19 @@
                   </div>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <button class="check-into-btn">Заселить</button>
+                <div class="main-table__cell">
+                  <button class="main-table__into-btn">Заселить</button>
                 </div>
 
-                <div class="main-table__cell" id="placement-table-cell">
-                  <div class="check-in-time">
+                <div class="main-table__cell">
+                  <div class="main-table__time">
                     <p class="_left">14:00</p>
                     <p class="_gray _left">стандарт</p>
                   </div>
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                 </div>
-                <div class="main-table__cell" id="placement-table-cell">
+                <div class="main-table__cell">
                   <p class="_gray">Сайт</p>
                 </div>
               </li>

@@ -1,5 +1,4 @@
 .placements-page {
-
   &._out {
     .main-table {
       &__cell {
@@ -36,12 +35,13 @@
   }
 
   .section-block {
-    padding: 0;
+    padding: 0 0 250px 0;
     border: none;
+    border-radius: 0;
+    margin-bottom: 0;
   }
 
   &__title-block {
-    padding-left: 105px;
     display: flex;
     align-items: center;
     gap: 22px;
@@ -51,10 +51,6 @@
   &__icon-input {
     width: 176px;
     margin-top: 10px;
-  }
-
-  .tab-menu {
-    padding-left: 95px;
   }
 
   .filter-panel {
@@ -161,9 +157,6 @@
         &._right {
           text-align: right;
         }
-      }
-      &:nth-child(1) {
-        padding-left: 16px;
       }
       &:nth-child(1) {
         max-width: 12%;

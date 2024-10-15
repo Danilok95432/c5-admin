@@ -55,7 +55,7 @@ export const initFileUploading = () => {
 
         reader.readAsDataURL(fileItem)
 
-        reader.addEventListener('load', async (e) => {
+        reader.addEventListener('load', async () => {
           if (fileScript && fileItem) {
             const formData = new FormData()
             formData.append('file', fileItem)

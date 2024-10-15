@@ -20,7 +20,7 @@ if(restaurantPage){
                           class="main-input manage-restaurant-input__menu"
                           type="text"
                           value=""
-                          name="title_menu[${blockCounter}]"
+                          name="${menuTitle}[${blockCounter}]"
                           required
                         />
                       </div>
@@ -56,7 +56,7 @@ if(restaurantPage){
                             <input
                               type="file"
                               class="file-upload__add file-upload__add-scan main-input"
-                              name="scan_menu[${blockCounter}]"
+                              name="${menuScan}[${blockCounter}]"
                               data-script="http://localhost:3333/api/test"
                               accept="application/pdf"
                             />
@@ -96,7 +96,7 @@ if(restaurantPage){
                             <input
                               type="file"
                               class="file-upload__add file-upload__add-photo main-input"
-                              name="photo_menu[${blockCounter}]"
+                              name="${menuPhoto}[${blockCounter}]"
                               data-script="http://localhost:3333/api/test"
                               accept="image/png, image/jpeg, image/jpg"
                             />

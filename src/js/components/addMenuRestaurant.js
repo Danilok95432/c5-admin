@@ -3,6 +3,7 @@ import { initFileUploading } from "./fileUpload"
 const restaurantPage = document.querySelector('.restaurant-page')
 
 let blockCounter = 2
+const [menuScan, menuPhoto, menuTitle] = getFirstName()
 
 if(restaurantPage){
   const addMenuBtn = restaurantPage.querySelector('.add-menu-btn')
@@ -127,21 +128,24 @@ if(restaurantPage){
 
 
 function updateMenu() {
-  const menuHeaders = document.querySelectorAll(".menu-title")
-  const menuScanInputName = document.querySelectorAll(".file-upload__add-scan")
-  const menuPhotoInputName = document.querySelectorAll(".file-upload__add-photo")
-  const titleMenuName = document.querySelectorAll(".manage-restaurant-input__menu")
-  menuHeaders.forEach((header, index) => {
-    header.textContent = `Меню ${index + 1}`
+  const restaurantMenu = document.querySelectorAll(".restaurant-menu")
+  restaurantMenu.forEach((menu, index) => {
+    const menuHeaders = menu.querySelector(".menu-title")
+    const menuScanInputName = menu.querySelector(".file-upload__add-scan")
+    const menuPhotoInputName = menu.querySelector(".file-upload__add-photo")
+    const titleMenuName = menu.querySelector(".manage-restaurant-input__menu")
+    menuHeaders.textContent = `Меню ${index + 1}`
+    menuScanInputName.name = `${menuScan}[${(index + 1)}]`
+    menuPhotoInputName.name = `${menuPhoto}[${(index + 1)}]`
+    titleMenuName.name = `${menuTitle}[${(index + 1)}]`
   })
-  menuScanInputName.forEach((input, index) => {
-    console.log(input.name)
-    input.name = `scan_menu[${(index + 1)}]`
-  })
-  menuPhotoInputName.forEach((input, index) => {
-    input.name = `photo_menu[${(index + 1)}]`
-  })
-  titleMenuName.forEach((input, index) => {
-    input.name = `title_menu[${(index + 1)}]`
-  })
+}
+
+function getFirstName() {
+  const restaurantMenu = document.querySelectorAll(".restaurant-menu")
+  const menuScanInputName = restaurantMenu[0].querySelector(".file-upload__add-scan").name.split('[') 
+  const menuPhotoInputName = restaurantMenu[0].querySelector(".file-upload__add-photo").name.split('[') 
+  const titleMenuName = restaurantMenu[0].querySelector(".manage-restaurant-input__menu").name.split('[') 
+
+  return [menuScanInputName[0], menuPhotoInputName[0], titleMenuName[0]]
 }

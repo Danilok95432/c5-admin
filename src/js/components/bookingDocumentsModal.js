@@ -16,28 +16,26 @@ if (bookingDocumentModal) {
   const uploadDocumentTmpl =
     bookingDocumentModal.querySelector('#upload-document')?.content
 
-  createBtn.addEventListener('click', () => {
+  const switchTemplate = (button, template) => {
     formContainer.innerHTML = ''
-    createBtn.classList.add('_active')
-    uploadBtn.classList.remove('_active')
-    formContainer.append(createDocumentTmpl.cloneNode(true))
+    createBtn.classList.toggle('_active', button === createBtn)
+    uploadBtn.classList.toggle('_active', button === uploadBtn)
+    formContainer.append(template.cloneNode(true))
     initAllDates()
     initAllMasks()
     initFileUploading()
     updateSelect()
+  }
+
+  createBtn.addEventListener('click', () => {
+    switchTemplate(createBtn, createDocumentTmpl)
   })
 
   uploadBtn.addEventListener('click', () => {
-    formContainer.innerHTML = ''
-    createBtn.classList.remove('_active')
-    uploadBtn.classList.add('_active')
-    formContainer.append(uploadDocumentTmpl.cloneNode(true))
-    initAllDates()
-    initAllMasks()
-    initFileUploading()
+    switchTemplate(uploadBtn, uploadDocumentTmpl)
   })
 
-  function updateSelect() {
+  const updateSelect = () => {
     const selectDocument = bookingDocumentModal.querySelector(
       '.type-document-select',
     )

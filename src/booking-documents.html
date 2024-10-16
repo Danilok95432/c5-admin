@@ -4,6 +4,7 @@
 
   <body class="page__body">
     <div class="site-container">
+      <div class="modal-overlay"></div>
       <header>@include('partials/auth-panel.html')</header>
       <main class="main booking-documents-page">
         <div class="container">
@@ -187,7 +188,7 @@
               </li>
             </ul>
             <div class="booking-documents-page__bottom">
-              <a class="main-btn" href="#">
+              <button class="main-btn" href="#" data-open-modal="booking-document-modal">
                 <svg
                   width="18"
                   height="18"
@@ -201,7 +202,7 @@
                   />
                 </svg>
                 Добавить документ
-              </a>
+              </button>
               <a class="main-btn _blue-outlined" href="#">
                 Выдать отчетные документы
               </a>
@@ -209,6 +210,7 @@
           </section>
         </div>
         @include('partials/info-modal.html')
+        @include('partials/booking-document-modal.html')
       </main>
     </div>
   </body>

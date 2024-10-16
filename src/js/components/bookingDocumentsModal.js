@@ -19,7 +19,7 @@ if(bookingDocumentModal) {
     formContainer.innerHTML = '';
     createBtn.classList.add('_active')
     uploadBtn.classList.remove('_active')
-    formContainer.appendChild(createDocumentTmpl.cloneNode(true));
+    formContainer.append(createDocumentTmpl.cloneNode(true));
     initAllDates()
     initAllMasks()
     initFileUploading()
@@ -31,7 +31,7 @@ if(bookingDocumentModal) {
     formContainer.innerHTML = '';
     createBtn.classList.remove('_active')
     uploadBtn.classList.add('_active')
-    formContainer.appendChild(uploadDocumentTmpl.cloneNode(true));
+    formContainer.append(uploadDocumentTmpl.cloneNode(true));
     initAllDates()
     initAllMasks()
     initFileUploading()

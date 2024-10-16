@@ -42,33 +42,36 @@ if (bookingDocumentModal) {
     const numberDocument = bookingDocumentModal.querySelector(
       '.number-document-mask',
     )
-    selectDocument.addEventListener('change', () => {
-      switch (selectDocument.value) {
-        case '0': {
-          numberDocument.className = 'main-input number-document-mask _contract'
-          numberDocument.setAttribute('value', 'ДОГ-######')
-          break
+    if (selectDocument) {
+      selectDocument.addEventListener('change', () => {
+        switch (selectDocument.value) {
+          case '0': {
+            numberDocument.className =
+              'main-input number-document-mask _contract'
+            numberDocument.setAttribute('value', 'ДОГ-######')
+            break
+          }
+          case '1': {
+            numberDocument.className = 'main-input number-document-mask _act'
+            numberDocument.setAttribute('value', 'АКТ-######')
+            break
+          }
+          case '2': {
+            numberDocument.className = 'main-input number-document-mask _bill'
+            numberDocument.setAttribute('value', 'СЧТ-######')
+            break
+          }
+          case '3': {
+            numberDocument.className = 'main-input number-document-mask _live'
+            numberDocument.setAttribute('value', 'СПР-######')
+            break
+          }
+          default:
+            break
         }
-        case '1': {
-          numberDocument.className = 'main-input number-document-mask _act'
-          numberDocument.setAttribute('value', 'АКТ-######')
-          break
-        }
-        case '2': {
-          numberDocument.className = 'main-input number-document-mask _bill'
-          numberDocument.setAttribute('value', 'СЧТ-######')
-          break
-        }
-        case '3': {
-          numberDocument.className = 'main-input number-document-mask _live'
-          numberDocument.setAttribute('value', 'СПР-######')
-          break
-        }
-        default:
-          break
-      }
-      initAllMasks()
-    })
+        initAllMasks()
+      })
+    }
   }
   updateSelect()
 }

@@ -113,7 +113,7 @@ export const initAllMasks = () => {
         Inputmask({
           mask: 'ДОГ-9{6,}',
           placeholder: 'ДОГ-######',
-          groupSeparator: 'ДОГ -',
+          groupSeparator: 'ДОГ-',
           showMaskOnHover: false,
           showMaskOnFocus: false,
           shortcuts: null,
@@ -133,7 +133,7 @@ export const initAllMasks = () => {
         Inputmask({
           mask: 'СЧТ-9{6,}',
           placeholder: 'СЧТ-######',
-          groupSeparator: 'СЧТ -',
+          groupSeparator: 'СЧТ-',
           showMaskOnHover: false,
           showMaskOnFocus: false,
           shortcuts: null,
@@ -143,7 +143,7 @@ export const initAllMasks = () => {
         Inputmask({
           mask: 'СПР-9{6,}',
           placeholder: 'СПР-######',
-          groupSeparator: 'СПР -',
+          groupSeparator: 'СПР-',
           showMaskOnHover: false,
           showMaskOnFocus: false,
           shortcuts: null,

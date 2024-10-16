@@ -19,7 +19,9 @@
     </svg>
   </button>
   <div class="add-document-modal-switch">
-    <button class="switch-btn create-document-btn _active">Создать документ</button>
+    <button class="switch-btn create-document-btn _active">
+      Создать документ
+    </button>
     <button class="switch-btn upload-document-btn">Загрузить документ</button>
   </div>
   <div class="form-container-template">
@@ -34,7 +36,7 @@
           required
         />
       </div>
-      
+
       <div class="input-column-wrapper">
         <label>Тип документа</label>
         <select class="main-input type-document-select" name="type_document">
@@ -46,9 +48,14 @@
       </div>
       <div class="input-column-wrapper short">
         <label>Номер документа</label>
-        <input class="main-input number-document-mask _contract" type="text" name="number_document" value="ДОГ -######" />
+        <input
+          class="main-input number-document-mask _contract"
+          type="text"
+          name="number_document"
+          value="ДОГ-######"
+          maxlength="10"
+        />
       </div>
-      
 
       <div class="input-column-wrapper short _last">
         <label>Дата создания документа</label>
@@ -58,7 +65,7 @@
             class="main-input date-mask date-document"
             placeholder="дд.мм.гггг"
             type="text"
-            data-date-start=""
+            data-date-start="now"
             autocomplete="off"
             name="start_date"
           />
@@ -77,9 +84,7 @@
         </div>
       </div>
 
-      <button class="main-btn" type="submit">
-        Создать документ
-      </button>
+      <button class="main-btn" type="submit">Создать документ</button>
     </form>
   </div>
   <template id="create-document">
@@ -105,18 +110,24 @@
       </div>
       <div class="input-column-wrapper short">
         <label>Номер документа</label>
-        <input class="main-input number-document-mask _contract" type="text" name="number_document" value="ДОГ -######" />
+        <input
+          class="main-input number-document-mask _contract"
+          type="text"
+          name="number_document"
+          value="ДОГ-######"
+          maxlength="10"
+        />
       </div>
-  
+
       <div class="input-column-wrapper short _last">
         <label>Дата создания документа</label>
-  
+
         <div class="icon-input">
           <input
             class="main-input date-mask date-document"
             placeholder="дд.мм.гггг"
             type="text"
-            data-date-start=""
+            data-date-start="now"
             autocomplete="off"
             name="start_date"
           />
@@ -134,13 +145,11 @@
           </svg>
         </div>
       </div>
-  
-      <button class="main-btn" type="submit">
-        Создать документ
-      </button>
+
+      <button class="main-btn" type="submit">Создать документ</button>
     </form>
   </template>
-  
+
   <template id="upload-document">
     <form class="upload-document-modal-form" action="#">
       <div class="input-column-wrapper">
@@ -153,16 +162,16 @@
           required
         />
       </div>
-  
+
       <div class="input-column-wrapper short">
         <label>Дата создания документа</label>
-  
+
         <div class="icon-input">
           <input
             class="main-input date-mask date-document"
             placeholder="дд.мм.гггг"
             type="text"
-            data-date-start=""
+            data-date-start="now"
             autocomplete="off"
             name="start_date"
           />
@@ -180,16 +189,11 @@
           </svg>
         </div>
       </div>
-  
-      <div class="input-column-wrapper changeable-input">
+
+      <div class="input-column-wrapper">
         <div class="file-upload">
           <div class="file-upload__info">
-            <button
-              class="file-upload__delete-btn"
-              type="button"
-              data-script="http://localhost:3333/api/test"
-              data-remove-id=""
-            >
+            <button class="file-upload__delete-btn" type="button">
               <svg
                 width="15"
                 height="15"
@@ -213,18 +217,15 @@
             <input
               type="file"
               class="file-upload__add file-upload__add-scan main-input"
-              name="scan_menu[1]"
-              data-script="http://localhost:3333/api/test"
+              name="scan_document"
               accept="application/pdf, application/msword"
             />
             Загрузить скан
           </label>
         </div>
       </div>
-  
-      <button class="main-btn" type="submit">
-        Загрузить документ
-      </button>
+
+      <button class="main-btn" type="submit">Загрузить документ</button>
     </form>
   </template>
 </div>

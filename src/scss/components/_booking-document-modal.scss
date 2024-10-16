@@ -1,0 +1,128 @@
+.booking-document-modal, .upload-document-modal {
+  background: #ffffff;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 18px 20px 30px;
+  box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
+  width: 490px;
+  gap: 18px;
+  @media (max-width: 540px) {
+    width: 90vw;
+  }
+
+  .short {
+    width: 173px;
+    input {
+      width: 173px;
+      margin-right: 5px;
+    }
+  }
+
+  .input-column-wrapper {
+    margin: 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .modal-close-btn {
+    top: 19px;
+    right: 20px;
+  }
+
+  .add-document-modal-switch {
+    display: flex;
+    flex-direction: row;
+    .switch-btn {
+      font-size: 15px;
+      height: 40px;
+      width: 223px;
+      background: #ffffff;
+      color: #000;
+      border: 1px solid #6DB4F5;
+      border-radius: 5px 0px 0px 5px;
+      &:last-child {
+        border-radius: 0px 5px 5px 0px;
+      }
+      &._active {
+        background: #064AB1;
+        color: #ffffff;
+        border: none;
+      }
+    }
+  }
+
+  .add-document-modal-form, .upload-document-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 5px;
+    .input-column-wrapper {
+      &._last {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .main-btn {
+    width: max-content;
+    padding: 10px 15px;
+  }
+
+  #file-upload-scan {
+    display: block;
+    padding: 2px 18px;
+  }
+  
+  .file-upload {
+    height: 41.5px;
+    margin-bottom: 5px;
+    .main-btn {
+      height: 35px;
+    }
+    &__name {
+      padding-left: 35px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 30px;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='30' viewBox='0 0 23 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.9969 28C22.9969 29.1046 22.1014 30 20.9969 30H2C0.89543 30 0 29.1046 0 28V2C0 0.89543 0.89543 0 2 0H14.5594L22.9969 8.4375V28Z' fill='%233090F6'/%3E%3Cpath d='M23 8.4375H15.5625C15.0102 8.4375 14.5625 7.98979 14.5625 7.4375V0L23 8.4375Z' fill='%234FB6E9'/%3E%3Cpath d='M14.5625 8.4375H23V16.875L14.5625 8.4375Z' fill='%23064AB1'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &__delete-btn {
+        top: 14px;
+    }
+    &._loaded {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .file-upload__info {
+        height: 41.5px;
+        a {
+          max-width: 185px;
+          height: 41.5px;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #064ab1;
+        }
+      }
+    }
+  }
+}

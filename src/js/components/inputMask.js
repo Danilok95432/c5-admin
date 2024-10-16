@@ -103,6 +103,54 @@ export const initAllMasks = () => {
       }).mask(el)
     })
   }
+
+  //маска для номера договора
+
+  const documentNumberMasks = document.querySelectorAll('.number-document-mask')
+  if (documentNumberMasks) {
+    documentNumberMasks.forEach((el) => {
+      if(el.classList.contains('_contract')){
+        Inputmask({
+          mask: 'ДОГ-9{6,}',
+          placeholder: 'ДОГ-######',
+          groupSeparator: 'ДОГ -',
+          showMaskOnHover: false,
+          showMaskOnFocus: false,
+          shortcuts: null,
+        }).mask(el)
+      }
+      if(el.classList.contains('_act')){
+        Inputmask({
+          mask: 'АКТ-9{6,}',
+          placeholder: 'АКТ-######',
+          groupSeparator: 'АКТ -',
+          showMaskOnHover: false,
+          showMaskOnFocus: false,
+          shortcuts: null,
+        }).mask(el)
+      }
+      if(el.classList.contains('_bill')){
+        Inputmask({
+          mask: 'СЧТ-9{6,}',
+          placeholder: 'СЧТ-######',
+          groupSeparator: 'СЧТ -',
+          showMaskOnHover: false,
+          showMaskOnFocus: false,
+          shortcuts: null,
+        }).mask(el)
+      }
+      if(el.classList.contains('_live')){
+        Inputmask({
+          mask: 'СПР-9{6,}',
+          placeholder: 'СПР-######',
+          groupSeparator: 'СПР -',
+          showMaskOnHover: false,
+          showMaskOnFocus: false,
+          shortcuts: null,
+        }).mask(el)
+      }
+    })
+  }
 }
 
 initAllMasks()

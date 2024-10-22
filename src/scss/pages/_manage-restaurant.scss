@@ -93,6 +93,14 @@
     @media (max-width: 450px) {
       flex-direction: column;
     }
+    @media (max-width: 760px) {
+      flex-wrap: wrap;
+    }
+    .breakfast-time {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
   }
 
   .restaurant-breakfast-input {

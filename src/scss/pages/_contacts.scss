@@ -2,22 +2,21 @@
   padding-bottom: 150px;
   &__disclaimer {
     display: flex;
-    flex-direction: row;
     gap: 9px;
     padding: 18px 15px;
     align-items: center;
-    max-width: 522px;
+    max-width: 523px;
     height: 48px;
     border-radius: 10px;
     background: #E8F1F8;
     margin-bottom: 20px;
     span {
-      font-size: 14.8px;
+      font-size: 15px;
       font-weight: 500;
       color: #546170;
     }
     &._short {
-      max-width: 397px;
+      max-width: 399px;
       padding: 18px 6px 18px 15px;
     }
     @media (max-width: 425px) {

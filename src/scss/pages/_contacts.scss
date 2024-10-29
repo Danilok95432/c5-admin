@@ -30,7 +30,6 @@
   }
   .input-column-wrapper {
     display: flex;
-    flex-direction: row;
     gap: 30px;
     max-width: 1173px;
     &:not(:last-child) {
@@ -42,7 +41,6 @@
     }
     label {
       display: flex;
-      flex-direction: row;
       font-size: 15px;
       font-weight: 400;
       color: #000000;

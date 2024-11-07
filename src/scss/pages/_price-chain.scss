@@ -1,3 +1,9 @@
+body:has(.price-chain-page) {
+  .air-datepicker-cell.-day-.-selected- {
+    pointer-events: none;
+  }
+}
+
 .price-chain-page {
   background-color: #ffffff;
 
@@ -12,17 +18,15 @@
   &__controllers {
     padding-top: 27px;
     padding-bottom: 30px;
-    background-color: #E8F1F8;
-    border-bottom: 1px solid #C3D5F5;
+    background-color: #e8f1f8;
+    border-bottom: 1px solid #c3d5f5;
 
     h2 {
       font-size: 25px;
       @include opensans-bold;
       margin-bottom: 23px;
-      color: #064AB1;
+      color: #064ab1;
     }
-
-
   }
 
   &__controllers-row {
@@ -31,6 +35,7 @@
     @media (max-width: 550px) {
       flex-wrap: wrap;
     }
+
     .main-input {
       max-width: 350px;
     }
@@ -45,7 +50,7 @@
     justify-content: center;
     background: #ffffff;
     border-radius: 3px;
-    border: 1px solid #6DB4F5;
+    border: 1px solid #6db4f5;
     margin-left: auto;
     @media (max-width: 550px) {
       margin-left: 0;
@@ -59,7 +64,6 @@
   }
 
   .room-booking-calendar {
-
     .trigger-row {
       td {
         &:first-child {
@@ -73,12 +77,13 @@
       }
     }
 
-    .child-row  {
+    .child-row {
       td {
         font-size: 11px;
         line-height: 1.2;
-        color: #064AB1;
+        color: #064ab1;
         @include opensans-medium;
+
         &:first-child {
           padding-left: 35px;
           color: #000000;
@@ -87,6 +92,5 @@
         }
       }
     }
-
   }
 }

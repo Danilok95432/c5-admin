@@ -42,7 +42,7 @@ const setInfoModalsHandlers = () => {
     infoCells.forEach((cellBtn) => {
       const dataObj = JSON.parse(cellBtn.dataset.json)
 
-      cellBtn?.addEventListener('click', (e) => {
+      cellBtn?.addEventListener('click', () => {
         trackModal.classList.add('_active')
         modalOverlay.classList.add('_active')
         idField.textContent = dataObj?.id
@@ -219,7 +219,7 @@ const getCellsContent = async (dateInfo) => {
 }
 
 if (roomDateController) {
-  const calendarInput = roomDateController.querySelector('.date-mask')
+  const calendarInput = roomDateController.querySelector('.main-input')
   const datePreview = roomDateController.querySelector(
     '.room-date-controller__date-preview',
   )
@@ -236,7 +236,7 @@ if (roomDateController) {
   })
 
   const customRoomCalendar = new AirDatepicker(calendarInput, {
-    onSelect: ({ date, formattedDate }) => {
+    onSelect: ({ date }) => {
       datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
 
       renderDateRow(customRoomCalendar.getViewDates('days'))
@@ -249,14 +249,8 @@ if (roomDateController) {
     'MMMM yyyy',
   )
 
-  calendarInput.addEventListener('click', (e) => {
-    const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
-    if (featuredDate) {
-      customRoomCalendar.selectDate(featuredDate)
-      customRoomCalendar.setViewDate(featuredDate)
-    }
-  })
-
+  calendarInput.addEventListener('paste', (e) => e.preventDefault())
+  calendarInput.addEventListener('keydown', (e) => e.preventDefault())
   //отрисовка таблицы с датами бронирования
 
   const setDateTypeClass = (checkedDate) => {
@@ -269,11 +263,8 @@ if (roomDateController) {
       checkedDate,
       'dd.MM.yyyy',
     )
-    const nowMonthFormatted = customRoomCalendar.formatDate(nowDate, 'MM')
-    const checkedMonthFormatted = customRoomCalendar.formatDate(
-      checkedDate,
-      'MM',
-    )
+    customRoomCalendar.formatDate(nowDate, 'MM')
+    customRoomCalendar.formatDate(checkedDate, 'MM')
     if (nowDateFormatted === checkedDateFormatted) {
       return '_active-day'
     }

@@ -32,7 +32,9 @@
     min-height: 370px;
     padding: 28px 0;
     transition: all 0.2s linear;
-
+    @media (max-width: 1363px) {
+      padding: 0;
+    }
     &._active {
       top: calc(100% + 1px);
       opacity: 1;
@@ -71,6 +73,11 @@
       @media (max-width: 1280px) {
         padding: 0 15px;
       }
+      .auto-submit-form {
+        @media (max-width: 1363px) {
+          padding: 28px 0;
+        }
+      }
     }
 
     &__lists {
@@ -80,6 +87,10 @@
       gap: 80px;
       @media (max-width: 1550px) {
         gap: 40px 50px;
+      }
+      @media (max-width: 1363px) {
+        border-right: 1px solid #C3D5F5;
+        padding: 28px 0;
       }
     }
 

@@ -92,6 +92,11 @@
         border-right: 1px solid #C3D5F5;
         padding: 28px 0;
       }
+      .special-list {
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+      }
     }
 
     &__list {

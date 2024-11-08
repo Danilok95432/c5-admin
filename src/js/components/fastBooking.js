@@ -207,7 +207,7 @@ if (fastBookingModal) {
         ({ roomName, roomValue }) =>
           `<option value="${roomValue}">${roomName}</option>`,
       )
-      .join()
+      .join('')
 
     const roomHtml = `
             <div class="input-column-wrapper">

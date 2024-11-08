@@ -7,6 +7,13 @@ export const initFileUploading = () => {
     if (e.target.classList.contains('file-upload__delete-btn')) {
       const currentFileWrapper = e.target.closest('.file-upload')
       const currentInput = currentFileWrapper.querySelector('.file-upload__add')
+      const idInfoInput = currentFileWrapper?.querySelector(
+        '.file-upload__input-id',
+      )
+
+      if (idInfoInput) {
+        idInfoInput.value = '0'
+      }
 
       if (e.target.dataset.script) {
         const removeId = e.target.dataset.removeId

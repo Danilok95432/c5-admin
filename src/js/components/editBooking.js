@@ -354,7 +354,7 @@ if (editBookingPage) {
         ({ roomName, roomValue }) =>
           `<option value="${roomValue}">${roomName}</option>`,
       )
-      .join()
+      .join('')
 
     const roomsCount =
       editBookingPage.querySelector('.rooms-list').children.length

@@ -92,13 +92,14 @@
         border-right: 1px solid #C3D5F5;
         padding: 28px 0;
       }
-      .special-list {
-        display: flex;
-        flex-direction: row;
-        gap: 80px;
-        @media (max-width: 1550px) {
-          gap: 40px 50px;
-        }
+    }
+
+    &__double-list {
+      display: flex;
+      flex-direction: row;
+      gap: 80px;
+      @media (max-width: 1550px) {
+        gap: 40px 50px;
       }
     }
 

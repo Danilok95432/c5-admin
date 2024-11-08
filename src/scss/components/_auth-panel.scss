@@ -95,7 +95,10 @@
       .special-list {
         display: flex;
         flex-direction: row;
-        gap: 60px;
+        gap: 80px;
+        @media (max-width: 1550px) {
+          gap: 40px 50px;
+        }
       }
     }
 

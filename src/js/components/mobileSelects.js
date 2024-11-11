@@ -1,3 +1,5 @@
+import { body } from '../_vars'
+
 const mobileSelects = document.querySelectorAll('.mobile-select')
 
 if (mobileSelects?.length) {
@@ -7,6 +9,7 @@ if (mobileSelects?.length) {
     const currentId = openedMenu.dataset.id
     if (e.target.classList.contains('opened-select-menu__close-btn')) {
       openedMenu.classList.remove('_active')
+      body.classList.remove('_lock')
     }
     if (e.target.dataset.value) {
       const currentSelect = document.querySelector(
@@ -14,6 +17,7 @@ if (mobileSelects?.length) {
       )
       currentSelect.value = e.target.dataset.value
       openedMenu.classList.remove('_active')
+      body.classList.remove('_lock')
       if (currentSelect.closest('.auto-submit-form')) {
         const parentForm = currentSelect.closest('.auto-submit-form')
         parentForm.submit()
@@ -53,6 +57,7 @@ if (mobileSelects?.length) {
         value: option.value,
         selected: option.selected,
       }))
+      body.classList.add('_lock')
       renderMobileSelect(selectArr, selectLabelText, openedMenu, selectId)
     })
     currentSelect.addEventListener('mousedown', (e) => e.preventDefault())

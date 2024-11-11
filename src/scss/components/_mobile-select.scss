@@ -35,6 +35,7 @@
   z-index: 9999;
   display: none;
   padding: 65px 20px;
+  overflow-y: auto;
 
   &._active {
     display: block;

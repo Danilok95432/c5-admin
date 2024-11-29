@@ -1,11 +1,9 @@
 import { sendData, showInfoModal } from '../_functions'
 
-const dashboardPage = document.querySelector('.dashboard-page')
+const guestActionBtns = document.querySelectorAll('button.guest-action')
 
-if (dashboardPage) {
-  const checkBtns = dashboardPage.querySelectorAll('button[data-submit]')
-
-  checkBtns.forEach((btnEl) => {
+if (guestActionBtns?.length) {
+  guestActionBtns.forEach((btnEl) => {
     const submitScript = btnEl.dataset.submit
     const submitId = btnEl.dataset.id
     btnEl.addEventListener('click', async (e) => {

@@ -109,43 +109,6 @@ body:has(.dashboard-page) {
       .card {
         min-height: 260px;
 
-        .guest-action {
-          margin-top: 2px;
-          margin-bottom: auto;
-          padding: 10px 14px;
-          @include opensans-regular;
-          font-size: 15px;
-          border-radius: 5px;
-          color: #064ab1;
-          border: 1px solid #064ab1;
-
-          &._success {
-            background: #cff4c9;
-            border-color: #cff4c9;
-            font-weight: 600;
-            color: #006b2b;
-            position: relative;
-            text-align: right;
-            justify-content: flex-end;
-            display: flex;
-            align-items: center;
-            padding-left: 28px;
-
-            &::before {
-              content: "";
-              position: absolute;
-              width: 15px;
-              height: 12px;
-              left: 7px;
-              top: 50%;
-              z-index: 5;
-              transform: translateY(-50%);
-              background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0538 0.563229C15.0132 0.447964 14.942 0.353656 14.8607 0.269826C14.7794 0.185997 14.6778 0.112646 14.5761 0.0707311C14.3627 -0.023577 14.1085 -0.023577 13.8951 0.0707311C13.7833 0.112646 13.6918 0.185997 13.6105 0.269826L5.33644 8.789L1.5247 4.84901C1.18926 4.50321 0.599714 4.50321 0.264281 4.84901C0.0914818 5.02715 0 5.25768 0 5.49869C0 5.7397 0.0914818 5.97023 0.264281 6.14837L4.70623 10.7276C4.78755 10.8114 4.8892 10.8847 5.00101 10.9266C5.11282 10.9686 5.22463 11 5.33644 11C5.44825 11 5.57023 10.979 5.67188 10.9266C5.78369 10.8847 5.87517 10.8114 5.95649 10.7276L14.8607 1.5587C14.942 1.47487 15.0132 1.37009 15.0538 1.2653C15.0945 1.15004 15.125 1.03477 15.125 0.919505C15.125 0.804239 15.1047 0.678495 15.0538 0.573708V0.563229Z' fill='%23006B2B'/%3E%3C/svg%3E%0A");
-              background-repeat: no-repeat;
-            }
-          }
-        }
-
         &__title {
           padding: 11px 14px 7px;
           border-bottom: 1px solid #d0d5df;

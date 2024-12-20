@@ -67,6 +67,18 @@ if (fastBookingModal) {
     return inputValue ? new Date(inputValue) : new Date()
   }
 
+  const setEndDate = (input) => {
+    const inputValue = input.value
+
+    if (inputValue) {
+      return new Date(inputValue)
+    } else {
+      const tomorrow = new Date()
+      tomorrow.setDate(tomorrow.getDate() + 1)
+      return tomorrow
+    }
+  }
+
   const setNightCounter = (checkInDate, checkOutDate) => {
     if (checkInDate && checkOutDate) {
       const diffInMs = checkOutDate - checkInDate
@@ -79,7 +91,7 @@ if (fastBookingModal) {
   const checkoutInput = fastBookingModal.querySelector('.check-out-input')
   const checkoutDatepicker = new AirDatepicker(checkoutInput, {
     container: '.date-fast-booking-container',
-    selectedDates: [setStartDate(checkoutInput)],
+    selectedDates: [setEndDate(checkoutInput)],
     minDate: new Date(),
     onSelect: ({ date }) => {
       setNightCounter(checkinDatepicker.selectedDates[0], date)

@@ -1,5 +1,15 @@
 .edit-booking-page {
   padding-bottom: 160px;
+  .input-column-wrapper {
+    label {
+      display: flex;
+      flex-direction: row;
+
+      & .label-star {
+        color: #ff6716;
+      }
+    }
+  }
   &._edit {
     .rooms-cost-section__discount-row {
       ._disabled {

@@ -11,33 +11,7 @@
             >Возврат к списку бронирований</a
           >
           <div class="title-controllers-block">
-            <h1>
-              Бронирование <span>#00002223</span>
-              <a href="edit-booking.html">
-                <svg
-                  width="19"
-                  height="18"
-                  viewBox="0 0 19 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g opacity="0.5">
-                    <path
-                      d="M12.3416 2.88933L4.62638 10.6203L8.14617 14.1329L15.8614 6.40195L12.3416 2.88933Z"
-                      fill="#064AB1"
-                    />
-                    <path
-                      d="M6.74826 15.5342L7.37608 14.9051L3.85626 11.3925L3.22844 12.0216L0.845007 16.9951C0.558908 17.5917 1.18365 18.2151 1.77966 17.9278L6.74826 15.5342Z"
-                      fill="#064AB1"
-                    />
-                    <path
-                      d="M18.5688 3.69591L15.8689 6.40124L12.3492 2.88862L15.049 0.183285C15.2923 -0.0605502 15.6882 -0.0613384 15.9324 0.182385L18.5683 2.81291C18.8121 3.05625 18.8125 3.45169 18.5688 3.69591Z"
-                      fill="#064AB1"
-                    />
-                  </g>
-                </svg>
-              </a>
-            </h1>
+            <h1>Бронирование <span>#00002223</span></h1>
             <div
               class="title-controllers-block__controllers booking-script-control"
             >
@@ -91,6 +65,34 @@
             </li>
           </ul>
           <section class="section-block _no-border">
+            <div class="edit-booking-link">
+              <a
+                class="main-btn _blue-outlined _edit-booking"
+                href="edit-booking.html"
+              >
+                <svg
+                  width="17"
+                  height="13"
+                  viewBox="0 0 17 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.6553 1.96492L4.15247 7.30287L6.58275 10.7188L14.0856 5.38085L11.6553 1.96492Z"
+                    fill="#064AB1"
+                  />
+                  <path
+                    d="M5.22324 11.6864L5.83378 11.2521L3.40347 7.83611L2.79293 8.27048L0.110592 12.0683C-0.211331 12.5238 0.220029 13.1301 0.755937 12.9753L5.22324 11.6864Z"
+                    fill="#064AB1"
+                  />
+                  <path
+                    d="M16.7175 3.51339L14.092 5.38133L11.6617 1.9654L14.2872 0.097461C14.5238 -0.0708982 14.853 -0.0157399 15.0216 0.221275L16.8416 2.77939C17.0099 3.01603 16.9545 3.34477 16.7175 3.51339Z"
+                    fill="#064AB1"
+                  />
+                </svg>
+                Редактировать бронирование
+              </a>
+            </div>
             <div class="fix-row">
               <h5 class="fix-row__title">Клиент:</h5>
               <p class="fix-row__desc">Константинопольский Иван Иванович</p>
@@ -102,6 +104,16 @@
                 (оплачено <span class="_balance-plus"> + 5 000.00 ₽</span> из 55
                 500.00)
               </p>
+            </div>
+            <div class="fix-row">
+              <h5 class="fix-row__title"></h5>
+              <button
+                class="main-btn _blue-outlined _pay-btn"
+                type="button"
+                data-custom-modal="pay-booking"
+              >
+                Оплатить
+              </button>
             </div>
             <div class="main-section__item">
               <div class="fix-row view-booking-page__source-row">
@@ -382,9 +394,38 @@
                 </p>
               </div>
             </div>
+            <div class="edit-booking-link">
+              <a
+                class="main-btn _blue-outlined _edit-booking"
+                href="edit-booking.html"
+              >
+                <svg
+                  width="17"
+                  height="13"
+                  viewBox="0 0 17 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.6553 1.96492L4.15247 7.30287L6.58275 10.7188L14.0856 5.38085L11.6553 1.96492Z"
+                    fill="#064AB1"
+                  />
+                  <path
+                    d="M5.22324 11.6864L5.83378 11.2521L3.40347 7.83611L2.79293 8.27048L0.110592 12.0683C-0.211331 12.5238 0.220029 13.1301 0.755937 12.9753L5.22324 11.6864Z"
+                    fill="#064AB1"
+                  />
+                  <path
+                    d="M16.7175 3.51339L14.092 5.38133L11.6617 1.9654L14.2872 0.097461C14.5238 -0.0708982 14.853 -0.0157399 15.0216 0.221275L16.8416 2.77939C17.0099 3.01603 16.9545 3.34477 16.7175 3.51339Z"
+                    fill="#064AB1"
+                  />
+                </svg>
+                Редактировать бронирование
+              </a>
+            </div>
           </section>
         </div>
         @include('partials/info-modal.html')
+        @include('partials/pay-booking-modal.html')
       </main>
     </div>
   </body>

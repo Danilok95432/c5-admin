@@ -4,11 +4,31 @@
   .section-block {
     padding-top: 30px;
   }
+  .edit-booking-link {
+    margin: 15px 0px 40px;
+    &:last-child {
+      margin: 45px 0px 0px;
+    }
+    ._edit-booking {
+      display: flex;
+      gap: 9px;
+      max-width: 298px;
+      padding: 7px 16px 7px 16px;
+      svg {
+        margin-top: 2px;
+      }
+    }
+  }
+
   .fix-row {
     &._file {
       align-items: center;
       margin-top: 12px;
       margin-bottom: 23px;
+    }
+    ._pay-btn {
+      margin: 3px 0 6px 0;
+      padding: 8px 18px;
     }
   }
 

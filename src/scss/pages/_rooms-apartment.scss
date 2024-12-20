@@ -12,6 +12,12 @@
     label {
       min-width: 172px;
       margin: 0;
+      display: flex;
+      flex-direction: row;
+
+      & .label-star {
+        color: #ff6716;
+      }
     }
 
     .short-input {

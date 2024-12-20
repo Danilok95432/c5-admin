@@ -1,97 +1,104 @@
 .client-card-page {
-    h3 {
-        margin-bottom: 30px;
+  h3 {
+    margin-bottom: 30px;
+  }
+
+  .back-button {
+    margin: 10px 0 40px 0;
+    width: max-content;
+    display: flex;
+    gap: 12px;
+    padding: 8px 12px 8px 15px;
+    border: 1px solid #6db4f5;
+    border-radius: 3px;
+
+    @include opensans-medium;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #064ab1;
+  }
+
+  .inputs-wrapper {
+    padding-bottom: 20px;
+    width: 525px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    label {
+      display: flex;
+      flex-direction: row;
+
+      & .label-star {
+        color: #ff6716;
+      }
+    }
+    input {
+      width: 320px;
+
+      @media (max-width: 420px) {
+        width: 100%;
+      }
     }
 
-    .back-button {
-        margin: 10px 0 40px 0;
-        width: max-content;
-        display: flex;
-        gap: 12px;
-        padding: 8px 12px 8px 15px;
-        border: 1px solid #6DB4F5;
-        border-radius: 3px;
+    &.juridical {
+      width: 727px;
 
-        @include opensans-medium;
+      @media (max-width: 850px) {
+        width: 100%;
+      }
+
+      input,
+      textarea {
+        width: 500px;
+
+        @media (max-width: 850px) {
+          width: 100%;
+        }
+      }
+
+      .input-column-wrapper {
+        @media (max-width: 850px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+
+    .input-column-wrapper {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      label {
+        padding-top: 5px;
+        @include opensans-regular;
         font-size: 15px;
         line-height: 1.2;
-        color: #064AB1;
+        color: $black;
+      }
     }
 
-    .inputs-wrapper {
-        padding-bottom: 20px;
-        width: 525px;
+    .textarea-container {
+      label {
+        padding-top: 10px;
+        align-self: flex-start;
+      }
 
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-
-        input {
-            width: 320px;
-
-            @media (max-width: 420px) {
-                width: 100%;
-            }
-        }
-
-        &.juridical {
-            width: 727px;
-
-            @media (max-width: 850px) {
-                width: 100%;
-            }
-
-            input,
-            textarea {
-                width: 500px;
-
-                @media (max-width: 850px) {
-                    width: 100%;
-                }
-            }
-
-            .input-column-wrapper {
-                @media (max-width: 850px) {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-            }
-        }
-
-        @media (max-width: 650px) {
-            width: 100%;
-        }
-
-        .input-column-wrapper {
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            @media (max-width: 600px) {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            label {
-                padding-top: 5px;
-                @include opensans-regular;
-                font-size: 15px;
-                line-height: 1.2;
-                color: $black;
-            }
-        }
-
-        .textarea-container {
-            label {
-                padding-top: 10px;
-                align-self: flex-start;
-            }
-
-            textarea {
-                height: 75px;
-                padding: 10px;
-            }
-        }
+      textarea {
+        height: 75px;
+        padding: 10px;
+      }
     }
+  }
 }

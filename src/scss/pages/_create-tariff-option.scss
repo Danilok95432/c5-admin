@@ -1,35 +1,42 @@
 .create-tariff-option-page {
-    .section-block {
-        display: flex;
-        gap: 145px;
-        padding-bottom: 40px;
+  .section-block {
+    display: flex;
+    gap: 145px;
+    padding-bottom: 40px;
 
-        @media (max-width: 990px) {
-            flex-direction: column;
-            gap: 10px;
-        }
+    @media (max-width: 990px) {
+      flex-direction: column;
+      gap: 10px;
     }
+  }
 
-    .input-column-wrapper {
-        margin: 0;
-        width: 560px;
+  .input-column-wrapper {
+    margin: 0;
+    width: 560px;
+    label {
+      display: flex;
+      flex-direction: row;
 
-        @media (max-width: 680px) {
-            width: 100%;
-        }
+      & .label-star {
+        color: #ff6716;
+      }
     }
-
-    .tariff-option-data {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+    @media (max-width: 680px) {
+      width: 100%;
     }
+  }
 
-    .checkbox-list {
-        padding-top: 20px;
+  .tariff-option-data {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-        display: flex;
-        flex-direction: column;
-        gap: 17px;
-    }
+  .checkbox-list {
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
 }

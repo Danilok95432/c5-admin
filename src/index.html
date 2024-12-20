@@ -16,21 +16,23 @@
             <h3>Основные данные</h3>
             <div class="content-column room-data">
               <div class="input-column-wrapper">
-                <label>Полное название номера</label>
+                <label>Полное название номера<span class="label-star">*</span></label>
                 <input
                   class="main-input"
                   type="text"
                   placeholder="Первый номер один"
                   name="room-full-title"
+                  required
                 />
               </div>
               <div class="input-column-wrapper">
-                <label>Краткое название номера</label>
+                <label>Краткое название номера<span class="label-star">*</span></label>
                 <input
                   class="main-input"
                   type="text"
                   placeholder="1 номер"
                   name="room-short-title"
+                  required
                 />
               </div>
             </div>
@@ -115,18 +117,12 @@
           <h3>Описание номера</h3>
           <div class="section-item">
             <div class="input-column-wrapper content-column">
-                  <textarea class="main-textarea" name="public-description">
-Описание номера для публичного ресурса
-                </textarea
-                >
+              <textarea class="main-textarea" name="public-description" placeholder="Описание номера для публичного ресурса"></textarea>
             </div>
           </div>
           <h4>Особые условия для гостей</h4>
           <div class="input-column-wrapper content-column">
-                <textarea class="main-textarea" name="guests-conditions">
-Условия заселения, размещения и всего остального (кроме цен), в свободной форме
-              </textarea
-              >
+            <textarea class="main-textarea" name="guests-conditions" placeholder="Условия заселения, размещения и всего остального (кроме цен), в свободной форме"></textarea>
           </div>
         </section>
         <section class="section-block">
@@ -147,9 +143,7 @@
         <section class="section-block">
           <h3>Комментарий</h3>
           <div class="input-column-wrapper content-column">
-                <textarea class="main-textarea" name="comment">
-Какой-то комментарий к номеру
-                </textarea>
+            <textarea class="main-textarea" name="comment" placeholder="Какой-то комментарий к номеру"></textarea>
           </div>
         </section>
         <div class="main-controllers">

@@ -1,0 +1,254 @@
+.pay-booking-modal {
+  .input-column-wrapper:not(:last-child) {
+    margin-right: 0;
+  }
+  .custom-modal__close-mobile-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 15px;
+    z-index: 30;
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+  .custom-modal__close-btn {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .custom-modal__content {
+    padding: 20px 0 35px;
+  }
+
+  .custom-modal__content-wrapper {
+    width: 862px;
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+  }
+
+  .main-input {
+    &::placeholder {
+      color: #a5afbb;
+    }
+  }
+
+  &__title {
+    h3 {
+      padding: 0 25px;
+      @include opensans-bold;
+      font-size: 22px;
+      color: #1d1b1b;
+      @media (max-width: 1024px) {
+        padding: 0 70px 0 25px;
+      }
+    }
+
+    padding-bottom: 20px;
+  }
+
+  &__inner {
+    padding: 5px 25px 0 25px;
+  }
+
+  section {
+    h3 {
+      @include opensans-bold;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #3090f6;
+    }
+  }
+
+  label:not(.main-checkbox) {
+    span {
+      color: #ff6716;
+    }
+  }
+
+  &__inputs-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+
+    p {
+      font-size: 13px;
+      color: #95a0ac;
+      line-height: 1.25;
+      max-width: 400px;
+    }
+
+    .main-btn {
+      padding: 10px 25px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+
+    .input-column-wrapper {
+      width: 24%;
+
+      label {
+        height: 25px;
+      }
+
+      &._sm {
+        width: 90px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      &._md {
+        width: 176px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        width: 46%;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .payment-section {
+    border-bottom: 1px solid #C3D5F5;
+    margin-bottom: 26px;
+    .total-cost {
+      border: 1px solid #c3d5f5;
+      border-radius: 10px;
+      background: #e8f1f8;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+      width: max-content;
+      min-width: 380px;
+      margin-bottom: 22px;
+      @media (max-width: 550px) {
+        flex-direction: column;
+        gap: 20px;
+        min-width: 100%;
+      }
+
+      &__item {
+        h4 {
+          font-size: 13px;
+          color: #a5afbb;
+          @include opensans-semibold;
+          margin: 0;
+        }
+
+        h3 {
+          font-size: 18px;
+          @include opensans-bold;
+          margin: 0 0 2px 3px;
+        }
+
+        &._introduced {
+          padding-right: 45px;
+          border-right: 1px solid #c3d5f5;
+          @media (max-width: 550px) {
+            padding-right: 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #c3d5f5;
+            border-right: none;
+          }
+
+          h3 {
+            color: #12a43b;
+          }
+        }
+
+        &._to-pay {
+          h3 {
+            color: #ff6716;
+          }
+        }
+      }
+    }
+  }
+
+  .table-payment-section {
+    .payments-list {
+      max-width: 812px;
+
+      .main-table__row {
+        border-bottom: none;
+        padding: 6px 10px;
+
+        &:nth-child(even) {
+          background-color: #f4f8fc;
+        }
+
+        &:nth-child(odd) {
+          background-color: transparent;
+        }
+
+        &.main-table__title-row {
+          border: 1px solid #e7eefa;
+
+          .main-table__cell {
+            color: #a5afbb;
+            font-size: 13px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .main-table__cell {
+        color: #1d1b1b;
+
+        &:nth-child(1) {
+          min-width: 4%;
+        }
+
+        &:nth-child(2) {
+          min-width: 30%;
+        }
+
+        &:nth-child(3) {
+          min-width: 23.5%;
+        }
+
+        &:nth-child(4) {
+          min-width: 26.5%;
+        }
+
+        &:nth-child(5) {
+          min-width: 12%;
+          font-weight: 600;
+          font-size: 15px;
+          text-align: right;
+        }
+
+        &:nth-child(6) {
+          min-width: 5%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

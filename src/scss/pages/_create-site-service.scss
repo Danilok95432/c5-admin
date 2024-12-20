@@ -1,89 +1,91 @@
 .create-site-service-page {
+  .input-column-wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+    & .label-star {
+      color: #ff6716;
+    }
+  }
+
+  select {
+    width: 587px;
+    align-self: flex-start;
+  }
+
+  .content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 30px;
+
     .input-column-wrapper {
-        margin: 0;
-    }
+      display: flex;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-start;
 
-    select {
-        width: 587px;
-        align-self: flex-start;
-    }
-
-    .content-column {
-        display: flex;
+      @media (max-width: 750px) {
         flex-direction: column;
-        gap: 20px;
 
-        margin-top: 30px;
-
-
-        .input-column-wrapper {
-            display: flex;
-            gap: 10px;
-            flex: 1;
-            justify-content: flex-start;
-
-            @media (max-width: 750px) {
-                flex-direction: column;
-
-                select {
-                    width: 100%;
-                }
-            }
+        select {
+          width: 100%;
         }
-
-        .row-title {
-            width: 220px;
-            min-width: 220px;
-
-            &.long {
-                width: 310px;
-
-                @media (max-width: 700px) {
-                    width: 100%;
-                }
-
-                +input {
-                    width: 580px;
-                    min-width: 580px;
-                    height: 40px;
-
-                    @media (max-width: 700px) {
-                        min-width: 100%;
-                        width: 100%;
-                    }
-                }
-            }
-        }
+      }
     }
 
-    .controled-textarea-wrapper {
-        flex: 1;
-        position: relative;
+    .row-title {
+      width: 220px;
+      min-width: 220px;
 
-        .textarea-label {
-            position: absolute;
-            content: '';
-            width: calc(100% - 20px);
-            background-color: #E8F1F8;
-            top: 10px;
-            right: 10px;
-            max-width: 900px;
-            padding: 10px;
+      &.long {
+        width: 310px;
 
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 20px;
-            text-align: center;
-            color: #A5AFBB;
+        @media (max-width: 700px) {
+          width: 100%;
         }
 
-        textarea {
+        + input {
+          width: 580px;
+          min-width: 580px;
+          height: 40px;
+
+          @media (max-width: 700px) {
+            min-width: 100%;
             width: 100%;
-            height: 100%;
-            min-height: 260px;
+          }
         }
+      }
+    }
+  }
+
+  .controled-textarea-wrapper {
+    flex: 1;
+    position: relative;
+
+    .textarea-label {
+      position: absolute;
+      content: "";
+      width: calc(100% - 20px);
+      background-color: #e8f1f8;
+      top: 10px;
+      right: 10px;
+      max-width: 900px;
+      padding: 10px;
+
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #a5afbb;
     }
 
-
-
+    textarea {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+    }
+  }
 }

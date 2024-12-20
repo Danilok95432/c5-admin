@@ -40,7 +40,10 @@
       font-size: 15px;
       @include opensans-regular;
       color: #000000;
-      min-width: 132px;
+      min-width: 135px;
+      & .label-star {
+        color: #ff6716;
+      }
     }
 
     &.input-column-wrapper__token {

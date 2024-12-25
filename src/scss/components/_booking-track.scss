@@ -51,6 +51,28 @@
       }
     }
   }
+
+  td._blue, td._blue-lock {
+    .booking-track {
+      border: 1px solid #65B9F3;
+      background: #ADDDFF;
+
+      svg path {
+        fill: #064AB1;
+      }
+    }
+  }
+
+  td._gray, td._gray-lock {
+    .booking-track {
+      border: 1px solid #E40000;
+      background: #D9D9D9;
+
+      svg path {
+        fill: #1F1E1E;
+      }
+    }
+  }
 }
 
 

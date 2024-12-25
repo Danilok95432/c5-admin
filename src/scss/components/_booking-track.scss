@@ -26,6 +26,24 @@
     }
   }
 
+  td._yellow {
+    .booking-track {
+      background-color: #FFA928;
+      border: 1px solid #FFD363;
+    }
+  }
+
+  td._yellow-lock {
+    .booking-track {
+      background-color: #FFA928;
+      border: 1px solid #FFDB80;
+
+      svg path {
+        fill: #FF6B00;
+      }
+    }
+  }
+
   td._orange, td._orange-lock {
     .booking-track {
       border: 1px solid #FFA011;

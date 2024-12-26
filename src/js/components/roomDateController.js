@@ -137,42 +137,66 @@ const renderCells = (cells) => {
       }
 
       if (cell.status === '_red') {
-        return `<td class="${cell.status}" >
-             <a href="${cell.link}" class="booking-track" title="${
-               cell.content
+        return `<td class="${cell.status}">
+             <div class="booking-track" data-json="${escapeHtml(
+               JSON.stringify(cell),
+             )}" title="${cell.customer ?? ''}, ${
+               cell?.price ?? ''
              }" style="width: ${cell.dayCount * 40 - 40}px">
-                    <p>${cell.content}</p>
-                  </a>
+                      <div class="booking-track__short-info">
+                         <p>${cell.id ?? ''} ${cell.customer ?? ''}</p>
+                         <p>${cell.source ?? ''}</p>
+                      </div>
+                    <h6>${cell.price ?? ''}</h6>
+                  </div>
               </td>`
       }
 
       if (cell.status === '_yellow') {
-        return `<td class="${cell.status}" >
-             <a href="${cell.link}" class="booking-track" title="${
-               cell.content
+        return `<td class="${cell.status}">
+             <div class="booking-track" data-json="${escapeHtml(
+               JSON.stringify(cell),
+             )}" title="${cell.customer ?? ''}, ${
+               cell?.price ?? ''
              }" style="width: ${cell.dayCount * 40 - 40}px">
-                    <p>${cell.content}</p>
-                  </a>
+                      <div class="booking-track__short-info">
+                         <p>${cell.id ?? ''} ${cell.customer ?? ''}</p>
+                         <p>${cell.source ?? ''}</p>
+                      </div>
+                    <h6>${cell.price ?? ''}</h6>
+                  </div>
               </td>`
       }
 
       if (cell.status === '_blue') {
-        return `<td class="${cell.status}" >
-             <a href="${cell.link}" class="booking-track" title="${
-               cell.content
+        return `<td class="${cell.status}">
+             <div class="booking-track" data-json="${escapeHtml(
+               JSON.stringify(cell),
+             )}" title="${cell.customer ?? ''}, ${
+               cell?.price ?? ''
              }" style="width: ${cell.dayCount * 40 - 40}px">
-                    <p>${cell.content}</p>
-                  </a>
+                      <div class="booking-track__short-info">
+                         <p>${cell.id ?? ''} ${cell.customer ?? ''}</p>
+                         <p>${cell.source ?? ''}</p>
+                      </div>
+                    <h6>${cell.price ?? ''}</h6>
+                  </div>
               </td>`
       }
 
       if (cell.status === '_gray') {
-        return `<td class="${cell.status}" >
-             <a href="${cell.link}" class="booking-track" title="${
-               cell.content
+        return `<td class="${cell.status}">
+             <div class="booking-track" data-json="${escapeHtml(
+               JSON.stringify(cell),
+             )}" title="${cell.customer ?? ''}, ${
+               cell?.price ?? ''
              }" style="width: ${cell.dayCount * 40 - 40}px">
-                    <p>${cell.content}</p>
-                  </a>
+                      <div class="booking-track__short-info">
+                         <p>${cell.id ?? ''} ${cell.customer ?? ''}</p>
+                         <p>${cell.source ?? ''}</p>
+                      </div>
+                    <h6>${cell.price ?? ''}</h6>
+                  </div>
               </td>`
       }
 
@@ -196,21 +220,11 @@ const renderCells = (cells) => {
         </td>`
       }
 
-      if (cell.status === '_yellow-lock') {
+      if (cell.status === '_yellow-lock' || cell.status === '_red-lock') {
         return `<td class="${cell.status}">
             <a href="${cell.link}" class="booking-track" title="${
               cell.content
             }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
-                ${lockSvg}
-            </a>
-        </td>`
-      }
-
-      if (cell.status === '_red-lock') {
-        return `<td class="${cell.status}">
-            <a href="${cell.link}" class="booking-track" title="${
-              cell.content
-            }" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
             </a>
         </td>`

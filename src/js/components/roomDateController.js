@@ -200,6 +200,22 @@ const renderCells = (cells) => {
               </td>`
       }
 
+      if (cell.status === '_purple') {
+        return `<td class="${cell.status}">
+             <div class="booking-track" data-json="${escapeHtml(
+               JSON.stringify(cell),
+             )}" title="${cell.customer ?? ''}, ${
+               cell?.price ?? ''
+             }" style="width: ${cell.dayCount * 40 - 40}px">
+                      <div class="booking-track__short-info">
+                         <p>${cell.id ?? ''} ${cell.customer ?? ''}</p>
+                         <p>${cell.source ?? ''}</p>
+                      </div>
+                    <h6>${cell.price ?? ''}</h6>
+                  </div>
+              </td>`
+      }
+
       if (cell.status === '_green-lock' || cell.status === '_orange-lock') {
         return `<td class="${cell.status}">
             <a href="${cell.link}" class="booking-track" title="${
@@ -211,6 +227,16 @@ const renderCells = (cells) => {
       }
 
       if (cell.status === '_blue-lock' || cell.status === '_gray-lock') {
+        return `<td class="${cell.status}">
+            <a href="${cell.link}" class="booking-track" title="${
+              cell.content
+            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
+                ${lockSvg}
+            </a>
+        </td>`
+      }
+
+      if (cell.status === '_purple-lock') {
         return `<td class="${cell.status}">
             <a href="${cell.link}" class="booking-track" title="${
               cell.content

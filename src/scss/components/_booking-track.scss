@@ -1,5 +1,18 @@
 .room-booking-calendar {
-  td._green, td._orange, td._red, td._blue, td._yellow, td._gray, td._green-lock, td._orange-lock, td._red-lock, td._blue-lock, td._yellow-lock, td._gray-lock  {
+  td._green,
+  td._orange,
+  td._red,
+  td._blue,
+  td._yellow,
+  td._gray,
+  td._purple,
+  td._green-lock,
+  td._purple-lock,
+  td._orange-lock,
+  td._red-lock,
+  td._blue-lock,
+  td._yellow-lock,
+  td._gray-lock {
     position: relative;
 
     svg {
@@ -11,25 +24,42 @@
     }
   }
 
-  td._green, td._green-lock {
+  td._green,
+  td._green-lock {
     .booking-track {
-      background-color: #9AFF8A;
-      border: 1px solid #01DA32;
+      background-color: #9aff8a;
+      border: 1px solid #01da32;
 
       svg path {
-        fill: #0E8128;
+        fill: #0e8128;
       }
     }
 
     h6 {
-      background: #0E8128;
+      background: #0e8128;
+    }
+  }
+
+  td._purple,
+  td._purple-lock {
+    .booking-track {
+      background-color: #E4C5FF;
+      border: 1px solid #C53DFF;
+
+      svg path {
+        fill: #7200A3;
+      }
+    }
+
+    h6 {
+      background: #0e8128;
     }
   }
 
   td._yellow {
     .booking-track {
-      background-color: #FFA928;
-      border: 1px solid #FFD363;
+      background-color: #ffa928;
+      border: 1px solid #ffd363;
     }
     h6 {
       background: #920303;
@@ -38,22 +68,23 @@
 
   td._yellow-lock {
     .booking-track {
-      background-color: #FFA928;
-      border: 1px solid #FFDB80;
+      background-color: #ffa928;
+      border: 1px solid #ffdb80;
 
       svg path {
-        fill: #FF6B00;
+        fill: #ff6b00;
       }
     }
   }
 
-  td._orange, td._orange-lock {
+  td._orange,
+  td._orange-lock {
     .booking-track {
-      border: 1px solid #FFA011;
-      background-color: #FFD363;
+      border: 1px solid #ffa011;
+      background-color: #ffd363;
 
       svg path {
-        fill: #D53E07;
+        fill: #d53e07;
       }
     }
 
@@ -62,10 +93,11 @@
     }
   }
 
-  td._red, td._red-lock {
+  td._red,
+  td._red-lock {
     .booking-track {
-      border: 1px solid #9E1F1F;
-      background: #FF9A9A;
+      border: 1px solid #9e1f1f;
+      background: #ff9a9a;
 
       svg path {
         fill: #920303;
@@ -73,29 +105,30 @@
     }
   }
 
-  td._blue, td._blue-lock {
+  td._blue,
+  td._blue-lock {
     .booking-track {
-      border: 1px solid #65B9F3;
-      background: #ADDDFF;
+      border: 1px solid #65b9f3;
+      background: #adddff;
 
       svg path {
-        fill: #064AB1;
+        fill: #064ab1;
       }
     }
   }
 
-  td._gray, td._gray-lock {
+  td._gray,
+  td._gray-lock {
     .booking-track {
-      border: 1px solid #E40000;
-      background: #D9D9D9;
+      border: 1px solid #e40000;
+      background: #d9d9d9;
 
       svg path {
-        fill: #1F1E1E;
+        fill: #1f1e1e;
       }
     }
   }
 }
-
 
 .booking-track {
   position: absolute;
@@ -113,7 +146,7 @@
   z-index: 1;
 
   &._searched {
-    border: 2px solid #3045FF !important;
+    border: 2px solid #3045ff !important;
   }
 
   p {
@@ -126,7 +159,7 @@
 
   h6 {
     @include opensans-bold;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 11px;
     line-height: 1;
     text-align: right;
@@ -134,7 +167,6 @@
     border-radius: 3px;
     min-width: max-content;
   }
-
 
   &__short-info {
     overflow: hidden;
@@ -150,7 +182,7 @@
     position: absolute;
     left: 20px;
     top: calc(100% - 3px);
-    background: #FFFFFF;
+    background: #ffffff;
     z-index: 10;
     border-radius: 3px;
     padding: 2px 15px;
@@ -183,5 +215,4 @@
       -webkit-line-clamp: 2;
     }
   }
-
 }

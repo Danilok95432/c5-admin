@@ -180,7 +180,7 @@
 
   &__comment {
     position: absolute;
-    left: 20px;
+    left: calc(100% - 235px);
     top: calc(100% - 3px);
     background: #ffffff;
     z-index: 10;

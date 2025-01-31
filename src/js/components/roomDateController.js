@@ -13,7 +13,10 @@ const roomDateController = document.querySelector('.room-date-controller')
 const searchBookings = () => {
   const searchInput = document.querySelector('[name="booking_search"]')
   const bookingTracks = document.querySelectorAll('.booking-track')
+  const countSpan = document.querySelector('.search-info__count span')
   const searchTerm = searchInput.value.trim().toLowerCase()
+
+  let foundCount = 0
 
   bookingTracks.forEach((track) => {
     const jsonData = track.dataset.json
@@ -42,8 +45,12 @@ const searchBookings = () => {
       ) {
         track.classList.add('_searched')
         childRow.classList.add('_visible')
+        foundCount++
       } else {
         track.classList.remove('_searched')
+      }
+      if (countSpan) {
+        countSpan.textContent = String(foundCount)
       }
     } catch (error) {
       track.classList.remove('_searched')
@@ -52,7 +59,9 @@ const searchBookings = () => {
 }
 
 const searchInput = document.querySelector('[name="booking_search"]')
-searchInput.addEventListener('change', searchBookings)
+if (searchInput) {
+  searchInput.addEventListener('change', searchBookings)
+}
 
 const setInfoModalsHandlers = () => {
   const infoCells = document.querySelectorAll(

@@ -1,4 +1,10 @@
 .room-booking-calendar {
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
   td._green,
   td._orange,
   td._red,
@@ -179,17 +185,55 @@
   }
 
   &__comment {
-    position: absolute;
-    left: calc(100% - 235px);
-    top: calc(100% - 3px);
+    position: fixed;
+    top: unset;
+    transform: unset;
+    bottom: 50px;
+    right: 50px;
     background: #ffffff;
-    z-index: 10;
+    z-index: 100000;
     border-radius: 3px;
-    padding: 2px 15px;
+    padding: 20px 15px 30px 17px;
     box-shadow: 0 4px 15px 0 rgba(6, 74, 177, 0.25);
     width: 435px;
     display: none;
     pointer-events: none;
+
+    .desc-head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      h4 {
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .descSvg {
+        right: 0;
+        left: unset;
+      }
+    }
+
+    .description-list {
+      padding: 14px 0 20px 0;
+      &__row {
+        display: grid;
+        grid-template-columns: minmax(150px, 150px) minmax(150px, 150px);
+        text-align: left;
+        align-items: flex-start;
+        gap: 10px;
+        & > span {
+          text-align: left;
+          font-size: 15px;
+          font-weight: 300;
+        }
+        & span:last-child {
+          font-weight: 500;
+        }
+      }
+    }
 
     &._active {
       display: block;
@@ -210,9 +254,6 @@
       text-align: left;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 2;
     }
   }
 }

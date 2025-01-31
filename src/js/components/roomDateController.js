@@ -1,14 +1,21 @@
 import AirDatepicker from 'air-datepicker'
 import {
+  addDaysToDate,
+  daysBetweenDates,
   defineWeekDay,
   escapeHtml,
+  formatStrToDate,
   getRowsSiblings,
+  returnDescHeadBooking,
   sendData,
   showInfoModal,
 } from '../_functions'
 import { lockSvg, modalOverlay, pointerSvg } from '../_vars'
 
 const roomDateController = document.querySelector('.room-date-controller')
+
+let firstDate,
+  lastDate = ''
 
 const searchBookings = () => {
   const searchInput = document.querySelector('[name="booking_search"]')
@@ -114,13 +121,51 @@ const setInfoModalsHandlers = () => {
         openBookingLink.href = dataObj?.link
       })
 
-      if (dataObj.comment) {
+      if (dataObj) {
+        let current = formatStrToDate(dataObj?.checkIn.split(' ')[0])
+        let first = addDaysToDate(formatStrToDate(firstDate), 7)
+        let last = addDaysToDate(formatStrToDate(lastDate), -7)
+        let styleOption = ''
+        if (current > first && current < last) {
+          styleOption = `style="left: ${
+            daysBetweenDates(formatStrToDate(firstDate), current) * 20
+          }px"`
+        } else if (current > last) {
+          styleOption = `style="right: ${
+            daysBetweenDates(formatStrToDate(lastDate), current) * 20
+          }px"`
+        } else if (current < first) {
+          styleOption = `style="left: ${
+            daysBetweenDates(formatStrToDate(firstDate), current) * 20
+          }px"`
+        }
         cellBtn.parentElement.insertAdjacentHTML(
           'beforeend',
-          `<div class="booking-track__comment">
-                       <h5>Комментарий к бронированию:</h5>
-                       <p>${dataObj.comment}</p>
-                  </div>`,
+          `<div class="booking-track__comment" ${styleOption}>
+            <div class="desc-head">
+              ${returnDescHeadBooking(dataObj?.status.slice(1))}
+            </div>
+            <div class="description-list">
+              <div class="description-list__row">
+                <span>Сроки проживания:</span>
+                <span class="leftInfo">${dataObj?.dayCount}</span>
+              </div>
+              <div class="description-list__row">
+                <span>Всего гостей:</span>
+                <span>${dataObj?.guests}</span>
+              </div>
+              <div class="description-list__row">
+                <span>Стоимость:</span>
+                <span>${dataObj?.price}</span>
+              </div>
+              <div class="description-list__row">
+                <span>Оплачено:</span>
+                <span>${dataObj?.paid}</span>
+              </div>
+            </div>
+            <h5>Комментарий к бронированию:</h5>
+            <p>${dataObj?.comment}</p>
+          </div>`,
         )
         const commentBlock = cellBtn.parentElement.querySelector(
           '.booking-track__comment',
@@ -346,7 +391,11 @@ const getCellsContent = async (dateInfo) => {
 
   try {
     const response = await sendData(jsonData, dataScript)
+
     const finishedResponse = await response.json()
+
+    firstDate = finishedResponse.first_date
+    lastDate = finishedResponse.last_date
 
     const { status, errortext, rows } = finishedResponse
 

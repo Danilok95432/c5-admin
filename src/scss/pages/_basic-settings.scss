@@ -19,6 +19,108 @@
       margin-bottom: 25px;
       border-bottom: 1px solid #c3d5f5;
     }
+
+    .load-logo-settings {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      line-height: 1.1;
+      h3 {
+        margin-bottom: 0;
+      }
+      span {
+        display: flex;
+        flex-direction: row;
+        .label-star {
+          color: #ff6716;
+        }
+      }
+
+      .upload-photos {
+        .dz-preview {
+          width: 300px;
+          img {
+            padding: 32px 24px;
+            object-fit: fill;
+          }
+        }
+      }
+      .dropzone-previews {
+        border: none;
+        padding: 0;
+        gap: 22px;
+      }
+    
+      .dz-default {
+        display: none;
+      }
+    
+      .general-dropzone__add-btn {
+        height: 40px;
+        width: 180px;
+        padding: 0;
+        background: #064ab1;
+        border: 1px solid #064ab1;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 5px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    
+      .droparea {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+        height: 115px;
+        stroke: #6db4f5;
+        padding-bottom: 4px;
+      }
+    
+      .dz-button {
+        width: 169px;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.3;
+      }
+    
+      .load-disclaimer {
+        width: 195px;
+        height: 115px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 13px;
+        margin-right: 45px;
+    
+        & .default-text {
+          max-width: 100%;
+          line-height: 1.2;
+        }
+    
+        & .dz-clickable {
+          background: #fff;
+          color: #064ab1;
+        }
+    
+        @media (max-width: 600px) {
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
   }
 
   .main-input-wrapper {

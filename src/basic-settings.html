@@ -8,7 +8,74 @@
       <main class="main basic-settings-page">
         <form class="container" action="#">
           <h1>Ключевые настройки</h1>
-
+          <section class="section-block _no-border">
+            <div class="load-logo-settings">
+              <h3>Логотип гостиницы</h3>
+              <span
+                >Загрузить изображение
+                <p class="label-star">*</p></span
+              >
+              <div class="upload-photos general-dropzone-wrapper">
+                <div
+                  id="mainPhoto"
+                  data-show-preview="true"
+                  class="dropzone general-dropzone dz-max-files-reached"
+                  data-general-info='{"url": "http://localhost:3333/api/test", "removeUrl": "http://localhost:3333/api/test", "width": "175", "height": "108", "acceptedFiles": ".svg", "type": "mainPhoto", "filesCount": "1", "additional": "доп.контент"}'
+                >
+                  <div class="dz-default dz-message droparea">
+                    <svg
+                      width="30"
+                      height="21"
+                      viewBox="0 0 30 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M27.9213 0H2.07723C0.930008 0 0 0.930008 0 2.07723V18.8413C0 19.9885 0.930008 20.9186 2.07723 20.9186H27.9213C29.0685 20.9186 29.9985 19.9885 29.9985 18.8413V2.07723C29.9985 0.930008 29.0685 0 27.9213 0Z"
+                        fill="#F4F8FC"
+                      />
+                      <path
+                        d="M9.93867 8.59803C11.3804 8.59803 12.5492 7.42926 12.5492 5.98749C12.5492 4.54573 11.3804 3.37695 9.93867 3.37695C8.4969 3.37695 7.32812 4.54573 7.32812 5.98749C7.32812 7.42926 8.4969 8.59803 9.93867 8.59803Z"
+                        fill="#064AB1"
+                      />
+                      <path
+                        d="M8.78741 8.33044C9.59336 8.33044 10.2467 7.28146 10.2467 5.98748C10.2467 4.69351 9.59336 3.64453 8.78741 3.64453C7.98147 3.64453 7.32812 4.69351 7.32812 5.98748C7.32812 7.28146 7.98147 8.33044 8.78741 8.33044Z"
+                        fill="#91D9F9"
+                      />
+                      <path
+                        d="M18.5482 20.9182H1.96335C1.44269 20.9181 0.943398 20.7112 0.575234 20.343C0.207071 19.9748 0.000164949 19.4755 0 18.9549V15.3736L4.77427 12.0169C5.03395 11.8346 5.34439 11.7385 5.66166 11.7423C5.97893 11.7461 6.28698 11.8496 6.54222 12.038L18.5482 20.9182Z"
+                        fill="#91D9F9"
+                      />
+                      <path
+                        d="M21.8706 9.09274L29.9991 14.0045V18.8908C29.9989 19.4286 29.7852 19.9443 29.4049 20.3245C29.0245 20.7047 28.5088 20.9183 27.971 20.9183H3.73438L18.5451 9.2981C19.0131 8.93059 19.5819 8.71413 20.1759 8.67745C20.7698 8.64078 21.3609 8.78561 21.8706 9.09274Z"
+                        fill="#064AB1"
+                      />
+                    </svg>
+                    <button class="dz-button" type="button">
+                      Перетащите изображение<br />
+                      на это поле<br />
+                      1:1 или 2:1, SVG
+                    </button>
+                  </div>
+                  <div class="load-disclaimer">
+                    <p class="default-text">
+                      Файл еще не загружен<br />
+                      Перетащите его на поле слева<br />
+                      или нажмите на ссылку
+                    </p>
+                    <button
+                      class="general-dropzone__add-btn dz-clickable"
+                      id="main-photo"
+                      type="button"
+                    >
+                      Загрузить
+                    </button>
+                  </div>
+                  <div class="dropzone-previews"></div>
+                </div>
+              </div>
+            </div>
+          </section>
           <section class="section-block">
             <h3>Время заезда и выезда</h3>
             <div class="section-block__time-zone">

@@ -10,6 +10,50 @@ import { lockSvg, modalOverlay, pointerSvg } from '../_vars'
 
 const roomDateController = document.querySelector('.room-date-controller')
 
+const searchBookings = () => {
+  const searchInput = document.querySelector('[name="booking_search"]')
+  const bookingTracks = document.querySelectorAll('.booking-track')
+  const searchTerm = searchInput.value.trim().toLowerCase()
+
+  bookingTracks.forEach((track) => {
+    const jsonData = track.dataset.json
+    const childRow = track.closest('tr.child-row')
+    if (!jsonData || searchTerm === '') {
+      childRow.classList.remove('_visible')
+      track.classList.remove('_searched')
+      return
+    }
+
+    try {
+      const bookingData = JSON.parse(jsonData)
+
+      const customer = bookingData.customer
+        ? bookingData.customer.toLowerCase()
+        : ''
+      const room = bookingData.room ? bookingData.room : ''
+      const checkIn = bookingData.checkIn ? bookingData.checkIn : ''
+      const checkOut = bookingData.checkOut ? bookingData.checkOut : ''
+
+      if (
+        customer.includes(searchTerm) ||
+        room.includes(searchTerm) ||
+        checkIn.includes(searchTerm) ||
+        checkOut.includes(searchTerm)
+      ) {
+        track.classList.add('_searched')
+        childRow.classList.add('_visible')
+      } else {
+        track.classList.remove('_searched')
+      }
+    } catch (error) {
+      track.classList.remove('_searched')
+    }
+  })
+}
+
+const searchInput = document.querySelector('[name="booking_search"]')
+searchInput.addEventListener('change', searchBookings)
+
 const setInfoModalsHandlers = () => {
   const infoCells = document.querySelectorAll(
     '.room-booking-calendar td .booking-track[data-json]',

@@ -10,10 +10,10 @@
   }
 
   .upload-photos .dz-preview {
-    height: 108px;
-    width: 325px;
+    height: 150px;
+    width: 300px;
     .dz-image {
-      height: 106px;
+      height: 150px;
     }
   }
 
@@ -50,14 +50,15 @@
 
   .photo-section {
     .general-dropzone {
+      align-items: center;
       &__previews {
         padding: 0;
         border: none;
         margin-top: 0;
-        max-width: 325px;
+        max-width: 300px;
         flex-grow: 1;
-        min-height: 108px;
-        height: 108px;
+        min-height: 150px;
+        height: 150px;
       }
     }
 

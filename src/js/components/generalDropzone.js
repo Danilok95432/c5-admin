@@ -114,6 +114,15 @@ if (genDropzones) {
                 el.classList.remove('hidden'),
               )
             }
+            if (dropzoneEl.querySelectorAll('.dz-preview').length === 0) {
+              const homeTitle = dropzoneEl.querySelector(
+                '.upload-photos__info-title',
+              )
+              const homeSubtitle = homeTitle.nextElementSibling
+              homeTitle.innerHTML = 'Файл еще не загружен'
+              homeSubtitle.innerHTML =
+                'Перетащите его на поле слева или нажмите на ссылку'
+            }
             updateAmountFiles()
           }
         } else {
@@ -153,6 +162,13 @@ if (genDropzones) {
         file.previewElement.parentNode.removeChild(file.previewElement)
       } else {
         const cutTitles = dropzoneEl.querySelectorAll('span[data-dz-name]')
+        const homeTitle = dropzoneEl.querySelector('.upload-photos__info-title')
+        const homeSubtitle = homeTitle.nextElementSibling
+        homeTitle.innerHTML =
+          filesCount > 1
+            ? 'Загруженные файлы отображается в поле внизу'
+            : 'Загруженный файл отображается в поле справа'
+        homeSubtitle.innerHTML = ''
 
         if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
           addBtn?.classList.add('btn_disabled')

@@ -26,7 +26,7 @@
     &__title {
       padding-top: 7px;
       min-width: 190px;
-
+      width: 190px;
       span {
         color: #FF6716;
         font-weight: 500;
@@ -35,6 +35,16 @@
 
     &__desc {
       flex-grow: 1;
+      ._short {
+        max-width: 610px;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    ._high {
+      height: 200px;
     }
   }
 

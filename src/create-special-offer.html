@@ -26,7 +26,7 @@
             </h5>
             <div class="fix-row__desc">
               <input
-                class="main-input"
+                class="main-input _short"
                 type="text"
                 name="offer_title"
                 required
@@ -35,10 +35,19 @@
           </div>
           <div class="fix-row">
             <h5 class="fix-row__title">
-              Описание<span>*</span>
+              Описание для главной<span>*</span>
             </h5>
             <div class="fix-row__desc">
-              <textarea class="main-textarea" name="offer_desc"
+              <textarea class="main-textarea _short" name="offer_desc"
+                        required></textarea>
+            </div>
+          </div>
+          <div class="fix-row">
+            <h5 class="fix-row__title">
+              Полное описание для страницы<span>*</span>
+            </h5>
+            <div class="fix-row__desc">
+              <textarea class="main-textarea _high" name="full_offer_desc"
                         required></textarea>
             </div>
           </div>

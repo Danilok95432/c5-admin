@@ -1,0 +1,97 @@
+.mail-settings-page {
+  .container {
+    padding: 0 55px 0 15px;
+  }
+  .mail-section {
+    padding: 26px 50px 40px 30px;
+  }
+  .mail-data {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    .two-inputs {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      @media (max-width: 440px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .input-column-wrapper {
+        width: 100%;
+        max-width: 900px;
+        .mail-settings-input {
+          width: 100%;
+        }
+      }
+      .input-column-wrapper:last-child {
+        max-width: 150px;
+        .mail-settings-input {
+          max-width: 150px;
+        }
+      }
+    }
+    .two-inputs:last-child {
+      gap: 6px;
+      align-items: flex-end;
+      .desc {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 13px;
+        padding-bottom: 10px;
+        color: #A5AFBB;
+      }
+      .input-column-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin-right: 10px;
+        .mail-settings-input {
+          position: relative;
+        }
+        .btn-show-name {
+          position: absolute;
+          top: 45%;
+          right: 10px;
+          width: 30px;
+          height: 30px;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          padding: 0;
+        
+          &__eye-open,
+          &__eye-close {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease-in-out;
+          }
+        
+          &__eye-close {
+            opacity: 0;
+          }
+        
+          &._close {
+            .btn-show-name__eye-open {
+              opacity: 0;
+            }
+        
+            .btn-show-name__eye-close {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      @media (max-width: 1280px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .mail-settings-input {
+      max-width: 900px;
+    }
+  }
+}

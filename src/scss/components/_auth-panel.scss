@@ -103,6 +103,12 @@
       }
     }
 
+    &__list:nth-child(3) {
+      @media (max-width: 1427px) {
+        order: 4;
+      }
+    }
+
     &__list {
       li {
         &:not(:last-child) {

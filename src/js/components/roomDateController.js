@@ -1,7 +1,6 @@
 import AirDatepicker from 'air-datepicker'
 import {
   addDaysToDate,
-  daysBetweenDates,
   defineWeekDay,
   escapeHtml,
   formatStrToDate,
@@ -70,6 +69,20 @@ if (searchInput) {
   searchInput.addEventListener('change', searchBookings)
 }
 
+const updateCommentPosition = (current, first, last, cellBtn, commentBlock) => {
+  const rect = cellBtn.getBoundingClientRect()
+  if (current > first && current < last) {
+    commentBlock.style.left = `${rect.left - window.scrollX}px`
+    commentBlock.style.top = `${rect.top + 50}px`
+  } else if (current > last) {
+    commentBlock.style.left = `${rect.left - window.scrollX - 395}px`
+    commentBlock.style.top = `${rect.top + 50}px`
+  } else if (current < first) {
+    commentBlock.style.left = `${rect.left - window.scrollX}px`
+    commentBlock.style.top = `${rect.top + 50}px`
+  }
+}
+
 const setInfoModalsHandlers = () => {
   const infoCells = document.querySelectorAll(
     '.room-booking-calendar td .booking-track[data-json]',
@@ -98,10 +111,9 @@ const setInfoModalsHandlers = () => {
     const openBookingLink = trackModal.querySelector(
       '.track-info-modal__open-booking',
     )
-
+    const triggerRows = document.querySelectorAll('tr.trigger-row')
     infoCells.forEach((cellBtn) => {
       const dataObj = JSON.parse(cellBtn.dataset.json)
-
       cellBtn?.addEventListener('click', () => {
         trackModal.classList.add('_active')
         modalOverlay.classList.add('_active')
@@ -122,26 +134,29 @@ const setInfoModalsHandlers = () => {
       })
 
       if (dataObj) {
+        if (triggerRows) {
+          triggerRows.forEach((rowEl) => {
+            const triggerCell = rowEl.querySelector('td:first-child')
+            const triggerCellPointerIcon = triggerCell.querySelector('svg')
+            if (!triggerCellPointerIcon.classList.contains('_rotate')) {
+              const allSiblings = getRowsSiblings(rowEl, 'trigger-row')
+              const el = allSiblings.filter((child) =>
+                child.querySelector('.booking-track'),
+              )
+              if (el.length > 0) {
+                triggerCellPointerIcon.classList.toggle('_rotate')
+                allSiblings.forEach((el) => el.classList.toggle('_visible'))
+              }
+            }
+          })
+        }
         let current = formatStrToDate(dataObj?.checkIn.split(' ')[0])
         let first = addDaysToDate(formatStrToDate(firstDate), 7)
         let last = addDaysToDate(formatStrToDate(lastDate), -7)
-        let styleOption = ''
-        if (current > first && current < last) {
-          styleOption = `style="left: ${
-            daysBetweenDates(formatStrToDate(firstDate), current) * 20
-          }px"`
-        } else if (current > last) {
-          styleOption = `style="right: ${
-            daysBetweenDates(formatStrToDate(lastDate), current) * 20
-          }px"`
-        } else if (current < first) {
-          styleOption = `style="left: ${
-            daysBetweenDates(formatStrToDate(firstDate), current) * 20
-          }px"`
-        }
+
         cellBtn.parentElement.insertAdjacentHTML(
           'beforeend',
-          `<div class="booking-track__comment" ${styleOption}>
+          `<div class="booking-track__comment">
             <div class="desc-head">
               ${returnDescHeadBooking(dataObj?.status.slice(1))}
             </div>
@@ -167,8 +182,23 @@ const setInfoModalsHandlers = () => {
             <p>${dataObj?.comment}</p>
           </div>`,
         )
-        const commentBlock = cellBtn.parentElement.querySelector(
+
+        let commentBlock = cellBtn.parentElement.querySelector(
           '.booking-track__comment',
+        )
+
+        updateCommentPosition(current, first, last, cellBtn, commentBlock)
+        const roomBookingCalendar = document.querySelector(
+          '.room-booking-calendar',
+        )
+        window.addEventListener('scroll', () =>
+          updateCommentPosition(current, first, last, cellBtn, commentBlock),
+        )
+        roomBookingCalendar.addEventListener('scroll', () =>
+          updateCommentPosition(current, first, last, cellBtn, commentBlock),
+        )
+        window.addEventListener('resize', () =>
+          updateCommentPosition(current, first, last, cellBtn, commentBlock),
         )
 
         cellBtn?.addEventListener('mouseover', () => {
@@ -179,6 +209,24 @@ const setInfoModalsHandlers = () => {
         })
       }
     })
+  } else {
+    const triggerRows = document.querySelectorAll('tr.trigger-row')
+    if (triggerRows) {
+      triggerRows.forEach((rowEl) => {
+        const triggerCell = rowEl.querySelector('td:first-child')
+        const triggerCellPointerIcon = triggerCell.querySelector('svg')
+        if (!triggerCellPointerIcon.classList.contains('_rotate')) {
+          const allSiblings = getRowsSiblings(rowEl, 'trigger-row')
+          const el = allSiblings.filter((child) =>
+            child.getElementsByTagName('p'),
+          )
+          if (el.length > 0) {
+            triggerCellPointerIcon.classList.toggle('_rotate')
+            allSiblings.forEach((el) => el.classList.toggle('_visible'))
+          }
+        }
+      })
+    }
   }
 }
 
@@ -391,7 +439,6 @@ const getCellsContent = async (dateInfo) => {
 
   try {
     const response = await sendData(jsonData, dataScript)
-
     const finishedResponse = await response.json()
 
     firstDate = finishedResponse.first_date

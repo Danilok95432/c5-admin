@@ -1,6 +1,10 @@
 .room-chain-page {
   background-color: #ffffff;
 
+  &__inner {
+    padding-bottom: 250px;
+  }
+
   .modal-overlay {
     background: transparent;
   }

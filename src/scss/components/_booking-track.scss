@@ -182,14 +182,13 @@
     position: fixed;
     top: unset;
     transform: unset;
-    bottom: 50px;
-    right: 50px;
     background: #ffffff;
     z-index: 100000;
     border-radius: 3px;
     padding: 20px 15px 30px 17px;
     box-shadow: 0 4px 15px 0 rgba(6, 74, 177, 0.25);
     width: 435px;
+    height: max-content;
     display: none;
     pointer-events: none;
 

@@ -50,6 +50,7 @@
         }
       }
       .payment-desc {
+        display: none;
         font-size: 15px;
         span {
           color: #FF6716;
@@ -58,6 +59,9 @@
         .afford {
           color: #0B8417;
         }
+      }
+      ._active {
+        display: block;
       }
     }
   }

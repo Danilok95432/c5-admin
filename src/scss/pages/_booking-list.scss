@@ -174,10 +174,9 @@
           color: #000000;
           gap: 4px;
         }
-        &:nth-child(5) {
+        &:nth-child(7) {
           a {
             max-width: 110px;
-            justify-content: flex-end;
             text-align: right;
           }
 
@@ -213,6 +212,39 @@
     }
 
     .main-table__cell {
+      .status {
+        width: 158px;
+        padding: 9px 0;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 3px;
+        text-align: center;
+      }
+      ._green-block {
+        background: #A1FF92;
+        border: 1px solid #01DA32;
+        color: #006717;
+      }
+      ._purple-block {
+        background: #E4C5FF;
+        border: 1px solid #C53DFF;
+        color: #7200A3;
+      }
+      ._orange-block {
+        background: #FFD978;
+        border: 1px solid #FFA011;
+        color: #D53E07;
+      }
+      ._red-block {
+        background: #FFCBCB;
+        border: 1px solid #DC4848;
+        color: #C10000;
+      }
+      ._blue-block {
+        background: #CAE9FF;
+        border: 1px solid #65B9F3;
+        color: #064AB1;
+      }
       p {
         line-height: 1.5;
       }
@@ -223,33 +255,49 @@
       }
 
       &:nth-child(2) {
-        max-width: 13%;
-      }
-
-      &:nth-child(3) {
-        max-width: 35%;
+        max-width: 15%;
         @media (max-width: 1280px) {
-          max-width: 30%;
+          max-width: 17%;
         }
       }
 
+      &:nth-child(3) {
+        max-width: 12%;
+      }
+
       &:nth-child(4) {
-        max-width: 19%;
+        max-width: 16%;
+        @media (max-width: 1280px) {
+          max-width: 13%;
+        }
       }
 
       &:nth-child(5) {
-        max-width: 16%;
+        max-width: 18%;
+        @media (max-width: 1280px) {
+          max-width: 14%;
+        }
+      }
 
+      &:nth-child(6) {
+        max-width: 12%;
+      }
+
+      &:nth-child(7) {
+        max-width: 10%;
+        @media (max-width: 1280px) {
+          max-width: 14%;
+        }
         .cost-info {
           max-width: 110px;
           text-align: right;
         }
       }
 
-      &:nth-child(6) {
+      &:nth-child(8) {
         max-width: 9%;
         @media (max-width: 1280px) {
-          max-width: 14%;
+          max-width: 10%;
         }
         p {
           min-width: 119px;

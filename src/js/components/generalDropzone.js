@@ -115,13 +115,17 @@ if (genDropzones) {
               )
             }
             if (dropzoneEl.querySelectorAll('.dz-preview').length === 0) {
-              const homeTitle = dropzoneEl.querySelector(
-                '.upload-photos__info-title',
+              const uploadContainer = dropzoneEl.querySelector(
+                '.upload-photos__info',
               )
-              const homeSubtitle = homeTitle.nextElementSibling
-              homeTitle.innerHTML = 'Файл еще не загружен'
-              homeSubtitle.innerHTML =
-                'Перетащите его на поле слева или нажмите на ссылку'
+              if (uploadContainer) {
+                const uploadFileDescs =
+                  uploadContainer.querySelectorAll('.file-info-desc')
+                if (uploadFileDescs && uploadFileDescs.length > 1) {
+                  uploadFileDescs[1].classList.toggle('_active')
+                  uploadFileDescs[0].classList.toggle('_active')
+                }
+              }
             }
             updateAmountFiles()
           }
@@ -162,13 +166,17 @@ if (genDropzones) {
         file.previewElement.parentNode.removeChild(file.previewElement)
       } else {
         const cutTitles = dropzoneEl.querySelectorAll('span[data-dz-name]')
-        const homeTitle = dropzoneEl.querySelector('.upload-photos__info-title')
-        const homeSubtitle = homeTitle.nextElementSibling
-        homeTitle.innerHTML =
-          filesCount > 1
-            ? 'Загруженные файлы отображается в поле внизу'
-            : 'Загруженный файл отображается в поле справа'
-        homeSubtitle.innerHTML = ''
+        const uploadContainer = dropzoneEl.querySelector('.upload-photos__info')
+        if (uploadContainer) {
+          const uploadFileDescs =
+            uploadContainer.querySelectorAll('.file-info-desc')
+          if (uploadFileDescs && uploadFileDescs.length > 1) {
+            if (dropzoneEl.querySelectorAll('.dz-preview').length === 1) {
+              uploadFileDescs[0].classList.toggle('_active')
+              uploadFileDescs[1].classList.toggle('_active')
+            }
+          }
+        }
 
         if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
           addBtn?.classList.add('btn_disabled')

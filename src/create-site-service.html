@@ -42,13 +42,12 @@
 
             <section class="section-block photo-section">
               <h3>Изображение секции</h3>
-              <p class="photo-section__desc">380px * 230px, JPG</p>
               <div class="upload-photos general-dropzone-wrapper">
                 <div
                   id="roomPhoto"
                   data-show-preview="true"
-                  class="dropzone general-dropzone"
-                  data-general-info='{"url": "./data/test.txt", "removeUrl": "./data/test.txt", "width": "325", "height": "108", "acceptedFiles": ".jpeg, .jpg", "type": "roomPhoto", "filesCount": "1", "additional": "доп.контент"}'
+                  class="dropzone general-dropzone _down-preview"
+                  data-general-info='{"url": "http://localhost:3333/api/test", "removeUrl": "http://localhost:3333/api/test", "width": "325", "height": "108", "acceptedFiles": ".jpeg, .jpg", "type": "roomPhoto", "filesCount": "1", "additional": "доп.контент"}'
                 >
                   <div class="dz-message">
                     <svg
@@ -80,12 +79,20 @@
                       />
                     </svg>
                     <p>Перетащите изображение на это поле</p>
+                    <p>2:1, не менее 1200px*600px, JPG, PNG.</p>
                   </div>
                   <div class="upload-photos__info">
-                    <p class="upload-photos__info-title">
-                      Файл еще не загружен
-                    </p>
-                    <p>Перетащите его на поле слева или нажмите на ссылку</p>
+                    <div class="file-info-desc _active">
+                      <p class="upload-photos__info-title">
+                        Файл еще не загружен
+                      </p>
+                      <p>Перетащите его на поле слева или нажмите на ссылку</p>
+                    </div>
+                    <div class="file-info-desc">
+                      <p class="upload-photos__info-title">
+                        Загруженный файл отображается в поле внизу
+                      </p>
+                    </div>
                     <button
                       class="general-dropzone__add-btn main-btn"
                       id="room-photo"

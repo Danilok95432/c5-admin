@@ -7,6 +7,11 @@
         flex-direction: column;
         justify-content: flex-start;
       }
+
+      &__previews {
+        border: 1px solid #6db4f5;
+        padding: 17px;
+      }
     }
 
     h4 {
@@ -51,6 +56,7 @@
       width: 100%;
     }
   }
+
   .restaurant-work-time {
     margin-bottom: 20px;
 
@@ -90,12 +96,15 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
+
     @media (max-width: 450px) {
       flex-direction: column;
     }
+
     @media (max-width: 760px) {
       flex-wrap: wrap;
     }
+
     .breakfast-time {
       display: flex;
       flex-direction: row;
@@ -124,10 +133,9 @@
     height: 40px;
     width: 180px;
     padding: 0;
-    background: #064ab1;
     border: 1px solid #064ab1;
     border-radius: 5px;
-    color: #ffffff;
+    color: #064ab1;
     font-size: 15px;
     font-weight: 600;
     display: -webkit-box;
@@ -147,8 +155,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 230px;
-    height: 115px;
+    width: 300px;
+    height: 150px;
     stroke: #6db4f5;
     padding-bottom: 4px;
   }
@@ -436,5 +444,41 @@
 
   .title-gallery {
     margin-bottom: 5px;
+  }
+
+  .desc-gallery {
+    @include opensans-light;
+    margin-bottom: 27px;
+
+    span {
+      color: #ff6716;
+      font-weight: 500;
+    }
+  }
+
+  .fix-row {
+    margin-bottom: 21px;
+
+    &__title {
+      padding-top: 7px;
+      min-width: 230px;
+
+      span {
+        color: #ff6716;
+        font-weight: 500;
+      }
+    }
+
+    &__desc {
+      flex-grow: 1;
+    }
+  }
+
+  .gallery-section {
+    &__gallery-photo-row {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #c3d5f5;
+      margin-bottom: 30px;
+    }
   }
 }

@@ -13,7 +13,7 @@
       min-width: 230px;
 
       span {
-        color: #FF6716;
+        color: #ff6716;
         font-weight: 500;
       }
     }
@@ -28,11 +28,10 @@
     margin-bottom: 27px;
 
     span {
-      color: #FF6716;
+      color: #ff6716;
       font-weight: 500;
     }
   }
-
 
   .promo-section {
     .general-dropzone {
@@ -70,13 +69,12 @@
         }
       }
       padding-bottom: 40px;
-      border-bottom: 1px solid #C3D5F5;
+      border-bottom: 1px solid #c3d5f5;
       margin-bottom: 30px;
     }
   }
 
   .table-section {
-
     h3 {
       margin-bottom: 25px;
     }
@@ -151,7 +149,7 @@
 
           .delete-link {
             opacity: 0;
-            transition: all .2s;
+            transition: all 0.2s;
             width: 23px;
             height: 23px;
             @media (max-width: 1024px) {
@@ -167,12 +165,12 @@
     &__textarea-row {
       padding-bottom: 30px;
       margin-bottom: 30px;
-      border-bottom: 1px solid #C3D5F5;
+      border-bottom: 1px solid #c3d5f5;
     }
   }
 
-  .special-section, .main-room-section {
-
+  .special-section,
+  .main-room-section {
     h3 {
       margin-bottom: 25px;
     }
@@ -209,8 +207,7 @@
   }
 
   .cafe-section {
-
-    .upload-photos {
+    .gallery-section__gallery-photo-row {
       .general-dropzone__previews {
         margin-top: 5px;
         min-height: auto;
@@ -222,8 +219,10 @@
       .dz-preview {
         width: 300px;
         height: 150px;
+
         .dz-image {
           height: 150px;
+
           img {
             object-fit: fill;
           }
@@ -233,7 +232,7 @@
 
     &__cafe-photo-row {
       padding-bottom: 20px;
-      border-bottom: 1px solid #C3D5F5;
+      border-bottom: 1px solid #c3d5f5;
       margin-bottom: 30px;
 
       .fix-row__title {

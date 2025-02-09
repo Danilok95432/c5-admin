@@ -1,12 +1,10 @@
 .booking-document-modal,
 .upload-document-modal {
-  background: #ffffff;
-  flex-direction: column;
-  border-radius: 3px;
-  padding: 18px 20px 30px;
-  box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
-  width: 490px;
-  gap: 18px;
+  border-radius: 10px;
+  width: 496px;
+  box-shadow: 0 4px 25px 0 rgb(6 74 177 / 15%);
+  background: #fff;
+
   @media (max-width: 540px) {
     width: 90vw;
   }
@@ -23,32 +21,33 @@
     margin: 0;
   }
 
-  h2 {
-    margin-bottom: 0;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.1;
-  }
-
   .modal-close-btn {
-    top: 19px;
-    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 0;
+    right: -60px;
+    background:
+      url("../img/close.svg") 50% / 20px 20px no-repeat,
+      #ff6716;
   }
 
   .add-document-modal-switch {
     display: flex;
-    flex-direction: row;
+    padding: 25px 0 20px 25px;
+
     .switch-btn {
       font-size: 15px;
       height: 40px;
       width: 223px;
-      background: #ffffff;
-      color: #000;
+      background: #fff;
       border: 1px solid #6db4f5;
       border-radius: 5px 0px 0px 5px;
+
       &:last-child {
         border-radius: 0px 5px 5px 0px;
       }
+
       &._active {
         background: #064ab1;
         color: #ffffff;
@@ -61,37 +60,37 @@
   .upload-document-modal-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 5px;
-    .input-column-wrapper {
-      &._last {
-        margin-bottom: 10px;
-      }
-    }
+    padding: 0 25px 30px;
+    row-gap: 20px;
   }
 
   .main-btn {
-    width: max-content;
     padding: 10px 15px;
   }
 
   #file-upload-scan {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2px 18px;
+    max-width: 155px;
   }
 
   .file-upload {
-    height: 41.5px;
-    margin-bottom: 5px;
+    height: 35px;
+
     @media (max-width: 460px) {
       height: max-content;
     }
+
     .main-btn {
       height: 35px;
     }
+
     &__name {
       padding-left: 35px;
       position: relative;
+
       &::before {
         content: "";
         position: absolute;
@@ -105,9 +104,11 @@
         background-repeat: no-repeat;
       }
     }
+
     &__delete-btn {
       top: 14px;
     }
+
     &._loaded {
       display: flex;
       flex-direction: row;
@@ -115,8 +116,10 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 5px;
+
       .file-upload__info {
         height: 41.5px;
+
         a {
           max-width: 185px;
           height: 41.5px;
@@ -129,5 +132,25 @@
         }
       }
     }
+  }
+}
+
+.booking-document-modal {
+  &__header {
+    padding: 24px 0 19px 25px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &__form-wrapper {
+    border-block: 1px solid #c3d5f5;
+  }
+
+  &__footer {
+    padding: 30px 25px;
   }
 }

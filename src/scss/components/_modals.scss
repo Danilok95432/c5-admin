@@ -23,10 +23,6 @@
     width: 80%;
   }
 
-  @media (max-width: 550px) {
-    width: 95%;
-  }
-
   &__inner {
     border-radius: 10px;
     background-color: #fff;
@@ -44,6 +40,7 @@
       width: 0;
     }
   }
+
   .styled-form {
     width: 485px;
     padding: 25px 30px 35px 30px;

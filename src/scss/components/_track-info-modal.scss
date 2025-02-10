@@ -4,8 +4,8 @@
   box-shadow: 0 4px 25px 0 rgb(6 74 177 / 15%);
   background: #fff;
 
-  @media (max-width: 768px) {
-    min-width: auto;
+  @media (max-width: 641px) {
+    max-width: 70%;
   }
 
   &__header {

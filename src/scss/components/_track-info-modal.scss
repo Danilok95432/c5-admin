@@ -28,10 +28,6 @@
 
   &__wrapper {
     border-block: 1px solid #c3d5f5;
-
-    @media (max-width: 400px) {
-      padding: 15px;
-    }
   }
 
   &__footer {
@@ -47,6 +43,14 @@
 
   .fix-row {
     align-items: center;
+
+    &__wrapper {
+      padding: 20px 25px 30px;
+
+      @media (max-width: 400px) {
+        padding: 15px;
+      }
+    }
 
     &:not(:last-child) {
       margin-bottom: 6px;

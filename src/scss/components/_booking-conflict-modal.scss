@@ -1,0 +1,106 @@
+.booking-conflict-modal {
+  max-width: 740px;
+  .modal-close-btn {
+    right: -60px;
+  }
+
+  .modal__inner {
+    width: 740px;
+  }
+  .fix-row {
+    margin-bottom: 10px;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-end;
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__title {
+      font-weight: 300;
+      width: 95px;
+      min-width: 95px;
+    }
+    &__desc {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #C3D5F5;
+    h2 {
+      font-size: 22px;
+      @include opensans-bold;
+
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .over-booking-info {
+    padding: 30px 0;
+  }
+
+  .over-booking-requests {
+    display: flex;
+    flex-direction: column;
+    .booking-request {
+      border-top: 1px solid #C3D5F5;
+      padding: 32px 0 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          color: #FF6716;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        button {
+          background: #064AB1;
+          color: #fff;
+          font-size: 15px;
+          padding: 14px 20px;
+          text-align: center;
+          max-width: 196px;
+          border-radius: 5px;
+        }
+      }
+      .fix-row {
+        margin-bottom: 10px;
+        font-weight: 400;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &__title {
+          font-weight: 300;
+          min-width: 95px;
+        }
+        &__desc {
+          display: flex;
+          gap: 15px;
+        }
+      }
+    }
+  }
+
+  &__controllers {
+    .modal-close-btn {
+      position: static;
+      padding: 16px 27px
+    }
+  }
+}

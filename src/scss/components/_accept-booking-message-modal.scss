@@ -1,0 +1,34 @@
+.accept-booking-message-modal {
+  max-width: 500px;
+  .modal {
+    &__inner {
+      width: 500px;
+    }
+    &__inner-content {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      text-align: center;
+      .controllers {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        button {
+          background: #064AB1;
+          color: #fff;
+          font-size: 15px;
+          padding: 14px 20px;
+          text-align: center;
+          min-width: 100px;
+          border-radius: 5px;
+        }
+        button:nth-child(2) {
+          background: #fff;
+          color: #000;
+          border: 1px solid #064AB1;
+        }
+      }
+    }
+  }
+}

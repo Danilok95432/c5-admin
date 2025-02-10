@@ -158,6 +158,161 @@ export const formatDate = (date) => {
   return date.split('.').reverse().join('.')
 }
 
+// Ищет пересечения дат
+export const intersectionDates = (dateRanges) => {
+  if (!Array.isArray(dateRanges) || dateRanges.length === 0) {
+    return 'Не передано ни одного диапазона дат'
+  }
+
+  const validRanges = dateRanges
+    .map((range) => {
+      if (!Array.isArray(range) || range.length !== 2) {
+        return null // Невалидный диапазон
+      }
+
+      const [start, end] = range
+
+      const [dayStart, monthStart, yearStart] = start.split('.').map(Number)
+      const [dayEnd, monthEnd, yearEnd] = end.split('.').map(Number)
+
+      if (
+        isNaN(dayStart) ||
+        isNaN(monthStart) ||
+        isNaN(yearStart) ||
+        isNaN(dayEnd) ||
+        isNaN(monthEnd) ||
+        isNaN(yearEnd) ||
+        monthStart < 1 ||
+        monthStart > 12 ||
+        monthEnd < 1 ||
+        monthEnd > 12 ||
+        dayStart < 1 ||
+        dayStart > 31 ||
+        dayEnd < 1 ||
+        dayEnd > 31
+      ) {
+        return null // Невалидная дата
+      }
+
+      const startDate = new Date(yearStart, monthStart - 1, dayStart)
+      const endDate = new Date(yearEnd, monthEnd - 1, dayEnd)
+
+      if (
+        startDate.toString() === 'Invalid Date' ||
+        endDate.toString() === 'Invalid Date' ||
+        startDate > endDate
+      ) {
+        return null // Невалидная дата или startDate > endDate
+      }
+
+      return { start: startDate, end: endDate }
+    })
+    .filter((range) => range !== null)
+
+  if (validRanges.length === 0) {
+    return 'Нет ни одного корректного диапазона дат'
+  }
+
+  let intersectionStart = validRanges[0].start
+  let intersectionEnd = validRanges[0].end
+
+  for (let i = 1; i < validRanges.length; i++) {
+    const currentRange = validRanges[i]
+
+    intersectionStart = new Date(
+      Math.max(intersectionStart, currentRange.start),
+    )
+    intersectionEnd = new Date(Math.min(intersectionEnd, currentRange.end))
+
+    if (intersectionStart > intersectionEnd) {
+      return 'Нет пересечения'
+    }
+  }
+
+  const formattedIntersectionStart = `${String(
+    intersectionStart.getDate(),
+  ).padStart(2, '0')}.${String(intersectionStart.getMonth() + 1).padStart(
+    2,
+    '0',
+  )}.${intersectionStart.getFullYear()}`
+  const formattedIntersectionEnd = `${String(
+    intersectionEnd.getDate(),
+  ).padStart(2, '0')}.${String(intersectionEnd.getMonth() + 1).padStart(
+    2,
+    '0',
+  )}.${intersectionEnd.getFullYear()}`
+
+  return `с ${formattedIntersectionStart} по ${formattedIntersectionEnd}`
+}
+
+export const areDateRangesIntersecting = (dateRanges) => {
+  if (!Array.isArray(dateRanges) || dateRanges.length === 0) {
+    return true
+  }
+
+  if (dateRanges.length === 1) {
+    return true
+  }
+
+  // Функция для преобразования строки даты в объект Date
+  function parseDateString(dateString) {
+    const [day, month, year] = dateString.split('.').map(Number)
+    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+      return null // Невалидная дата
+    }
+    return new Date(year, month - 1, day)
+  }
+
+  // Функция для проверки валидности диапазона (start <= end)
+  function isValidRange(start, end) {
+    return start && end && start <= end
+  }
+
+  // Вычисление пересечения для двух диапазонов
+  function rangesIntersect(range1, range2) {
+    const [checkIn1Str, checkOut1Str] = range1
+    const [checkIn2Str, checkOut2Str] = range2
+
+    const checkIn1 = parseDateString(checkIn1Str)
+    const checkOut1 = parseDateString(checkOut1Str)
+    const checkIn2 = parseDateString(checkIn2Str)
+    const checkOut2 = parseDateString(checkOut2Str)
+
+    if (
+      !isValidRange(checkIn1, checkOut1) ||
+      !isValidRange(checkIn2, checkOut2)
+    ) {
+      return false
+    }
+
+    return checkIn1 <= checkOut2 && checkOut1 >= checkIn2
+  }
+
+  // Проверяем попарно все диапазоны на пересечение
+  for (let i = 0; i < dateRanges.length; i++) {
+    for (let j = i + 1; j < dateRanges.length; j++) {
+      if (!rangesIntersect(dateRanges[i], dateRanges[j])) {
+        return false
+      }
+    }
+  }
+
+  return true
+}
+
+// Поиск поля клиент рядом с кнопкой "Утвердить заявку"
+
+export const findNearestClient = (button) => {
+  let bookingRequestElement = button.closest('.booking-request')
+  if (!bookingRequestElement) {
+    return null
+  }
+  let clientElement = bookingRequestElement.querySelector(
+    '.booking-conflict-modal__client',
+  )
+  return clientElement.innerHTML
+}
+
 // Получение всех соседних элементов
 
 export const getRowsSiblings = (elem, limitElClass) => {

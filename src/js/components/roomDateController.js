@@ -1,10 +1,14 @@
 import AirDatepicker from 'air-datepicker'
 import {
   addDaysToDate,
+  areDateRangesIntersecting,
   defineWeekDay,
   escapeHtml,
+  findNearestClient,
   formatStrToDate,
+  getNoun,
   getRowsSiblings,
+  intersectionDates,
   returnDescHeadBooking,
   sendData,
   showInfoModal,
@@ -15,6 +19,7 @@ const roomDateController = document.querySelector('.room-date-controller')
 
 let firstDate,
   lastDate = ''
+let redTracks = []
 
 const searchBookings = () => {
   const searchInput = document.querySelector('[name="booking_search"]')
@@ -111,26 +116,180 @@ const setInfoModalsHandlers = () => {
     const openBookingLink = trackModal.querySelector(
       '.track-info-modal__open-booking',
     )
+
+    const conflictModal = document.querySelector('.booking-conflict-modal')
+    const acceptRequestModal = document.querySelector(
+      '.accept-booking-message-modal',
+    )
+    const clientRequestField = acceptRequestModal.querySelector(
+      '.client-request-field',
+    )
+    const closeModalBtn = conflictModal.querySelector('.modal-close-btn')
+    const categoryConflictField = conflictModal.querySelector(
+      '.booking-conflict-modal__category',
+    )
+    const roomConflictField = conflictModal.querySelector(
+      '.booking-conflict-modal__room',
+    )
+    const datesConflictField = conflictModal.querySelector(
+      '.booking-conflict-modal__dates',
+    )
+
+    const overBookingRequests = conflictModal.querySelector(
+      '.over-booking-requests',
+    )
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => {
+        redTracks = []
+        overBookingRequests.innerHTML = ``
+      })
+    }
+
     const triggerRows = document.querySelectorAll('tr.trigger-row')
+    const bookingTracks = document.querySelectorAll('.booking-track')
     infoCells.forEach((cellBtn) => {
       const dataObj = JSON.parse(cellBtn.dataset.json)
       cellBtn?.addEventListener('click', () => {
-        trackModal.classList.add('_active')
-        modalOverlay.classList.add('_active')
-        idField.textContent = dataObj?.id
-        customerField.textContent = dataObj?.customer
-        phoneField.textContent = dataObj?.phone
-        guestsField.textContent = dataObj?.guests
-        checkInField.textContent = dataObj?.checkIn
-        checkOutField.textContent = dataObj?.checkOut
-        foodField.textContent = dataObj?.food
-        sourceField.textContent = dataObj?.source
-        categoryField.textContent = dataObj?.category
-        tariffField.textContent = dataObj?.tariff
-        roomField.textContent = dataObj?.room
-        priceField.textContent = dataObj?.price
-        paidField.textContent = dataObj?.paid
-        openBookingLink.href = dataObj?.link
+        if (dataObj?.status != '_red') {
+          trackModal.classList.add('_active')
+          modalOverlay.classList.add('_active')
+          idField.textContent = dataObj?.id
+          customerField.textContent = dataObj?.customer
+          phoneField.textContent = dataObj?.phone
+          guestsField.textContent = dataObj?.guests
+          checkInField.textContent = dataObj?.checkIn
+          checkOutField.textContent = dataObj?.checkOut
+          foodField.textContent = dataObj?.food
+          sourceField.textContent = dataObj?.source
+          categoryField.textContent = dataObj?.category
+          tariffField.textContent = dataObj?.tariff
+          roomField.textContent = dataObj?.room
+          priceField.textContent = dataObj?.price
+          paidField.textContent = dataObj?.paid
+          openBookingLink.href = dataObj?.link
+        } else {
+          conflictModal.classList.add('_active')
+          modalOverlay.classList.add('_active')
+          categoryConflictField.textContent = dataObj?.category
+          roomConflictField.textContent = dataObj?.room
+          let datesRange = []
+          datesRange.push([
+            dataObj?.checkIn.split(' ')[0],
+            dataObj?.checkOut.split(' ')[0],
+          ])
+          bookingTracks.forEach((track) => {
+            const jsonData = track.dataset.json
+            try {
+              const bookingData = JSON.parse(jsonData)
+              if (bookingData.status == '_red') {
+                datesRange.push([
+                  bookingData.checkIn.split(' ')[0],
+                  bookingData.checkOut.split(' ')[0],
+                ])
+                if (areDateRangesIntersecting(datesRange)) {
+                  redTracks.push(bookingData)
+                }
+                datesRange.pop()
+              }
+            } catch (error) {
+              console.log('error', error)
+            }
+          })
+          datesRange = []
+          redTracks.forEach((track) => {
+            datesRange.push([
+              track.checkIn.split(' ')[0],
+              track.checkOut.split(' ')[0],
+            ])
+          })
+          datesConflictField.textContent = intersectionDates(datesRange)
+          redTracks.forEach((track) => {
+            const requestDiv = document.createElement('div')
+            requestDiv.classList.add('booking-request')
+            requestDiv.innerHTML = `
+              <div class="header">
+                <h2>Заявка #241112-161-603100  (Овербукинг-8990)</h2>
+                <button class="accept-request-btn">Утвердить заявку</button>
+              </div>
+              <div class="info">
+                <div class="fix-row">
+                  <p class="fix-row__title">Клиент:</p>
+                  <p class="fix-row__desc booking-conflict-modal__client">${
+                    track.customer
+                  }</p>
+                </div>
+                <div class="fix-row">
+                  <p class="fix-row__title">Гости:</p>
+                  <p class="fix-row__desc booking-conflict-modal__guests">${
+                    track.guests
+                  }</p>
+                </div>
+                <div class="fix-row">
+                  <p class="fix-row__title">Даты:</p>
+                  <p class="fix-row__desc booking-conflict-modal__dates">${
+                    track.checkIn.split(' ')[0]
+                  } - ${track.checkOut.split(' ')[0]}(${
+                    track.dayCount - 1
+                  } ${getNoun(track.dayCount - 1, 'ночь', 'ночи', 'ночей')})</p>
+                </div>
+                <div class="fix-row">
+                  <p class="fix-row__title">Вся цена:</p>
+                  <p class="fix-row__desc booking-conflict-modal__price">${
+                    track.price
+                  }</p>
+                </div>
+                <div class="fix-row">
+                  <p class="fix-row__title">Предоплата:</p>
+                  <p class="fix-row__desc booking-conflict-modal__paid">${
+                    track.paid
+                  }</p>
+                </div>
+              </div>
+            `
+            overBookingRequests.appendChild(requestDiv)
+          })
+          const acceptBtns = document.querySelectorAll('.accept-request-btn')
+          acceptBtns.forEach((btn) => {
+            const client = findNearestClient(btn)
+            btn.addEventListener('click', () => {
+              acceptRequestModal.classList.add('_active')
+              clientRequestField.innerHTML = client
+              conflictModal.classList.remove('_active')
+              const accept = acceptRequestModal.querySelector('.accept-request')
+              const reject = acceptRequestModal.querySelector('.reject-request')
+              if (accept && reject) {
+                accept.addEventListener('click', () => {
+                  acceptRequestModal.classList.remove('_active')
+                  modalOverlay.classList.remove('_active')
+                  bookingTracks.forEach((track) => {
+                    const jsonData = track.dataset.json
+                    try {
+                      const bookingData = JSON.parse(jsonData)
+                      if (
+                        bookingData.status == '_red' &&
+                        bookingData.customer == clientRequestField.textContent
+                      ) {
+                        bookingData.status = '_orange'
+                        const presentDay = new Date()
+                        getCellsContent(presentDay, bookingData).then(() =>
+                          initRowsVisibleHandler(),
+                        )
+                      }
+                    } catch (error) {
+                      console.log('error', error)
+                    }
+                  })
+                  redTracks = []
+                  overBookingRequests.innerHTML = ``
+                })
+                reject.addEventListener('click', () => {
+                  conflictModal.classList.add('_active')
+                  acceptRequestModal.classList.remove('_active')
+                })
+              }
+            })
+          })
+        }
       })
 
       if (dataObj) {
@@ -428,7 +587,7 @@ export const renderRows = (rows) => {
     rowsContainer.innerHTML = html.join('')
   }
 }
-const getCellsContent = async (dateInfo) => {
+const getCellsContent = async (dateInfo, changedTrack = null) => {
   const bookingTableWrapper = document.querySelector('.room-booking-calendar')
   const dataScript = bookingTableWrapper.dataset.script
 
@@ -439,6 +598,23 @@ const getCellsContent = async (dateInfo) => {
 
   try {
     const response = await sendData(jsonData, dataScript)
+
+    if (changedTrack !== null) {
+      response.rows.map((row) => {
+        row.childRows.map((elem) => {
+          elem.cells.map((item) => {
+            if (
+              item.customer === changedTrack.customer &&
+              item.category === changedTrack.category &&
+              item.room === changedTrack.room
+            ) {
+              item.status = '_orange'
+            }
+          })
+        })
+      })
+    }
+
     const finishedResponse = await response.json()
 
     firstDate = finishedResponse.first_date

@@ -1,0 +1,41 @@
+<div class="modal booking-conflict-modal" id="booking-conflict-modal">
+  <button
+    class="modal-close-btn"
+    data-close-modal="booking-conflict-modal"
+    type="button"
+  >
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="20" fill="#FF6716" />
+      <path
+        d="M20.0848 22.2364C19.0941 23.2317 17.9053 24.4261 16.9145 25.4214C15.5275 26.8149 14.3387 28.0093 12.9517 29.4028C12.1591 30.1991 11.1682 30.1991 10.5738 29.4028C9.97939 28.8056 9.97939 27.6113 10.5738 27.0141C12.7534 24.8243 14.9331 22.6345 17.1126 20.4447C17.3108 20.2456 17.3107 20.2457 17.5088 20.0467C17.3107 19.8476 17.3108 19.8475 17.1126 19.6484C14.9331 17.4586 12.7534 15.269 10.5738 13.0793C9.5831 12.0839 9.97953 10.6904 10.9702 10.2923C11.5647 10.0932 12.3573 10.0931 12.9517 10.6903C15.1313 12.8801 17.3107 15.0699 19.4903 17.2597C19.6884 17.4587 19.6886 17.4586 19.8867 17.6577C20.0848 17.4586 20.0847 17.4587 20.2829 17.2597C22.4625 15.0699 24.6421 12.8801 27.0198 10.4913C28.0105 9.69501 29.3976 9.89422 29.7939 10.8896C29.992 11.6858 29.9919 12.283 29.3974 12.8803C27.2179 15.07 25.0384 17.2596 22.8589 19.4494C22.6607 19.6484 22.6606 19.6486 22.4624 19.8477C22.6606 20.0467 22.6607 20.0466 22.8589 20.2457C25.0384 22.4354 27.2179 24.6253 29.3974 26.815C29.9919 27.4123 30.1902 28.2085 29.7939 28.8057C29.3976 29.4029 28.8031 29.8009 28.0105 29.6018C27.6142 29.4027 27.218 29.2038 27.0198 29.0048C24.8402 26.815 22.6606 24.6251 20.481 22.4354C20.2828 22.6345 20.0848 22.4354 20.0848 22.2364Z"
+        fill="white" />
+    </svg>
+  </button>
+  <div class="modal__inner">
+
+    <div class="modal__inner-content">
+      <div class="booking-conflict-modal__title">
+        <h2>
+          Конфликт бронирований
+        </h2>
+      </div>
+      <div class="over-booking-info">
+        <div class="fix-row">
+          <p class="fix-row__title">Категория:</p>
+          <p class="fix-row__desc booking-conflict-modal__category"></p>
+        </div>
+        <div class="fix-row">
+          <p class="fix-row__title">Номер:</p>
+          <p class="fix-row__desc booking-conflict-modal__room"></p>
+        </div>
+        <div class="fix-row">
+          <p class="fix-row__title">Даты наложения:</p>
+          <p class="fix-row__desc booking-conflict-modal__dates"></p>
+        </div>
+      </div>
+      <div class="over-booking-requests"></div>
+    </div>
+
+  </div>
+</div>

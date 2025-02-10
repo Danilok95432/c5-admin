@@ -23,12 +23,6 @@
     }
   }
 
-  .container {
-    margin: 0 auto;
-    max-width: 1920px;
-    padding: 0 15px;
-  }
-
   .input-column-wrapper {
     label {
       display: flex;
@@ -214,6 +208,15 @@
     &:last-child {
       border: none;
       padding: 35px 0 0 0;
+    }
+
+    .dz-preview {
+      width: 300px;
+      height: 150px;
+    }
+
+    .dz-image {
+      height: 100%;
     }
   }
 
@@ -425,15 +428,15 @@
     justify-content: center;
   }
 
-  .droparea-menu {
-    display: none;
-  }
+  // .droparea-menu {
+  //   display: none;
+  // }
 
-  .dz-load-menu {
-    background: #fff;
-    color: #064ab1;
-    margin-top: 0;
-  }
+  // .dz-load-menu {
+  //   background: #fff;
+  //   color: #064ab1;
+  //   margin-top: 0;
+  // }
 
   .menu-column {
     min-width: 457px;

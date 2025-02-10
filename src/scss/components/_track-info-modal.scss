@@ -10,7 +10,13 @@
 
   &__header {
     padding: 24px 25px 19px;
+
+    @media (max-width: 400px) {
+      text-align: center;
+      padding: 15px
+    }
   }
+
 
   &__title {
     @include opensans-bold;
@@ -22,18 +28,25 @@
 
   &__wrapper {
     border-block: 1px solid #c3d5f5;
+
+    @media (max-width: 400px) {
+      padding: 15px;
+    }
   }
 
   &__footer {
     padding: 30px 25px;
+
+    @media (max-width: 400px) {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .fix-row {
     align-items: center;
-
-    &__wrapper {
-      padding: 20px 25px 30px;
-    }
 
     &:not(:last-child) {
       margin-bottom: 6px;

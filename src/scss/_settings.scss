@@ -19,6 +19,7 @@ body {
   background-color: #e8f1f8;
   color: $black;
   position: relative;
+
   &._lock {
     overflow-y: hidden;
   }
@@ -28,8 +29,9 @@ main {
   min-height: 100vh;
 
   h1 {
-    font-size: 25px;
     @include opensans-bold;
+
+    font-size: 25px;
     color: #064ab1;
     padding: 40px 0 30px;
   }
@@ -70,11 +72,11 @@ p {
 }
 
 button {
-  border: none;
-  cursor: pointer;
-  background: none;
   margin: 0;
+  border: none;
   padding: 0;
+  background: none;
+  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
@@ -113,8 +115,8 @@ textarea {
 
 .container {
   margin: 0 auto;
-  max-width: 1920px;
   padding: 0 15px;
+  max-width: 1920px;
 }
 
 .dz-details,
@@ -132,8 +134,8 @@ textarea {
 }
 
 .dz-remove {
-  line-height: 0;
   font-size: 0;
+  line-height: 0;
 }
 
 .dz-preview:not(.dz-preview.dz-processing) {
@@ -141,10 +143,10 @@ textarea {
 }
 
 .general-dropzone__previews {
-  width: 100%;
-  gap: 15px;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  gap: 15px;
 }
 
 .dz-preview {

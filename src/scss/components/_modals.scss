@@ -1,99 +1,92 @@
-.modal{
-    position: fixed;
-    overflow-x: hidden;
-    left: 50%;
-    top: 50%;
-    padding-right: 50px;
-    transform: translate(-50%, -50%);
-    transition: all .2s;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    gap: 20px;
-    max-height: 90vh;
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  &__inner {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 760px;
+    padding: 25px 30px;
+    overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
 
+    @media (max-width: 768px) {
+      padding: 15px 10px;
+    }
+
     &::-webkit-scrollbar {
-        width: 0;
+      width: 0;
+    }
+  }
+
+  .styled-form {
+    width: 485px;
+    padding: 25px 30px 35px 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+
+    @media (max-width: 730px) {
+      width: 90vw;
+      padding: 30px 20px 20px 20px;
     }
 
-    &._active {
-        opacity: 1;
-        z-index: 999;
-        visibility: visible;
+    h4 {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 16px;
     }
-
-    @media (max-width: 1024px) {
-        width: 80%;
-    }
-    @media (max-width: 550px) {
-        width: 95%;
-    }
-
-    &__inner {
-        border-radius: 10px;
-        background-color: #fff;
-        width: 760px;
-        padding: 25px 30px;
-        overflow-y: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        @media (max-width: 768px) {
-            padding: 15px 10px;
-        }
-
-        &::-webkit-scrollbar {
-            width: 0;
-        }
-    }
-    .styled-form {
-        width: 485px;
-        padding: 25px 30px 35px 30px;
-        border-radius: 5px;
-        background-color: #fff;
-        border: none;
-
-        @media (max-width: 730px) {
-            width: 90vw;
-            padding: 30px 20px 20px 20px;
-        }
-
-        h4 {
-            font-size: 25px;
-            font-weight: 600;
-            line-height: normal;
-            margin-bottom: 16px;
-        }
-    }
-
+  }
 }
 
 .modal-links {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(#002968, 0.4);
-    visibility: hidden;
-    z-index: -1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(#002968, 0.4);
+  visibility: hidden;
+  z-index: -1;
 
-    &._active {
-        z-index: 998;
-        visibility: visible;
-    }
+  &._active {
+    z-index: 998;
+    visibility: visible;
+  }
 }
 
 .modal-close-btn {
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1000;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
 }

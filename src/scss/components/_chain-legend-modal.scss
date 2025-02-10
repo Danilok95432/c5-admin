@@ -1,88 +1,141 @@
 .chain-legend-modal {
-  padding: 18px 63px 18px 18px;
-  max-width: 490px;
-  background:#ffffff;
-  flex-direction: column;
-  border-radius: 3px;
-  box-shadow: 0 4px 25px 0 rgba(6, 74, 177, 0.15);
+  border-radius: 10px;
+  max-width: 518px;
+  box-shadow: 0 4px 25px 0 rgb(6 74 177 / 15%);
+  background: #fff;
+
+  @media(max-width: 641px) {
+    max-width: 70%
+  }
+
+  @media(max-width: 400px) {
+    max-width: 63%
+  }
 
   .modal-close-btn {
-    top: 18px;
-    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 0;
+    right: -60px;
+    background:
+      url("../img/close.svg") 50% / 20px 20px no-repeat,
+      #ff6716;
   }
-  h4 {
-    font-size: 15px;
-    @include opensans-bold;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #E7E9ED;
+
+  &__header {
+    padding: 24px 25px 15px;
+  }
+
+  &__title {
     margin-bottom: 0;
+    font-weight: 700;
+    font-size: 22px;
   }
-  ul {
-    padding-left: 20px;
-    padding-bottom: 12px;
+
+  &__wrapper {
+    border-top: 1px solid #c3d5f5;
+  }
+
+  &__list {
+    padding: 25px 40px 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media(max-width: 641px) {
+      padding: 15px;
+    }
+
+
+    span {
+      border-radius: 3px;
+      border-width: 2px;
+
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+
     .green-cell {
       span {
-        background: #9AFF8A;
-        border: 1px solid #01DA32;
+        background: #9aff8a;
+        border: solid #01da32;
       }
     }
+
     .purple-cell {
       span {
-        background: #E4C5FF;
-        border: 1px solid #C53DFF;
+        background: #e4c5ff;
+        border: solid #c53dff;
       }
     }
+
     .orange-cell {
       span {
-        background: #FFD363;
-        border: 1px solid #FFA011;
+        background: #ffd363;
+        border: solid #ffa011;
       }
     }
+
     .blue-cell {
       span {
-        background: #CAE9FF;
-        border: 1px solid #65B9F3;
+        background: #cae9ff;
+        border: solid #65b9f3;
       }
     }
+
     .red-cell {
       span {
-        background: #FFA4A4;
-        border: 1px solid #DC4848;
+        background: #ffa4a4;
+        border: solid #dc4848;
       }
     }
+
     .gray-cell {
       span {
-        background: #D9D9D9;
-        border: 1px solid #E40000;
+        background: #d9d9d9;
+        border: solid #e40000;
       }
     }
+
     .current-day-cell {
       span {
-        background: #FFFFFF;
-        border: 1px solid #96CBFB;
+        background: #ffffff;
+        border: solid #96cbfb;
       }
     }
+
     li {
       display: flex;
       align-items: center;
-      gap: 46px;
+      gap: 25px;
+
       span {
-        width: 30px;
+        min-width: 30px;
         height: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
+
       p {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.3;
+
+        @media(max-width: 641px) {
+          font-size: 13px;
+        }
       }
-      @media (max-width: 550px) {
+
+      @media (max-width <=641px) {
         gap: 20px;
       }
     }
+  }
+
+  @media (max-width <=641px) {
+    max-width: 60%;
   }
 }

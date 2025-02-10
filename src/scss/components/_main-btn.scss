@@ -1,11 +1,12 @@
 .main-btn {
+  @include opensans-semibold;
+
   color: #ffffff;
   text-align: center;
-  @include opensans-semibold;
   font-size: 15px;
   padding: 15px 25px;
   border-radius: 5px;
-  background: #064AB1;
+  background: #064ab1;
 
   svg {
     margin-right: 2px;
@@ -14,18 +15,18 @@
 
   &._blue-outlined {
     background: transparent;
-    border: 1px solid #064AB1;
-    color: #064AB1;
+    border: 1px solid #064ab1;
+    color: #064ab1;
   }
   &._orange {
     border: none;
     color: #ffffff;
-    background: #FF6716;
+    background: #ff6716;
   }
   &._orange-outlined {
     background: transparent;
-    border: 1px solid #FF6716;
-    color: #FF6716;
+    border: 1px solid #ff6716;
+    color: #ff6716;
   }
 
   &._red {
@@ -35,15 +36,14 @@
   }
 
   &._green {
-    border: 1px solid #00754A;
-    color: #00754A;
+    border: 1px solid #00754a;
+    color: #00754a;
     background: transparent;
   }
 
-
   &._white {
     border: none;
-    color: #064AB1;
+    color: #064ab1;
     padding: 0;
   }
 }

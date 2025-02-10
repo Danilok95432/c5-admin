@@ -36,6 +36,7 @@
   .promo-section {
     .general-dropzone {
       align-items: center;
+
       &__previews {
         padding: 0;
         margin-top: 0;
@@ -53,6 +54,7 @@
 
         .dz-image {
           height: 150px;
+
           img {
             aspect-ratio: 4 / 1;
             object-fit: fill;
@@ -64,10 +66,12 @@
     &__promo-photo-row {
       .fix-row__title {
         padding-top: 40px;
+
         @media (max-width: 768px) {
           padding-top: 0;
         }
       }
+
       padding-bottom: 40px;
       border-bottom: 1px solid #c3d5f5;
       margin-bottom: 30px;
@@ -112,7 +116,7 @@
         }
       }
 
-      .main-checkbox input + label::before {
+      .main-checkbox input+label::before {
         margin-right: 0;
       }
 
@@ -152,6 +156,7 @@
             transition: all 0.2s;
             width: 23px;
             height: 23px;
+
             @media (max-width: 1024px) {
               opacity: 1;
             }
@@ -237,6 +242,7 @@
 
       .fix-row__title {
         padding-top: 40px;
+
         @media (max-width: 768px) {
           padding-top: 0;
         }

@@ -321,7 +321,7 @@ const setInfoModalsHandlers = () => {
             </div>
             <div class="description-list">
               <div class="description-list__row">
-                <span>Сроки проживания:</span>
+                <span>Количество ночей:</span>
                 <span class="leftInfo">${dataObj?.dayCount - 1}</span>
               </div>
               <div class="description-list__row">

@@ -208,7 +208,7 @@ const setInfoModalsHandlers = () => {
             requestDiv.classList.add('booking-request')
             requestDiv.innerHTML = `
               <div class="header">
-                <h2>Заявка #241112-161-603100  (Овербукинг-8990)</h2>
+                <h2>Заявка #241112-161-603100 (Овербукинг-8990)</h2>
                 <button class="accept-request-btn">Утвердить заявку</button>
               </div>
               <div class="info">
@@ -322,7 +322,7 @@ const setInfoModalsHandlers = () => {
             <div class="description-list">
               <div class="description-list__row">
                 <span>Сроки проживания:</span>
-                <span class="leftInfo">${dataObj?.dayCount}</span>
+                <span class="leftInfo">${dataObj?.dayCount - 1}</span>
               </div>
               <div class="description-list__row">
                 <span>Всего гостей:</span>

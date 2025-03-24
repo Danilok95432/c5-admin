@@ -1,6 +1,22 @@
 .view-booking-page {
   padding-bottom: 40px;
 
+  .title-controllers-block {
+    &__head {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      .status-order {
+        color: #064AB1;
+        background: #ffffff;
+        border-radius: 50px;
+        padding: 3px 12px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+
   .section-block {
     padding-top: 30px;
   }

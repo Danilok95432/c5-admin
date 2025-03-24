@@ -141,6 +141,22 @@
     }
     &__cell {
       padding-right: 55px;
+      &:first-child {
+        padding-left: 12px;
+      }
+      .order {
+        display: flex;
+        flex-direction: column;
+        .number-order {
+          display: flex;
+          gap: 4px;
+        }
+        .status-order {
+          color: #5E6265;
+          font-size: 13px;
+        }
+      }
+
       p {
         line-height: 1.5;
         &._gray {

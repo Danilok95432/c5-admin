@@ -1,0 +1,50 @@
+.menu-links-page {
+  padding-bottom: 230px;
+
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  .input-column-wrapper {
+    margin-right: 0;
+    display: flex;
+    gap: 23px;
+    align-items: flex-end;
+    width: 100%;
+    @media (max-width: 550px) {
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+    }
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 579px;
+    }
+
+    .menu-links-checkbox {
+      margin-bottom: 10px;
+    }
+
+
+    label {
+      font-size: 13px;
+      @include opensans-regular;
+      color: #A5AFBB;
+      min-width: 135px;
+      display: flex;
+      flex-direction: row;
+      & .label-star {
+        color: #ff6716;
+      }
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}

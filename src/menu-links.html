@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru" class="page" xmlns="http://www.w3.org/1999/html">
+@include('partials/head.html', { 'title': 'Создание/редактирование канала'})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  <header>
+    @include('partials/auth-panel.html')
+  </header>
+  <main class="main menu-links-page">
+    <div class="container">
+      <h1>
+        Меню и ссылки
+      </h1>
+      <form class="menu-links-page__form" action="#">
+        <section class="section-block channel-section">
+          <h3>Верхнее меню</h3>
+          <div class="menu-links-page__inner">
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Главная страница
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Главная страница"
+                  name="top_main_page"
+                  placeholder="Название"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_mainpage" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >О гостинице
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="О гостинице"
+                  name="top_about_hotel"
+                  placeholder="О гостинице"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_about" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Номера
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Номера"
+                  name="top_rooms"
+                  placeholder="Номера"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_rooms" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Ресторан
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Кафе"
+                  name="top_restaurant"
+                  placeholder="Кафе"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_restaurant" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Акции
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Акции и скидки"
+                  name="top_discount"
+                  placeholder="Акции"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_discount" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Контакты
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Контактная информация"
+                  name="top_contact_info"
+                  placeholder="Контактная информация"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_contacts" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+          </div>
+        </section>
+        <section class="section-block data-section">
+          <h3>Нижнее меню</h3>
+          <div class="menu-links-page__inner">
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >О гостинице
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="О гостинице"
+                  name="bottom_about_hotel"
+                  placeholder="О гостинице"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_about_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Номера
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Номера"
+                  name="bottom_rooms"
+                  placeholder="Номера"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_rooms_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Ресторан
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Ресторан"
+                  name="bottom_restaurant"
+                  placeholder="Ресторан"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_restaurant_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Цены
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Цены"
+                  name="bottom_price"
+                  placeholder="Цены"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_price_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Акции
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Акции"
+                  name="bottom_discount"
+                  placeholder="Акции"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_discount_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Контакты
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Контакты"
+                  name="bottom_contacts"
+                  placeholder="Контакты"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_contacts_bottom" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+            <div class="input-column-wrapper">
+              <div class="input-wrapper">
+                <label
+                  >Забронировать
+                </label>
+                <input
+                  class="main-input menu-links-input"
+                  type="text"
+                  value="Забронировать"
+                  name="bottom_booking"
+                  placeholder="Забронировать"
+                />
+              </div>
+              <label class="main-checkbox menu-links-checkbox">
+                <input type="checkbox" name="hide_booking" />
+                <span>Включить пункт меню</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <div class="main-controllers">
+          <div class="main-controllers__btns-left">
+            <button class="main-btn" type="submit">
+              Сохранить и закрыть
+            </button>
+            <button class="main-btn _blue-outlined" type="button"
+                    data-action="./data/test.txt">Применить и продолжить
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+  @include('partials/info-modal.html')
+</div>
+</body>
+
+
+</html>

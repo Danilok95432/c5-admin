@@ -5,6 +5,7 @@ import {
   newChildGuest,
   newRoom,
 } from '../_vars'
+import { initFileUploading } from './fileUpload'
 import { initAllDates } from './customDate'
 import { returnMoreZero, sendData, showInfoModal } from '../_functions'
 import { initAllMasks } from './inputMask'
@@ -199,6 +200,7 @@ if (editBookingPage) {
         .closest('.rooms-list__item')
         .querySelector('.guests-list')
       currentRoomGuests.insertAdjacentHTML('beforeend', newAdultGuest)
+      initFileUploading()
       initAllDates()
       initAllMasks()
     }
@@ -207,6 +209,7 @@ if (editBookingPage) {
         .closest('.rooms-list__item')
         .querySelector('.guests-list')
       currentRoomGuests.insertAdjacentHTML('beforeend', newChildGuest)
+      initFileUploading()
       initAllDates()
       initAllMasks()
     }

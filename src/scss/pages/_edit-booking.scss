@@ -1,5 +1,44 @@
 .edit-booking-page {
   padding-bottom: 160px;
+
+  .file-upload__delete-btn {
+    top: 12px;
+  }
+
+  .file-upload__info a {
+    height: 41.5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #064ab1;
+  }
+
+  .file-upload__name {
+    padding-left: 35px;
+    position: relative;
+  }
+
+  .file-upload__name::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 30px;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='30' viewBox='0 0 23 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.9969 28C22.9969 29.1046 22.1014 30 20.9969 30H2C0.89543 30 0 29.1046 0 28V2C0 0.89543 0.89543 0 2 0H14.5594L22.9969 8.4375V28Z' fill='%233090F6'/%3E%3Cpath d='M23 8.4375H15.5625C15.0102 8.4375 14.5625 7.98979 14.5625 7.4375V0L23 8.4375Z' fill='%234FB6E9'/%3E%3Cpath d='M14.5625 8.4375H23V16.875L14.5625 8.4375Z' fill='%23064AB1'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .input-column-wrapper {
     label {
       display: flex;
@@ -38,7 +77,7 @@
       gap: 10px;
     }
 
-    .input-column-wrapper {
+    .input-column-wrapper:not(:last-child) {
       width: 24%;
 
       label {

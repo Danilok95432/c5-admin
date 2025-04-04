@@ -32,6 +32,7 @@ if (createTariffPage) {
     if (e.currentTarget.checked) {
       prepaymentInput.value = ''
       prepaymentInput.classList.add('_disabled')
+      prepaymentInput.removeAttribute('required')
     } else {
       prepaymentInput.classList.remove('_disabled')
     }

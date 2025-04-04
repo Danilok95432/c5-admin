@@ -20,6 +20,10 @@ const roomDateController = document.querySelector('.room-date-controller')
 let firstDate,
   lastDate = ''
 let redTracks = []
+const countSpan = document.querySelector('.search-info__count span')
+if (countSpan) {
+  countSpan.textContent = '0'
+}
 
 const searchBookings = () => {
   const searchInput = document.querySelector('[name="booking_search"]')
@@ -28,6 +32,9 @@ const searchBookings = () => {
   const searchTerm = searchInput.value.trim().toLowerCase()
 
   let foundCount = 0
+  if (countSpan) {
+    countSpan.textContent = String(foundCount)
+  }
 
   bookingTracks.forEach((track) => {
     const jsonData = track.dataset.json
@@ -615,7 +622,1103 @@ const getCellsContent = async (dateInfo, changedTrack = null) => {
       })
     }
 
-    const finishedResponse = await response.json()
+    const finishedResponse = {
+      dayname: 'Wednesday',
+      first_date: '2025-03-31',
+      last_date: '2025-05-04',
+      last_date_plus: '2025-05-05',
+      last_month_date: '2025-04-30',
+      date: '2025-04-03',
+      status: 'ok',
+      errortext:
+        '\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430!',
+      rows: [
+        {
+          cells: [
+            '\u041a\u0430\u043c\u043e\u0440\u043a\u0430 \u043f\u043e\u0434 \u043b\u0435\u0441\u0442\u043d\u0438\u0446\u0435\u0439',
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+          ],
+          childRows: [
+            {
+              cells: [
+                '\u0413\u041f-1',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+          ],
+        },
+        {
+          cells: [
+            '2-\u0421\u0422\u0414',
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+          ],
+          childRows: [
+            {
+              cells: [
+                '101',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '102',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '105',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '106',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '107',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+            {
+              cells: [
+                '110',
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+          ],
+        },
+        {
+          cells: [
+            '\u0422\u0435\u0441\u0442 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043a\u0440\u043e\u0432\u0430\u0442\u0438',
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+          ],
+          childRows: [
+            {
+              cells: [
+                '301',
+                [],
+                [],
+                [],
+                {
+                  customer: '\u0411\u043e6\u0434\u0430\u0440\u044c \u041c. .',
+                  guests: '1 \u0432\u0437\u0440\u043e\u0441\u043b\u044b\u0445',
+                  phone: '+7 (910) 751-11-05',
+                  checkIn: '03.04.2025 \u0432 14:00:00',
+                  checkOut: '04.04.2025 \u0432 12:00:00',
+                  food: '\u0441 \u043f\u0438\u0442\u0430\u043d\u0438\u0435\u043c',
+                  source: '\u0421\u0430\u0439\u0442',
+                  category:
+                    '\u0422\u0435\u0441\u0442 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043a\u0440\u043e\u0432\u0430\u0442\u0438',
+                  tariff:
+                    '\u041a\u0443\u0440\u0435\u043d\u0438\u0435 \u043f\u0430\u0440\u043e\u0432\u043e\u0437\u0438\u0442\u044c',
+                  room: '301',
+                  paid: '99.00',
+                  price: '100.00',
+                  status: '_orange',
+                  link: '/admin/bookings/?view&id=287',
+                  comment: '',
+                  dayCount: 2,
+                },
+                [],
+                [],
+                [],
+                {
+                  customer: '\u0442\u0435\u0441\u0442 \u0442. .',
+                  guests: '1 \u0432\u0437\u0440\u043e\u0441\u043b\u044b\u0445',
+                  phone: '+7 (910) 751-11-05',
+                  checkIn: '07.04.2025 \u0432 14:00:00',
+                  checkOut: '08.04.2025 \u0432 12:00:00',
+                  food: '\u0441 \u043f\u0438\u0442\u0430\u043d\u0438\u0435\u043c',
+                  source: '\u0421\u0430\u0439\u0442',
+                  category:
+                    '\u0422\u0435\u0441\u0442 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043a\u0440\u043e\u0432\u0430\u0442\u0438',
+                  tariff:
+                    '\u041a\u0443\u0440\u0435\u043d\u0438\u0435 \u043f\u0430\u0440\u043e\u0432\u043e\u0437\u0438\u0442\u044c',
+                  room: '301',
+                  paid: '99.00',
+                  price: '100.00',
+                  status: '_orange',
+                  link: '/admin/bookings/?view&id=288',
+                  comment: '',
+                  dayCount: 2,
+                },
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+                [],
+              ],
+            },
+          ],
+        },
+      ],
+    }
 
     firstDate = finishedResponse.first_date
     lastDate = finishedResponse.last_date
@@ -640,34 +1743,90 @@ if (roomDateController) {
     '.room-date-controller__date-preview',
   )
   const presentDay = new Date()
-  getCellsContent(presentDay).then(() => initRowsVisibleHandler())
+
+  // Функция для получения дат для отображения
+  const getCalendarDates = (startDate) => {
+    const dates = []
+    let currentDate = new Date(startDate)
+
+    // Добавляем дни до конца текущего месяца
+    while (currentDate.getMonth() === startDate.getMonth()) {
+      dates.push(new Date(currentDate))
+      currentDate.setDate(currentDate.getDate() + 1)
+    }
+
+    // Добавляем два следующих месяца полностью
+    let nextMonth = new Date(
+      startDate.getFullYear(),
+      startDate.getMonth() + 1,
+      1,
+    )
+    for (let i = 0; i < 2; i++) {
+      while (nextMonth.getMonth() === (startDate.getMonth() + 1 + i) % 12) {
+        dates.push(new Date(nextMonth))
+        nextMonth.setDate(nextMonth.getDate() + 1)
+      }
+      nextMonth = new Date(
+        startDate.getFullYear(),
+        startDate.getMonth() + 2 + i,
+        1,
+      )
+    }
+
+    return dates
+  }
+
+  // Вычисляем начальную дату (16 дней назад от текущей даты)
+  const startDate = new Date(presentDay)
+  startDate.setDate(presentDay.getDate() - 16)
+
+  // Получаем массив дат для отображения
+  const calendarDates = getCalendarDates(startDate)
+
+  const customRoomCalendar = new AirDatepicker(calendarInput, {
+    onSelect: ({ date }) => {
+      datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
+      const newStartDate = new Date(date)
+      newStartDate.setDate(date.getDate() - 16)
+      const newCalendarDates = getCalendarDates(newStartDate)
+      const newMonthHeaders = getMonthHeaders(
+        newCalendarDates,
+        customRoomCalendar,
+      )
+      renderDateRow(newCalendarDates, newMonthHeaders)
+      getCellsContent(date).then(() => initRowsVisibleHandler())
+    },
+    selectedDates: [presentDay],
+  })
+
+  // Функция для получения заголовков месяцев (после инициализации календаря)
+  const getMonthHeaders = (dates, calendar) => {
+    const monthHeaders = []
+    let currentMonth = null
+
+    dates.forEach((date) => {
+      const month = calendar.formatDate(date, 'MMMM yyyy')
+      if (month !== currentMonth) {
+        monthHeaders.push({ date: date, header: month })
+        currentMonth = month
+      }
+    })
+    return monthHeaders
+  }
+
+  // Получаем заголовки месяцев после инициализации календаря
+  getMonthHeaders(calendarDates, customRoomCalendar)
 
   const currentDayBtn = roomDateController.querySelector(
     '.room-date-controller__current-day-btn',
   )
-
   currentDayBtn.addEventListener('click', () => {
     customRoomCalendar.selectDate(presentDay)
     customRoomCalendar.setViewDate(presentDay)
   })
 
-  const customRoomCalendar = new AirDatepicker(calendarInput, {
-    onSelect: ({ date }) => {
-      datePreview.textContent = customRoomCalendar.formatDate(date, 'MMMM yyyy')
-
-      renderDateRow(customRoomCalendar.getViewDates('days'))
-      getCellsContent(date).then(() => initRowsVisibleHandler())
-    },
-    selectedDates: [presentDay],
-  })
-  datePreview.textContent = customRoomCalendar.formatDate(
-    presentDay,
-    'MMMM yyyy',
-  )
-
   calendarInput.addEventListener('paste', (e) => e.preventDefault())
   calendarInput.addEventListener('keydown', (e) => e.preventDefault())
-  //отрисовка таблицы с датами бронирования
 
   const setDateTypeClass = (checkedDate) => {
     const nowDate = customRoomCalendar.selectedDates
@@ -679,8 +1838,6 @@ if (roomDateController) {
       checkedDate,
       'dd.MM.yyyy',
     )
-    customRoomCalendar.formatDate(nowDate, 'MM')
-    customRoomCalendar.formatDate(checkedDate, 'MM')
     if (nowDateFormatted === checkedDateFormatted) {
       return '_active-day'
     }
@@ -692,16 +1849,88 @@ if (roomDateController) {
     'thead tr.room-booking-calendar__dates-row',
   )
 
-  const renderDateRow = (cellArr) => {
-    const html = cellArr.map((dateEl) => {
-      return `<th class="day-cell ${setDateTypeClass(dateEl)}">
-                    <span>${customRoomCalendar.formatDate(dateEl, 'dd')}</span>
-                    <span>${defineWeekDay(dateEl)}</span>
-                </th>`
-    })
-    html.unshift('<th>Номера</th>')
-    bookingTableTitleRow.innerHTML = html.join('')
+  // Функция для вычисления left position
+  const calculateMonthHeaderPosition = (date) => {
+    const firstDayCell = bookingTableTitleRow.querySelector(`.day-cell`)
+    if (!firstDayCell) return 0
+
+    // Находим индекс первой ячейки с датой, соответствующей месяцу
+    let firstDayIndex = calendarDates.findIndex(
+      (d) =>
+        d.getMonth() === date.getMonth() &&
+        d.getFullYear() === date.getFullYear(),
+    )
+
+    if (firstDayIndex === -1) return 0 // Если не нашли, возвращаем 0
+
+    // Получаем все ячейки с днями
+    const dayCells = bookingTableTitleRow.querySelectorAll(`.day-cell`)
+    // Если нашли индекс, то берем соответствующую ячейку
+    const relevantDayCell = dayCells[firstDayIndex]
+
+    if (!relevantDayCell) return 0
+
+    const cellRect = relevantDayCell.getBoundingClientRect()
+    return cellRect.left
   }
 
-  renderDateRow(customRoomCalendar.getViewDates('days'))
+  // Функция для отрисовки дат и заголовков
+  const renderDateRow = (cellArr, headers) => {
+    let html = ''
+
+    cellArr.forEach((dateEl) => {
+      html += `<th class="day-cell ${setDateTypeClass(dateEl)}">
+              <span>${customRoomCalendar.formatDate(dateEl, 'dd')}</span>
+              <span>${defineWeekDay(dateEl)}</span>
+          </th>`
+    })
+
+    bookingTableTitleRow.innerHTML = `<th>Номера</th>${html}`
+
+    // Очищаем существующие заголовки месяцев и линии
+    const roomDateControllerEl = document.querySelector('.room-date-controller')
+    const existingElements = roomDateControllerEl.querySelectorAll(
+      '.room-date-controller__month-header, .room-date-controller__line',
+    )
+    existingElements.forEach((el) => el.remove())
+
+    // Создаем и позиционируем заголовки месяцев и линии
+    headers.forEach((header, index) => {
+      // Если это не первый заголовок, добавляем линию перед ним
+      if (index > 0) {
+        const lineEl = document.createElement('th')
+        lineEl.classList.add('room-date-controller__line')
+        lineEl.style.position = 'absolute'
+        lineEl.style.top = '0'
+
+        // Вычисляем позицию линии, немного сдвигая ее влево от заголовка
+        const headerPosition = calculateMonthHeaderPosition(header.date)
+        lineEl.style.left = `${headerPosition}px`
+        lineEl.style.width = `1px`
+        lineEl.style.height = `10000px`
+        roomDateControllerEl.appendChild(lineEl)
+      }
+
+      const monthHeaderEl = document.createElement('th')
+      monthHeaderEl.classList.add('room-date-controller__month-header')
+      monthHeaderEl.style.position = 'absolute'
+      monthHeaderEl.style.top = '20px'
+      monthHeaderEl.style.left = `${calculateMonthHeaderPosition(
+        header.date,
+      )}px`
+      monthHeaderEl.textContent = header.header
+      roomDateControllerEl.appendChild(monthHeaderEl)
+    })
+  }
+
+  const init = () => {
+    const initialMonthHeaders = getMonthHeaders(
+      calendarDates,
+      customRoomCalendar,
+    )
+    renderDateRow(calendarDates, initialMonthHeaders)
+    getCellsContent(presentDay).then(() => initRowsVisibleHandler())
+  }
+
+  init()
 }

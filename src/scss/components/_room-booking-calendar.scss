@@ -1,5 +1,6 @@
 .room-booking-calendar {
   overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
 
   &__prompt-btn {
@@ -8,6 +9,14 @@
     top: 23px;
     width: 18px;
     height: 18px;
+  }
+
+  .room-booking-calendar__dates-row--fixed {
+    position: absolute;
+    background-color: white;
+    th:first-child {
+      min-width: 207px;
+    }
   }
 
   .room-date-controller {
@@ -110,7 +119,7 @@
       text-align: left;
       font-size: 15px;
       background-color: #fff;
-      min-width: 207px;
+      width: 207px;
       border-right: 1px solid #c3d5f5;
     }
 

@@ -6,7 +6,7 @@
   }
 
   .container {
-    max-width: 1220px;
+    max-width: 1240px;
   }
 
   .section-block {
@@ -175,18 +175,32 @@
     gap: 10px;
   }
 
-  .top-block {
+  .ban-info-block {
+    padding: 30px 0 25px 0;
+    border-top: 1px solid #C3D5F5;
+    border-bottom: 1px solid #C3D5F5;
+    .data-table__row {
+      max-width: 210px;
+    }
+  }
+
+  .name-block {
     padding: 30px 0 25px 0;
     border-top: 1px solid #C3D5F5;
     border-bottom: 1px solid #C3D5F5;
   }
 
-  .middle-block {
+  .info-block {
     padding: 23px 0;
     border-bottom: 1px solid #C3D5F5;
   }
 
-  .bottom-block {
+  .desc-block {
+    padding: 23px 0;
+    border-bottom: 1px solid #C3D5F5;
+  }
+
+  .booking-ways-block {
     padding: 25px 0;
 
     p {

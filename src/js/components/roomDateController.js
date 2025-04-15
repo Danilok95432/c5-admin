@@ -1,7 +1,6 @@
 import AirDatepicker from 'air-datepicker'
 import {
   addDaysToDate,
-  areDateRangesIntersecting,
   defineWeekDay,
   escapeHtml,
   findNearestClient,
@@ -19,7 +18,6 @@ const roomDateController = document.querySelector('.room-date-controller')
 
 let firstDate,
   lastDate = ''
-let redTracks = []
 const countSpan = document.querySelector('.search-info__count span')
 if (countSpan) {
   countSpan.textContent = '0'
@@ -147,7 +145,6 @@ const setInfoModalsHandlers = () => {
     )
     if (closeModalBtn) {
       closeModalBtn.addEventListener('click', () => {
-        redTracks = []
         overBookingRequests.innerHTML = ``
       })
     }
@@ -180,37 +177,14 @@ const setInfoModalsHandlers = () => {
           categoryConflictField.textContent = dataObj?.category
           roomConflictField.textContent = dataObj?.room
           let datesRange = []
-          datesRange.push([
-            dataObj?.checkIn.split(' ')[0],
-            dataObj?.checkOut.split(' ')[0],
-          ])
-          bookingTracks.forEach((track) => {
-            const jsonData = track.dataset.json
-            try {
-              const bookingData = JSON.parse(jsonData)
-              if (bookingData.status == '_red') {
-                datesRange.push([
-                  bookingData.checkIn.split(' ')[0],
-                  bookingData.checkOut.split(' ')[0],
-                ])
-                if (areDateRangesIntersecting(datesRange)) {
-                  redTracks.push(bookingData)
-                }
-                datesRange.pop()
-              }
-            } catch (error) {
-              console.log('error', error)
-            }
-          })
-          datesRange = []
-          redTracks.forEach((track) => {
+          dataObj?.conflict.map((req) => {
             datesRange.push([
-              track.checkIn.split(' ')[0],
-              track.checkOut.split(' ')[0],
+              req.checkIn.split(' ')[0],
+              req.checkOut.split(' ')[0],
             ])
           })
           datesConflictField.textContent = intersectionDates(datesRange)
-          redTracks.forEach((track) => {
+          dataObj?.conflict.forEach((track) => {
             const requestDiv = document.createElement('div')
             requestDiv.classList.add('booking-request')
             requestDiv.innerHTML = `
@@ -271,14 +245,22 @@ const setInfoModalsHandlers = () => {
                   bookingTracks.forEach((track) => {
                     const jsonData = track.dataset.json
                     try {
-                      const bookingData = JSON.parse(jsonData)
+                      let bookingData = JSON.parse(jsonData)
                       if (
                         bookingData.status == '_red' &&
-                        bookingData.customer == clientRequestField.textContent
+                        bookingData.conflict.some(
+                          (req) =>
+                            req.customer == clientRequestField.textContent,
+                        )
                       ) {
-                        bookingData.status = '_orange'
                         const presentDay = new Date()
-                        getCellsContent(presentDay, bookingData).then(() =>
+                        const indexResolve = bookingData.conflict.findIndex(
+                          (req) => req.customer == client,
+                        )
+                        getCellsContent(
+                          presentDay,
+                          bookingData,
+                          indexResolve,
                           initRowsVisibleHandler(),
                         )
                       }
@@ -286,7 +268,6 @@ const setInfoModalsHandlers = () => {
                       console.log('error', error)
                     }
                   })
-                  redTracks = []
                   overBookingRequests.innerHTML = ``
                 })
                 reject.addEventListener('click', () => {
@@ -316,13 +297,14 @@ const setInfoModalsHandlers = () => {
             }
           })
         }
-        let current = formatStrToDate(dataObj?.checkIn.split(' ')[0])
-        let first = addDaysToDate(formatStrToDate(firstDate), 7)
-        let last = addDaysToDate(formatStrToDate(lastDate), -7)
+        if (dataObj?.status != '_red') {
+          let current = formatStrToDate(dataObj?.checkIn.split(' ')[0])
+          let first = addDaysToDate(formatStrToDate(firstDate), 7)
+          let last = addDaysToDate(formatStrToDate(lastDate), -7)
 
-        cellBtn.parentElement.insertAdjacentHTML(
-          'beforeend',
-          `<div class="booking-track__comment">
+          cellBtn.parentElement.insertAdjacentHTML(
+            'beforeend',
+            `<div class="booking-track__comment">
             <div class="desc-head">
               ${returnDescHeadBooking(dataObj?.status.slice(1))}
             </div>
@@ -347,32 +329,52 @@ const setInfoModalsHandlers = () => {
             <h5>Комментарий к бронированию:</h5>
             <p>${dataObj?.comment}</p>
           </div>`,
-        )
+          )
 
-        let commentBlock = cellBtn.parentElement.querySelector(
-          '.booking-track__comment',
-        )
+          let commentBlock = cellBtn.parentElement.querySelector(
+            '.booking-track__comment',
+          )
 
-        updateCommentPosition(current, first, last, cellBtn, commentBlock)
-        const roomBookingCalendar = document.querySelector(
-          '.room-booking-calendar',
-        )
-        window.addEventListener('scroll', () =>
-          updateCommentPosition(current, first, last, cellBtn, commentBlock),
-        )
-        roomBookingCalendar.addEventListener('scroll', () =>
-          updateCommentPosition(current, first, last, cellBtn, commentBlock),
-        )
-        window.addEventListener('resize', () =>
-          updateCommentPosition(current, first, last, cellBtn, commentBlock),
-        )
+          updateCommentPosition(current, first, last, cellBtn, commentBlock)
+          const roomBookingCalendar = document.querySelector(
+            '.room-booking-calendar',
+          )
+          window.addEventListener('scroll', () =>
+            updateCommentPosition(current, first, last, cellBtn, commentBlock),
+          )
+          roomBookingCalendar.addEventListener('scroll', () =>
+            updateCommentPosition(current, first, last, cellBtn, commentBlock),
+          )
+          window.addEventListener('resize', () =>
+            updateCommentPosition(current, first, last, cellBtn, commentBlock),
+          )
 
-        cellBtn?.addEventListener('mouseover', () => {
-          commentBlock.classList.add('_active')
-        })
-        cellBtn?.addEventListener('mouseout', () => {
-          commentBlock.classList.remove('_active')
-        })
+          cellBtn?.addEventListener('mouseover', () => {
+            commentBlock.classList.add('_active')
+          })
+          cellBtn?.addEventListener('mouseout', () => {
+            commentBlock.classList.remove('_active')
+          })
+        } else {
+          cellBtn.parentElement.insertAdjacentHTML(
+            'beforeend',
+            `<div class="booking-track__comment">
+            <div class="desc-head">
+              ${returnDescHeadBooking(dataObj?.status.slice(1))}
+            </div>
+            </div>`,
+          )
+          let commentBlock = cellBtn.parentElement.querySelector(
+            '.booking-track__comment',
+          )
+
+          cellBtn?.addEventListener('mouseover', () => {
+            commentBlock.classList.add('_active')
+          })
+          cellBtn?.addEventListener('mouseout', () => {
+            commentBlock.classList.remove('_active')
+          })
+        }
       }
     })
   } else {
@@ -530,9 +532,11 @@ const renderCells = (cells) => {
 
       if (cell.status === '_green-lock' || cell.status === '_orange-lock') {
         return `<td class="${cell.status}">
-            <a href="${cell.link}" class="booking-track" title="${
-              cell.content
-            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
+            <a href="${
+              cell.link
+            }" target="_blank" class="booking-track" title="${cell.content}, ${
+              cell?.price ?? ''
+            }" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
             </a>
         </td>`
@@ -540,9 +544,11 @@ const renderCells = (cells) => {
 
       if (cell.status === '_blue-lock' || cell.status === '_gray-lock') {
         return `<td class="${cell.status}">
-            <a href="${cell.link}" class="booking-track" title="${
-              cell.content
-            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
+            <a href="${
+              cell.link
+            }" target="_blank" class="booking-track" title="${cell.content}, ${
+              cell?.price ?? ''
+            }" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
             </a>
         </td>`
@@ -550,9 +556,11 @@ const renderCells = (cells) => {
 
       if (cell.status === '_purple-lock') {
         return `<td class="${cell.status}">
-            <a href="${cell.link}" class="booking-track" title="${
-              cell.content
-            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
+            <a href="${
+              cell.link
+            }" target="_blank" class="booking-track" title="${cell.content}, ${
+              cell?.price ?? ''
+            }" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
             </a>
         </td>`
@@ -560,9 +568,11 @@ const renderCells = (cells) => {
 
       if (cell.status === '_yellow-lock' || cell.status === '_red-lock') {
         return `<td class="${cell.status}">
-            <a href="${cell.link}" class="booking-track" title="${
-              cell.content
-            }, ${cell?.price ?? ''}" style="width: ${cell.dayCount * 40}px">
+            <a href="${
+              cell.link
+            }" target="_blank" class="booking-track" title="${cell.content}, ${
+              cell?.price ?? ''
+            }" style="width: ${cell.dayCount * 40}px">
                 ${lockSvg}
             </a>
         </td>`
@@ -594,7 +604,11 @@ export const renderRows = (rows) => {
     rowsContainer.innerHTML = html.join('')
   }
 }
-const getCellsContent = async (dateInfo, changedTrack = null) => {
+const getCellsContent = async (
+  dateInfo,
+  changedTrack = null,
+  resolveConflict = 0,
+) => {
   const bookingTableWrapper = document.querySelector('.room-booking-calendar')
   const dataScript = bookingTableWrapper.dataset.script
 
@@ -607,15 +621,11 @@ const getCellsContent = async (dateInfo, changedTrack = null) => {
     const response = await sendData(jsonData, dataScript)
 
     if (changedTrack !== null) {
-      response.rows.map((row) => {
-        row.childRows.map((elem) => {
-          elem.cells.map((item) => {
-            if (
-              item.customer === changedTrack.customer &&
-              item.category === changedTrack.category &&
-              item.room === changedTrack.room
-            ) {
-              item.status = '_orange'
+      finishedResponse.rows.forEach((row) => {
+        row.childRows.forEach((elem) => {
+          elem.cells.forEach((item, index, cells) => {
+            if (item.conflict && item.conflict.length > 0) {
+              cells[index] = item.conflict[resolveConflict]
             }
           })
         })
@@ -625,7 +635,7 @@ const getCellsContent = async (dateInfo, changedTrack = null) => {
     const finishedResponse = await response.json()
 
     firstDate = finishedResponse.first_date
-    lastDate = finishedResponse.last_date
+    lastDate = finishedResponse.last_date_plus
 
     const { status, errortext, rows } = finishedResponse
 
@@ -648,27 +658,19 @@ if (roomDateController) {
   const getCalendarDates = (startDate) => {
     const dates = []
     let currentDate = new Date(startDate)
+    let presentDay = new Date(startDate)
+    presentDay.setDate(presentDay.getDate() + 16)
 
-    while (currentDate.getMonth() === startDate.getMonth()) {
+    const future = new Date(currentDate)
+    future.setMonth(future.getMonth() + 2)
+
+    let maxDate
+    if (startDate.getMonth() != presentDay.getMonth())
+      maxDate = new Date(future.getFullYear(), future.getMonth() + 2, 0)
+    else maxDate = new Date(future.getFullYear(), future.getMonth() + 1, 0)
+    while (currentDate <= maxDate) {
       dates.push(new Date(currentDate))
       currentDate.setDate(currentDate.getDate() + 1)
-    }
-
-    let nextMonth = new Date(
-      startDate.getFullYear(),
-      startDate.getMonth() + 1,
-      1,
-    )
-    for (let i = 0; i < 2; i++) {
-      while (nextMonth.getMonth() === (startDate.getMonth() + 1 + i) % 12) {
-        dates.push(new Date(nextMonth))
-        nextMonth.setDate(nextMonth.getDate() + 1)
-      }
-      nextMonth = new Date(
-        startDate.getFullYear(),
-        startDate.getMonth() + 2 + i,
-        1,
-      )
     }
 
     return dates

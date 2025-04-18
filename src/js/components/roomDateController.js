@@ -118,6 +118,9 @@ const setInfoModalsHandlers = () => {
     const roomField = trackModal.querySelector('.track-info-modal__room')
     const priceField = trackModal.querySelector('.track-info-modal__price')
     const paidField = trackModal.querySelector('.track-info-modal__paid')
+    const orderCodeField = trackModal.querySelector(
+      '.track-info-modal__order_code',
+    )
     const openBookingLink = trackModal.querySelector(
       '.track-info-modal__open-booking',
     )
@@ -171,6 +174,7 @@ const setInfoModalsHandlers = () => {
           priceField.textContent = dataObj?.price
           paidField.textContent = dataObj?.paid
           openBookingLink.href = dataObj?.link
+          orderCodeField.textContent = dataObj?.order_code
         } else {
           conflictModal.classList.add('_active')
           modalOverlay.classList.add('_active')
@@ -189,7 +193,9 @@ const setInfoModalsHandlers = () => {
             requestDiv.classList.add('booking-request')
             requestDiv.innerHTML = `
               <div class="header">
-                <h2>Заявка #241112-161-603100 (Овербукинг-8990)</h2>
+                <h2>Заявка #${track.order_code} (Овербукинг-${
+                  dataObj?.overBooking_code
+                })</h2>
                 <button class="accept-request-btn">Утвердить заявку</button>
               </div>
               <div class="info">
@@ -309,6 +315,10 @@ const setInfoModalsHandlers = () => {
               ${returnDescHeadBooking(dataObj?.status.slice(1))}
             </div>
             <div class="description-list">
+              <div class="description-list__row">
+                <span>Номер заказа:</span>
+                <span class="leftInfo">${dataObj?.order_code}</span>
+              </div>
               <div class="description-list__row">
                 <span>Количество ночей:</span>
                 <span class="leftInfo">${dataObj?.dayCount - 1}</span>

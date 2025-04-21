@@ -178,6 +178,7 @@ const setInfoModalsHandlers = () => {
         } else {
           conflictModal.classList.add('_active')
           modalOverlay.classList.add('_active')
+          overBookingRequests.innerHTML = ``
           categoryConflictField.textContent = dataObj?.category
           roomConflictField.textContent = dataObj?.room
           let datesRange = []
@@ -193,9 +194,7 @@ const setInfoModalsHandlers = () => {
             requestDiv.classList.add('booking-request')
             requestDiv.innerHTML = `
               <div class="header">
-                <h2>Заявка #${track.order_code} (Овербукинг-${
-                  dataObj?.overBooking_code
-                })</h2>
+                <h2>Заявка #${track.order_code}</h2>
                 <button class="accept-request-btn">Утвердить заявку</button>
               </div>
               <div class="info">
@@ -630,6 +629,8 @@ const getCellsContent = async (
   try {
     const response = await sendData(jsonData, dataScript)
 
+    const finishedResponse = await response.json()
+
     if (changedTrack !== null) {
       finishedResponse.rows.forEach((row) => {
         row.childRows.forEach((elem) => {
@@ -641,8 +642,6 @@ const getCellsContent = async (
         })
       })
     }
-
-    const finishedResponse = await response.json()
 
     firstDate = finishedResponse.first_date
     lastDate = finishedResponse.last_date_plus

@@ -15,7 +15,7 @@
           <section class="section-block">
             <h3>Запрет бронирования №11</h3>
 
-            <form class="create-booking-ban-form" action="#">
+            <form class="create-booking-ban-form" action="#" data-script="./data/getBooking.txt">
               <div class="input-column-wrapper column">
                 <label>Основание запрета</label>
                 <select class="main-input" name="ban-basis">
@@ -149,5 +149,6 @@
         </div>
       </main>
     </div>
+    @include('partials/info-modal.html')
   </body>
 </html>

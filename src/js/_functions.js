@@ -1,6 +1,7 @@
 //Сбор данных форм
 
 import { bigImgModal, infoModal, modalOverlay } from './_vars'
+import { parse, isValid } from 'date-fns'
 
 export const serializeForm = (formNode) => {
   return new FormData(formNode)
@@ -254,13 +255,12 @@ export const areDateRangesIntersecting = (dateRanges) => {
     return true
   }
 
-  // Функция для преобразования строки даты в объект Date
+  const dateFormat = "dd.MM.yyyy 'в' HH:mm:ss" // Формат даты с временем
+
+  // Функция для преобразования строки даты в объект Date с учетом формата
   function parseDateString(dateString) {
-    const [day, month, year] = dateString.split('.').map(Number)
-    if (isNaN(day) || isNaN(month) || isNaN(year)) {
-      return null // Невалидная дата
-    }
-    return new Date(year, month - 1, day)
+    const parsedDate = parse(dateString, dateFormat, new Date())
+    return isValid(parsedDate) ? parsedDate : null
   }
 
   // Функция для проверки валидности диапазона (start <= end)

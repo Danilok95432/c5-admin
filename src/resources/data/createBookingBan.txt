@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "errortext": "Произошла ошибка!",
+  "id_room": "1",
+  "begin_date": "23.04.2025",
+  "begin_time": "10:00",
+  "end_date": "23.04.2025",
+  "end_time": "12:00",
+}

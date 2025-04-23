@@ -1,16 +1,24 @@
 import AirDatepicker from 'air-datepicker'
-import { sendData, areDateRangesIntersecting } from '../_functions'
+import { sendData } from '../_functions'
 import { showInfoModal } from '../_functions'
 
 const bookingBanPage = document.querySelector('.create-booking-ban-page')
 const bookingBanForm = document.querySelector('.create-booking-ban-form')
-const checkIn = bookingBanForm.querySelector('.main-input[name="start-date"]')
-const checkOut = bookingBanForm.querySelector('.main-input[name="end-date"]')
 
-const getBookingData = async (date) => {
+const validateBookingBanData = async (
+  room,
+  startDate,
+  startTime,
+  endDate,
+  endTime,
+) => {
   const dataScript = bookingBanForm.dataset.script
   const objData = {
-    date: String(date),
+    id_room: room,
+    begin_date: String(startDate),
+    begin_time: startTime,
+    end_date: String(endDate),
+    end_time: endTime,
   }
   const jsonData = JSON.stringify(objData)
   const response = await sendData(jsonData, dataScript)
@@ -18,45 +26,25 @@ const getBookingData = async (date) => {
   return finishedResponse
 }
 
-let dateInfo = null
-
-const initializeDateInfo = async () => {
-  const presentDay = new Date()
-  dateInfo = await getBookingData(presentDay)
-}
-
-initializeDateInfo()
-
-new AirDatepicker(checkIn, {
-  onSelect: async ({ date }) => {
-    const newStartDate = new Date(date)
-    dateInfo = await getBookingData(newStartDate)
-  },
-  selectedDates: [new Date()],
-})
-
-new AirDatepicker(checkOut, {
-  onSelect: async ({ date }) => {
-    const newStartDate = new Date(date)
-    dateInfo = await getBookingData(newStartDate)
-  },
-  selectedDates: [new Date()],
-})
-
 if (bookingBanPage && bookingBanForm) {
+  const checkIn = bookingBanForm.querySelector('.main-input[name="start-date"]')
+  const checkOut = bookingBanForm.querySelector('.main-input[name="end-date"]')
+  new AirDatepicker(checkIn, {
+    selectedDates: [new Date()],
+  })
+
+  new AirDatepicker(checkOut, {
+    selectedDates: [new Date()],
+  })
   const sumbitBtns = bookingBanPage.querySelectorAll('.main-btn')
   sumbitBtns.forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      const roomCategorySelect = bookingBanForm.querySelector(
-        'select[name="room_category"]',
-      )
-      const roomCategory =
-        roomCategorySelect.options[roomCategorySelect.selectedIndex].text
+    btn.addEventListener('click', async (event) => {
+      event.preventDefault()
+
       const roomNumberSelect = bookingBanForm.querySelector(
         'select[name="room"]',
       )
-      const roomNumber =
-        roomNumberSelect.options[roomNumberSelect.selectedIndex].text
+      const roomNumber = roomNumberSelect.value
       const checkInTimeSelect = bookingBanForm.querySelector(
         'select[name="start-hour"]',
       )
@@ -67,47 +55,20 @@ if (bookingBanPage && bookingBanForm) {
       )
       const checkOutTime =
         checkOutTimeSelect.options[checkOutTimeSelect.selectedIndex].text
-      let datesRange = []
-      datesRange.push([
-        checkIn.value + ' в ' + checkInTime + ':00',
-        checkOut.value + ' в ' + checkOutTime + ':00',
-      ])
-      await validateCreateBan(datesRange, roomNumber, roomCategory, dateInfo)
+
+      validateBookingBanData(
+        roomNumber,
+        checkIn.value,
+        checkInTime,
+        checkOut.value,
+        checkOutTime,
+      ).then((res) => {
+        if (res.status === 'error') {
+          showInfoModal(res.errortext)
+        } else if (res.status === 'ok') {
+          bookingBanForm.submit()
+        }
+      })
     })
   })
-}
-
-const validateCreateBan = async (datesRange, room, category, dataInfo) => {
-  let flag = false
-  if (dataInfo) {
-    for (const row of dataInfo.rows) {
-      if (row.cells[0] === category) {
-        for (const elem of row.childRows) {
-          for (const cell of elem.cells) {
-            if (cell.room === room) {
-              datesRange.push([cell.checkIn, cell.checkOut])
-              flag = areDateRangesIntersecting(datesRange)
-              if (flag) {
-                datesRange.pop()
-                showInfoModal('На выбранные даты нет мест')
-                return {
-                  status: 'error',
-                  errortext: 'На выбранные даты нет мест',
-                }
-              } else {
-                datesRange.pop()
-              }
-            }
-          }
-        }
-      }
-    }
-    return { status: 'ok' }
-  } else {
-    showInfoModal('Нет данных о заказах')
-    return {
-      status: 'error',
-      errortext: 'Нет данных о заказах',
-    }
-  }
 }

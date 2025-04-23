@@ -15,7 +15,7 @@
           <section class="section-block">
             <h3>Запрет бронирования №11</h3>
 
-            <form class="create-booking-ban-form" action="#" data-script="./data/getBooking.txt">
+            <form class="create-booking-ban-form" action="#" data-script="./data/createBookingBan.txt">
               <div class="input-column-wrapper column">
                 <label>Основание запрета</label>
                 <select class="main-input" name="ban-basis">
@@ -134,13 +134,13 @@
           </section>
           <div class="main-controllers">
             <div class="main-controllers__btns-left">
-              <button class="main-btn" type="submit">
+              <button class="main-btn" type="submit" data-script="./data/createBookingBan.txt">
                 Сохранить и закрыть
               </button>
               <button
                 class="main-btn _blue-outlined"
                 type="button"
-                data-action="./data/test.txt"
+                data-script="./data/createBookingBan.txt"
               >
                 Применить и продолжить
               </button>
